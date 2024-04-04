@@ -1056,8 +1056,8 @@ class FhirRequest with _$FhirRequest {
 
       /// TRANSACTION
       transaction: (FhirTransactionRequest request) async {
-        if ((this as FhirTransactionRequest).bundle.type.toString() !=
-            'transaction') {
+        if ((this as FhirTransactionRequest).bundle.type !=
+            BundleType.transaction) {
           return _operationOutcome(
               'A Transaction request was made, but no Bundle was included.');
         }
@@ -1088,7 +1088,7 @@ class FhirRequest with _$FhirRequest {
 
       /// BATCH
       batch: (FhirBatchRequest request) async {
-        if ((this as FhirBatchRequest).bundle.type.toString() != 'batch') {
+        if ((this as FhirBatchRequest).bundle.type != BundleType.batch) {
           return _operationOutcome(
               'A Batch request was made, but the included Bundle is not a'
               ' batch type.');
@@ -1302,8 +1302,8 @@ class FhirRequest with _$FhirRequest {
           mimeType: mimeType,
         ),
         transaction: (FhirTransactionRequest request) {
-          if ((this as FhirTransactionRequest).bundle.type.toString() !=
-              'transaction') {
+          if ((this as FhirTransactionRequest).bundle.type !=
+              BundleType.transaction) {
             throw const FormatException(
                 'A Transaction request was made, but no Bundle was included.');
           }
@@ -1331,7 +1331,7 @@ class FhirRequest with _$FhirRequest {
           );
         },
         batch: (FhirBatchRequest request) {
-          if ((this as FhirBatchRequest).bundle.type.toString() != 'batch') {
+          if ((this as FhirBatchRequest).bundle.type != BundleType.batch) {
             throw const FormatException(
                 'A Batch request was made, but the included Bundle is not a'
                 ' batch type.');
