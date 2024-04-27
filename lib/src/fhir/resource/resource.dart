@@ -98,7 +98,7 @@ abstract mixin class Resource {
   String toYaml() => json2yaml(toJson());
 
   /// produce a string of the [resourceType]
-  String? get resourceTypeString => resourceType.toString();
+  String get resourceTypeString => resourceType.toString();
 
   /// Convenience method to return a [Reference] referring to that [Resource]
   Reference get thisReference => Reference(reference: path);
