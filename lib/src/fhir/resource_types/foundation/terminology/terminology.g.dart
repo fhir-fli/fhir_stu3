@@ -147,7 +147,7 @@ _$CodeSystemImpl _$$CodeSystemImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$CodeSystemImplToJson(_$CodeSystemImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -728,7 +728,7 @@ _$ConceptMapImpl _$$ConceptMapImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ConceptMapImplToJson(_$ConceptMapImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -1187,7 +1187,7 @@ _$ExpansionProfileImpl _$$ExpansionProfileImplFromJson(
 Map<String, dynamic> _$$ExpansionProfileImplToJson(
     _$ExpansionProfileImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -1561,7 +1561,7 @@ _$NamingSystemImpl _$$NamingSystemImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$NamingSystemImplToJson(_$NamingSystemImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -1797,7 +1797,7 @@ _$ValueSetImpl _$$ValueSetImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ValueSetImplToJson(_$ValueSetImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

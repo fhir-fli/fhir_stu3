@@ -2,7 +2,7 @@
 import 'package:petitparser/petitparser.dart';
 
 // Project imports:
-import '../stu3.dart';
+import '../../../fhir_stu3.dart';
 
 /// identifies sums
 final Parser<SumParser> sumLexer =

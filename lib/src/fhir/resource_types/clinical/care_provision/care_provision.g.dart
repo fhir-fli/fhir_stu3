@@ -230,7 +230,7 @@ _$CarePlanImpl _$$CarePlanImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$CarePlanImplToJson(_$CarePlanImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -658,7 +658,7 @@ _$CareTeamImpl _$$CareTeamImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$CareTeamImplToJson(_$CareTeamImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -837,7 +837,7 @@ _$GoalImpl _$$GoalImplFromJson(Map<String, dynamic> json) => _$GoalImpl(
 
 Map<String, dynamic> _$$GoalImplToJson(_$GoalImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -1029,7 +1029,7 @@ _$NutritionOrderImpl _$$NutritionOrderImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$NutritionOrderImplToJson(
     _$NutritionOrderImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -1475,7 +1475,7 @@ _$ProcedureRequestImpl _$$ProcedureRequestImplFromJson(
 Map<String, dynamic> _$$ProcedureRequestImplToJson(
     _$ProcedureRequestImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -1689,7 +1689,7 @@ _$ReferralRequestImpl _$$ReferralRequestImplFromJson(
 Map<String, dynamic> _$$ReferralRequestImplToJson(
     _$ReferralRequestImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -1879,7 +1879,7 @@ _$RiskAssessmentImpl _$$RiskAssessmentImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$RiskAssessmentImplToJson(
     _$RiskAssessmentImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -2064,7 +2064,7 @@ _$VisionPrescriptionImpl _$$VisionPrescriptionImplFromJson(
 Map<String, dynamic> _$$VisionPrescriptionImplToJson(
     _$VisionPrescriptionImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

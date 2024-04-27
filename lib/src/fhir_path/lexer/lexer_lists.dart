@@ -2,7 +2,7 @@
 import 'package:petitparser/petitparser.dart';
 
 // Project imports:
-import '../stu3.dart';
+import '../../../fhir_stu3.dart';
 
 /// Lexers for identifying special items
 final ChoiceParser<dynamic> specialLexer = bracketsIndexLexer |

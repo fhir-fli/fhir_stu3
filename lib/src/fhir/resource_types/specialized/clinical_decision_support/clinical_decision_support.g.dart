@@ -98,7 +98,7 @@ _$GuidanceResponseImpl _$$GuidanceResponseImplFromJson(
 Map<String, dynamic> _$$GuidanceResponseImplToJson(
     _$GuidanceResponseImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

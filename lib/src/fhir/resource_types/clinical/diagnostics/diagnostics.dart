@@ -4,13 +4,11 @@
 import 'dart:convert';
 
 // Package imports:
-import 'package:fhir_primitives/fhir_primitives.dart';
-import 'package:fhir_yaml/fhir_yaml.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:yaml/yaml.dart';
 
 // Project imports:
-import '../../../stu3.dart';
+import '../../../../../fhir_stu3.dart';
 
 part 'diagnostics.enums.dart';
 part 'diagnostics.freezed.dart';

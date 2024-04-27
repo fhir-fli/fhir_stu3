@@ -2,7 +2,7 @@
 import 'package:petitparser/petitparser.dart';
 
 // Project imports:
-import '../stu3.dart';
+import '../../../fhir_stu3.dart';
 
 /******************************************************************************
  * These are some special operators with some unique functionality, I may

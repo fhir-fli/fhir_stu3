@@ -350,11 +350,10 @@ enum Stu3ResourceType {
   ValueSet,
 
   @JsonValue('VisionPrescription')
-  VisionPrescription,
-}
+  VisionPrescription;
 
-extension Stu3ResourceTypeExtension on Stu3ResourceType {
-  String get asString {
+  @override
+  String toString() {
     switch (this) {
       case Stu3ResourceType.Account:
         return 'Account';
@@ -708,4 +707,375 @@ extension Stu3ResourceTypeExtension on Stu3ResourceType {
         return 'VisionPrescription';
     }
   }
+
+  String toJson() => toString();
+
+  static Stu3ResourceType? fromString(String string) {
+    switch (string) {
+      case 'Account':
+        return Stu3ResourceType.Account;
+      case 'ActivityDefinition':
+        return Stu3ResourceType.ActivityDefinition;
+      case 'AdverseEvent':
+        return Stu3ResourceType.AdverseEvent;
+      case 'AllergyIntolerance':
+        return Stu3ResourceType.AllergyIntolerance;
+      case 'Appointment':
+        return Stu3ResourceType.Appointment;
+      case 'AppointmentResponse':
+        return Stu3ResourceType.AppointmentResponse;
+      case 'AuditEvent':
+        return Stu3ResourceType.AuditEvent;
+      case 'Basic':
+        return Stu3ResourceType.Basic;
+      case 'Binary':
+        return Stu3ResourceType.Binary;
+      case 'BodySite':
+        return Stu3ResourceType.BodySite;
+      case 'Bundle':
+        return Stu3ResourceType.Bundle;
+      case 'CapabilityStatement':
+        return Stu3ResourceType.CapabilityStatement;
+      case 'CarePlan':
+        return Stu3ResourceType.CarePlan;
+      case 'CareTeam':
+        return Stu3ResourceType.CareTeam;
+      case 'ChargeItem':
+        return Stu3ResourceType.ChargeItem;
+      case 'Claim':
+        return Stu3ResourceType.Claim;
+      case 'ClaimResponse':
+        return Stu3ResourceType.ClaimResponse;
+      case 'ClinicalImpression':
+        return Stu3ResourceType.ClinicalImpression;
+      case 'CodeSystem':
+        return Stu3ResourceType.CodeSystem;
+      case 'Communication':
+        return Stu3ResourceType.Communication;
+      case 'CommunicationRequest':
+        return Stu3ResourceType.CommunicationRequest;
+      case 'CompartmentDefinition':
+        return Stu3ResourceType.CompartmentDefinition;
+      case 'Composition':
+        return Stu3ResourceType.Composition;
+      case 'ConceptMap':
+        return Stu3ResourceType.ConceptMap;
+      case 'Condition':
+        return Stu3ResourceType.Condition;
+      case 'Consent':
+        return Stu3ResourceType.Consent;
+      case 'Contract':
+        return Stu3ResourceType.Contract;
+      case 'Coverage':
+        return Stu3ResourceType.Coverage;
+      case 'DataElement':
+        return Stu3ResourceType.DataElement;
+      case 'DetectedIssue':
+        return Stu3ResourceType.DetectedIssue;
+      case 'Device':
+        return Stu3ResourceType.Device;
+      case 'DeviceComponent':
+        return Stu3ResourceType.DeviceComponent;
+      case 'DeviceMetric':
+        return Stu3ResourceType.DeviceMetric;
+      case 'DeviceRequest':
+        return Stu3ResourceType.DeviceRequest;
+      case 'DeviceUseStatement':
+        return Stu3ResourceType.DeviceUseStatement;
+      case 'DiagnosticReport':
+        return Stu3ResourceType.DiagnosticReport;
+      case 'DocumentManifest':
+        return Stu3ResourceType.DocumentManifest;
+      case 'DocumentReference':
+        return Stu3ResourceType.DocumentReference;
+      case 'EligibilityRequest':
+        return Stu3ResourceType.EligibilityRequest;
+      case 'EligibilityResponse':
+        return Stu3ResourceType.EligibilityResponse;
+      case 'Encounter':
+        return Stu3ResourceType.Encounter;
+      case 'Endpoint':
+        return Stu3ResourceType.Endpoint;
+      case 'EnrollmentRequest':
+        return Stu3ResourceType.EnrollmentRequest;
+      case 'EnrollmentResponse':
+        return Stu3ResourceType.EnrollmentResponse;
+      case 'EpisodeOfCare':
+        return Stu3ResourceType.EpisodeOfCare;
+      case 'ExpansionProfile':
+        return Stu3ResourceType.ExpansionProfile;
+      case 'ExplanationOfBenefit':
+        return Stu3ResourceType.ExplanationOfBenefit;
+      case 'FamilyMemberHistory':
+        return Stu3ResourceType.FamilyMemberHistory;
+      case 'Flag':
+        return Stu3ResourceType.Flag;
+      case 'Goal':
+        return Stu3ResourceType.Goal;
+      case 'GraphDefinition':
+        return Stu3ResourceType.GraphDefinition;
+      case 'Group':
+        return Stu3ResourceType.Group;
+      case 'GuidanceResponse':
+        return Stu3ResourceType.GuidanceResponse;
+      case 'HealthcareService':
+        return Stu3ResourceType.HealthcareService;
+      case 'ImagingManifest':
+        return Stu3ResourceType.ImagingManifest;
+      case 'ImagingStudy':
+        return Stu3ResourceType.ImagingStudy;
+      case 'Immunization':
+        return Stu3ResourceType.Immunization;
+      case 'ImmunizationRecommendation':
+        return Stu3ResourceType.ImmunizationRecommendation;
+      case 'ImplementationGuide':
+        return Stu3ResourceType.ImplementationGuide;
+      case 'Library':
+        return Stu3ResourceType.Library;
+      case 'Linkage':
+        return Stu3ResourceType.Linkage;
+      case 'List':
+        return Stu3ResourceType.FhirList;
+      case 'Location':
+        return Stu3ResourceType.Location;
+      case 'Measure':
+        return Stu3ResourceType.Measure;
+      case 'MeasureReport':
+        return Stu3ResourceType.MeasureReport;
+      case 'Media':
+        return Stu3ResourceType.Media;
+      case 'Medication':
+        return Stu3ResourceType.Medication;
+      case 'MedicationAdministration':
+        return Stu3ResourceType.MedicationAdministration;
+      case 'MedicationDispense':
+        return Stu3ResourceType.MedicationDispense;
+      case 'MedicationRequest':
+        return Stu3ResourceType.MedicationRequest;
+      case 'MedicationStatement':
+        return Stu3ResourceType.MedicationStatement;
+      case 'MessageDefinition':
+        return Stu3ResourceType.MessageDefinition;
+      case 'MessageHeader':
+        return Stu3ResourceType.MessageHeader;
+      case 'NamingSystem':
+        return Stu3ResourceType.NamingSystem;
+      case 'NutritionOrder':
+        return Stu3ResourceType.NutritionOrder;
+      case 'Observation':
+        return Stu3ResourceType.Observation;
+      case 'OperationDefinition':
+        return Stu3ResourceType.OperationDefinition;
+      case 'OperationOutcome':
+        return Stu3ResourceType.OperationOutcome;
+      case 'Organization':
+        return Stu3ResourceType.Organization;
+      case 'Parameters':
+        return Stu3ResourceType.Parameters;
+      case 'Patient':
+        return Stu3ResourceType.Patient;
+      case 'PaymentNotice':
+        return Stu3ResourceType.PaymentNotice;
+      case 'PaymentReconciliation':
+        return Stu3ResourceType.PaymentReconciliation;
+      case 'Person':
+        return Stu3ResourceType.Person;
+      case 'PlanDefinition':
+        return Stu3ResourceType.PlanDefinition;
+      case 'Practitioner':
+        return Stu3ResourceType.Practitioner;
+      case 'PractitionerRole':
+        return Stu3ResourceType.PractitionerRole;
+      case 'Procedure':
+        return Stu3ResourceType.Procedure;
+      case 'ProcedureRequest':
+        return Stu3ResourceType.ProcedureRequest;
+      case 'ProcessRequest':
+        return Stu3ResourceType.ProcessRequest;
+      case 'ProcessResponse':
+        return Stu3ResourceType.ProcessResponse;
+      case 'Provenance':
+        return Stu3ResourceType.Provenance;
+      case 'Questionnaire':
+        return Stu3ResourceType.Questionnaire;
+      case 'QuestionnaireResponse':
+        return Stu3ResourceType.QuestionnaireResponse;
+      case 'ReferralRequest':
+        return Stu3ResourceType.ReferralRequest;
+      case 'RelatedPerson':
+        return Stu3ResourceType.RelatedPerson;
+      case 'RequestGroup':
+        return Stu3ResourceType.RequestGroup;
+      case 'ResearchStudy':
+        return Stu3ResourceType.ResearchStudy;
+      case 'ResearchSubject':
+        return Stu3ResourceType.ResearchSubject;
+      case 'RiskAssessment':
+        return Stu3ResourceType.RiskAssessment;
+      case 'Schedule':
+        return Stu3ResourceType.Schedule;
+      case 'SearchParameter':
+        return Stu3ResourceType.SearchParameter;
+      case 'Sequence':
+        return Stu3ResourceType.Sequence;
+      case 'ServiceDefinition':
+        return Stu3ResourceType.ServiceDefinition;
+      case 'Slot':
+        return Stu3ResourceType.Slot;
+      case 'Specimen':
+        return Stu3ResourceType.Specimen;
+      case 'StructureDefinition':
+        return Stu3ResourceType.StructureDefinition;
+      case 'StructureMap':
+        return Stu3ResourceType.StructureMap;
+      case 'Subscription':
+        return Stu3ResourceType.Subscription;
+      case 'Substance':
+        return Stu3ResourceType.Substance;
+      case 'SupplyDelivery':
+        return Stu3ResourceType.SupplyDelivery;
+      case 'SupplyRequest':
+        return Stu3ResourceType.SupplyRequest;
+      case 'Task':
+        return Stu3ResourceType.Task;
+      case 'TestReport':
+        return Stu3ResourceType.TestReport;
+      case 'TestScript':
+        return Stu3ResourceType.TestScript;
+      case 'ValueSet':
+        return Stu3ResourceType.ValueSet;
+      case 'VisionPrescription':
+        return Stu3ResourceType.VisionPrescription;
+      default:
+        return null;
+    }
+  }
+
+  static Stu3ResourceType? fromJson(dynamic json) {
+    if (json is String) {
+      return fromString(json);
+    } else {
+      return null;
+    }
+  }
+
+  static List<String> get typesAsStrings => <String>[
+        'Account',
+        'ActivityDefinition',
+        'AdverseEvent',
+        'AllergyIntolerance',
+        'Appointment',
+        'AppointmentResponse',
+        'AuditEvent',
+        'Basic',
+        'Binary',
+        'BodySite',
+        'Bundle',
+        'CapabilityStatement',
+        'CarePlan',
+        'CareTeam',
+        'ChargeItem',
+        'Claim',
+        'ClaimResponse',
+        'ClinicalImpression',
+        'CodeSystem',
+        'Communication',
+        'CommunicationRequest',
+        'CompartmentDefinition',
+        'Composition',
+        'ConceptMap',
+        'Condition',
+        'Consent',
+        'Contract',
+        'Coverage',
+        'DataElement',
+        'DetectedIssue',
+        'Device',
+        'DeviceComponent',
+        'DeviceMetric',
+        'DeviceRequest',
+        'DeviceUseStatement',
+        'DiagnosticReport',
+        'DocumentManifest',
+        'DocumentReference',
+        'EligibilityRequest',
+        'EligibilityResponse',
+        'Encounter',
+        'Endpoint',
+        'EnrollmentRequest',
+        'EnrollmentResponse',
+        'EpisodeOfCare',
+        'ExpansionProfile',
+        'ExplanationOfBenefit',
+        'FamilyMemberHistory',
+        'Flag',
+        'Goal',
+        'GraphDefinition',
+        'Group',
+        'GuidanceResponse',
+        'HealthcareService',
+        'ImagingManifest',
+        'ImagingStudy',
+        'Immunization',
+        'ImmunizationRecommendation',
+        'ImplementationGuide',
+        'Library',
+        'Linkage',
+        'List',
+        'Location',
+        'Measure',
+        'MeasureReport',
+        'Media',
+        'Medication',
+        'MedicationAdministration',
+        'MedicationDispense',
+        'MedicationRequest',
+        'MedicationStatement',
+        'MessageDefinition',
+        'MessageHeader',
+        'NamingSystem',
+        'NutritionOrder',
+        'Observation',
+        'OperationDefinition',
+        'OperationOutcome',
+        'Organization',
+        'Parameters',
+        'Patient',
+        'PaymentNotice',
+        'PaymentReconciliation',
+        'Person',
+        'PlanDefinition',
+        'Practitioner',
+        'PractitionerRole',
+        'Procedure',
+        'ProcedureRequest',
+        'ProcessRequest',
+        'ProcessResponse',
+        'Provenance',
+        'Questionnaire',
+        'QuestionnaireResponse',
+        'ReferralRequest',
+        'RelatedPerson',
+        'RequestGroup',
+        'ResearchStudy',
+        'ResearchSubject',
+        'RiskAssessment',
+        'Schedule',
+        'SearchParameter',
+        'Sequence',
+        'ServiceDefinition',
+        'Slot',
+        'Specimen',
+        'StructureDefinition',
+        'StructureMap',
+        'Subscription',
+        'Substance',
+        'SupplyDelivery',
+        'SupplyRequest',
+        'Task',
+        'TestReport',
+        'TestScript',
+        'ValueSet',
+        'VisionPrescription',
+      ];
 }

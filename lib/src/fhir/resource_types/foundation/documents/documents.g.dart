@@ -92,7 +92,7 @@ _$CompositionImpl _$$CompositionImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$CompositionImplToJson(_$CompositionImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -512,7 +512,7 @@ _$DocumentManifestImpl _$$DocumentManifestImplFromJson(
 Map<String, dynamic> _$$DocumentManifestImplToJson(
     _$DocumentManifestImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -712,7 +712,7 @@ _$DocumentReferenceImpl _$$DocumentReferenceImplFromJson(
 Map<String, dynamic> _$$DocumentReferenceImplToJson(
     _$DocumentReferenceImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

@@ -4,7 +4,7 @@
 import 'package:collection/collection.dart';
 
 // Project imports:
-import '../../stu3.dart';
+import '../../../../fhir_stu3.dart';
 
 class SumParser extends FhirPathParser {
   SumParser();

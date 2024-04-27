@@ -37,7 +37,7 @@ Map<String, dynamic> _$$FhirReadRequestImplToJson(
     _$FhirReadRequestImpl instance) {
   final val = <String, dynamic>{
     'base': instance.base.toString(),
-    'type': _$Stu3ResourceTypeEnumMap[instance.type]!,
+    'type': instance.type.toJson(),
     'id': instance.id,
   };
 
@@ -227,7 +227,7 @@ Map<String, dynamic> _$$FhirVReadRequestImplToJson(
     _$FhirVReadRequestImpl instance) {
   final val = <String, dynamic>{
     'base': instance.base.toString(),
-    'type': _$Stu3ResourceTypeEnumMap[instance.type]!,
+    'type': instance.type.toJson(),
     'id': instance.id,
     'vid': instance.vid.toJson(),
   };
@@ -383,7 +383,7 @@ Map<String, dynamic> _$$FhirDeleteRequestImplToJson(
     _$FhirDeleteRequestImpl instance) {
   final val = <String, dynamic>{
     'base': instance.base.toString(),
-    'type': _$Stu3ResourceTypeEnumMap[instance.type]!,
+    'type': instance.type.toJson(),
     'id': instance.id,
   };
 
@@ -490,7 +490,7 @@ Map<String, dynamic> _$$FhirSearchRequestImplToJson(
     _$FhirSearchRequestImpl instance) {
   final val = <String, dynamic>{
     'base': instance.base.toString(),
-    'type': _$Stu3ResourceTypeEnumMap[instance.type]!,
+    'type': instance.type.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -747,7 +747,7 @@ _$FhirHistoryRequestImpl _$$FhirHistoryRequestImplFromJson(
               ?.map((e) => e as String)
               .toList() ??
           const <String>[],
-      count: json['count'] as int?,
+      count: (json['count'] as num?)?.toInt(),
       since: json['since'] == null
           ? null
           : FhirInstant.fromJson(json['since'] as String),
@@ -768,7 +768,7 @@ Map<String, dynamic> _$$FhirHistoryRequestImplToJson(
     _$FhirHistoryRequestImpl instance) {
   final val = <String, dynamic>{
     'base': instance.base.toString(),
-    'type': _$Stu3ResourceTypeEnumMap[instance.type]!,
+    'type': instance.type.toJson(),
     'id': instance.id,
   };
 
@@ -811,7 +811,7 @@ _$FhirHistoryTypeRequestImpl _$$FhirHistoryTypeRequestImplFromJson(
               ?.map((e) => e as String)
               .toList() ??
           const <String>[],
-      count: json['count'] as int?,
+      count: (json['count'] as num?)?.toInt(),
       since: json['since'] == null
           ? null
           : FhirInstant.fromJson(json['since'] as String),
@@ -832,7 +832,7 @@ Map<String, dynamic> _$$FhirHistoryTypeRequestImplToJson(
     _$FhirHistoryTypeRequestImpl instance) {
   final val = <String, dynamic>{
     'base': instance.base.toString(),
-    'type': _$Stu3ResourceTypeEnumMap[instance.type]!,
+    'type': instance.type.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -873,7 +873,7 @@ _$FhirHistoryAllRequestImpl _$$FhirHistoryAllRequestImplFromJson(
               ?.map((e) => e as String)
               .toList() ??
           const <String>[],
-      count: json['count'] as int?,
+      count: (json['count'] as num?)?.toInt(),
       since: json['since'] == null
           ? null
           : FhirInstant.fromJson(json['since'] as String),
@@ -963,7 +963,7 @@ Map<String, dynamic> _$$FhirOperationRequestImplToJson(
     }
   }
 
-  writeNotNull('type', _$Stu3ResourceTypeEnumMap[instance.type]);
+  writeNotNull('type', instance.type?.toJson());
   writeNotNull('id', instance.id);
   writeNotNull('pretty', instance.pretty);
   val['summary'] = _$SummaryEnumMap[instance.summary]!;

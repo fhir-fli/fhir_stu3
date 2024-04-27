@@ -108,7 +108,7 @@ _$ResearchStudyImpl _$$ResearchStudyImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ResearchStudyImplToJson(_$ResearchStudyImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -389,7 +389,7 @@ _$ResearchSubjectImpl _$$ResearchSubjectImplFromJson(
 Map<String, dynamic> _$$ResearchSubjectImplToJson(
     _$ResearchSubjectImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

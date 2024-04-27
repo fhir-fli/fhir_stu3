@@ -1,6 +1,6 @@
 // ignore_for_file: annotate_overrides, overridden_fields
 
-import '../../stu3.dart';
+import '../../../../fhir_stu3.dart';
 
 /// Merge the two collections into a single collection,
 /// eliminating any duplicate values (using = (Equals) (=) to

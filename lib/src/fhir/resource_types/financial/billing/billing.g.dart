@@ -137,7 +137,7 @@ _$ClaimImpl _$$ClaimImplFromJson(Map<String, dynamic> json) => _$ClaimImpl(
 
 Map<String, dynamic> _$$ClaimImplToJson(_$ClaimImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -1082,7 +1082,7 @@ _$ClaimResponseImpl _$$ClaimResponseImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ClaimResponseImplToJson(_$ClaimResponseImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

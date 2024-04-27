@@ -79,7 +79,7 @@ _$FhirGroupImpl _$$FhirGroupImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$FhirGroupImplToJson(_$FhirGroupImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -451,7 +451,7 @@ _$PatientImpl _$$PatientImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$PatientImplToJson(_$PatientImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -735,7 +735,7 @@ _$PersonImpl _$$PersonImplFromJson(Map<String, dynamic> json) => _$PersonImpl(
 
 Map<String, dynamic> _$$PersonImplToJson(_$PersonImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -889,7 +889,7 @@ _$PractitionerImpl _$$PractitionerImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$PractitionerImplToJson(_$PractitionerImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -1057,7 +1057,7 @@ _$PractitionerRoleImpl _$$PractitionerRoleImplFromJson(
 Map<String, dynamic> _$$PractitionerRoleImplToJson(
     _$PractitionerRoleImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -1263,7 +1263,7 @@ _$RelatedPersonImpl _$$RelatedPersonImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$RelatedPersonImplToJson(_$RelatedPersonImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {

@@ -4,7 +4,7 @@
 import 'package:collection/collection.dart';
 
 // Project imports:
-import '../../stu3.dart';
+import '../../../../fhir_stu3.dart';
 
 /// Returns true if the input collection is empty ({ }) and false otherwise.
 class EmptyParser extends FhirPathParser {

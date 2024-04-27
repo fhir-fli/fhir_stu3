@@ -73,7 +73,7 @@ _$AuditEventImpl _$$AuditEventImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$AuditEventImplToJson(_$AuditEventImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -593,7 +593,7 @@ _$ConsentImpl _$$ConsentImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ConsentImplToJson(_$ConsentImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -908,7 +908,7 @@ _$ProvenanceImpl _$$ProvenanceImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ProvenanceImplToJson(_$ProvenanceImpl instance) {
   final val = <String, dynamic>{
-    'resourceType': _$Stu3ResourceTypeEnumMap[instance.resourceType]!,
+    'resourceType': instance.resourceType.toJson(),
   };
 
   void writeNotNull(String key, dynamic value) {
