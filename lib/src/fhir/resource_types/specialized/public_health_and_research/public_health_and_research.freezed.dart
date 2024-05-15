@@ -114,12 +114,7 @@ abstract class $ResearchStudyCopyWith<$Res> {
       List<ResearchStudyArm>? arm});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get titleElement;
-  $ElementCopyWith<$Res>? get statusElement;
-  $ElementCopyWith<$Res>? get descriptionElement;
   $PeriodCopyWith<$Res>? get period;
   $ReferenceCopyWith<$Res>? get sponsor;
   $ReferenceCopyWith<$Res>? get principalInvestigator;
@@ -328,30 +323,6 @@ class _$ResearchStudyCopyWithImpl<$Res, $Val extends ResearchStudy>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -359,42 +330,6 @@ class _$ResearchStudyCopyWithImpl<$Res, $Val extends ResearchStudy>
 
     return $NarrativeCopyWith<$Res>(_value.text!, (value) {
       return _then(_value.copyWith(text: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get titleElement {
-    if (_value.titleElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.titleElement!, (value) {
-      return _then(_value.copyWith(titleElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get descriptionElement {
-    if (_value.descriptionElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.descriptionElement!, (value) {
-      return _then(_value.copyWith(descriptionElement: value) as $Val);
     });
   }
 
@@ -495,17 +430,7 @@ abstract class _$$ResearchStudyImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
-  @override
-  $ElementCopyWith<$Res>? get titleElement;
-  @override
-  $ElementCopyWith<$Res>? get statusElement;
-  @override
-  $ElementCopyWith<$Res>? get descriptionElement;
   @override
   $PeriodCopyWith<$Res>? get period;
   @override
@@ -1214,6 +1139,11 @@ ResearchStudyArm _$ResearchStudyArmFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ResearchStudyArm {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: '_name')
   Element? get nameElement => throw _privateConstructorUsedError;
@@ -1235,15 +1165,16 @@ abstract class $ResearchStudyArmCopyWith<$Res> {
       _$ResearchStudyArmCopyWithImpl<$Res, ResearchStudyArm>;
   @useResult
   $Res call(
-      {String? name,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      String? name,
       @JsonKey(name: '_name') Element? nameElement,
       CodeableConcept? code,
       String? description,
       @JsonKey(name: '_description') Element? descriptionElement});
 
-  $ElementCopyWith<$Res>? get nameElement;
   $CodeableConceptCopyWith<$Res>? get code;
-  $ElementCopyWith<$Res>? get descriptionElement;
 }
 
 /// @nodoc
@@ -1259,6 +1190,9 @@ class _$ResearchStudyArmCopyWithImpl<$Res, $Val extends ResearchStudyArm>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? name = freezed,
     Object? nameElement = freezed,
     Object? code = freezed,
@@ -1266,6 +1200,18 @@ class _$ResearchStudyArmCopyWithImpl<$Res, $Val extends ResearchStudyArm>
     Object? descriptionElement = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -1291,18 +1237,6 @@ class _$ResearchStudyArmCopyWithImpl<$Res, $Val extends ResearchStudyArm>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get nameElement {
-    if (_value.nameElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.nameElement!, (value) {
-      return _then(_value.copyWith(nameElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get code {
     if (_value.code == null) {
       return null;
@@ -1310,18 +1244,6 @@ class _$ResearchStudyArmCopyWithImpl<$Res, $Val extends ResearchStudyArm>
 
     return $CodeableConceptCopyWith<$Res>(_value.code!, (value) {
       return _then(_value.copyWith(code: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get descriptionElement {
-    if (_value.descriptionElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.descriptionElement!, (value) {
-      return _then(_value.copyWith(descriptionElement: value) as $Val);
     });
   }
 }
@@ -1335,18 +1257,17 @@ abstract class _$$ResearchStudyArmImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? name,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      String? name,
       @JsonKey(name: '_name') Element? nameElement,
       CodeableConcept? code,
       String? description,
       @JsonKey(name: '_description') Element? descriptionElement});
 
   @override
-  $ElementCopyWith<$Res>? get nameElement;
-  @override
   $CodeableConceptCopyWith<$Res>? get code;
-  @override
-  $ElementCopyWith<$Res>? get descriptionElement;
 }
 
 /// @nodoc
@@ -1360,6 +1281,9 @@ class __$$ResearchStudyArmImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? name = freezed,
     Object? nameElement = freezed,
     Object? code = freezed,
@@ -1367,6 +1291,18 @@ class __$$ResearchStudyArmImplCopyWithImpl<$Res>
     Object? descriptionElement = freezed,
   }) {
     return _then(_$ResearchStudyArmImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -1395,15 +1331,44 @@ class __$$ResearchStudyArmImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ResearchStudyArmImpl extends _ResearchStudyArm {
   const _$ResearchStudyArmImpl(
-      {this.name,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.name,
       @JsonKey(name: '_name') this.nameElement,
       this.code,
       this.description,
       @JsonKey(name: '_description') this.descriptionElement})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$ResearchStudyArmImpl.fromJson(Map<String, dynamic> json) =>
       _$$ResearchStudyArmImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final String? name;
@@ -1420,7 +1385,7 @@ class _$ResearchStudyArmImpl extends _ResearchStudyArm {
 
   @override
   String toString() {
-    return 'ResearchStudyArm(name: $name, nameElement: $nameElement, code: $code, description: $description, descriptionElement: $descriptionElement)';
+    return 'ResearchStudyArm(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, name: $name, nameElement: $nameElement, code: $code, description: $description, descriptionElement: $descriptionElement)';
   }
 
   @override
@@ -1428,6 +1393,11 @@ class _$ResearchStudyArmImpl extends _ResearchStudyArm {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ResearchStudyArmImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.nameElement, nameElement) ||
                 other.nameElement == nameElement) &&
@@ -1441,7 +1411,15 @@ class _$ResearchStudyArmImpl extends _ResearchStudyArm {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, name, nameElement, code, description, descriptionElement);
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      name,
+      nameElement,
+      code,
+      description,
+      descriptionElement);
 
   @JsonKey(ignore: true)
   @override
@@ -1460,7 +1438,10 @@ class _$ResearchStudyArmImpl extends _ResearchStudyArm {
 
 abstract class _ResearchStudyArm extends ResearchStudyArm {
   const factory _ResearchStudyArm(
-          {final String? name,
+          {final String? id,
+          @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+          final List<FhirExtension>? modifierExtension,
+          final String? name,
           @JsonKey(name: '_name') final Element? nameElement,
           final CodeableConcept? code,
           final String? description,
@@ -1471,6 +1452,13 @@ abstract class _ResearchStudyArm extends ResearchStudyArm {
   factory _ResearchStudyArm.fromJson(Map<String, dynamic> json) =
       _$ResearchStudyArmImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   String? get name;
   @override
@@ -1564,16 +1552,11 @@ abstract class $ResearchSubjectCopyWith<$Res> {
       Reference? consent});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
   $IdentifierCopyWith<$Res>? get identifier;
-  $ElementCopyWith<$Res>? get statusElement;
   $PeriodCopyWith<$Res>? get period;
   $ReferenceCopyWith<$Res> get study;
   $ReferenceCopyWith<$Res> get individual;
-  $ElementCopyWith<$Res>? get assignedArmElement;
-  $ElementCopyWith<$Res>? get actualArmElement;
   $ReferenceCopyWith<$Res>? get consent;
 }
 
@@ -1719,30 +1702,6 @@ class _$ResearchSubjectCopyWithImpl<$Res, $Val extends ResearchSubject>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -1762,18 +1721,6 @@ class _$ResearchSubjectCopyWithImpl<$Res, $Val extends ResearchSubject>
 
     return $IdentifierCopyWith<$Res>(_value.identifier!, (value) {
       return _then(_value.copyWith(identifier: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
     });
   }
 
@@ -1802,30 +1749,6 @@ class _$ResearchSubjectCopyWithImpl<$Res, $Val extends ResearchSubject>
   $ReferenceCopyWith<$Res> get individual {
     return $ReferenceCopyWith<$Res>(_value.individual, (value) {
       return _then(_value.copyWith(individual: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get assignedArmElement {
-    if (_value.assignedArmElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.assignedArmElement!, (value) {
-      return _then(_value.copyWith(assignedArmElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get actualArmElement {
-    if (_value.actualArmElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.actualArmElement!, (value) {
-      return _then(_value.copyWith(actualArmElement: value) as $Val);
     });
   }
 
@@ -1878,25 +1801,15 @@ abstract class _$$ResearchSubjectImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
   @override
   $IdentifierCopyWith<$Res>? get identifier;
-  @override
-  $ElementCopyWith<$Res>? get statusElement;
   @override
   $PeriodCopyWith<$Res>? get period;
   @override
   $ReferenceCopyWith<$Res> get study;
   @override
   $ReferenceCopyWith<$Res> get individual;
-  @override
-  $ElementCopyWith<$Res>? get assignedArmElement;
-  @override
-  $ElementCopyWith<$Res>? get actualArmElement;
   @override
   $ReferenceCopyWith<$Res>? get consent;
 }

@@ -52,6 +52,9 @@ class AdverseEvent with Resource, _$AdverseEvent {
     List<Reference>? study,
   }) = _AdverseEvent;
 
+  @override
+  String get fhirType => 'AdverseEvent';
+
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory AdverseEvent.fromYaml(dynamic yaml) => yaml is String
       ? AdverseEvent.fromJson(
@@ -86,9 +89,12 @@ class AdverseEvent with Resource, _$AdverseEvent {
 }
 
 @freezed
-class AdverseEventSuspectEntity with _$AdverseEventSuspectEntity {
+class AdverseEventSuspectEntity with BackboneType, _$AdverseEventSuspectEntity {
   const AdverseEventSuspectEntity._();
   const factory AdverseEventSuspectEntity({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     required Reference instance,
     AdverseEventSuspectEntityCausality? causality,
     @JsonKey(name: '_causality') Element? causalityElement,
@@ -101,8 +107,8 @@ class AdverseEventSuspectEntity with _$AdverseEventSuspectEntity {
     CodeableConcept? causalityResult,
   }) = _AdverseEventSuspectEntity;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'AdverseEventSuspectEntity';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory AdverseEventSuspectEntity.fromYaml(dynamic yaml) => yaml is String
@@ -130,10 +136,6 @@ class AdverseEventSuspectEntity with _$AdverseEventSuspectEntity {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -183,6 +185,9 @@ class AllergyIntolerance with Resource, _$AllergyIntolerance {
     List<AllergyIntoleranceReaction>? reaction,
   }) = _AllergyIntolerance;
 
+  @override
+  String get fhirType => 'AllergyIntolerance';
+
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory AllergyIntolerance.fromYaml(dynamic yaml) => yaml is String
       ? AllergyIntolerance.fromJson(
@@ -217,9 +222,13 @@ class AllergyIntolerance with Resource, _$AllergyIntolerance {
 }
 
 @freezed
-class AllergyIntoleranceReaction with _$AllergyIntoleranceReaction {
+class AllergyIntoleranceReaction
+    with BackboneType, _$AllergyIntoleranceReaction {
   const AllergyIntoleranceReaction._();
   const factory AllergyIntoleranceReaction({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     CodeableConcept? substance,
     required List<CodeableConcept> manifestation,
     String? description,
@@ -232,8 +241,8 @@ class AllergyIntoleranceReaction with _$AllergyIntoleranceReaction {
     List<Annotation>? note,
   }) = _AllergyIntoleranceReaction;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'AllergyIntoleranceReaction';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory AllergyIntoleranceReaction.fromYaml(dynamic yaml) => yaml is String
@@ -261,10 +270,6 @@ class AllergyIntoleranceReaction with _$AllergyIntoleranceReaction {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -312,6 +317,9 @@ class ClinicalImpression with Resource, _$ClinicalImpression {
     List<Annotation>? note,
   }) = _ClinicalImpression;
 
+  @override
+  String get fhirType => 'ClinicalImpression';
+
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ClinicalImpression.fromYaml(dynamic yaml) => yaml is String
       ? ClinicalImpression.fromJson(
@@ -346,15 +354,19 @@ class ClinicalImpression with Resource, _$ClinicalImpression {
 }
 
 @freezed
-class ClinicalImpressionInvestigation with _$ClinicalImpressionInvestigation {
+class ClinicalImpressionInvestigation
+    with BackboneType, _$ClinicalImpressionInvestigation {
   const ClinicalImpressionInvestigation._();
   const factory ClinicalImpressionInvestigation({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     required CodeableConcept code,
     List<Reference>? item,
   }) = _ClinicalImpressionInvestigation;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'ClinicalImpressionInvestigation';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ClinicalImpressionInvestigation.fromYaml(dynamic yaml) => yaml
@@ -383,24 +395,23 @@ class ClinicalImpressionInvestigation with _$ClinicalImpressionInvestigation {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class ClinicalImpressionFinding with _$ClinicalImpressionFinding {
+class ClinicalImpressionFinding with BackboneType, _$ClinicalImpressionFinding {
   const ClinicalImpressionFinding._();
   const factory ClinicalImpressionFinding({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     CodeableConcept? itemCodeableConcept,
     Reference? itemReference,
     String? basis,
     @JsonKey(name: '_basis') Element? basisElement,
   }) = _ClinicalImpressionFinding;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'ClinicalImpressionFinding';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ClinicalImpressionFinding.fromYaml(dynamic yaml) => yaml is String
@@ -428,10 +439,6 @@ class ClinicalImpressionFinding with _$ClinicalImpressionFinding {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -486,6 +493,9 @@ class Condition with Resource, _$Condition {
     List<Annotation>? note,
   }) = _Condition;
 
+  @override
+  String get fhirType => 'Condition';
+
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory Condition.fromYaml(dynamic yaml) => yaml is String
       ? Condition.fromJson(
@@ -520,15 +530,18 @@ class Condition with Resource, _$Condition {
 }
 
 @freezed
-class ConditionStage with _$ConditionStage {
+class ConditionStage with BackboneType, _$ConditionStage {
   const ConditionStage._();
   const factory ConditionStage({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     CodeableConcept? summary,
     List<Reference>? assessment,
   }) = _ConditionStage;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'ConditionStage';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ConditionStage.fromYaml(dynamic yaml) => yaml is String
@@ -556,22 +569,21 @@ class ConditionStage with _$ConditionStage {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class ConditionEvidence with _$ConditionEvidence {
+class ConditionEvidence with BackboneType, _$ConditionEvidence {
   const ConditionEvidence._();
   const factory ConditionEvidence({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     List<CodeableConcept>? code,
     List<Reference>? detail,
   }) = _ConditionEvidence;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'ConditionEvidence';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ConditionEvidence.fromYaml(dynamic yaml) => yaml is String
@@ -599,10 +611,6 @@ class ConditionEvidence with _$ConditionEvidence {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -640,6 +648,9 @@ class DetectedIssue with Resource, _$DetectedIssue {
     List<DetectedIssueMitigation>? mitigation,
   }) = _DetectedIssue;
 
+  @override
+  String get fhirType => 'DetectedIssue';
+
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DetectedIssue.fromYaml(dynamic yaml) => yaml is String
       ? DetectedIssue.fromJson(
@@ -674,17 +685,20 @@ class DetectedIssue with Resource, _$DetectedIssue {
 }
 
 @freezed
-class DetectedIssueMitigation with _$DetectedIssueMitigation {
+class DetectedIssueMitigation with BackboneType, _$DetectedIssueMitigation {
   const DetectedIssueMitigation._();
   const factory DetectedIssueMitigation({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     required CodeableConcept action,
     FhirDate? date,
     @JsonKey(name: '_date') Element? dateElement,
     Reference? author,
   }) = _DetectedIssueMitigation;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'DetectedIssueMitigation';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory DetectedIssueMitigation.fromYaml(dynamic yaml) => yaml is String
@@ -712,10 +726,6 @@ class DetectedIssueMitigation with _$DetectedIssueMitigation {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -775,6 +785,9 @@ class FamilyMemberHistory with Resource, _$FamilyMemberHistory {
     List<FamilyMemberHistoryCondition>? condition,
   }) = _FamilyMemberHistory;
 
+  @override
+  String get fhirType => 'FamilyMemberHistory';
+
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory FamilyMemberHistory.fromYaml(dynamic yaml) => yaml is String
       ? FamilyMemberHistory.fromJson(
@@ -809,9 +822,13 @@ class FamilyMemberHistory with Resource, _$FamilyMemberHistory {
 }
 
 @freezed
-class FamilyMemberHistoryCondition with _$FamilyMemberHistoryCondition {
+class FamilyMemberHistoryCondition
+    with BackboneType, _$FamilyMemberHistoryCondition {
   const FamilyMemberHistoryCondition._();
   const factory FamilyMemberHistoryCondition({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     required CodeableConcept code,
     CodeableConcept? outcome,
     Age? onsetAge,
@@ -822,8 +839,8 @@ class FamilyMemberHistoryCondition with _$FamilyMemberHistoryCondition {
     List<Annotation>? note,
   }) = _FamilyMemberHistoryCondition;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'FamilyMemberHistoryCondition';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory FamilyMemberHistoryCondition.fromYaml(dynamic yaml) => yaml is String
@@ -851,10 +868,6 @@ class FamilyMemberHistoryCondition with _$FamilyMemberHistoryCondition {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -906,6 +919,9 @@ class Procedure with Resource, _$Procedure {
     List<CodeableConcept>? usedCode,
   }) = _Procedure;
 
+  @override
+  String get fhirType => 'Procedure';
+
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory Procedure.fromYaml(dynamic yaml) => yaml is String
       ? Procedure.fromJson(
@@ -940,16 +956,19 @@ class Procedure with Resource, _$Procedure {
 }
 
 @freezed
-class ProcedurePerformer with _$ProcedurePerformer {
+class ProcedurePerformer with BackboneType, _$ProcedurePerformer {
   const ProcedurePerformer._();
   const factory ProcedurePerformer({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     CodeableConcept? role,
     required Reference actor,
     Reference? onBehalfOf,
   }) = _ProcedurePerformer;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'ProcedurePerformer';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ProcedurePerformer.fromYaml(dynamic yaml) => yaml is String
@@ -977,22 +996,21 @@ class ProcedurePerformer with _$ProcedurePerformer {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class ProcedureFocalDevice with _$ProcedureFocalDevice {
+class ProcedureFocalDevice with BackboneType, _$ProcedureFocalDevice {
   const ProcedureFocalDevice._();
   const factory ProcedureFocalDevice({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     CodeableConcept? action,
     required Reference manipulated,
   }) = _ProcedureFocalDevice;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'ProcedureFocalDevice';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ProcedureFocalDevice.fromYaml(dynamic yaml) => yaml is String
@@ -1020,8 +1038,4 @@ class ProcedureFocalDevice with _$ProcedureFocalDevice {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }

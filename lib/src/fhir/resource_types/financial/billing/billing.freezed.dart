@@ -131,15 +131,10 @@ abstract class $ClaimCopyWith<$Res> {
       Money? total});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get statusElement;
   $CodeableConceptCopyWith<$Res>? get type;
-  $ElementCopyWith<$Res>? get useElement;
   $ReferenceCopyWith<$Res>? get patient;
   $PeriodCopyWith<$Res>? get billablePeriod;
-  $ElementCopyWith<$Res>? get createdElement;
   $ReferenceCopyWith<$Res>? get enterer;
   $ReferenceCopyWith<$Res>? get insurer;
   $ReferenceCopyWith<$Res>? get provider;
@@ -409,30 +404,6 @@ class _$ClaimCopyWithImpl<$Res, $Val extends Claim>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -445,18 +416,6 @@ class _$ClaimCopyWithImpl<$Res, $Val extends Claim>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get type {
     if (_value.type == null) {
       return null;
@@ -464,18 +423,6 @@ class _$ClaimCopyWithImpl<$Res, $Val extends Claim>
 
     return $CodeableConceptCopyWith<$Res>(_value.type!, (value) {
       return _then(_value.copyWith(type: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get useElement {
-    if (_value.useElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.useElement!, (value) {
-      return _then(_value.copyWith(useElement: value) as $Val);
     });
   }
 
@@ -500,18 +447,6 @@ class _$ClaimCopyWithImpl<$Res, $Val extends Claim>
 
     return $PeriodCopyWith<$Res>(_value.billablePeriod!, (value) {
       return _then(_value.copyWith(billablePeriod: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get createdElement {
-    if (_value.createdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.createdElement!, (value) {
-      return _then(_value.copyWith(createdElement: value) as $Val);
     });
   }
 
@@ -753,23 +688,13 @@ abstract class _$$ClaimImplCopyWith<$Res> implements $ClaimCopyWith<$Res> {
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
   @override
-  $ElementCopyWith<$Res>? get statusElement;
-  @override
   $CodeableConceptCopyWith<$Res>? get type;
-  @override
-  $ElementCopyWith<$Res>? get useElement;
   @override
   $ReferenceCopyWith<$Res>? get patient;
   @override
   $PeriodCopyWith<$Res>? get billablePeriod;
-  @override
-  $ElementCopyWith<$Res>? get createdElement;
   @override
   $ReferenceCopyWith<$Res>? get enterer;
   @override
@@ -1604,6 +1529,11 @@ ClaimRelated _$ClaimRelatedFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimRelated {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   Reference? get claim => throw _privateConstructorUsedError;
   CodeableConcept? get relationship => throw _privateConstructorUsedError;
   Identifier? get reference => throw _privateConstructorUsedError;
@@ -1621,7 +1551,12 @@ abstract class $ClaimRelatedCopyWith<$Res> {
       _$ClaimRelatedCopyWithImpl<$Res, ClaimRelated>;
   @useResult
   $Res call(
-      {Reference? claim, CodeableConcept? relationship, Identifier? reference});
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      Reference? claim,
+      CodeableConcept? relationship,
+      Identifier? reference});
 
   $ReferenceCopyWith<$Res>? get claim;
   $CodeableConceptCopyWith<$Res>? get relationship;
@@ -1641,11 +1576,26 @@ class _$ClaimRelatedCopyWithImpl<$Res, $Val extends ClaimRelated>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? claim = freezed,
     Object? relationship = freezed,
     Object? reference = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       claim: freezed == claim
           ? _value.claim
           : claim // ignore: cast_nullable_to_non_nullable
@@ -1707,7 +1657,12 @@ abstract class _$$ClaimRelatedImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Reference? claim, CodeableConcept? relationship, Identifier? reference});
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      Reference? claim,
+      CodeableConcept? relationship,
+      Identifier? reference});
 
   @override
   $ReferenceCopyWith<$Res>? get claim;
@@ -1728,11 +1683,26 @@ class __$$ClaimRelatedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? claim = freezed,
     Object? relationship = freezed,
     Object? reference = freezed,
   }) {
     return _then(_$ClaimRelatedImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       claim: freezed == claim
           ? _value.claim
           : claim // ignore: cast_nullable_to_non_nullable
@@ -1752,11 +1722,43 @@ class __$$ClaimRelatedImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ClaimRelatedImpl extends _ClaimRelated {
-  const _$ClaimRelatedImpl({this.claim, this.relationship, this.reference})
-      : super._();
+  const _$ClaimRelatedImpl(
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.claim,
+      this.relationship,
+      this.reference})
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$ClaimRelatedImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimRelatedImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final Reference? claim;
@@ -1767,7 +1769,7 @@ class _$ClaimRelatedImpl extends _ClaimRelated {
 
   @override
   String toString() {
-    return 'ClaimRelated(claim: $claim, relationship: $relationship, reference: $reference)';
+    return 'ClaimRelated(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, claim: $claim, relationship: $relationship, reference: $reference)';
   }
 
   @override
@@ -1775,6 +1777,11 @@ class _$ClaimRelatedImpl extends _ClaimRelated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimRelatedImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.claim, claim) || other.claim == claim) &&
             (identical(other.relationship, relationship) ||
                 other.relationship == relationship) &&
@@ -1784,7 +1791,14 @@ class _$ClaimRelatedImpl extends _ClaimRelated {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, claim, relationship, reference);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      claim,
+      relationship,
+      reference);
 
   @JsonKey(ignore: true)
   @override
@@ -1802,7 +1816,10 @@ class _$ClaimRelatedImpl extends _ClaimRelated {
 
 abstract class _ClaimRelated extends ClaimRelated {
   const factory _ClaimRelated(
-      {final Reference? claim,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final Reference? claim,
       final CodeableConcept? relationship,
       final Identifier? reference}) = _$ClaimRelatedImpl;
   const _ClaimRelated._() : super._();
@@ -1810,6 +1827,13 @@ abstract class _ClaimRelated extends ClaimRelated {
   factory _ClaimRelated.fromJson(Map<String, dynamic> json) =
       _$ClaimRelatedImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   Reference? get claim;
   @override
@@ -1828,6 +1852,11 @@ ClaimPayee _$ClaimPayeeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimPayee {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   CodeableConcept get type => throw _privateConstructorUsedError;
   Reference? get party => throw _privateConstructorUsedError;
 
@@ -1843,7 +1872,12 @@ abstract class $ClaimPayeeCopyWith<$Res> {
           ClaimPayee value, $Res Function(ClaimPayee) then) =
       _$ClaimPayeeCopyWithImpl<$Res, ClaimPayee>;
   @useResult
-  $Res call({CodeableConcept type, Reference? party});
+  $Res call(
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept type,
+      Reference? party});
 
   $CodeableConceptCopyWith<$Res> get type;
   $ReferenceCopyWith<$Res>? get party;
@@ -1862,10 +1896,25 @@ class _$ClaimPayeeCopyWithImpl<$Res, $Val extends ClaimPayee>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? type = null,
     Object? party = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -1906,7 +1955,12 @@ abstract class _$$ClaimPayeeImplCopyWith<$Res>
       __$$ClaimPayeeImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({CodeableConcept type, Reference? party});
+  $Res call(
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept type,
+      Reference? party});
 
   @override
   $CodeableConceptCopyWith<$Res> get type;
@@ -1925,10 +1979,25 @@ class __$$ClaimPayeeImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? type = null,
     Object? party = freezed,
   }) {
     return _then(_$ClaimPayeeImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -1944,10 +2013,42 @@ class __$$ClaimPayeeImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ClaimPayeeImpl extends _ClaimPayee {
-  const _$ClaimPayeeImpl({required this.type, this.party}) : super._();
+  const _$ClaimPayeeImpl(
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      required this.type,
+      this.party})
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$ClaimPayeeImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimPayeeImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final CodeableConcept type;
@@ -1956,7 +2057,7 @@ class _$ClaimPayeeImpl extends _ClaimPayee {
 
   @override
   String toString() {
-    return 'ClaimPayee(type: $type, party: $party)';
+    return 'ClaimPayee(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, party: $party)';
   }
 
   @override
@@ -1964,13 +2065,24 @@ class _$ClaimPayeeImpl extends _ClaimPayee {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimPayeeImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.party, party) || other.party == party));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, type, party);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      type,
+      party);
 
   @JsonKey(ignore: true)
   @override
@@ -1988,13 +2100,23 @@ class _$ClaimPayeeImpl extends _ClaimPayee {
 
 abstract class _ClaimPayee extends ClaimPayee {
   const factory _ClaimPayee(
-      {required final CodeableConcept type,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      required final CodeableConcept type,
       final Reference? party}) = _$ClaimPayeeImpl;
   const _ClaimPayee._() : super._();
 
   factory _ClaimPayee.fromJson(Map<String, dynamic> json) =
       _$ClaimPayeeImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   CodeableConcept get type;
   @override
@@ -2011,6 +2133,11 @@ ClaimCareTeam _$ClaimCareTeamFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimCareTeam {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirDecimal? get sequence => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequence')
   Element? get sequenceElement => throw _privateConstructorUsedError;
@@ -2034,7 +2161,10 @@ abstract class $ClaimCareTeamCopyWith<$Res> {
       _$ClaimCareTeamCopyWithImpl<$Res, ClaimCareTeam>;
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       Reference provider,
       FhirBoolean? responsible,
@@ -2042,9 +2172,7 @@ abstract class $ClaimCareTeamCopyWith<$Res> {
       CodeableConcept? role,
       CodeableConcept? qualification});
 
-  $ElementCopyWith<$Res>? get sequenceElement;
   $ReferenceCopyWith<$Res> get provider;
-  $ElementCopyWith<$Res>? get responsibleElement;
   $CodeableConceptCopyWith<$Res>? get role;
   $CodeableConceptCopyWith<$Res>? get qualification;
 }
@@ -2062,6 +2190,9 @@ class _$ClaimCareTeamCopyWithImpl<$Res, $Val extends ClaimCareTeam>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? provider = null,
@@ -2071,6 +2202,18 @@ class _$ClaimCareTeamCopyWithImpl<$Res, $Val extends ClaimCareTeam>
     Object? qualification = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -2104,33 +2247,9 @@ class _$ClaimCareTeamCopyWithImpl<$Res, $Val extends ClaimCareTeam>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceElement {
-    if (_value.sequenceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceElement!, (value) {
-      return _then(_value.copyWith(sequenceElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res> get provider {
     return $ReferenceCopyWith<$Res>(_value.provider, (value) {
       return _then(_value.copyWith(provider: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get responsibleElement {
-    if (_value.responsibleElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.responsibleElement!, (value) {
-      return _then(_value.copyWith(responsibleElement: value) as $Val);
     });
   }
 
@@ -2168,7 +2287,10 @@ abstract class _$$ClaimCareTeamImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       Reference provider,
       FhirBoolean? responsible,
@@ -2177,11 +2299,7 @@ abstract class _$$ClaimCareTeamImplCopyWith<$Res>
       CodeableConcept? qualification});
 
   @override
-  $ElementCopyWith<$Res>? get sequenceElement;
-  @override
   $ReferenceCopyWith<$Res> get provider;
-  @override
-  $ElementCopyWith<$Res>? get responsibleElement;
   @override
   $CodeableConceptCopyWith<$Res>? get role;
   @override
@@ -2199,6 +2317,9 @@ class __$$ClaimCareTeamImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? provider = null,
@@ -2208,6 +2329,18 @@ class __$$ClaimCareTeamImplCopyWithImpl<$Res>
     Object? qualification = freezed,
   }) {
     return _then(_$ClaimCareTeamImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -2244,17 +2377,46 @@ class __$$ClaimCareTeamImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimCareTeamImpl extends _ClaimCareTeam {
   const _$ClaimCareTeamImpl(
-      {this.sequence,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.sequence,
       @JsonKey(name: '_sequence') this.sequenceElement,
       required this.provider,
       this.responsible,
       @JsonKey(name: '_responsible') this.responsibleElement,
       this.role,
       this.qualification})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$ClaimCareTeamImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimCareTeamImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirDecimal? sequence;
@@ -2275,7 +2437,7 @@ class _$ClaimCareTeamImpl extends _ClaimCareTeam {
 
   @override
   String toString() {
-    return 'ClaimCareTeam(sequence: $sequence, sequenceElement: $sequenceElement, provider: $provider, responsible: $responsible, responsibleElement: $responsibleElement, role: $role, qualification: $qualification)';
+    return 'ClaimCareTeam(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, sequence: $sequence, sequenceElement: $sequenceElement, provider: $provider, responsible: $responsible, responsibleElement: $responsibleElement, role: $role, qualification: $qualification)';
   }
 
   @override
@@ -2283,6 +2445,11 @@ class _$ClaimCareTeamImpl extends _ClaimCareTeam {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimCareTeamImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.sequence, sequence) ||
                 other.sequence == sequence) &&
             (identical(other.sequenceElement, sequenceElement) ||
@@ -2300,8 +2467,18 @@ class _$ClaimCareTeamImpl extends _ClaimCareTeam {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, sequence, sequenceElement,
-      provider, responsible, responsibleElement, role, qualification);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      sequence,
+      sequenceElement,
+      provider,
+      responsible,
+      responsibleElement,
+      role,
+      qualification);
 
   @JsonKey(ignore: true)
   @override
@@ -2319,7 +2496,10 @@ class _$ClaimCareTeamImpl extends _ClaimCareTeam {
 
 abstract class _ClaimCareTeam extends ClaimCareTeam {
   const factory _ClaimCareTeam(
-      {final FhirDecimal? sequence,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirDecimal? sequence,
       @JsonKey(name: '_sequence') final Element? sequenceElement,
       required final Reference provider,
       final FhirBoolean? responsible,
@@ -2331,6 +2511,13 @@ abstract class _ClaimCareTeam extends ClaimCareTeam {
   factory _ClaimCareTeam.fromJson(Map<String, dynamic> json) =
       _$ClaimCareTeamImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirDecimal? get sequence;
   @override
@@ -2359,6 +2546,11 @@ ClaimInformation _$ClaimInformationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimInformation {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirDecimal? get sequence => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequence')
   Element? get sequenceElement => throw _privateConstructorUsedError;
@@ -2389,7 +2581,10 @@ abstract class $ClaimInformationCopyWith<$Res> {
       _$ClaimInformationCopyWithImpl<$Res, ClaimInformation>;
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       CodeableConcept category,
       CodeableConcept? code,
@@ -2403,12 +2598,9 @@ abstract class $ClaimInformationCopyWith<$Res> {
       Reference? valueReference,
       CodeableConcept? reason});
 
-  $ElementCopyWith<$Res>? get sequenceElement;
   $CodeableConceptCopyWith<$Res> get category;
   $CodeableConceptCopyWith<$Res>? get code;
-  $ElementCopyWith<$Res>? get timingDateElement;
   $PeriodCopyWith<$Res>? get timingPeriod;
-  $ElementCopyWith<$Res>? get valueStringElement;
   $QuantityCopyWith<$Res>? get valueQuantity;
   $AttachmentCopyWith<$Res>? get valueAttachment;
   $ReferenceCopyWith<$Res>? get valueReference;
@@ -2428,6 +2620,9 @@ class _$ClaimInformationCopyWithImpl<$Res, $Val extends ClaimInformation>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? category = null,
@@ -2443,6 +2638,18 @@ class _$ClaimInformationCopyWithImpl<$Res, $Val extends ClaimInformation>
     Object? reason = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -2500,18 +2707,6 @@ class _$ClaimInformationCopyWithImpl<$Res, $Val extends ClaimInformation>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceElement {
-    if (_value.sequenceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceElement!, (value) {
-      return _then(_value.copyWith(sequenceElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res> get category {
     return $CodeableConceptCopyWith<$Res>(_value.category, (value) {
       return _then(_value.copyWith(category: value) as $Val);
@@ -2532,18 +2727,6 @@ class _$ClaimInformationCopyWithImpl<$Res, $Val extends ClaimInformation>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get timingDateElement {
-    if (_value.timingDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.timingDateElement!, (value) {
-      return _then(_value.copyWith(timingDateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $PeriodCopyWith<$Res>? get timingPeriod {
     if (_value.timingPeriod == null) {
       return null;
@@ -2551,18 +2734,6 @@ class _$ClaimInformationCopyWithImpl<$Res, $Val extends ClaimInformation>
 
     return $PeriodCopyWith<$Res>(_value.timingPeriod!, (value) {
       return _then(_value.copyWith(timingPeriod: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueStringElement {
-    if (_value.valueStringElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueStringElement!, (value) {
-      return _then(_value.copyWith(valueStringElement: value) as $Val);
     });
   }
 
@@ -2624,7 +2795,10 @@ abstract class _$$ClaimInformationImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       CodeableConcept category,
       CodeableConcept? code,
@@ -2639,17 +2813,11 @@ abstract class _$$ClaimInformationImplCopyWith<$Res>
       CodeableConcept? reason});
 
   @override
-  $ElementCopyWith<$Res>? get sequenceElement;
-  @override
   $CodeableConceptCopyWith<$Res> get category;
   @override
   $CodeableConceptCopyWith<$Res>? get code;
   @override
-  $ElementCopyWith<$Res>? get timingDateElement;
-  @override
   $PeriodCopyWith<$Res>? get timingPeriod;
-  @override
-  $ElementCopyWith<$Res>? get valueStringElement;
   @override
   $QuantityCopyWith<$Res>? get valueQuantity;
   @override
@@ -2671,6 +2839,9 @@ class __$$ClaimInformationImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? category = null,
@@ -2686,6 +2857,18 @@ class __$$ClaimInformationImplCopyWithImpl<$Res>
     Object? reason = freezed,
   }) {
     return _then(_$ClaimInformationImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -2746,7 +2929,10 @@ class __$$ClaimInformationImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimInformationImpl extends _ClaimInformation {
   const _$ClaimInformationImpl(
-      {this.sequence,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.sequence,
       @JsonKey(name: '_sequence') this.sequenceElement,
       required this.category,
       this.code,
@@ -2759,10 +2945,36 @@ class _$ClaimInformationImpl extends _ClaimInformation {
       this.valueAttachment,
       this.valueReference,
       this.reason})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$ClaimInformationImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimInformationImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirDecimal? sequence;
@@ -2796,7 +3008,7 @@ class _$ClaimInformationImpl extends _ClaimInformation {
 
   @override
   String toString() {
-    return 'ClaimInformation(sequence: $sequence, sequenceElement: $sequenceElement, category: $category, code: $code, timingDate: $timingDate, timingDateElement: $timingDateElement, timingPeriod: $timingPeriod, valueString: $valueString, valueStringElement: $valueStringElement, valueQuantity: $valueQuantity, valueAttachment: $valueAttachment, valueReference: $valueReference, reason: $reason)';
+    return 'ClaimInformation(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, sequence: $sequence, sequenceElement: $sequenceElement, category: $category, code: $code, timingDate: $timingDate, timingDateElement: $timingDateElement, timingPeriod: $timingPeriod, valueString: $valueString, valueStringElement: $valueStringElement, valueQuantity: $valueQuantity, valueAttachment: $valueAttachment, valueReference: $valueReference, reason: $reason)';
   }
 
   @override
@@ -2804,6 +3016,11 @@ class _$ClaimInformationImpl extends _ClaimInformation {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimInformationImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.sequence, sequence) ||
                 other.sequence == sequence) &&
             (identical(other.sequenceElement, sequenceElement) ||
@@ -2834,6 +3051,9 @@ class _$ClaimInformationImpl extends _ClaimInformation {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
       sequence,
       sequenceElement,
       category,
@@ -2865,7 +3085,10 @@ class _$ClaimInformationImpl extends _ClaimInformation {
 
 abstract class _ClaimInformation extends ClaimInformation {
   const factory _ClaimInformation(
-      {final FhirDecimal? sequence,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirDecimal? sequence,
       @JsonKey(name: '_sequence') final Element? sequenceElement,
       required final CodeableConcept category,
       final CodeableConcept? code,
@@ -2883,6 +3106,13 @@ abstract class _ClaimInformation extends ClaimInformation {
   factory _ClaimInformation.fromJson(Map<String, dynamic> json) =
       _$ClaimInformationImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirDecimal? get sequence;
   @override
@@ -2924,6 +3154,11 @@ ClaimDiagnosis _$ClaimDiagnosisFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimDiagnosis {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirDecimal? get sequence => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequence')
   Element? get sequenceElement => throw _privateConstructorUsedError;
@@ -2946,14 +3181,16 @@ abstract class $ClaimDiagnosisCopyWith<$Res> {
       _$ClaimDiagnosisCopyWithImpl<$Res, ClaimDiagnosis>;
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       CodeableConcept? diagnosisCodeableConcept,
       Reference? diagnosisReference,
       List<CodeableConcept>? type,
       CodeableConcept? packageCode});
 
-  $ElementCopyWith<$Res>? get sequenceElement;
   $CodeableConceptCopyWith<$Res>? get diagnosisCodeableConcept;
   $ReferenceCopyWith<$Res>? get diagnosisReference;
   $CodeableConceptCopyWith<$Res>? get packageCode;
@@ -2972,6 +3209,9 @@ class _$ClaimDiagnosisCopyWithImpl<$Res, $Val extends ClaimDiagnosis>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? diagnosisCodeableConcept = freezed,
@@ -2980,6 +3220,18 @@ class _$ClaimDiagnosisCopyWithImpl<$Res, $Val extends ClaimDiagnosis>
     Object? packageCode = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -3005,18 +3257,6 @@ class _$ClaimDiagnosisCopyWithImpl<$Res, $Val extends ClaimDiagnosis>
           : packageCode // ignore: cast_nullable_to_non_nullable
               as CodeableConcept?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceElement {
-    if (_value.sequenceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceElement!, (value) {
-      return _then(_value.copyWith(sequenceElement: value) as $Val);
-    });
   }
 
   @override
@@ -3066,15 +3306,16 @@ abstract class _$$ClaimDiagnosisImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       CodeableConcept? diagnosisCodeableConcept,
       Reference? diagnosisReference,
       List<CodeableConcept>? type,
       CodeableConcept? packageCode});
 
-  @override
-  $ElementCopyWith<$Res>? get sequenceElement;
   @override
   $CodeableConceptCopyWith<$Res>? get diagnosisCodeableConcept;
   @override
@@ -3094,6 +3335,9 @@ class __$$ClaimDiagnosisImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? diagnosisCodeableConcept = freezed,
@@ -3102,6 +3346,18 @@ class __$$ClaimDiagnosisImplCopyWithImpl<$Res>
     Object? packageCode = freezed,
   }) {
     return _then(_$ClaimDiagnosisImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -3134,17 +3390,46 @@ class __$$ClaimDiagnosisImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimDiagnosisImpl extends _ClaimDiagnosis {
   const _$ClaimDiagnosisImpl(
-      {this.sequence,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.sequence,
       @JsonKey(name: '_sequence') this.sequenceElement,
       this.diagnosisCodeableConcept,
       this.diagnosisReference,
       final List<CodeableConcept>? type,
       this.packageCode})
-      : _type = type,
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _type = type,
         super._();
 
   factory _$ClaimDiagnosisImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimDiagnosisImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirDecimal? sequence;
@@ -3170,7 +3455,7 @@ class _$ClaimDiagnosisImpl extends _ClaimDiagnosis {
 
   @override
   String toString() {
-    return 'ClaimDiagnosis(sequence: $sequence, sequenceElement: $sequenceElement, diagnosisCodeableConcept: $diagnosisCodeableConcept, diagnosisReference: $diagnosisReference, type: $type, packageCode: $packageCode)';
+    return 'ClaimDiagnosis(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, sequence: $sequence, sequenceElement: $sequenceElement, diagnosisCodeableConcept: $diagnosisCodeableConcept, diagnosisReference: $diagnosisReference, type: $type, packageCode: $packageCode)';
   }
 
   @override
@@ -3178,6 +3463,11 @@ class _$ClaimDiagnosisImpl extends _ClaimDiagnosis {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimDiagnosisImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.sequence, sequence) ||
                 other.sequence == sequence) &&
             (identical(other.sequenceElement, sequenceElement) ||
@@ -3196,6 +3486,9 @@ class _$ClaimDiagnosisImpl extends _ClaimDiagnosis {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
       sequence,
       sequenceElement,
       diagnosisCodeableConcept,
@@ -3220,7 +3513,10 @@ class _$ClaimDiagnosisImpl extends _ClaimDiagnosis {
 
 abstract class _ClaimDiagnosis extends ClaimDiagnosis {
   const factory _ClaimDiagnosis(
-      {final FhirDecimal? sequence,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirDecimal? sequence,
       @JsonKey(name: '_sequence') final Element? sequenceElement,
       final CodeableConcept? diagnosisCodeableConcept,
       final Reference? diagnosisReference,
@@ -3231,6 +3527,13 @@ abstract class _ClaimDiagnosis extends ClaimDiagnosis {
   factory _ClaimDiagnosis.fromJson(Map<String, dynamic> json) =
       _$ClaimDiagnosisImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirDecimal? get sequence;
   @override
@@ -3256,6 +3559,11 @@ ClaimProcedure _$ClaimProcedureFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimProcedure {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirDecimal? get sequence => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequence')
   Element? get sequenceElement => throw _privateConstructorUsedError;
@@ -3279,15 +3587,16 @@ abstract class $ClaimProcedureCopyWith<$Res> {
       _$ClaimProcedureCopyWithImpl<$Res, ClaimProcedure>;
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       FhirDate? date,
       @JsonKey(name: '_date') Element? dateElement,
       CodeableConcept? procedureCodeableConcept,
       Reference? procedureReference});
 
-  $ElementCopyWith<$Res>? get sequenceElement;
-  $ElementCopyWith<$Res>? get dateElement;
   $CodeableConceptCopyWith<$Res>? get procedureCodeableConcept;
   $ReferenceCopyWith<$Res>? get procedureReference;
 }
@@ -3305,6 +3614,9 @@ class _$ClaimProcedureCopyWithImpl<$Res, $Val extends ClaimProcedure>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? date = freezed,
@@ -3313,6 +3625,18 @@ class _$ClaimProcedureCopyWithImpl<$Res, $Val extends ClaimProcedure>
     Object? procedureReference = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -3338,30 +3662,6 @@ class _$ClaimProcedureCopyWithImpl<$Res, $Val extends ClaimProcedure>
           : procedureReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceElement {
-    if (_value.sequenceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceElement!, (value) {
-      return _then(_value.copyWith(sequenceElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get dateElement {
-    if (_value.dateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.dateElement!, (value) {
-      return _then(_value.copyWith(dateElement: value) as $Val);
-    });
   }
 
   @override
@@ -3399,17 +3699,16 @@ abstract class _$$ClaimProcedureImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       FhirDate? date,
       @JsonKey(name: '_date') Element? dateElement,
       CodeableConcept? procedureCodeableConcept,
       Reference? procedureReference});
 
-  @override
-  $ElementCopyWith<$Res>? get sequenceElement;
-  @override
-  $ElementCopyWith<$Res>? get dateElement;
   @override
   $CodeableConceptCopyWith<$Res>? get procedureCodeableConcept;
   @override
@@ -3427,6 +3726,9 @@ class __$$ClaimProcedureImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? date = freezed,
@@ -3435,6 +3737,18 @@ class __$$ClaimProcedureImplCopyWithImpl<$Res>
     Object? procedureReference = freezed,
   }) {
     return _then(_$ClaimProcedureImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -3467,16 +3781,45 @@ class __$$ClaimProcedureImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimProcedureImpl extends _ClaimProcedure {
   const _$ClaimProcedureImpl(
-      {this.sequence,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.sequence,
       @JsonKey(name: '_sequence') this.sequenceElement,
       this.date,
       @JsonKey(name: '_date') this.dateElement,
       this.procedureCodeableConcept,
       this.procedureReference})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$ClaimProcedureImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimProcedureImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirDecimal? sequence;
@@ -3495,7 +3838,7 @@ class _$ClaimProcedureImpl extends _ClaimProcedure {
 
   @override
   String toString() {
-    return 'ClaimProcedure(sequence: $sequence, sequenceElement: $sequenceElement, date: $date, dateElement: $dateElement, procedureCodeableConcept: $procedureCodeableConcept, procedureReference: $procedureReference)';
+    return 'ClaimProcedure(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, sequence: $sequence, sequenceElement: $sequenceElement, date: $date, dateElement: $dateElement, procedureCodeableConcept: $procedureCodeableConcept, procedureReference: $procedureReference)';
   }
 
   @override
@@ -3503,6 +3846,11 @@ class _$ClaimProcedureImpl extends _ClaimProcedure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimProcedureImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.sequence, sequence) ||
                 other.sequence == sequence) &&
             (identical(other.sequenceElement, sequenceElement) ||
@@ -3519,8 +3867,17 @@ class _$ClaimProcedureImpl extends _ClaimProcedure {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, sequence, sequenceElement, date,
-      dateElement, procedureCodeableConcept, procedureReference);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      sequence,
+      sequenceElement,
+      date,
+      dateElement,
+      procedureCodeableConcept,
+      procedureReference);
 
   @JsonKey(ignore: true)
   @override
@@ -3539,7 +3896,10 @@ class _$ClaimProcedureImpl extends _ClaimProcedure {
 
 abstract class _ClaimProcedure extends ClaimProcedure {
   const factory _ClaimProcedure(
-      {final FhirDecimal? sequence,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirDecimal? sequence,
       @JsonKey(name: '_sequence') final Element? sequenceElement,
       final FhirDate? date,
       @JsonKey(name: '_date') final Element? dateElement,
@@ -3550,6 +3910,13 @@ abstract class _ClaimProcedure extends ClaimProcedure {
   factory _ClaimProcedure.fromJson(Map<String, dynamic> json) =
       _$ClaimProcedureImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirDecimal? get sequence;
   @override
@@ -3576,6 +3943,11 @@ ClaimInsurance _$ClaimInsuranceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimInsurance {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirDecimal? get sequence => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequence')
   Element? get sequenceElement => throw _privateConstructorUsedError;
@@ -3604,7 +3976,10 @@ abstract class $ClaimInsuranceCopyWith<$Res> {
       _$ClaimInsuranceCopyWithImpl<$Res, ClaimInsurance>;
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       FhirBoolean? focal,
       @JsonKey(name: '_focal') Element? focalElement,
@@ -3616,10 +3991,7 @@ abstract class $ClaimInsuranceCopyWith<$Res> {
       @JsonKey(name: '_preAuthRef') List<Element?>? preAuthRefElement,
       Reference? claimResponse});
 
-  $ElementCopyWith<$Res>? get sequenceElement;
-  $ElementCopyWith<$Res>? get focalElement;
   $ReferenceCopyWith<$Res> get coverage;
-  $ElementCopyWith<$Res>? get businessArrangementElement;
   $ReferenceCopyWith<$Res>? get claimResponse;
 }
 
@@ -3636,6 +4008,9 @@ class _$ClaimInsuranceCopyWithImpl<$Res, $Val extends ClaimInsurance>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? focal = freezed,
@@ -3648,6 +4023,18 @@ class _$ClaimInsuranceCopyWithImpl<$Res, $Val extends ClaimInsurance>
     Object? claimResponse = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -3693,45 +4080,9 @@ class _$ClaimInsuranceCopyWithImpl<$Res, $Val extends ClaimInsurance>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceElement {
-    if (_value.sequenceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceElement!, (value) {
-      return _then(_value.copyWith(sequenceElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get focalElement {
-    if (_value.focalElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.focalElement!, (value) {
-      return _then(_value.copyWith(focalElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res> get coverage {
     return $ReferenceCopyWith<$Res>(_value.coverage, (value) {
       return _then(_value.copyWith(coverage: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get businessArrangementElement {
-    if (_value.businessArrangementElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.businessArrangementElement!, (value) {
-      return _then(_value.copyWith(businessArrangementElement: value) as $Val);
     });
   }
 
@@ -3757,7 +4108,10 @@ abstract class _$$ClaimInsuranceImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       FhirBoolean? focal,
       @JsonKey(name: '_focal') Element? focalElement,
@@ -3770,13 +4124,7 @@ abstract class _$$ClaimInsuranceImplCopyWith<$Res>
       Reference? claimResponse});
 
   @override
-  $ElementCopyWith<$Res>? get sequenceElement;
-  @override
-  $ElementCopyWith<$Res>? get focalElement;
-  @override
   $ReferenceCopyWith<$Res> get coverage;
-  @override
-  $ElementCopyWith<$Res>? get businessArrangementElement;
   @override
   $ReferenceCopyWith<$Res>? get claimResponse;
 }
@@ -3792,6 +4140,9 @@ class __$$ClaimInsuranceImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? focal = freezed,
@@ -3804,6 +4155,18 @@ class __$$ClaimInsuranceImplCopyWithImpl<$Res>
     Object? claimResponse = freezed,
   }) {
     return _then(_$ClaimInsuranceImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -3852,7 +4215,10 @@ class __$$ClaimInsuranceImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimInsuranceImpl extends _ClaimInsurance {
   const _$ClaimInsuranceImpl(
-      {this.sequence,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.sequence,
       @JsonKey(name: '_sequence') this.sequenceElement,
       this.focal,
       @JsonKey(name: '_focal') this.focalElement,
@@ -3862,12 +4228,38 @@ class _$ClaimInsuranceImpl extends _ClaimInsurance {
       final List<String>? preAuthRef,
       @JsonKey(name: '_preAuthRef') final List<Element?>? preAuthRefElement,
       this.claimResponse})
-      : _preAuthRef = preAuthRef,
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _preAuthRef = preAuthRef,
         _preAuthRefElement = preAuthRefElement,
         super._();
 
   factory _$ClaimInsuranceImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimInsuranceImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirDecimal? sequence;
@@ -3913,7 +4305,7 @@ class _$ClaimInsuranceImpl extends _ClaimInsurance {
 
   @override
   String toString() {
-    return 'ClaimInsurance(sequence: $sequence, sequenceElement: $sequenceElement, focal: $focal, focalElement: $focalElement, coverage: $coverage, businessArrangement: $businessArrangement, businessArrangementElement: $businessArrangementElement, preAuthRef: $preAuthRef, preAuthRefElement: $preAuthRefElement, claimResponse: $claimResponse)';
+    return 'ClaimInsurance(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, sequence: $sequence, sequenceElement: $sequenceElement, focal: $focal, focalElement: $focalElement, coverage: $coverage, businessArrangement: $businessArrangement, businessArrangementElement: $businessArrangementElement, preAuthRef: $preAuthRef, preAuthRefElement: $preAuthRefElement, claimResponse: $claimResponse)';
   }
 
   @override
@@ -3921,6 +4313,11 @@ class _$ClaimInsuranceImpl extends _ClaimInsurance {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimInsuranceImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.sequence, sequence) ||
                 other.sequence == sequence) &&
             (identical(other.sequenceElement, sequenceElement) ||
@@ -3948,6 +4345,9 @@ class _$ClaimInsuranceImpl extends _ClaimInsurance {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
       sequence,
       sequenceElement,
       focal,
@@ -3976,7 +4376,10 @@ class _$ClaimInsuranceImpl extends _ClaimInsurance {
 
 abstract class _ClaimInsurance extends ClaimInsurance {
   const factory _ClaimInsurance(
-      {final FhirDecimal? sequence,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirDecimal? sequence,
       @JsonKey(name: '_sequence') final Element? sequenceElement,
       final FhirBoolean? focal,
       @JsonKey(name: '_focal') final Element? focalElement,
@@ -3992,6 +4395,13 @@ abstract class _ClaimInsurance extends ClaimInsurance {
   factory _ClaimInsurance.fromJson(Map<String, dynamic> json) =
       _$ClaimInsuranceImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirDecimal? get sequence;
   @override
@@ -4028,6 +4438,11 @@ ClaimAccident _$ClaimAccidentFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimAccident {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirDate? get date => throw _privateConstructorUsedError;
   @JsonKey(name: '_date')
   Element? get dateElement => throw _privateConstructorUsedError;
@@ -4048,13 +4463,15 @@ abstract class $ClaimAccidentCopyWith<$Res> {
       _$ClaimAccidentCopyWithImpl<$Res, ClaimAccident>;
   @useResult
   $Res call(
-      {FhirDate? date,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDate? date,
       @JsonKey(name: '_date') Element? dateElement,
       CodeableConcept? type,
       Address? locationAddress,
       Reference? locationReference});
 
-  $ElementCopyWith<$Res>? get dateElement;
   $CodeableConceptCopyWith<$Res>? get type;
   $AddressCopyWith<$Res>? get locationAddress;
   $ReferenceCopyWith<$Res>? get locationReference;
@@ -4073,6 +4490,9 @@ class _$ClaimAccidentCopyWithImpl<$Res, $Val extends ClaimAccident>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? date = freezed,
     Object? dateElement = freezed,
     Object? type = freezed,
@@ -4080,6 +4500,18 @@ class _$ClaimAccidentCopyWithImpl<$Res, $Val extends ClaimAccident>
     Object? locationReference = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -4101,18 +4533,6 @@ class _$ClaimAccidentCopyWithImpl<$Res, $Val extends ClaimAccident>
           : locationReference // ignore: cast_nullable_to_non_nullable
               as Reference?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get dateElement {
-    if (_value.dateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.dateElement!, (value) {
-      return _then(_value.copyWith(dateElement: value) as $Val);
-    });
   }
 
   @override
@@ -4161,14 +4581,15 @@ abstract class _$$ClaimAccidentImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirDate? date,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDate? date,
       @JsonKey(name: '_date') Element? dateElement,
       CodeableConcept? type,
       Address? locationAddress,
       Reference? locationReference});
 
-  @override
-  $ElementCopyWith<$Res>? get dateElement;
   @override
   $CodeableConceptCopyWith<$Res>? get type;
   @override
@@ -4188,6 +4609,9 @@ class __$$ClaimAccidentImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? date = freezed,
     Object? dateElement = freezed,
     Object? type = freezed,
@@ -4195,6 +4619,18 @@ class __$$ClaimAccidentImplCopyWithImpl<$Res>
     Object? locationReference = freezed,
   }) {
     return _then(_$ClaimAccidentImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -4223,15 +4659,44 @@ class __$$ClaimAccidentImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimAccidentImpl extends _ClaimAccident {
   const _$ClaimAccidentImpl(
-      {this.date,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.date,
       @JsonKey(name: '_date') this.dateElement,
       this.type,
       this.locationAddress,
       this.locationReference})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$ClaimAccidentImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimAccidentImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirDate? date;
@@ -4247,7 +4712,7 @@ class _$ClaimAccidentImpl extends _ClaimAccident {
 
   @override
   String toString() {
-    return 'ClaimAccident(date: $date, dateElement: $dateElement, type: $type, locationAddress: $locationAddress, locationReference: $locationReference)';
+    return 'ClaimAccident(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, date: $date, dateElement: $dateElement, type: $type, locationAddress: $locationAddress, locationReference: $locationReference)';
   }
 
   @override
@@ -4255,6 +4720,11 @@ class _$ClaimAccidentImpl extends _ClaimAccident {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimAccidentImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.date, date) || other.date == date) &&
             (identical(other.dateElement, dateElement) ||
                 other.dateElement == dateElement) &&
@@ -4268,7 +4738,15 @@ class _$ClaimAccidentImpl extends _ClaimAccident {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, date, dateElement, type, locationAddress, locationReference);
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      date,
+      dateElement,
+      type,
+      locationAddress,
+      locationReference);
 
   @JsonKey(ignore: true)
   @override
@@ -4286,7 +4764,10 @@ class _$ClaimAccidentImpl extends _ClaimAccident {
 
 abstract class _ClaimAccident extends ClaimAccident {
   const factory _ClaimAccident(
-      {final FhirDate? date,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirDate? date,
       @JsonKey(name: '_date') final Element? dateElement,
       final CodeableConcept? type,
       final Address? locationAddress,
@@ -4296,6 +4777,13 @@ abstract class _ClaimAccident extends ClaimAccident {
   factory _ClaimAccident.fromJson(Map<String, dynamic> json) =
       _$ClaimAccidentImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirDate? get date;
   @override
@@ -4319,6 +4807,11 @@ ClaimItem _$ClaimItemFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimItem {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirDecimal? get sequence => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequence')
   Element? get sequenceElement => throw _privateConstructorUsedError;
@@ -4375,7 +4868,10 @@ abstract class $ClaimItemCopyWith<$Res> {
       _$ClaimItemCopyWithImpl<$Res, ClaimItem>;
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       List<FhirId>? careTeamLinkId,
       @JsonKey(name: '_careTeamLinkId') List<Element?>? careTeamLinkIdElement,
@@ -4408,18 +4904,15 @@ abstract class $ClaimItemCopyWith<$Res> {
       List<Reference>? encounter,
       List<ClaimDetail>? detail});
 
-  $ElementCopyWith<$Res>? get sequenceElement;
   $CodeableConceptCopyWith<$Res>? get revenue;
   $CodeableConceptCopyWith<$Res>? get category;
   $CodeableConceptCopyWith<$Res>? get service;
-  $ElementCopyWith<$Res>? get servicedDateElement;
   $PeriodCopyWith<$Res>? get servicedPeriod;
   $CodeableConceptCopyWith<$Res>? get locationCodeableConcept;
   $AddressCopyWith<$Res>? get locationAddress;
   $ReferenceCopyWith<$Res>? get locationReference;
   $QuantityCopyWith<$Res>? get quantity;
   $MoneyCopyWith<$Res>? get unitPrice;
-  $ElementCopyWith<$Res>? get factorElement;
   $MoneyCopyWith<$Res>? get net;
   $CodeableConceptCopyWith<$Res>? get bodySite;
 }
@@ -4437,6 +4930,9 @@ class _$ClaimItemCopyWithImpl<$Res, $Val extends ClaimItem>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? careTeamLinkId = freezed,
@@ -4470,6 +4966,18 @@ class _$ClaimItemCopyWithImpl<$Res, $Val extends ClaimItem>
     Object? detail = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -4599,18 +5107,6 @@ class _$ClaimItemCopyWithImpl<$Res, $Val extends ClaimItem>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceElement {
-    if (_value.sequenceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceElement!, (value) {
-      return _then(_value.copyWith(sequenceElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get revenue {
     if (_value.revenue == null) {
       return null;
@@ -4642,18 +5138,6 @@ class _$ClaimItemCopyWithImpl<$Res, $Val extends ClaimItem>
 
     return $CodeableConceptCopyWith<$Res>(_value.service!, (value) {
       return _then(_value.copyWith(service: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get servicedDateElement {
-    if (_value.servicedDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.servicedDateElement!, (value) {
-      return _then(_value.copyWith(servicedDateElement: value) as $Val);
     });
   }
 
@@ -4732,18 +5216,6 @@ class _$ClaimItemCopyWithImpl<$Res, $Val extends ClaimItem>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get factorElement {
-    if (_value.factorElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.factorElement!, (value) {
-      return _then(_value.copyWith(factorElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $MoneyCopyWith<$Res>? get net {
     if (_value.net == null) {
       return null;
@@ -4776,7 +5248,10 @@ abstract class _$$ClaimItemImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       List<FhirId>? careTeamLinkId,
       @JsonKey(name: '_careTeamLinkId') List<Element?>? careTeamLinkIdElement,
@@ -4810,15 +5285,11 @@ abstract class _$$ClaimItemImplCopyWith<$Res>
       List<ClaimDetail>? detail});
 
   @override
-  $ElementCopyWith<$Res>? get sequenceElement;
-  @override
   $CodeableConceptCopyWith<$Res>? get revenue;
   @override
   $CodeableConceptCopyWith<$Res>? get category;
   @override
   $CodeableConceptCopyWith<$Res>? get service;
-  @override
-  $ElementCopyWith<$Res>? get servicedDateElement;
   @override
   $PeriodCopyWith<$Res>? get servicedPeriod;
   @override
@@ -4831,8 +5302,6 @@ abstract class _$$ClaimItemImplCopyWith<$Res>
   $QuantityCopyWith<$Res>? get quantity;
   @override
   $MoneyCopyWith<$Res>? get unitPrice;
-  @override
-  $ElementCopyWith<$Res>? get factorElement;
   @override
   $MoneyCopyWith<$Res>? get net;
   @override
@@ -4850,6 +5319,9 @@ class __$$ClaimItemImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? careTeamLinkId = freezed,
@@ -4883,6 +5355,18 @@ class __$$ClaimItemImplCopyWithImpl<$Res>
     Object? detail = freezed,
   }) {
     return _then(_$ClaimItemImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -5015,7 +5499,10 @@ class __$$ClaimItemImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimItemImpl extends _ClaimItem {
   const _$ClaimItemImpl(
-      {this.sequence,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.sequence,
       @JsonKey(name: '_sequence') this.sequenceElement,
       final List<FhirId>? careTeamLinkId,
       @JsonKey(name: '_careTeamLinkId')
@@ -5050,7 +5537,9 @@ class _$ClaimItemImpl extends _ClaimItem {
       final List<CodeableConcept>? subSite,
       final List<Reference>? encounter,
       final List<ClaimDetail>? detail})
-      : _careTeamLinkId = careTeamLinkId,
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _careTeamLinkId = careTeamLinkId,
         _careTeamLinkIdElement = careTeamLinkIdElement,
         _diagnosisLinkId = diagnosisLinkId,
         _diagnosisLinkIdElement = diagnosisLinkIdElement,
@@ -5068,6 +5557,30 @@ class _$ClaimItemImpl extends _ClaimItem {
 
   factory _$ClaimItemImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimItemImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirDecimal? sequence;
@@ -5257,7 +5770,7 @@ class _$ClaimItemImpl extends _ClaimItem {
 
   @override
   String toString() {
-    return 'ClaimItem(sequence: $sequence, sequenceElement: $sequenceElement, careTeamLinkId: $careTeamLinkId, careTeamLinkIdElement: $careTeamLinkIdElement, diagnosisLinkId: $diagnosisLinkId, diagnosisLinkIdElement: $diagnosisLinkIdElement, procedureLinkId: $procedureLinkId, procedureLinkIdElement: $procedureLinkIdElement, informationLinkId: $informationLinkId, informationLinkIdElement: $informationLinkIdElement, revenue: $revenue, category: $category, service: $service, modifier: $modifier, programCode: $programCode, servicedDate: $servicedDate, servicedDateElement: $servicedDateElement, servicedPeriod: $servicedPeriod, locationCodeableConcept: $locationCodeableConcept, locationAddress: $locationAddress, locationReference: $locationReference, quantity: $quantity, unitPrice: $unitPrice, factor: $factor, factorElement: $factorElement, net: $net, udi: $udi, bodySite: $bodySite, subSite: $subSite, encounter: $encounter, detail: $detail)';
+    return 'ClaimItem(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, sequence: $sequence, sequenceElement: $sequenceElement, careTeamLinkId: $careTeamLinkId, careTeamLinkIdElement: $careTeamLinkIdElement, diagnosisLinkId: $diagnosisLinkId, diagnosisLinkIdElement: $diagnosisLinkIdElement, procedureLinkId: $procedureLinkId, procedureLinkIdElement: $procedureLinkIdElement, informationLinkId: $informationLinkId, informationLinkIdElement: $informationLinkIdElement, revenue: $revenue, category: $category, service: $service, modifier: $modifier, programCode: $programCode, servicedDate: $servicedDate, servicedDateElement: $servicedDateElement, servicedPeriod: $servicedPeriod, locationCodeableConcept: $locationCodeableConcept, locationAddress: $locationAddress, locationReference: $locationReference, quantity: $quantity, unitPrice: $unitPrice, factor: $factor, factorElement: $factorElement, net: $net, udi: $udi, bodySite: $bodySite, subSite: $subSite, encounter: $encounter, detail: $detail)';
   }
 
   @override
@@ -5265,6 +5778,11 @@ class _$ClaimItemImpl extends _ClaimItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimItemImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.sequence, sequence) ||
                 other.sequence == sequence) &&
             (identical(other.sequenceElement, sequenceElement) ||
@@ -5326,6 +5844,9 @@ class _$ClaimItemImpl extends _ClaimItem {
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
+        id,
+        const DeepCollectionEquality().hash(_extension_),
+        const DeepCollectionEquality().hash(_modifierExtension),
         sequence,
         sequenceElement,
         const DeepCollectionEquality().hash(_careTeamLinkId),
@@ -5375,7 +5896,10 @@ class _$ClaimItemImpl extends _ClaimItem {
 
 abstract class _ClaimItem extends ClaimItem {
   const factory _ClaimItem(
-      {final FhirDecimal? sequence,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirDecimal? sequence,
       @JsonKey(name: '_sequence') final Element? sequenceElement,
       final List<FhirId>? careTeamLinkId,
       @JsonKey(name: '_careTeamLinkId')
@@ -5415,6 +5939,13 @@ abstract class _ClaimItem extends ClaimItem {
   factory _ClaimItem.fromJson(Map<String, dynamic> json) =
       _$ClaimItemImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirDecimal? get sequence;
   @override
@@ -5496,6 +6027,11 @@ ClaimDetail _$ClaimDetailFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimDetail {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirDecimal? get sequence => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequence')
   Element? get sequenceElement => throw _privateConstructorUsedError;
@@ -5526,7 +6062,10 @@ abstract class $ClaimDetailCopyWith<$Res> {
       _$ClaimDetailCopyWithImpl<$Res, ClaimDetail>;
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       CodeableConcept? revenue,
       CodeableConcept? category,
@@ -5541,13 +6080,11 @@ abstract class $ClaimDetailCopyWith<$Res> {
       List<Reference>? udi,
       List<ClaimSubDetail>? subDetail});
 
-  $ElementCopyWith<$Res>? get sequenceElement;
   $CodeableConceptCopyWith<$Res>? get revenue;
   $CodeableConceptCopyWith<$Res>? get category;
   $CodeableConceptCopyWith<$Res>? get service;
   $QuantityCopyWith<$Res>? get quantity;
   $MoneyCopyWith<$Res>? get unitPrice;
-  $ElementCopyWith<$Res>? get factorElement;
   $MoneyCopyWith<$Res>? get net;
 }
 
@@ -5564,6 +6101,9 @@ class _$ClaimDetailCopyWithImpl<$Res, $Val extends ClaimDetail>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? revenue = freezed,
@@ -5580,6 +6120,18 @@ class _$ClaimDetailCopyWithImpl<$Res, $Val extends ClaimDetail>
     Object? subDetail = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -5637,18 +6189,6 @@ class _$ClaimDetailCopyWithImpl<$Res, $Val extends ClaimDetail>
           : subDetail // ignore: cast_nullable_to_non_nullable
               as List<ClaimSubDetail>?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceElement {
-    if (_value.sequenceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceElement!, (value) {
-      return _then(_value.copyWith(sequenceElement: value) as $Val);
-    });
   }
 
   @override
@@ -5713,18 +6253,6 @@ class _$ClaimDetailCopyWithImpl<$Res, $Val extends ClaimDetail>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get factorElement {
-    if (_value.factorElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.factorElement!, (value) {
-      return _then(_value.copyWith(factorElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $MoneyCopyWith<$Res>? get net {
     if (_value.net == null) {
       return null;
@@ -5745,7 +6273,10 @@ abstract class _$$ClaimDetailImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       CodeableConcept? revenue,
       CodeableConcept? category,
@@ -5761,8 +6292,6 @@ abstract class _$$ClaimDetailImplCopyWith<$Res>
       List<ClaimSubDetail>? subDetail});
 
   @override
-  $ElementCopyWith<$Res>? get sequenceElement;
-  @override
   $CodeableConceptCopyWith<$Res>? get revenue;
   @override
   $CodeableConceptCopyWith<$Res>? get category;
@@ -5772,8 +6301,6 @@ abstract class _$$ClaimDetailImplCopyWith<$Res>
   $QuantityCopyWith<$Res>? get quantity;
   @override
   $MoneyCopyWith<$Res>? get unitPrice;
-  @override
-  $ElementCopyWith<$Res>? get factorElement;
   @override
   $MoneyCopyWith<$Res>? get net;
 }
@@ -5789,6 +6316,9 @@ class __$$ClaimDetailImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? revenue = freezed,
@@ -5805,6 +6335,18 @@ class __$$ClaimDetailImplCopyWithImpl<$Res>
     Object? subDetail = freezed,
   }) {
     return _then(_$ClaimDetailImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -5869,7 +6411,10 @@ class __$$ClaimDetailImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimDetailImpl extends _ClaimDetail {
   const _$ClaimDetailImpl(
-      {this.sequence,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.sequence,
       @JsonKey(name: '_sequence') this.sequenceElement,
       this.revenue,
       this.category,
@@ -5883,7 +6428,9 @@ class _$ClaimDetailImpl extends _ClaimDetail {
       this.net,
       final List<Reference>? udi,
       final List<ClaimSubDetail>? subDetail})
-      : _modifier = modifier,
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _modifier = modifier,
         _programCode = programCode,
         _udi = udi,
         _subDetail = subDetail,
@@ -5891,6 +6438,30 @@ class _$ClaimDetailImpl extends _ClaimDetail {
 
   factory _$ClaimDetailImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimDetailImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirDecimal? sequence;
@@ -5956,7 +6527,7 @@ class _$ClaimDetailImpl extends _ClaimDetail {
 
   @override
   String toString() {
-    return 'ClaimDetail(sequence: $sequence, sequenceElement: $sequenceElement, revenue: $revenue, category: $category, service: $service, modifier: $modifier, programCode: $programCode, quantity: $quantity, unitPrice: $unitPrice, factor: $factor, factorElement: $factorElement, net: $net, udi: $udi, subDetail: $subDetail)';
+    return 'ClaimDetail(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, sequence: $sequence, sequenceElement: $sequenceElement, revenue: $revenue, category: $category, service: $service, modifier: $modifier, programCode: $programCode, quantity: $quantity, unitPrice: $unitPrice, factor: $factor, factorElement: $factorElement, net: $net, udi: $udi, subDetail: $subDetail)';
   }
 
   @override
@@ -5964,6 +6535,11 @@ class _$ClaimDetailImpl extends _ClaimDetail {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimDetailImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.sequence, sequence) ||
                 other.sequence == sequence) &&
             (identical(other.sequenceElement, sequenceElement) ||
@@ -5992,6 +6568,9 @@ class _$ClaimDetailImpl extends _ClaimDetail {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
       sequence,
       sequenceElement,
       revenue,
@@ -6023,7 +6602,10 @@ class _$ClaimDetailImpl extends _ClaimDetail {
 
 abstract class _ClaimDetail extends ClaimDetail {
   const factory _ClaimDetail(
-      {final FhirDecimal? sequence,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirDecimal? sequence,
       @JsonKey(name: '_sequence') final Element? sequenceElement,
       final CodeableConcept? revenue,
       final CodeableConcept? category,
@@ -6042,6 +6624,13 @@ abstract class _ClaimDetail extends ClaimDetail {
   factory _ClaimDetail.fromJson(Map<String, dynamic> json) =
       _$ClaimDetailImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirDecimal? get sequence;
   @override
@@ -6084,6 +6673,11 @@ ClaimSubDetail _$ClaimSubDetailFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimSubDetail {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirDecimal? get sequence => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequence')
   Element? get sequenceElement => throw _privateConstructorUsedError;
@@ -6113,7 +6707,10 @@ abstract class $ClaimSubDetailCopyWith<$Res> {
       _$ClaimSubDetailCopyWithImpl<$Res, ClaimSubDetail>;
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       CodeableConcept? revenue,
       CodeableConcept? category,
@@ -6127,13 +6724,11 @@ abstract class $ClaimSubDetailCopyWith<$Res> {
       Money? net,
       List<Reference>? udi});
 
-  $ElementCopyWith<$Res>? get sequenceElement;
   $CodeableConceptCopyWith<$Res>? get revenue;
   $CodeableConceptCopyWith<$Res>? get category;
   $CodeableConceptCopyWith<$Res>? get service;
   $QuantityCopyWith<$Res>? get quantity;
   $MoneyCopyWith<$Res>? get unitPrice;
-  $ElementCopyWith<$Res>? get factorElement;
   $MoneyCopyWith<$Res>? get net;
 }
 
@@ -6150,6 +6745,9 @@ class _$ClaimSubDetailCopyWithImpl<$Res, $Val extends ClaimSubDetail>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? revenue = freezed,
@@ -6165,6 +6763,18 @@ class _$ClaimSubDetailCopyWithImpl<$Res, $Val extends ClaimSubDetail>
     Object? udi = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -6218,18 +6828,6 @@ class _$ClaimSubDetailCopyWithImpl<$Res, $Val extends ClaimSubDetail>
           : udi // ignore: cast_nullable_to_non_nullable
               as List<Reference>?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceElement {
-    if (_value.sequenceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceElement!, (value) {
-      return _then(_value.copyWith(sequenceElement: value) as $Val);
-    });
   }
 
   @override
@@ -6294,18 +6892,6 @@ class _$ClaimSubDetailCopyWithImpl<$Res, $Val extends ClaimSubDetail>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get factorElement {
-    if (_value.factorElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.factorElement!, (value) {
-      return _then(_value.copyWith(factorElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $MoneyCopyWith<$Res>? get net {
     if (_value.net == null) {
       return null;
@@ -6326,7 +6912,10 @@ abstract class _$$ClaimSubDetailImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       CodeableConcept? revenue,
       CodeableConcept? category,
@@ -6341,8 +6930,6 @@ abstract class _$$ClaimSubDetailImplCopyWith<$Res>
       List<Reference>? udi});
 
   @override
-  $ElementCopyWith<$Res>? get sequenceElement;
-  @override
   $CodeableConceptCopyWith<$Res>? get revenue;
   @override
   $CodeableConceptCopyWith<$Res>? get category;
@@ -6352,8 +6939,6 @@ abstract class _$$ClaimSubDetailImplCopyWith<$Res>
   $QuantityCopyWith<$Res>? get quantity;
   @override
   $MoneyCopyWith<$Res>? get unitPrice;
-  @override
-  $ElementCopyWith<$Res>? get factorElement;
   @override
   $MoneyCopyWith<$Res>? get net;
 }
@@ -6369,6 +6954,9 @@ class __$$ClaimSubDetailImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? revenue = freezed,
@@ -6384,6 +6972,18 @@ class __$$ClaimSubDetailImplCopyWithImpl<$Res>
     Object? udi = freezed,
   }) {
     return _then(_$ClaimSubDetailImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -6444,7 +7044,10 @@ class __$$ClaimSubDetailImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimSubDetailImpl extends _ClaimSubDetail {
   const _$ClaimSubDetailImpl(
-      {this.sequence,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.sequence,
       @JsonKey(name: '_sequence') this.sequenceElement,
       this.revenue,
       this.category,
@@ -6457,13 +7060,39 @@ class _$ClaimSubDetailImpl extends _ClaimSubDetail {
       @JsonKey(name: '_factor') this.factorElement,
       this.net,
       final List<Reference>? udi})
-      : _modifier = modifier,
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _modifier = modifier,
         _programCode = programCode,
         _udi = udi,
         super._();
 
   factory _$ClaimSubDetailImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimSubDetailImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirDecimal? sequence;
@@ -6519,7 +7148,7 @@ class _$ClaimSubDetailImpl extends _ClaimSubDetail {
 
   @override
   String toString() {
-    return 'ClaimSubDetail(sequence: $sequence, sequenceElement: $sequenceElement, revenue: $revenue, category: $category, service: $service, modifier: $modifier, programCode: $programCode, quantity: $quantity, unitPrice: $unitPrice, factor: $factor, factorElement: $factorElement, net: $net, udi: $udi)';
+    return 'ClaimSubDetail(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, sequence: $sequence, sequenceElement: $sequenceElement, revenue: $revenue, category: $category, service: $service, modifier: $modifier, programCode: $programCode, quantity: $quantity, unitPrice: $unitPrice, factor: $factor, factorElement: $factorElement, net: $net, udi: $udi)';
   }
 
   @override
@@ -6527,6 +7156,11 @@ class _$ClaimSubDetailImpl extends _ClaimSubDetail {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimSubDetailImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.sequence, sequence) ||
                 other.sequence == sequence) &&
             (identical(other.sequenceElement, sequenceElement) ||
@@ -6553,6 +7187,9 @@ class _$ClaimSubDetailImpl extends _ClaimSubDetail {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
       sequence,
       sequenceElement,
       revenue,
@@ -6584,7 +7221,10 @@ class _$ClaimSubDetailImpl extends _ClaimSubDetail {
 
 abstract class _ClaimSubDetail extends ClaimSubDetail {
   const factory _ClaimSubDetail(
-      {final FhirDecimal? sequence,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirDecimal? sequence,
       @JsonKey(name: '_sequence') final Element? sequenceElement,
       final CodeableConcept? revenue,
       final CodeableConcept? category,
@@ -6602,6 +7242,13 @@ abstract class _ClaimSubDetail extends ClaimSubDetail {
   factory _ClaimSubDetail.fromJson(Map<String, dynamic> json) =
       _$ClaimSubDetailImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirDecimal? get sequence;
   @override
@@ -6744,18 +7391,13 @@ abstract class $ClaimResponseCopyWith<$Res> {
       List<ClaimResponseInsurance>? insurance});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get statusElement;
   $ReferenceCopyWith<$Res>? get patient;
-  $ElementCopyWith<$Res>? get createdElement;
   $ReferenceCopyWith<$Res>? get insurer;
   $ReferenceCopyWith<$Res>? get requestProvider;
   $ReferenceCopyWith<$Res>? get requestOrganization;
   $ReferenceCopyWith<$Res>? get request;
   $CodeableConceptCopyWith<$Res>? get outcome;
-  $ElementCopyWith<$Res>? get dispositionElement;
   $CodeableConceptCopyWith<$Res>? get payeeType;
   $MoneyCopyWith<$Res>? get totalCost;
   $MoneyCopyWith<$Res>? get unallocDeductable;
@@ -6982,30 +7624,6 @@ class _$ClaimResponseCopyWithImpl<$Res, $Val extends ClaimResponse>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -7018,18 +7636,6 @@ class _$ClaimResponseCopyWithImpl<$Res, $Val extends ClaimResponse>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get patient {
     if (_value.patient == null) {
       return null;
@@ -7037,18 +7643,6 @@ class _$ClaimResponseCopyWithImpl<$Res, $Val extends ClaimResponse>
 
     return $ReferenceCopyWith<$Res>(_value.patient!, (value) {
       return _then(_value.copyWith(patient: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get createdElement {
-    if (_value.createdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.createdElement!, (value) {
-      return _then(_value.copyWith(createdElement: value) as $Val);
     });
   }
 
@@ -7109,18 +7703,6 @@ class _$ClaimResponseCopyWithImpl<$Res, $Val extends ClaimResponse>
 
     return $CodeableConceptCopyWith<$Res>(_value.outcome!, (value) {
       return _then(_value.copyWith(outcome: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get dispositionElement {
-    if (_value.dispositionElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.dispositionElement!, (value) {
-      return _then(_value.copyWith(dispositionElement: value) as $Val);
     });
   }
 
@@ -7260,17 +7842,9 @@ abstract class _$$ClaimResponseImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
   @override
-  $ElementCopyWith<$Res>? get statusElement;
-  @override
   $ReferenceCopyWith<$Res>? get patient;
-  @override
-  $ElementCopyWith<$Res>? get createdElement;
   @override
   $ReferenceCopyWith<$Res>? get insurer;
   @override
@@ -7281,8 +7855,6 @@ abstract class _$$ClaimResponseImplCopyWith<$Res>
   $ReferenceCopyWith<$Res>? get request;
   @override
   $CodeableConceptCopyWith<$Res>? get outcome;
-  @override
-  $ElementCopyWith<$Res>? get dispositionElement;
   @override
   $CodeableConceptCopyWith<$Res>? get payeeType;
   @override
@@ -7988,6 +8560,11 @@ ClaimResponseItem _$ClaimResponseItemFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimResponseItem {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirId? get sequenceLinkId => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequenceLinkId')
   Element? get sequenceLinkIdElement => throw _privateConstructorUsedError;
@@ -8011,14 +8588,15 @@ abstract class $ClaimResponseItemCopyWith<$Res> {
       _$ClaimResponseItemCopyWithImpl<$Res, ClaimResponseItem>;
   @useResult
   $Res call(
-      {FhirId? sequenceLinkId,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirId? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') Element? sequenceLinkIdElement,
       List<FhirDecimal>? noteNumber,
       @JsonKey(name: '_noteNumber') List<Element?>? noteNumberElement,
       List<ClaimResponseAdjudication>? adjudication,
       List<ClaimResponseDetail>? detail});
-
-  $ElementCopyWith<$Res>? get sequenceLinkIdElement;
 }
 
 /// @nodoc
@@ -8034,6 +8612,9 @@ class _$ClaimResponseItemCopyWithImpl<$Res, $Val extends ClaimResponseItem>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequenceLinkId = freezed,
     Object? sequenceLinkIdElement = freezed,
     Object? noteNumber = freezed,
@@ -8042,6 +8623,18 @@ class _$ClaimResponseItemCopyWithImpl<$Res, $Val extends ClaimResponseItem>
     Object? detail = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequenceLinkId: freezed == sequenceLinkId
           ? _value.sequenceLinkId
           : sequenceLinkId // ignore: cast_nullable_to_non_nullable
@@ -8068,18 +8661,6 @@ class _$ClaimResponseItemCopyWithImpl<$Res, $Val extends ClaimResponseItem>
               as List<ClaimResponseDetail>?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceLinkIdElement {
-    if (_value.sequenceLinkIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceLinkIdElement!, (value) {
-      return _then(_value.copyWith(sequenceLinkIdElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -8091,15 +8672,15 @@ abstract class _$$ClaimResponseItemImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirId? sequenceLinkId,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirId? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') Element? sequenceLinkIdElement,
       List<FhirDecimal>? noteNumber,
       @JsonKey(name: '_noteNumber') List<Element?>? noteNumberElement,
       List<ClaimResponseAdjudication>? adjudication,
       List<ClaimResponseDetail>? detail});
-
-  @override
-  $ElementCopyWith<$Res>? get sequenceLinkIdElement;
 }
 
 /// @nodoc
@@ -8113,6 +8694,9 @@ class __$$ClaimResponseItemImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequenceLinkId = freezed,
     Object? sequenceLinkIdElement = freezed,
     Object? noteNumber = freezed,
@@ -8121,6 +8705,18 @@ class __$$ClaimResponseItemImplCopyWithImpl<$Res>
     Object? detail = freezed,
   }) {
     return _then(_$ClaimResponseItemImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequenceLinkId: freezed == sequenceLinkId
           ? _value.sequenceLinkId
           : sequenceLinkId // ignore: cast_nullable_to_non_nullable
@@ -8153,13 +8749,18 @@ class __$$ClaimResponseItemImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimResponseItemImpl extends _ClaimResponseItem {
   const _$ClaimResponseItemImpl(
-      {this.sequenceLinkId,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') this.sequenceLinkIdElement,
       final List<FhirDecimal>? noteNumber,
       @JsonKey(name: '_noteNumber') final List<Element?>? noteNumberElement,
       final List<ClaimResponseAdjudication>? adjudication,
       final List<ClaimResponseDetail>? detail})
-      : _noteNumber = noteNumber,
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _noteNumber = noteNumber,
         _noteNumberElement = noteNumberElement,
         _adjudication = adjudication,
         _detail = detail,
@@ -8167,6 +8768,30 @@ class _$ClaimResponseItemImpl extends _ClaimResponseItem {
 
   factory _$ClaimResponseItemImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimResponseItemImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirId? sequenceLinkId;
@@ -8217,7 +8842,7 @@ class _$ClaimResponseItemImpl extends _ClaimResponseItem {
 
   @override
   String toString() {
-    return 'ClaimResponseItem(sequenceLinkId: $sequenceLinkId, sequenceLinkIdElement: $sequenceLinkIdElement, noteNumber: $noteNumber, noteNumberElement: $noteNumberElement, adjudication: $adjudication, detail: $detail)';
+    return 'ClaimResponseItem(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, sequenceLinkId: $sequenceLinkId, sequenceLinkIdElement: $sequenceLinkIdElement, noteNumber: $noteNumber, noteNumberElement: $noteNumberElement, adjudication: $adjudication, detail: $detail)';
   }
 
   @override
@@ -8225,6 +8850,11 @@ class _$ClaimResponseItemImpl extends _ClaimResponseItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimResponseItemImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.sequenceLinkId, sequenceLinkId) ||
                 other.sequenceLinkId == sequenceLinkId) &&
             (identical(other.sequenceLinkIdElement, sequenceLinkIdElement) ||
@@ -8242,6 +8872,9 @@ class _$ClaimResponseItemImpl extends _ClaimResponseItem {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
       sequenceLinkId,
       sequenceLinkIdElement,
       const DeepCollectionEquality().hash(_noteNumber),
@@ -8266,7 +8899,10 @@ class _$ClaimResponseItemImpl extends _ClaimResponseItem {
 
 abstract class _ClaimResponseItem extends ClaimResponseItem {
   const factory _ClaimResponseItem(
-      {final FhirId? sequenceLinkId,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirId? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') final Element? sequenceLinkIdElement,
       final List<FhirDecimal>? noteNumber,
       @JsonKey(name: '_noteNumber') final List<Element?>? noteNumberElement,
@@ -8277,6 +8913,13 @@ abstract class _ClaimResponseItem extends ClaimResponseItem {
   factory _ClaimResponseItem.fromJson(Map<String, dynamic> json) =
       _$ClaimResponseItemImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirId? get sequenceLinkId;
   @override
@@ -8304,6 +8947,11 @@ ClaimResponseAdjudication _$ClaimResponseAdjudicationFromJson(
 
 /// @nodoc
 mixin _$ClaimResponseAdjudication {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   CodeableConcept get category => throw _privateConstructorUsedError;
   CodeableConcept? get reason => throw _privateConstructorUsedError;
   Money? get amount => throw _privateConstructorUsedError;
@@ -8324,7 +8972,10 @@ abstract class $ClaimResponseAdjudicationCopyWith<$Res> {
       _$ClaimResponseAdjudicationCopyWithImpl<$Res, ClaimResponseAdjudication>;
   @useResult
   $Res call(
-      {CodeableConcept category,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept category,
       CodeableConcept? reason,
       Money? amount,
       FhirDecimal? value,
@@ -8333,7 +8984,6 @@ abstract class $ClaimResponseAdjudicationCopyWith<$Res> {
   $CodeableConceptCopyWith<$Res> get category;
   $CodeableConceptCopyWith<$Res>? get reason;
   $MoneyCopyWith<$Res>? get amount;
-  $ElementCopyWith<$Res>? get valueElement;
 }
 
 /// @nodoc
@@ -8350,6 +9000,9 @@ class _$ClaimResponseAdjudicationCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? category = null,
     Object? reason = freezed,
     Object? amount = freezed,
@@ -8357,6 +9010,18 @@ class _$ClaimResponseAdjudicationCopyWithImpl<$Res,
     Object? valueElement = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -8411,18 +9076,6 @@ class _$ClaimResponseAdjudicationCopyWithImpl<$Res,
       return _then(_value.copyWith(amount: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueElement {
-    if (_value.valueElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueElement!, (value) {
-      return _then(_value.copyWith(valueElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -8435,7 +9088,10 @@ abstract class _$$ClaimResponseAdjudicationImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {CodeableConcept category,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept category,
       CodeableConcept? reason,
       Money? amount,
       FhirDecimal? value,
@@ -8447,8 +9103,6 @@ abstract class _$$ClaimResponseAdjudicationImplCopyWith<$Res>
   $CodeableConceptCopyWith<$Res>? get reason;
   @override
   $MoneyCopyWith<$Res>? get amount;
-  @override
-  $ElementCopyWith<$Res>? get valueElement;
 }
 
 /// @nodoc
@@ -8464,6 +9118,9 @@ class __$$ClaimResponseAdjudicationImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? category = null,
     Object? reason = freezed,
     Object? amount = freezed,
@@ -8471,6 +9128,18 @@ class __$$ClaimResponseAdjudicationImplCopyWithImpl<$Res>
     Object? valueElement = freezed,
   }) {
     return _then(_$ClaimResponseAdjudicationImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -8499,15 +9168,44 @@ class __$$ClaimResponseAdjudicationImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimResponseAdjudicationImpl extends _ClaimResponseAdjudication {
   const _$ClaimResponseAdjudicationImpl(
-      {required this.category,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      required this.category,
       this.reason,
       this.amount,
       this.value,
       @JsonKey(name: '_value') this.valueElement})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$ClaimResponseAdjudicationImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimResponseAdjudicationImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final CodeableConcept category;
@@ -8523,7 +9221,7 @@ class _$ClaimResponseAdjudicationImpl extends _ClaimResponseAdjudication {
 
   @override
   String toString() {
-    return 'ClaimResponseAdjudication(category: $category, reason: $reason, amount: $amount, value: $value, valueElement: $valueElement)';
+    return 'ClaimResponseAdjudication(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, category: $category, reason: $reason, amount: $amount, value: $value, valueElement: $valueElement)';
   }
 
   @override
@@ -8531,6 +9229,11 @@ class _$ClaimResponseAdjudicationImpl extends _ClaimResponseAdjudication {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimResponseAdjudicationImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.reason, reason) || other.reason == reason) &&
@@ -8542,8 +9245,16 @@ class _$ClaimResponseAdjudicationImpl extends _ClaimResponseAdjudication {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, category, reason, amount, value, valueElement);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      category,
+      reason,
+      amount,
+      value,
+      valueElement);
 
   @JsonKey(ignore: true)
   @override
@@ -8562,7 +9273,10 @@ class _$ClaimResponseAdjudicationImpl extends _ClaimResponseAdjudication {
 
 abstract class _ClaimResponseAdjudication extends ClaimResponseAdjudication {
   const factory _ClaimResponseAdjudication(
-          {required final CodeableConcept category,
+          {final String? id,
+          @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+          final List<FhirExtension>? modifierExtension,
+          required final CodeableConcept category,
           final CodeableConcept? reason,
           final Money? amount,
           final FhirDecimal? value,
@@ -8573,6 +9287,13 @@ abstract class _ClaimResponseAdjudication extends ClaimResponseAdjudication {
   factory _ClaimResponseAdjudication.fromJson(Map<String, dynamic> json) =
       _$ClaimResponseAdjudicationImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   CodeableConcept get category;
   @override
@@ -8596,6 +9317,11 @@ ClaimResponseDetail _$ClaimResponseDetailFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimResponseDetail {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirId? get sequenceLinkId => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequenceLinkId')
   Element? get sequenceLinkIdElement => throw _privateConstructorUsedError;
@@ -8620,14 +9346,15 @@ abstract class $ClaimResponseDetailCopyWith<$Res> {
       _$ClaimResponseDetailCopyWithImpl<$Res, ClaimResponseDetail>;
   @useResult
   $Res call(
-      {FhirId? sequenceLinkId,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirId? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') Element? sequenceLinkIdElement,
       List<FhirDecimal>? noteNumber,
       @JsonKey(name: '_noteNumber') List<Element?>? noteNumberElement,
       List<ClaimResponseAdjudication>? adjudication,
       List<ClaimResponseSubDetail>? subDetail});
-
-  $ElementCopyWith<$Res>? get sequenceLinkIdElement;
 }
 
 /// @nodoc
@@ -8643,6 +9370,9 @@ class _$ClaimResponseDetailCopyWithImpl<$Res, $Val extends ClaimResponseDetail>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequenceLinkId = freezed,
     Object? sequenceLinkIdElement = freezed,
     Object? noteNumber = freezed,
@@ -8651,6 +9381,18 @@ class _$ClaimResponseDetailCopyWithImpl<$Res, $Val extends ClaimResponseDetail>
     Object? subDetail = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequenceLinkId: freezed == sequenceLinkId
           ? _value.sequenceLinkId
           : sequenceLinkId // ignore: cast_nullable_to_non_nullable
@@ -8677,18 +9419,6 @@ class _$ClaimResponseDetailCopyWithImpl<$Res, $Val extends ClaimResponseDetail>
               as List<ClaimResponseSubDetail>?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceLinkIdElement {
-    if (_value.sequenceLinkIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceLinkIdElement!, (value) {
-      return _then(_value.copyWith(sequenceLinkIdElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -8700,15 +9430,15 @@ abstract class _$$ClaimResponseDetailImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirId? sequenceLinkId,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirId? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') Element? sequenceLinkIdElement,
       List<FhirDecimal>? noteNumber,
       @JsonKey(name: '_noteNumber') List<Element?>? noteNumberElement,
       List<ClaimResponseAdjudication>? adjudication,
       List<ClaimResponseSubDetail>? subDetail});
-
-  @override
-  $ElementCopyWith<$Res>? get sequenceLinkIdElement;
 }
 
 /// @nodoc
@@ -8722,6 +9452,9 @@ class __$$ClaimResponseDetailImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequenceLinkId = freezed,
     Object? sequenceLinkIdElement = freezed,
     Object? noteNumber = freezed,
@@ -8730,6 +9463,18 @@ class __$$ClaimResponseDetailImplCopyWithImpl<$Res>
     Object? subDetail = freezed,
   }) {
     return _then(_$ClaimResponseDetailImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequenceLinkId: freezed == sequenceLinkId
           ? _value.sequenceLinkId
           : sequenceLinkId // ignore: cast_nullable_to_non_nullable
@@ -8762,13 +9507,18 @@ class __$$ClaimResponseDetailImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimResponseDetailImpl extends _ClaimResponseDetail {
   const _$ClaimResponseDetailImpl(
-      {this.sequenceLinkId,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') this.sequenceLinkIdElement,
       final List<FhirDecimal>? noteNumber,
       @JsonKey(name: '_noteNumber') final List<Element?>? noteNumberElement,
       final List<ClaimResponseAdjudication>? adjudication,
       final List<ClaimResponseSubDetail>? subDetail})
-      : _noteNumber = noteNumber,
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _noteNumber = noteNumber,
         _noteNumberElement = noteNumberElement,
         _adjudication = adjudication,
         _subDetail = subDetail,
@@ -8776,6 +9526,30 @@ class _$ClaimResponseDetailImpl extends _ClaimResponseDetail {
 
   factory _$ClaimResponseDetailImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimResponseDetailImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirId? sequenceLinkId;
@@ -8826,7 +9600,7 @@ class _$ClaimResponseDetailImpl extends _ClaimResponseDetail {
 
   @override
   String toString() {
-    return 'ClaimResponseDetail(sequenceLinkId: $sequenceLinkId, sequenceLinkIdElement: $sequenceLinkIdElement, noteNumber: $noteNumber, noteNumberElement: $noteNumberElement, adjudication: $adjudication, subDetail: $subDetail)';
+    return 'ClaimResponseDetail(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, sequenceLinkId: $sequenceLinkId, sequenceLinkIdElement: $sequenceLinkIdElement, noteNumber: $noteNumber, noteNumberElement: $noteNumberElement, adjudication: $adjudication, subDetail: $subDetail)';
   }
 
   @override
@@ -8834,6 +9608,11 @@ class _$ClaimResponseDetailImpl extends _ClaimResponseDetail {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimResponseDetailImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.sequenceLinkId, sequenceLinkId) ||
                 other.sequenceLinkId == sequenceLinkId) &&
             (identical(other.sequenceLinkIdElement, sequenceLinkIdElement) ||
@@ -8852,6 +9631,9 @@ class _$ClaimResponseDetailImpl extends _ClaimResponseDetail {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
       sequenceLinkId,
       sequenceLinkIdElement,
       const DeepCollectionEquality().hash(_noteNumber),
@@ -8876,7 +9658,10 @@ class _$ClaimResponseDetailImpl extends _ClaimResponseDetail {
 
 abstract class _ClaimResponseDetail extends ClaimResponseDetail {
   const factory _ClaimResponseDetail(
-      {final FhirId? sequenceLinkId,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirId? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') final Element? sequenceLinkIdElement,
       final List<FhirDecimal>? noteNumber,
       @JsonKey(name: '_noteNumber') final List<Element?>? noteNumberElement,
@@ -8888,6 +9673,13 @@ abstract class _ClaimResponseDetail extends ClaimResponseDetail {
   factory _ClaimResponseDetail.fromJson(Map<String, dynamic> json) =
       _$ClaimResponseDetailImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirId? get sequenceLinkId;
   @override
@@ -8915,6 +9707,11 @@ ClaimResponseSubDetail _$ClaimResponseSubDetailFromJson(
 
 /// @nodoc
 mixin _$ClaimResponseSubDetail {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirId? get sequenceLinkId => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequenceLinkId')
   Element? get sequenceLinkIdElement => throw _privateConstructorUsedError;
@@ -8937,13 +9734,14 @@ abstract class $ClaimResponseSubDetailCopyWith<$Res> {
       _$ClaimResponseSubDetailCopyWithImpl<$Res, ClaimResponseSubDetail>;
   @useResult
   $Res call(
-      {FhirId? sequenceLinkId,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirId? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') Element? sequenceLinkIdElement,
       List<FhirDecimal>? noteNumber,
       @JsonKey(name: '_noteNumber') List<Element?>? noteNumberElement,
       List<ClaimResponseAdjudication>? adjudication});
-
-  $ElementCopyWith<$Res>? get sequenceLinkIdElement;
 }
 
 /// @nodoc
@@ -8960,6 +9758,9 @@ class _$ClaimResponseSubDetailCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequenceLinkId = freezed,
     Object? sequenceLinkIdElement = freezed,
     Object? noteNumber = freezed,
@@ -8967,6 +9768,18 @@ class _$ClaimResponseSubDetailCopyWithImpl<$Res,
     Object? adjudication = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequenceLinkId: freezed == sequenceLinkId
           ? _value.sequenceLinkId
           : sequenceLinkId // ignore: cast_nullable_to_non_nullable
@@ -8989,18 +9802,6 @@ class _$ClaimResponseSubDetailCopyWithImpl<$Res,
               as List<ClaimResponseAdjudication>?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceLinkIdElement {
-    if (_value.sequenceLinkIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceLinkIdElement!, (value) {
-      return _then(_value.copyWith(sequenceLinkIdElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -9013,14 +9814,14 @@ abstract class _$$ClaimResponseSubDetailImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirId? sequenceLinkId,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirId? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') Element? sequenceLinkIdElement,
       List<FhirDecimal>? noteNumber,
       @JsonKey(name: '_noteNumber') List<Element?>? noteNumberElement,
       List<ClaimResponseAdjudication>? adjudication});
-
-  @override
-  $ElementCopyWith<$Res>? get sequenceLinkIdElement;
 }
 
 /// @nodoc
@@ -9036,6 +9837,9 @@ class __$$ClaimResponseSubDetailImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequenceLinkId = freezed,
     Object? sequenceLinkIdElement = freezed,
     Object? noteNumber = freezed,
@@ -9043,6 +9847,18 @@ class __$$ClaimResponseSubDetailImplCopyWithImpl<$Res>
     Object? adjudication = freezed,
   }) {
     return _then(_$ClaimResponseSubDetailImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequenceLinkId: freezed == sequenceLinkId
           ? _value.sequenceLinkId
           : sequenceLinkId // ignore: cast_nullable_to_non_nullable
@@ -9071,18 +9887,47 @@ class __$$ClaimResponseSubDetailImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimResponseSubDetailImpl extends _ClaimResponseSubDetail {
   const _$ClaimResponseSubDetailImpl(
-      {this.sequenceLinkId,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') this.sequenceLinkIdElement,
       final List<FhirDecimal>? noteNumber,
       @JsonKey(name: '_noteNumber') final List<Element?>? noteNumberElement,
       final List<ClaimResponseAdjudication>? adjudication})
-      : _noteNumber = noteNumber,
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _noteNumber = noteNumber,
         _noteNumberElement = noteNumberElement,
         _adjudication = adjudication,
         super._();
 
   factory _$ClaimResponseSubDetailImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimResponseSubDetailImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirId? sequenceLinkId;
@@ -9123,7 +9968,7 @@ class _$ClaimResponseSubDetailImpl extends _ClaimResponseSubDetail {
 
   @override
   String toString() {
-    return 'ClaimResponseSubDetail(sequenceLinkId: $sequenceLinkId, sequenceLinkIdElement: $sequenceLinkIdElement, noteNumber: $noteNumber, noteNumberElement: $noteNumberElement, adjudication: $adjudication)';
+    return 'ClaimResponseSubDetail(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, sequenceLinkId: $sequenceLinkId, sequenceLinkIdElement: $sequenceLinkIdElement, noteNumber: $noteNumber, noteNumberElement: $noteNumberElement, adjudication: $adjudication)';
   }
 
   @override
@@ -9131,6 +9976,11 @@ class _$ClaimResponseSubDetailImpl extends _ClaimResponseSubDetail {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimResponseSubDetailImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.sequenceLinkId, sequenceLinkId) ||
                 other.sequenceLinkId == sequenceLinkId) &&
             (identical(other.sequenceLinkIdElement, sequenceLinkIdElement) ||
@@ -9147,6 +9997,9 @@ class _$ClaimResponseSubDetailImpl extends _ClaimResponseSubDetail {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
       sequenceLinkId,
       sequenceLinkIdElement,
       const DeepCollectionEquality().hash(_noteNumber),
@@ -9170,7 +10023,10 @@ class _$ClaimResponseSubDetailImpl extends _ClaimResponseSubDetail {
 
 abstract class _ClaimResponseSubDetail extends ClaimResponseSubDetail {
   const factory _ClaimResponseSubDetail(
-      {final FhirId? sequenceLinkId,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirId? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') final Element? sequenceLinkIdElement,
       final List<FhirDecimal>? noteNumber,
       @JsonKey(name: '_noteNumber') final List<Element?>? noteNumberElement,
@@ -9181,6 +10037,13 @@ abstract class _ClaimResponseSubDetail extends ClaimResponseSubDetail {
   factory _ClaimResponseSubDetail.fromJson(Map<String, dynamic> json) =
       _$ClaimResponseSubDetailImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirId? get sequenceLinkId;
   @override
@@ -9205,6 +10068,11 @@ ClaimResponseAddItem _$ClaimResponseAddItemFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimResponseAddItem {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   List<FhirId>? get sequenceLinkId => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequenceLinkId')
   List<Element?>? get sequenceLinkIdElement =>
@@ -9234,7 +10102,10 @@ abstract class $ClaimResponseAddItemCopyWith<$Res> {
       _$ClaimResponseAddItemCopyWithImpl<$Res, ClaimResponseAddItem>;
   @useResult
   $Res call(
-      {List<FhirId>? sequenceLinkId,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      List<FhirId>? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') List<Element?>? sequenceLinkIdElement,
       CodeableConcept? revenue,
       CodeableConcept? category,
@@ -9266,6 +10137,9 @@ class _$ClaimResponseAddItemCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequenceLinkId = freezed,
     Object? sequenceLinkIdElement = freezed,
     Object? revenue = freezed,
@@ -9279,6 +10153,18 @@ class _$ClaimResponseAddItemCopyWithImpl<$Res,
     Object? detail = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequenceLinkId: freezed == sequenceLinkId
           ? _value.sequenceLinkId
           : sequenceLinkId // ignore: cast_nullable_to_non_nullable
@@ -9384,7 +10270,10 @@ abstract class _$$ClaimResponseAddItemImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<FhirId>? sequenceLinkId,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      List<FhirId>? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') List<Element?>? sequenceLinkIdElement,
       CodeableConcept? revenue,
       CodeableConcept? category,
@@ -9417,6 +10306,9 @@ class __$$ClaimResponseAddItemImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequenceLinkId = freezed,
     Object? sequenceLinkIdElement = freezed,
     Object? revenue = freezed,
@@ -9430,6 +10322,18 @@ class __$$ClaimResponseAddItemImplCopyWithImpl<$Res>
     Object? detail = freezed,
   }) {
     return _then(_$ClaimResponseAddItemImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequenceLinkId: freezed == sequenceLinkId
           ? _value._sequenceLinkId
           : sequenceLinkId // ignore: cast_nullable_to_non_nullable
@@ -9482,7 +10386,10 @@ class __$$ClaimResponseAddItemImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimResponseAddItemImpl extends _ClaimResponseAddItem {
   const _$ClaimResponseAddItemImpl(
-      {final List<FhirId>? sequenceLinkId,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final List<FhirId>? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId')
       final List<Element?>? sequenceLinkIdElement,
       this.revenue,
@@ -9494,7 +10401,9 @@ class _$ClaimResponseAddItemImpl extends _ClaimResponseAddItem {
       @JsonKey(name: '_noteNumber') final List<Element?>? noteNumberElement,
       final List<ClaimResponseAdjudication>? adjudication,
       final List<ClaimResponseDetail1>? detail})
-      : _sequenceLinkId = sequenceLinkId,
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _sequenceLinkId = sequenceLinkId,
         _sequenceLinkIdElement = sequenceLinkIdElement,
         _modifier = modifier,
         _noteNumber = noteNumber,
@@ -9505,6 +10414,30 @@ class _$ClaimResponseAddItemImpl extends _ClaimResponseAddItem {
 
   factory _$ClaimResponseAddItemImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimResponseAddItemImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   final List<FhirId>? _sequenceLinkId;
   @override
@@ -9590,7 +10523,7 @@ class _$ClaimResponseAddItemImpl extends _ClaimResponseAddItem {
 
   @override
   String toString() {
-    return 'ClaimResponseAddItem(sequenceLinkId: $sequenceLinkId, sequenceLinkIdElement: $sequenceLinkIdElement, revenue: $revenue, category: $category, service: $service, modifier: $modifier, fee: $fee, noteNumber: $noteNumber, noteNumberElement: $noteNumberElement, adjudication: $adjudication, detail: $detail)';
+    return 'ClaimResponseAddItem(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, sequenceLinkId: $sequenceLinkId, sequenceLinkIdElement: $sequenceLinkIdElement, revenue: $revenue, category: $category, service: $service, modifier: $modifier, fee: $fee, noteNumber: $noteNumber, noteNumberElement: $noteNumberElement, adjudication: $adjudication, detail: $detail)';
   }
 
   @override
@@ -9598,6 +10531,11 @@ class _$ClaimResponseAddItemImpl extends _ClaimResponseAddItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimResponseAddItemImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             const DeepCollectionEquality()
                 .equals(other._sequenceLinkId, _sequenceLinkId) &&
             const DeepCollectionEquality()
@@ -9621,6 +10559,9 @@ class _$ClaimResponseAddItemImpl extends _ClaimResponseAddItem {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
       const DeepCollectionEquality().hash(_sequenceLinkId),
       const DeepCollectionEquality().hash(_sequenceLinkIdElement),
       revenue,
@@ -9651,7 +10592,10 @@ class _$ClaimResponseAddItemImpl extends _ClaimResponseAddItem {
 
 abstract class _ClaimResponseAddItem extends ClaimResponseAddItem {
   const factory _ClaimResponseAddItem(
-      {final List<FhirId>? sequenceLinkId,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final List<FhirId>? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId')
       final List<Element?>? sequenceLinkIdElement,
       final CodeableConcept? revenue,
@@ -9668,6 +10612,13 @@ abstract class _ClaimResponseAddItem extends ClaimResponseAddItem {
   factory _ClaimResponseAddItem.fromJson(Map<String, dynamic> json) =
       _$ClaimResponseAddItemImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   List<FhirId>? get sequenceLinkId;
   @override
@@ -9704,6 +10655,11 @@ ClaimResponseDetail1 _$ClaimResponseDetail1FromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimResponseDetail1 {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   CodeableConcept? get revenue => throw _privateConstructorUsedError;
   CodeableConcept? get category => throw _privateConstructorUsedError;
   CodeableConcept? get service => throw _privateConstructorUsedError;
@@ -9728,7 +10684,10 @@ abstract class $ClaimResponseDetail1CopyWith<$Res> {
       _$ClaimResponseDetail1CopyWithImpl<$Res, ClaimResponseDetail1>;
   @useResult
   $Res call(
-      {CodeableConcept? revenue,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept? revenue,
       CodeableConcept? category,
       CodeableConcept? service,
       List<CodeableConcept>? modifier,
@@ -9757,6 +10716,9 @@ class _$ClaimResponseDetail1CopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? revenue = freezed,
     Object? category = freezed,
     Object? service = freezed,
@@ -9767,6 +10729,18 @@ class _$ClaimResponseDetail1CopyWithImpl<$Res,
     Object? adjudication = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       revenue: freezed == revenue
           ? _value.revenue
           : revenue // ignore: cast_nullable_to_non_nullable
@@ -9860,7 +10834,10 @@ abstract class _$$ClaimResponseDetail1ImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {CodeableConcept? revenue,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept? revenue,
       CodeableConcept? category,
       CodeableConcept? service,
       List<CodeableConcept>? modifier,
@@ -9890,6 +10867,9 @@ class __$$ClaimResponseDetail1ImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? revenue = freezed,
     Object? category = freezed,
     Object? service = freezed,
@@ -9900,6 +10880,18 @@ class __$$ClaimResponseDetail1ImplCopyWithImpl<$Res>
     Object? adjudication = freezed,
   }) {
     return _then(_$ClaimResponseDetail1Impl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       revenue: freezed == revenue
           ? _value.revenue
           : revenue // ignore: cast_nullable_to_non_nullable
@@ -9940,7 +10932,10 @@ class __$$ClaimResponseDetail1ImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimResponseDetail1Impl extends _ClaimResponseDetail1 {
   const _$ClaimResponseDetail1Impl(
-      {this.revenue,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.revenue,
       this.category,
       this.service,
       final List<CodeableConcept>? modifier,
@@ -9948,7 +10943,9 @@ class _$ClaimResponseDetail1Impl extends _ClaimResponseDetail1 {
       final List<FhirDecimal>? noteNumber,
       @JsonKey(name: '_noteNumber') final List<Element?>? noteNumberElement,
       final List<ClaimResponseAdjudication>? adjudication})
-      : _modifier = modifier,
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _modifier = modifier,
         _noteNumber = noteNumber,
         _noteNumberElement = noteNumberElement,
         _adjudication = adjudication,
@@ -9956,6 +10953,30 @@ class _$ClaimResponseDetail1Impl extends _ClaimResponseDetail1 {
 
   factory _$ClaimResponseDetail1Impl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimResponseDetail1ImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final CodeableConcept? revenue;
@@ -10009,7 +11030,7 @@ class _$ClaimResponseDetail1Impl extends _ClaimResponseDetail1 {
 
   @override
   String toString() {
-    return 'ClaimResponseDetail1(revenue: $revenue, category: $category, service: $service, modifier: $modifier, fee: $fee, noteNumber: $noteNumber, noteNumberElement: $noteNumberElement, adjudication: $adjudication)';
+    return 'ClaimResponseDetail1(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, revenue: $revenue, category: $category, service: $service, modifier: $modifier, fee: $fee, noteNumber: $noteNumber, noteNumberElement: $noteNumberElement, adjudication: $adjudication)';
   }
 
   @override
@@ -10017,6 +11038,11 @@ class _$ClaimResponseDetail1Impl extends _ClaimResponseDetail1 {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimResponseDetail1Impl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.revenue, revenue) || other.revenue == revenue) &&
             (identical(other.category, category) ||
                 other.category == category) &&
@@ -10035,6 +11061,9 @@ class _$ClaimResponseDetail1Impl extends _ClaimResponseDetail1 {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
       revenue,
       category,
       service,
@@ -10062,7 +11091,10 @@ class _$ClaimResponseDetail1Impl extends _ClaimResponseDetail1 {
 
 abstract class _ClaimResponseDetail1 extends ClaimResponseDetail1 {
   const factory _ClaimResponseDetail1(
-          {final CodeableConcept? revenue,
+          {final String? id,
+          @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+          final List<FhirExtension>? modifierExtension,
+          final CodeableConcept? revenue,
           final CodeableConcept? category,
           final CodeableConcept? service,
           final List<CodeableConcept>? modifier,
@@ -10076,6 +11108,13 @@ abstract class _ClaimResponseDetail1 extends ClaimResponseDetail1 {
   factory _ClaimResponseDetail1.fromJson(Map<String, dynamic> json) =
       _$ClaimResponseDetail1Impl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   CodeableConcept? get revenue;
   @override
@@ -10105,6 +11144,11 @@ ClaimResponseError _$ClaimResponseErrorFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimResponseError {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirId? get sequenceLinkId => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequenceLinkId')
   Element? get sequenceLinkIdElement => throw _privateConstructorUsedError;
@@ -10131,7 +11175,10 @@ abstract class $ClaimResponseErrorCopyWith<$Res> {
       _$ClaimResponseErrorCopyWithImpl<$Res, ClaimResponseError>;
   @useResult
   $Res call(
-      {FhirId? sequenceLinkId,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirId? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') Element? sequenceLinkIdElement,
       FhirId? detailSequenceLinkId,
       @JsonKey(name: '_detailSequenceLinkId')
@@ -10141,9 +11188,6 @@ abstract class $ClaimResponseErrorCopyWith<$Res> {
       Element? subdetailSequenceLinkIdElement,
       CodeableConcept code});
 
-  $ElementCopyWith<$Res>? get sequenceLinkIdElement;
-  $ElementCopyWith<$Res>? get detailSequenceLinkIdElement;
-  $ElementCopyWith<$Res>? get subdetailSequenceLinkIdElement;
   $CodeableConceptCopyWith<$Res> get code;
 }
 
@@ -10160,6 +11204,9 @@ class _$ClaimResponseErrorCopyWithImpl<$Res, $Val extends ClaimResponseError>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequenceLinkId = freezed,
     Object? sequenceLinkIdElement = freezed,
     Object? detailSequenceLinkId = freezed,
@@ -10169,6 +11216,18 @@ class _$ClaimResponseErrorCopyWithImpl<$Res, $Val extends ClaimResponseError>
     Object? code = null,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequenceLinkId: freezed == sequenceLinkId
           ? _value.sequenceLinkId
           : sequenceLinkId // ignore: cast_nullable_to_non_nullable
@@ -10202,44 +11261,6 @@ class _$ClaimResponseErrorCopyWithImpl<$Res, $Val extends ClaimResponseError>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceLinkIdElement {
-    if (_value.sequenceLinkIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceLinkIdElement!, (value) {
-      return _then(_value.copyWith(sequenceLinkIdElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get detailSequenceLinkIdElement {
-    if (_value.detailSequenceLinkIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.detailSequenceLinkIdElement!, (value) {
-      return _then(_value.copyWith(detailSequenceLinkIdElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get subdetailSequenceLinkIdElement {
-    if (_value.subdetailSequenceLinkIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.subdetailSequenceLinkIdElement!,
-        (value) {
-      return _then(
-          _value.copyWith(subdetailSequenceLinkIdElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res> get code {
     return $CodeableConceptCopyWith<$Res>(_value.code, (value) {
       return _then(_value.copyWith(code: value) as $Val);
@@ -10256,7 +11277,10 @@ abstract class _$$ClaimResponseErrorImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirId? sequenceLinkId,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirId? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') Element? sequenceLinkIdElement,
       FhirId? detailSequenceLinkId,
       @JsonKey(name: '_detailSequenceLinkId')
@@ -10266,12 +11290,6 @@ abstract class _$$ClaimResponseErrorImplCopyWith<$Res>
       Element? subdetailSequenceLinkIdElement,
       CodeableConcept code});
 
-  @override
-  $ElementCopyWith<$Res>? get sequenceLinkIdElement;
-  @override
-  $ElementCopyWith<$Res>? get detailSequenceLinkIdElement;
-  @override
-  $ElementCopyWith<$Res>? get subdetailSequenceLinkIdElement;
   @override
   $CodeableConceptCopyWith<$Res> get code;
 }
@@ -10287,6 +11305,9 @@ class __$$ClaimResponseErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequenceLinkId = freezed,
     Object? sequenceLinkIdElement = freezed,
     Object? detailSequenceLinkId = freezed,
@@ -10296,6 +11317,18 @@ class __$$ClaimResponseErrorImplCopyWithImpl<$Res>
     Object? code = null,
   }) {
     return _then(_$ClaimResponseErrorImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequenceLinkId: freezed == sequenceLinkId
           ? _value.sequenceLinkId
           : sequenceLinkId // ignore: cast_nullable_to_non_nullable
@@ -10332,7 +11365,10 @@ class __$$ClaimResponseErrorImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimResponseErrorImpl extends _ClaimResponseError {
   const _$ClaimResponseErrorImpl(
-      {this.sequenceLinkId,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') this.sequenceLinkIdElement,
       this.detailSequenceLinkId,
       @JsonKey(name: '_detailSequenceLinkId') this.detailSequenceLinkIdElement,
@@ -10340,10 +11376,36 @@ class _$ClaimResponseErrorImpl extends _ClaimResponseError {
       @JsonKey(name: '_subdetailSequenceLinkId')
       this.subdetailSequenceLinkIdElement,
       required this.code})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$ClaimResponseErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimResponseErrorImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirId? sequenceLinkId;
@@ -10365,7 +11427,7 @@ class _$ClaimResponseErrorImpl extends _ClaimResponseError {
 
   @override
   String toString() {
-    return 'ClaimResponseError(sequenceLinkId: $sequenceLinkId, sequenceLinkIdElement: $sequenceLinkIdElement, detailSequenceLinkId: $detailSequenceLinkId, detailSequenceLinkIdElement: $detailSequenceLinkIdElement, subdetailSequenceLinkId: $subdetailSequenceLinkId, subdetailSequenceLinkIdElement: $subdetailSequenceLinkIdElement, code: $code)';
+    return 'ClaimResponseError(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, sequenceLinkId: $sequenceLinkId, sequenceLinkIdElement: $sequenceLinkIdElement, detailSequenceLinkId: $detailSequenceLinkId, detailSequenceLinkIdElement: $detailSequenceLinkIdElement, subdetailSequenceLinkId: $subdetailSequenceLinkId, subdetailSequenceLinkIdElement: $subdetailSequenceLinkIdElement, code: $code)';
   }
 
   @override
@@ -10373,6 +11435,11 @@ class _$ClaimResponseErrorImpl extends _ClaimResponseError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimResponseErrorImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.sequenceLinkId, sequenceLinkId) ||
                 other.sequenceLinkId == sequenceLinkId) &&
             (identical(other.sequenceLinkIdElement, sequenceLinkIdElement) ||
@@ -10397,6 +11464,9 @@ class _$ClaimResponseErrorImpl extends _ClaimResponseError {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
       sequenceLinkId,
       sequenceLinkIdElement,
       detailSequenceLinkId,
@@ -10422,7 +11492,10 @@ class _$ClaimResponseErrorImpl extends _ClaimResponseError {
 
 abstract class _ClaimResponseError extends ClaimResponseError {
   const factory _ClaimResponseError(
-      {final FhirId? sequenceLinkId,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirId? sequenceLinkId,
       @JsonKey(name: '_sequenceLinkId') final Element? sequenceLinkIdElement,
       final FhirId? detailSequenceLinkId,
       @JsonKey(name: '_detailSequenceLinkId')
@@ -10436,6 +11509,13 @@ abstract class _ClaimResponseError extends ClaimResponseError {
   factory _ClaimResponseError.fromJson(Map<String, dynamic> json) =
       _$ClaimResponseErrorImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirId? get sequenceLinkId;
   @override
@@ -10465,6 +11545,11 @@ ClaimResponsePayment _$ClaimResponsePaymentFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClaimResponsePayment {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   CodeableConcept? get type => throw _privateConstructorUsedError;
   Money? get adjustment => throw _privateConstructorUsedError;
   CodeableConcept? get adjustmentReason => throw _privateConstructorUsedError;
@@ -10487,7 +11572,10 @@ abstract class $ClaimResponsePaymentCopyWith<$Res> {
       _$ClaimResponsePaymentCopyWithImpl<$Res, ClaimResponsePayment>;
   @useResult
   $Res call(
-      {CodeableConcept? type,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept? type,
       Money? adjustment,
       CodeableConcept? adjustmentReason,
       FhirDate? date,
@@ -10498,7 +11586,6 @@ abstract class $ClaimResponsePaymentCopyWith<$Res> {
   $CodeableConceptCopyWith<$Res>? get type;
   $MoneyCopyWith<$Res>? get adjustment;
   $CodeableConceptCopyWith<$Res>? get adjustmentReason;
-  $ElementCopyWith<$Res>? get dateElement;
   $MoneyCopyWith<$Res>? get amount;
   $IdentifierCopyWith<$Res>? get identifier;
 }
@@ -10517,6 +11604,9 @@ class _$ClaimResponsePaymentCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? type = freezed,
     Object? adjustment = freezed,
     Object? adjustmentReason = freezed,
@@ -10526,6 +11616,18 @@ class _$ClaimResponsePaymentCopyWithImpl<$Res,
     Object? identifier = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -10595,18 +11697,6 @@ class _$ClaimResponsePaymentCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get dateElement {
-    if (_value.dateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.dateElement!, (value) {
-      return _then(_value.copyWith(dateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $MoneyCopyWith<$Res>? get amount {
     if (_value.amount == null) {
       return null;
@@ -10639,7 +11729,10 @@ abstract class _$$ClaimResponsePaymentImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {CodeableConcept? type,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept? type,
       Money? adjustment,
       CodeableConcept? adjustmentReason,
       FhirDate? date,
@@ -10653,8 +11746,6 @@ abstract class _$$ClaimResponsePaymentImplCopyWith<$Res>
   $MoneyCopyWith<$Res>? get adjustment;
   @override
   $CodeableConceptCopyWith<$Res>? get adjustmentReason;
-  @override
-  $ElementCopyWith<$Res>? get dateElement;
   @override
   $MoneyCopyWith<$Res>? get amount;
   @override
@@ -10672,6 +11763,9 @@ class __$$ClaimResponsePaymentImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? type = freezed,
     Object? adjustment = freezed,
     Object? adjustmentReason = freezed,
@@ -10681,6 +11775,18 @@ class __$$ClaimResponsePaymentImplCopyWithImpl<$Res>
     Object? identifier = freezed,
   }) {
     return _then(_$ClaimResponsePaymentImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -10717,17 +11823,46 @@ class __$$ClaimResponsePaymentImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimResponsePaymentImpl extends _ClaimResponsePayment {
   const _$ClaimResponsePaymentImpl(
-      {this.type,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.type,
       this.adjustment,
       this.adjustmentReason,
       this.date,
       @JsonKey(name: '_date') this.dateElement,
       this.amount,
       this.identifier})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$ClaimResponsePaymentImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimResponsePaymentImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final CodeableConcept? type;
@@ -10747,7 +11882,7 @@ class _$ClaimResponsePaymentImpl extends _ClaimResponsePayment {
 
   @override
   String toString() {
-    return 'ClaimResponsePayment(type: $type, adjustment: $adjustment, adjustmentReason: $adjustmentReason, date: $date, dateElement: $dateElement, amount: $amount, identifier: $identifier)';
+    return 'ClaimResponsePayment(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, adjustment: $adjustment, adjustmentReason: $adjustmentReason, date: $date, dateElement: $dateElement, amount: $amount, identifier: $identifier)';
   }
 
   @override
@@ -10755,6 +11890,11 @@ class _$ClaimResponsePaymentImpl extends _ClaimResponsePayment {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimResponsePaymentImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.adjustment, adjustment) ||
                 other.adjustment == adjustment) &&
@@ -10770,8 +11910,18 @@ class _$ClaimResponsePaymentImpl extends _ClaimResponsePayment {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, type, adjustment,
-      adjustmentReason, date, dateElement, amount, identifier);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      type,
+      adjustment,
+      adjustmentReason,
+      date,
+      dateElement,
+      amount,
+      identifier);
 
   @JsonKey(ignore: true)
   @override
@@ -10791,7 +11941,10 @@ class _$ClaimResponsePaymentImpl extends _ClaimResponsePayment {
 
 abstract class _ClaimResponsePayment extends ClaimResponsePayment {
   const factory _ClaimResponsePayment(
-      {final CodeableConcept? type,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final CodeableConcept? type,
       final Money? adjustment,
       final CodeableConcept? adjustmentReason,
       final FhirDate? date,
@@ -10803,6 +11956,13 @@ abstract class _ClaimResponsePayment extends ClaimResponsePayment {
   factory _ClaimResponsePayment.fromJson(Map<String, dynamic> json) =
       _$ClaimResponsePaymentImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   CodeableConcept? get type;
   @override
@@ -10831,6 +11991,11 @@ ClaimResponseProcessNote _$ClaimResponseProcessNoteFromJson(
 
 /// @nodoc
 mixin _$ClaimResponseProcessNote {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirDecimal? get number => throw _privateConstructorUsedError;
   @JsonKey(name: '_number')
   Element? get numberElement => throw _privateConstructorUsedError;
@@ -10853,16 +12018,17 @@ abstract class $ClaimResponseProcessNoteCopyWith<$Res> {
       _$ClaimResponseProcessNoteCopyWithImpl<$Res, ClaimResponseProcessNote>;
   @useResult
   $Res call(
-      {FhirDecimal? number,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? number,
       @JsonKey(name: '_number') Element? numberElement,
       CodeableConcept? type,
       String? text,
       @JsonKey(name: '_text') Element? textElement,
       CodeableConcept? language});
 
-  $ElementCopyWith<$Res>? get numberElement;
   $CodeableConceptCopyWith<$Res>? get type;
-  $ElementCopyWith<$Res>? get textElement;
   $CodeableConceptCopyWith<$Res>? get language;
 }
 
@@ -10880,6 +12046,9 @@ class _$ClaimResponseProcessNoteCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? number = freezed,
     Object? numberElement = freezed,
     Object? type = freezed,
@@ -10888,6 +12057,18 @@ class _$ClaimResponseProcessNoteCopyWithImpl<$Res,
     Object? language = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
@@ -10917,18 +12098,6 @@ class _$ClaimResponseProcessNoteCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get numberElement {
-    if (_value.numberElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.numberElement!, (value) {
-      return _then(_value.copyWith(numberElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get type {
     if (_value.type == null) {
       return null;
@@ -10936,18 +12105,6 @@ class _$ClaimResponseProcessNoteCopyWithImpl<$Res,
 
     return $CodeableConceptCopyWith<$Res>(_value.type!, (value) {
       return _then(_value.copyWith(type: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get textElement {
-    if (_value.textElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.textElement!, (value) {
-      return _then(_value.copyWith(textElement: value) as $Val);
     });
   }
 
@@ -10974,7 +12131,10 @@ abstract class _$$ClaimResponseProcessNoteImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirDecimal? number,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? number,
       @JsonKey(name: '_number') Element? numberElement,
       CodeableConcept? type,
       String? text,
@@ -10982,11 +12142,7 @@ abstract class _$$ClaimResponseProcessNoteImplCopyWith<$Res>
       CodeableConcept? language});
 
   @override
-  $ElementCopyWith<$Res>? get numberElement;
-  @override
   $CodeableConceptCopyWith<$Res>? get type;
-  @override
-  $ElementCopyWith<$Res>? get textElement;
   @override
   $CodeableConceptCopyWith<$Res>? get language;
 }
@@ -11004,6 +12160,9 @@ class __$$ClaimResponseProcessNoteImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? number = freezed,
     Object? numberElement = freezed,
     Object? type = freezed,
@@ -11012,6 +12171,18 @@ class __$$ClaimResponseProcessNoteImplCopyWithImpl<$Res>
     Object? language = freezed,
   }) {
     return _then(_$ClaimResponseProcessNoteImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
@@ -11044,16 +12215,45 @@ class __$$ClaimResponseProcessNoteImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimResponseProcessNoteImpl extends _ClaimResponseProcessNote {
   const _$ClaimResponseProcessNoteImpl(
-      {this.number,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.number,
       @JsonKey(name: '_number') this.numberElement,
       this.type,
       this.text,
       @JsonKey(name: '_text') this.textElement,
       this.language})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$ClaimResponseProcessNoteImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimResponseProcessNoteImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirDecimal? number;
@@ -11072,7 +12272,7 @@ class _$ClaimResponseProcessNoteImpl extends _ClaimResponseProcessNote {
 
   @override
   String toString() {
-    return 'ClaimResponseProcessNote(number: $number, numberElement: $numberElement, type: $type, text: $text, textElement: $textElement, language: $language)';
+    return 'ClaimResponseProcessNote(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, number: $number, numberElement: $numberElement, type: $type, text: $text, textElement: $textElement, language: $language)';
   }
 
   @override
@@ -11080,6 +12280,11 @@ class _$ClaimResponseProcessNoteImpl extends _ClaimResponseProcessNote {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimResponseProcessNoteImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.number, number) || other.number == number) &&
             (identical(other.numberElement, numberElement) ||
                 other.numberElement == numberElement) &&
@@ -11094,7 +12299,16 @@ class _$ClaimResponseProcessNoteImpl extends _ClaimResponseProcessNote {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, number, numberElement, type, text, textElement, language);
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      number,
+      numberElement,
+      type,
+      text,
+      textElement,
+      language);
 
   @JsonKey(ignore: true)
   @override
@@ -11113,7 +12327,10 @@ class _$ClaimResponseProcessNoteImpl extends _ClaimResponseProcessNote {
 
 abstract class _ClaimResponseProcessNote extends ClaimResponseProcessNote {
   const factory _ClaimResponseProcessNote(
-      {final FhirDecimal? number,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirDecimal? number,
       @JsonKey(name: '_number') final Element? numberElement,
       final CodeableConcept? type,
       final String? text,
@@ -11124,6 +12341,13 @@ abstract class _ClaimResponseProcessNote extends ClaimResponseProcessNote {
   factory _ClaimResponseProcessNote.fromJson(Map<String, dynamic> json) =
       _$ClaimResponseProcessNoteImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirDecimal? get number;
   @override
@@ -11151,6 +12375,11 @@ ClaimResponseInsurance _$ClaimResponseInsuranceFromJson(
 
 /// @nodoc
 mixin _$ClaimResponseInsurance {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   FhirDecimal? get sequence => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequence')
   Element? get sequenceElement => throw _privateConstructorUsedError;
@@ -11179,7 +12408,10 @@ abstract class $ClaimResponseInsuranceCopyWith<$Res> {
       _$ClaimResponseInsuranceCopyWithImpl<$Res, ClaimResponseInsurance>;
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       FhirBoolean? focal,
       @JsonKey(name: '_focal') Element? focalElement,
@@ -11191,10 +12423,7 @@ abstract class $ClaimResponseInsuranceCopyWith<$Res> {
       @JsonKey(name: '_preAuthRef') List<Element?>? preAuthRefElement,
       Reference? claimResponse});
 
-  $ElementCopyWith<$Res>? get sequenceElement;
-  $ElementCopyWith<$Res>? get focalElement;
   $ReferenceCopyWith<$Res> get coverage;
-  $ElementCopyWith<$Res>? get businessArrangementElement;
   $ReferenceCopyWith<$Res>? get claimResponse;
 }
 
@@ -11212,6 +12441,9 @@ class _$ClaimResponseInsuranceCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? focal = freezed,
@@ -11224,6 +12456,18 @@ class _$ClaimResponseInsuranceCopyWithImpl<$Res,
     Object? claimResponse = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -11269,45 +12513,9 @@ class _$ClaimResponseInsuranceCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceElement {
-    if (_value.sequenceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceElement!, (value) {
-      return _then(_value.copyWith(sequenceElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get focalElement {
-    if (_value.focalElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.focalElement!, (value) {
-      return _then(_value.copyWith(focalElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res> get coverage {
     return $ReferenceCopyWith<$Res>(_value.coverage, (value) {
       return _then(_value.copyWith(coverage: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get businessArrangementElement {
-    if (_value.businessArrangementElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.businessArrangementElement!, (value) {
-      return _then(_value.copyWith(businessArrangementElement: value) as $Val);
     });
   }
 
@@ -11334,7 +12542,10 @@ abstract class _$$ClaimResponseInsuranceImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       FhirBoolean? focal,
       @JsonKey(name: '_focal') Element? focalElement,
@@ -11347,13 +12558,7 @@ abstract class _$$ClaimResponseInsuranceImplCopyWith<$Res>
       Reference? claimResponse});
 
   @override
-  $ElementCopyWith<$Res>? get sequenceElement;
-  @override
-  $ElementCopyWith<$Res>? get focalElement;
-  @override
   $ReferenceCopyWith<$Res> get coverage;
-  @override
-  $ElementCopyWith<$Res>? get businessArrangementElement;
   @override
   $ReferenceCopyWith<$Res>? get claimResponse;
 }
@@ -11371,6 +12576,9 @@ class __$$ClaimResponseInsuranceImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? focal = freezed,
@@ -11383,6 +12591,18 @@ class __$$ClaimResponseInsuranceImplCopyWithImpl<$Res>
     Object? claimResponse = freezed,
   }) {
     return _then(_$ClaimResponseInsuranceImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -11431,7 +12651,10 @@ class __$$ClaimResponseInsuranceImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ClaimResponseInsuranceImpl extends _ClaimResponseInsurance {
   const _$ClaimResponseInsuranceImpl(
-      {this.sequence,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.sequence,
       @JsonKey(name: '_sequence') this.sequenceElement,
       this.focal,
       @JsonKey(name: '_focal') this.focalElement,
@@ -11441,12 +12664,38 @@ class _$ClaimResponseInsuranceImpl extends _ClaimResponseInsurance {
       final List<String>? preAuthRef,
       @JsonKey(name: '_preAuthRef') final List<Element?>? preAuthRefElement,
       this.claimResponse})
-      : _preAuthRef = preAuthRef,
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _preAuthRef = preAuthRef,
         _preAuthRefElement = preAuthRefElement,
         super._();
 
   factory _$ClaimResponseInsuranceImpl.fromJson(Map<String, dynamic> json) =>
       _$$ClaimResponseInsuranceImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirDecimal? sequence;
@@ -11492,7 +12741,7 @@ class _$ClaimResponseInsuranceImpl extends _ClaimResponseInsurance {
 
   @override
   String toString() {
-    return 'ClaimResponseInsurance(sequence: $sequence, sequenceElement: $sequenceElement, focal: $focal, focalElement: $focalElement, coverage: $coverage, businessArrangement: $businessArrangement, businessArrangementElement: $businessArrangementElement, preAuthRef: $preAuthRef, preAuthRefElement: $preAuthRefElement, claimResponse: $claimResponse)';
+    return 'ClaimResponseInsurance(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, sequence: $sequence, sequenceElement: $sequenceElement, focal: $focal, focalElement: $focalElement, coverage: $coverage, businessArrangement: $businessArrangement, businessArrangementElement: $businessArrangementElement, preAuthRef: $preAuthRef, preAuthRefElement: $preAuthRefElement, claimResponse: $claimResponse)';
   }
 
   @override
@@ -11500,6 +12749,11 @@ class _$ClaimResponseInsuranceImpl extends _ClaimResponseInsurance {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClaimResponseInsuranceImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.sequence, sequence) ||
                 other.sequence == sequence) &&
             (identical(other.sequenceElement, sequenceElement) ||
@@ -11527,6 +12781,9 @@ class _$ClaimResponseInsuranceImpl extends _ClaimResponseInsurance {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
       sequence,
       sequenceElement,
       focal,
@@ -11555,7 +12812,10 @@ class _$ClaimResponseInsuranceImpl extends _ClaimResponseInsurance {
 
 abstract class _ClaimResponseInsurance extends ClaimResponseInsurance {
   const factory _ClaimResponseInsurance(
-      {final FhirDecimal? sequence,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final FhirDecimal? sequence,
       @JsonKey(name: '_sequence') final Element? sequenceElement,
       final FhirBoolean? focal,
       @JsonKey(name: '_focal') final Element? focalElement,
@@ -11571,6 +12831,13 @@ abstract class _ClaimResponseInsurance extends ClaimResponseInsurance {
   factory _ClaimResponseInsurance.fromJson(Map<String, dynamic> json) =
       _$ClaimResponseInsuranceImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   FhirDecimal? get sequence;
   @override

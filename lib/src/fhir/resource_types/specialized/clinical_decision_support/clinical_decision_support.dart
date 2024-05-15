@@ -51,6 +51,9 @@ class GuidanceResponse with Resource, _$GuidanceResponse {
     List<DataRequirement>? dataRequirement,
   }) = _GuidanceResponse;
 
+  @override
+  String get fhirType => 'GuidanceResponse';
+
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory GuidanceResponse.fromYaml(dynamic yaml) => yaml is String
       ? GuidanceResponse.fromJson(

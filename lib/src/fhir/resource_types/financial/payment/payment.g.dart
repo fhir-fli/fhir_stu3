@@ -372,6 +372,13 @@ Map<String, dynamic> _$$PaymentReconciliationImplToJson(
 _$PaymentReconciliationDetailImpl _$$PaymentReconciliationDetailImplFromJson(
         Map<String, dynamic> json) =>
     _$PaymentReconciliationDetailImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       type: CodeableConcept.fromJson(json['type'] as Map<String, dynamic>),
       request: json['request'] == null
           ? null
@@ -398,9 +405,7 @@ _$PaymentReconciliationDetailImpl _$$PaymentReconciliationDetailImplFromJson(
 
 Map<String, dynamic> _$$PaymentReconciliationDetailImplToJson(
     _$PaymentReconciliationDetailImpl instance) {
-  final val = <String, dynamic>{
-    'type': instance.type.toJson(),
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -408,6 +413,12 @@ Map<String, dynamic> _$$PaymentReconciliationDetailImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['type'] = instance.type.toJson();
   writeNotNull('request', instance.request?.toJson());
   writeNotNull('response', instance.response?.toJson());
   writeNotNull('submitter', instance.submitter?.toJson());
@@ -422,6 +433,13 @@ _$PaymentReconciliationProcessNoteImpl
     _$$PaymentReconciliationProcessNoteImplFromJson(
             Map<String, dynamic> json) =>
         _$PaymentReconciliationProcessNoteImpl(
+          id: json['id'] as String?,
+          extension_: (json['extension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
           type: json['type'] == null
               ? null
               : CodeableConcept.fromJson(json['type'] as Map<String, dynamic>),
@@ -441,6 +459,11 @@ Map<String, dynamic> _$$PaymentReconciliationProcessNoteImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('type', instance.type?.toJson());
   writeNotNull('text', instance.text);
   writeNotNull('_text', instance.textElement?.toJson());

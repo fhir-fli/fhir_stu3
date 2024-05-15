@@ -119,10 +119,6 @@ _$FhirExtensionImpl _$$FhirExtensionImplFromJson(Map<String, dynamic> json) =>
           ? null
           : FhirExtension.fromJson(
               json['valueExtension'] as Map<String, dynamic>),
-      valueBackboneElement: json['valueBackboneElement'] == null
-          ? null
-          : BackboneElement.fromJson(
-              json['valueBackboneElement'] as Map<String, dynamic>),
       valueNarrative: json['valueNarrative'] == null
           ? null
           : Narrative.fromJson(json['valueNarrative'] as Map<String, dynamic>),
@@ -291,7 +287,6 @@ Map<String, dynamic> _$$FhirExtensionImplToJson(_$FhirExtensionImpl instance) {
   writeNotNull('_valueMarkdown', instance.valueMarkdownElement?.toJson());
   writeNotNull('valueElement', instance.valueElement?.toJson());
   writeNotNull('valueExtension', instance.valueExtension?.toJson());
-  writeNotNull('valueBackboneElement', instance.valueBackboneElement?.toJson());
   writeNotNull('valueNarrative', instance.valueNarrative?.toJson());
   writeNotNull('valueAnnotation', instance.valueAnnotation?.toJson());
   writeNotNull('valueAttachment', instance.valueAttachment?.toJson());

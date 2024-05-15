@@ -94,6 +94,9 @@ class Measure with Resource, _$Measure {
     List<MeasureSupplementalData>? supplementalData,
   }) = _Measure;
 
+  @override
+  String get fhirType => 'Measure';
+
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory Measure.fromYaml(dynamic yaml) => yaml is String
       ? Measure.fromJson(
@@ -128,9 +131,12 @@ class Measure with Resource, _$Measure {
 }
 
 @freezed
-class MeasureGroup with _$MeasureGroup {
+class MeasureGroup with BackboneType, _$MeasureGroup {
   const MeasureGroup._();
   const factory MeasureGroup({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     required Identifier identifier,
     String? name,
     @JsonKey(name: '_name') Element? nameElement,
@@ -140,8 +146,8 @@ class MeasureGroup with _$MeasureGroup {
     List<MeasureStratifier>? stratifier,
   }) = _MeasureGroup;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'MeasureGroup';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory MeasureGroup.fromYaml(dynamic yaml) => yaml is String
@@ -169,16 +175,15 @@ class MeasureGroup with _$MeasureGroup {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class MeasurePopulation with _$MeasurePopulation {
+class MeasurePopulation with BackboneType, _$MeasurePopulation {
   const MeasurePopulation._();
   const factory MeasurePopulation({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     Identifier? identifier,
     CodeableConcept? code,
     String? name,
@@ -189,8 +194,8 @@ class MeasurePopulation with _$MeasurePopulation {
     @JsonKey(name: '_criteria') Element? criteriaElement,
   }) = _MeasurePopulation;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'MeasurePopulation';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory MeasurePopulation.fromYaml(dynamic yaml) => yaml is String
@@ -218,16 +223,15 @@ class MeasurePopulation with _$MeasurePopulation {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class MeasureStratifier with _$MeasureStratifier {
+class MeasureStratifier with BackboneType, _$MeasureStratifier {
   const MeasureStratifier._();
   const factory MeasureStratifier({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     Identifier? identifier,
     String? criteria,
     @JsonKey(name: '_criteria') Element? criteriaElement,
@@ -235,8 +239,8 @@ class MeasureStratifier with _$MeasureStratifier {
     @JsonKey(name: '_path') Element? pathElement,
   }) = _MeasureStratifier;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'MeasureStratifier';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory MeasureStratifier.fromYaml(dynamic yaml) => yaml is String
@@ -264,16 +268,15 @@ class MeasureStratifier with _$MeasureStratifier {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class MeasureSupplementalData with _$MeasureSupplementalData {
+class MeasureSupplementalData with BackboneType, _$MeasureSupplementalData {
   const MeasureSupplementalData._();
   const factory MeasureSupplementalData({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     Identifier? identifier,
     List<CodeableConcept>? usage,
     String? criteria,
@@ -282,8 +285,8 @@ class MeasureSupplementalData with _$MeasureSupplementalData {
     @JsonKey(name: '_path') Element? pathElement,
   }) = _MeasureSupplementalData;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'MeasureSupplementalData';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory MeasureSupplementalData.fromYaml(dynamic yaml) => yaml is String
@@ -311,10 +314,6 @@ class MeasureSupplementalData with _$MeasureSupplementalData {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -348,6 +347,9 @@ class MeasureReport with Resource, _$MeasureReport {
     List<MeasureReportGroup>? group,
     Reference? evaluatedResources,
   }) = _MeasureReport;
+
+  @override
+  String get fhirType => 'MeasureReport';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory MeasureReport.fromYaml(dynamic yaml) => yaml is String
@@ -383,9 +385,12 @@ class MeasureReport with Resource, _$MeasureReport {
 }
 
 @freezed
-class MeasureReportGroup with _$MeasureReportGroup {
+class MeasureReportGroup with BackboneType, _$MeasureReportGroup {
   const MeasureReportGroup._();
   const factory MeasureReportGroup({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     required Identifier identifier,
     List<MeasureReportPopulation>? population,
     FhirDecimal? measureScore,
@@ -393,8 +398,8 @@ class MeasureReportGroup with _$MeasureReportGroup {
     List<MeasureReportStratifier>? stratifier,
   }) = _MeasureReportGroup;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'MeasureReportGroup';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory MeasureReportGroup.fromYaml(dynamic yaml) => yaml is String
@@ -422,16 +427,15 @@ class MeasureReportGroup with _$MeasureReportGroup {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class MeasureReportPopulation with _$MeasureReportPopulation {
+class MeasureReportPopulation with BackboneType, _$MeasureReportPopulation {
   const MeasureReportPopulation._();
   const factory MeasureReportPopulation({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     Identifier? identifier,
     CodeableConcept? code,
     FhirDecimal? count,
@@ -439,8 +443,8 @@ class MeasureReportPopulation with _$MeasureReportPopulation {
     Reference? patients,
   }) = _MeasureReportPopulation;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'MeasureReportPopulation';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory MeasureReportPopulation.fromYaml(dynamic yaml) => yaml is String
@@ -468,22 +472,21 @@ class MeasureReportPopulation with _$MeasureReportPopulation {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class MeasureReportStratifier with _$MeasureReportStratifier {
+class MeasureReportStratifier with BackboneType, _$MeasureReportStratifier {
   const MeasureReportStratifier._();
   const factory MeasureReportStratifier({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     Identifier? identifier,
     List<MeasureReportStratum>? stratum,
   }) = _MeasureReportStratifier;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'MeasureReportStratifier';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory MeasureReportStratifier.fromYaml(dynamic yaml) => yaml is String
@@ -511,16 +514,15 @@ class MeasureReportStratifier with _$MeasureReportStratifier {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class MeasureReportStratum with _$MeasureReportStratum {
+class MeasureReportStratum with BackboneType, _$MeasureReportStratum {
   const MeasureReportStratum._();
   const factory MeasureReportStratum({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     String? value,
     @JsonKey(name: '_value') Element? valueElement,
     List<MeasureReportPopulation1>? population,
@@ -528,8 +530,8 @@ class MeasureReportStratum with _$MeasureReportStratum {
     @JsonKey(name: '_measureScore') Element? measureScoreElement,
   }) = _MeasureReportStratum;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'MeasureReportStratum';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory MeasureReportStratum.fromYaml(dynamic yaml) => yaml is String
@@ -557,16 +559,15 @@ class MeasureReportStratum with _$MeasureReportStratum {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class MeasureReportPopulation1 with _$MeasureReportPopulation1 {
+class MeasureReportPopulation1 with BackboneType, _$MeasureReportPopulation1 {
   const MeasureReportPopulation1._();
   const factory MeasureReportPopulation1({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     Identifier? identifier,
     CodeableConcept? code,
     FhirDecimal? count,
@@ -574,8 +575,8 @@ class MeasureReportPopulation1 with _$MeasureReportPopulation1 {
     Reference? patients,
   }) = _MeasureReportPopulation1;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'MeasureReportPopulation1';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory MeasureReportPopulation1.fromYaml(dynamic yaml) => yaml is String
@@ -603,8 +604,4 @@ class MeasureReportPopulation1 with _$MeasureReportPopulation1 {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }

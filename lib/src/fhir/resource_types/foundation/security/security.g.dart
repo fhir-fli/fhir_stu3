@@ -253,6 +253,13 @@ const _$AuditEventOutcomeEnumMap = {
 _$AuditEventAgentImpl _$$AuditEventAgentImplFromJson(
         Map<String, dynamic> json) =>
     _$AuditEventAgentImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       role: (json['role'] as List<dynamic>?)
           ?.map((e) => CodeableConcept.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -306,6 +313,11 @@ Map<String, dynamic> _$$AuditEventAgentImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('role', instance.role?.map((e) => e.toJson()).toList());
   writeNotNull('reference', instance.reference?.toJson());
   writeNotNull('userId', instance.userId?.toJson());
@@ -329,6 +341,13 @@ Map<String, dynamic> _$$AuditEventAgentImplToJson(
 _$AuditEventNetworkImpl _$$AuditEventNetworkImplFromJson(
         Map<String, dynamic> json) =>
     _$AuditEventNetworkImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       address: json['address'] as String?,
       addressElement: json['_address'] == null
           ? null
@@ -349,6 +368,11 @@ Map<String, dynamic> _$$AuditEventNetworkImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('address', instance.address);
   writeNotNull('_address', instance.addressElement?.toJson());
   writeNotNull('type', _$AuditEventNetworkTypeEnumMap[instance.type]);
@@ -368,6 +392,13 @@ const _$AuditEventNetworkTypeEnumMap = {
 _$AuditEventSourceImpl _$$AuditEventSourceImplFromJson(
         Map<String, dynamic> json) =>
     _$AuditEventSourceImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       site: json['site'] as String?,
       siteElement: json['_site'] == null
           ? null
@@ -389,6 +420,11 @@ Map<String, dynamic> _$$AuditEventSourceImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('site', instance.site);
   writeNotNull('_site', instance.siteElement?.toJson());
   val['identifier'] = instance.identifier.toJson();
@@ -399,6 +435,13 @@ Map<String, dynamic> _$$AuditEventSourceImplToJson(
 _$AuditEventEntityImpl _$$AuditEventEntityImplFromJson(
         Map<String, dynamic> json) =>
     _$AuditEventEntityImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       identifier: json['identifier'] == null
           ? null
           : Identifier.fromJson(json['identifier'] as Map<String, dynamic>),
@@ -444,6 +487,11 @@ Map<String, dynamic> _$$AuditEventEntityImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('identifier', instance.identifier?.toJson());
   writeNotNull('reference', instance.reference?.toJson());
   writeNotNull('type', instance.type?.toJson());
@@ -464,6 +512,13 @@ Map<String, dynamic> _$$AuditEventEntityImplToJson(
 _$AuditEventDetailImpl _$$AuditEventDetailImplFromJson(
         Map<String, dynamic> json) =>
     _$AuditEventDetailImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       type: json['type'] as String?,
       typeElement: json['_type'] == null
           ? null
@@ -484,6 +539,11 @@ Map<String, dynamic> _$$AuditEventDetailImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('type', instance.type);
   writeNotNull('_type', instance.typeElement?.toJson());
   writeNotNull('value', instance.value);
@@ -656,18 +716,45 @@ const _$ConsentStatusEnumMap = {
 
 _$ConsentActorImpl _$$ConsentActorImplFromJson(Map<String, dynamic> json) =>
     _$ConsentActorImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       role: CodeableConcept.fromJson(json['role'] as Map<String, dynamic>),
       reference: Reference.fromJson(json['reference'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ConsentActorImplToJson(_$ConsentActorImpl instance) =>
-    <String, dynamic>{
-      'role': instance.role.toJson(),
-      'reference': instance.reference.toJson(),
-    };
+Map<String, dynamic> _$$ConsentActorImplToJson(_$ConsentActorImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['role'] = instance.role.toJson();
+  val['reference'] = instance.reference.toJson();
+  return val;
+}
 
 _$ConsentPolicyImpl _$$ConsentPolicyImplFromJson(Map<String, dynamic> json) =>
     _$ConsentPolicyImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       authority: json['authority'] as String?,
       authorityElement: json['_authority'] == null
           ? null
@@ -687,6 +774,11 @@ Map<String, dynamic> _$$ConsentPolicyImplToJson(_$ConsentPolicyImpl instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('authority', instance.authority);
   writeNotNull('_authority', instance.authorityElement?.toJson());
   writeNotNull('uri', instance.uri);
@@ -696,6 +788,13 @@ Map<String, dynamic> _$$ConsentPolicyImplToJson(_$ConsentPolicyImpl instance) {
 
 _$ConsentDataImpl _$$ConsentDataImplFromJson(Map<String, dynamic> json) =>
     _$ConsentDataImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       meaning:
           $enumDecodeNullable(_$ConsentDataMeaningEnumMap, json['meaning']),
       meaningElement: json['_meaning'] == null
@@ -713,6 +812,11 @@ Map<String, dynamic> _$$ConsentDataImplToJson(_$ConsentDataImpl instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('meaning', _$ConsentDataMeaningEnumMap[instance.meaning]);
   writeNotNull('_meaning', instance.meaningElement?.toJson());
   val['reference'] = instance.reference.toJson();
@@ -729,6 +833,13 @@ const _$ConsentDataMeaningEnumMap = {
 
 _$ConsentExceptImpl _$$ConsentExceptImplFromJson(Map<String, dynamic> json) =>
     _$ConsentExceptImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       type: $enumDecodeNullable(_$ConsentExceptTypeEnumMap, json['type']),
       typeElement: json['_type'] == null
           ? null
@@ -771,6 +882,11 @@ Map<String, dynamic> _$$ConsentExceptImplToJson(_$ConsentExceptImpl instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('type', _$ConsentExceptTypeEnumMap[instance.type]);
   writeNotNull('_type', instance.typeElement?.toJson());
   writeNotNull('period', instance.period?.toJson());
@@ -794,18 +910,45 @@ const _$ConsentExceptTypeEnumMap = {
 
 _$ConsentActor1Impl _$$ConsentActor1ImplFromJson(Map<String, dynamic> json) =>
     _$ConsentActor1Impl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       role: CodeableConcept.fromJson(json['role'] as Map<String, dynamic>),
       reference: Reference.fromJson(json['reference'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ConsentActor1ImplToJson(_$ConsentActor1Impl instance) =>
-    <String, dynamic>{
-      'role': instance.role.toJson(),
-      'reference': instance.reference.toJson(),
-    };
+Map<String, dynamic> _$$ConsentActor1ImplToJson(_$ConsentActor1Impl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['role'] = instance.role.toJson();
+  val['reference'] = instance.reference.toJson();
+  return val;
+}
 
 _$ConsentData1Impl _$$ConsentData1ImplFromJson(Map<String, dynamic> json) =>
     _$ConsentData1Impl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       meaning:
           $enumDecodeNullable(_$ConsentData1MeaningEnumMap, json['meaning']),
       meaningElement: json['_meaning'] == null
@@ -823,6 +966,11 @@ Map<String, dynamic> _$$ConsentData1ImplToJson(_$ConsentData1Impl instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('meaning', _$ConsentData1MeaningEnumMap[instance.meaning]);
   writeNotNull('_meaning', instance.meaningElement?.toJson());
   val['reference'] = instance.reference.toJson();
@@ -950,6 +1098,13 @@ Map<String, dynamic> _$$ProvenanceImplToJson(_$ProvenanceImpl instance) {
 _$ProvenanceAgentImpl _$$ProvenanceAgentImplFromJson(
         Map<String, dynamic> json) =>
     _$ProvenanceAgentImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       role: (json['role'] as List<dynamic>?)
           ?.map((e) => CodeableConcept.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -984,6 +1139,11 @@ Map<String, dynamic> _$$ProvenanceAgentImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('role', instance.role?.map((e) => e.toJson()).toList());
   writeNotNull('whoUri', instance.whoUri);
   writeNotNull('_whoUri', instance.whoUriElement?.toJson());
@@ -998,6 +1158,13 @@ Map<String, dynamic> _$$ProvenanceAgentImplToJson(
 _$ProvenanceEntityImpl _$$ProvenanceEntityImplFromJson(
         Map<String, dynamic> json) =>
     _$ProvenanceEntityImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       role: $enumDecodeNullable(_$ProvenanceEntityRoleEnumMap, json['role']),
       roleElement: json['_role'] == null
           ? null
@@ -1027,6 +1194,11 @@ Map<String, dynamic> _$$ProvenanceEntityImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('role', _$ProvenanceEntityRoleEnumMap[instance.role]);
   writeNotNull('_role', instance.roleElement?.toJson());
   writeNotNull('whatUri', instance.whatUri);

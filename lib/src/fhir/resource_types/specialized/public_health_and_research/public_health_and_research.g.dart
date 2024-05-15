@@ -294,6 +294,13 @@ const _$ResearchStudyStatusEnumMap = {
 _$ResearchStudyArmImpl _$$ResearchStudyArmImplFromJson(
         Map<String, dynamic> json) =>
     _$ResearchStudyArmImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       name: json['name'] as String?,
       nameElement: json['_name'] == null
           ? null
@@ -317,6 +324,11 @@ Map<String, dynamic> _$$ResearchStudyArmImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   writeNotNull('code', instance.code?.toJson());
