@@ -20,6 +20,9 @@ Narrative _$NarrativeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Narrative {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   NarrativeStatus? get status => throw _privateConstructorUsedError;
   @JsonKey(name: '_status')
   Element? get statusElement => throw _privateConstructorUsedError;
@@ -37,11 +40,11 @@ abstract class $NarrativeCopyWith<$Res> {
       _$NarrativeCopyWithImpl<$Res, Narrative>;
   @useResult
   $Res call(
-      {NarrativeStatus? status,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      NarrativeStatus? status,
       @JsonKey(name: '_status') Element? statusElement,
       String div});
-
-  $ElementCopyWith<$Res>? get statusElement;
 }
 
 /// @nodoc
@@ -57,11 +60,21 @@ class _$NarrativeCopyWithImpl<$Res, $Val extends Narrative>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? status = freezed,
     Object? statusElement = freezed,
     Object? div = null,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -76,18 +89,6 @@ class _$NarrativeCopyWithImpl<$Res, $Val extends Narrative>
               as String,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -99,12 +100,11 @@ abstract class _$$NarrativeImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {NarrativeStatus? status,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      NarrativeStatus? status,
       @JsonKey(name: '_status') Element? statusElement,
       String div});
-
-  @override
-  $ElementCopyWith<$Res>? get statusElement;
 }
 
 /// @nodoc
@@ -118,11 +118,21 @@ class __$$NarrativeImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? status = freezed,
     Object? statusElement = freezed,
     Object? div = null,
   }) {
     return _then(_$NarrativeImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -143,13 +153,29 @@ class __$$NarrativeImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$NarrativeImpl extends _Narrative {
   const _$NarrativeImpl(
-      {this.status,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      this.status,
       @JsonKey(name: '_status') this.statusElement,
       required this.div})
-      : super._();
+      : _extension_ = extension_,
+        super._();
 
   factory _$NarrativeImpl.fromJson(Map<String, dynamic> json) =>
       _$$NarrativeImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final NarrativeStatus? status;
@@ -161,7 +187,7 @@ class _$NarrativeImpl extends _Narrative {
 
   @override
   String toString() {
-    return 'Narrative(status: $status, statusElement: $statusElement, div: $div)';
+    return 'Narrative(id: $id, extension_: $extension_, status: $status, statusElement: $statusElement, div: $div)';
   }
 
   @override
@@ -169,6 +195,9 @@ class _$NarrativeImpl extends _Narrative {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NarrativeImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.statusElement, statusElement) ||
                 other.statusElement == statusElement) &&
@@ -177,7 +206,13 @@ class _$NarrativeImpl extends _Narrative {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, status, statusElement, div);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      status,
+      statusElement,
+      div);
 
   @JsonKey(ignore: true)
   @override
@@ -195,7 +230,9 @@ class _$NarrativeImpl extends _Narrative {
 
 abstract class _Narrative extends Narrative {
   const factory _Narrative(
-      {final NarrativeStatus? status,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final NarrativeStatus? status,
       @JsonKey(name: '_status') final Element? statusElement,
       required final String div}) = _$NarrativeImpl;
   const _Narrative._() : super._();
@@ -203,6 +240,11 @@ abstract class _Narrative extends Narrative {
   factory _Narrative.fromJson(Map<String, dynamic> json) =
       _$NarrativeImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
   @override
   NarrativeStatus? get status;
   @override
@@ -222,6 +264,9 @@ Reference _$ReferenceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Reference {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   String? get reference => throw _privateConstructorUsedError;
   @JsonKey(name: '_reference')
   Element? get referenceElement => throw _privateConstructorUsedError;
@@ -242,15 +287,15 @@ abstract class $ReferenceCopyWith<$Res> {
       _$ReferenceCopyWithImpl<$Res, Reference>;
   @useResult
   $Res call(
-      {String? reference,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      String? reference,
       @JsonKey(name: '_reference') Element? referenceElement,
       Identifier? identifier,
       String? display,
       @JsonKey(name: '_display') Element? displayElement});
 
-  $ElementCopyWith<$Res>? get referenceElement;
   $IdentifierCopyWith<$Res>? get identifier;
-  $ElementCopyWith<$Res>? get displayElement;
 }
 
 /// @nodoc
@@ -266,6 +311,8 @@ class _$ReferenceCopyWithImpl<$Res, $Val extends Reference>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? reference = freezed,
     Object? referenceElement = freezed,
     Object? identifier = freezed,
@@ -273,6 +320,14 @@ class _$ReferenceCopyWithImpl<$Res, $Val extends Reference>
     Object? displayElement = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       reference: freezed == reference
           ? _value.reference
           : reference // ignore: cast_nullable_to_non_nullable
@@ -298,18 +353,6 @@ class _$ReferenceCopyWithImpl<$Res, $Val extends Reference>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get referenceElement {
-    if (_value.referenceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.referenceElement!, (value) {
-      return _then(_value.copyWith(referenceElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $IdentifierCopyWith<$Res>? get identifier {
     if (_value.identifier == null) {
       return null;
@@ -317,18 +360,6 @@ class _$ReferenceCopyWithImpl<$Res, $Val extends Reference>
 
     return $IdentifierCopyWith<$Res>(_value.identifier!, (value) {
       return _then(_value.copyWith(identifier: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get displayElement {
-    if (_value.displayElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.displayElement!, (value) {
-      return _then(_value.copyWith(displayElement: value) as $Val);
     });
   }
 }
@@ -342,18 +373,16 @@ abstract class _$$ReferenceImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? reference,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      String? reference,
       @JsonKey(name: '_reference') Element? referenceElement,
       Identifier? identifier,
       String? display,
       @JsonKey(name: '_display') Element? displayElement});
 
   @override
-  $ElementCopyWith<$Res>? get referenceElement;
-  @override
   $IdentifierCopyWith<$Res>? get identifier;
-  @override
-  $ElementCopyWith<$Res>? get displayElement;
 }
 
 /// @nodoc
@@ -367,6 +396,8 @@ class __$$ReferenceImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? reference = freezed,
     Object? referenceElement = freezed,
     Object? identifier = freezed,
@@ -374,6 +405,14 @@ class __$$ReferenceImplCopyWithImpl<$Res>
     Object? displayElement = freezed,
   }) {
     return _then(_$ReferenceImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       reference: freezed == reference
           ? _value.reference
           : reference // ignore: cast_nullable_to_non_nullable
@@ -402,15 +441,31 @@ class __$$ReferenceImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ReferenceImpl extends _Reference {
   const _$ReferenceImpl(
-      {this.reference,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      this.reference,
       @JsonKey(name: '_reference') this.referenceElement,
       this.identifier,
       this.display,
       @JsonKey(name: '_display') this.displayElement})
-      : super._();
+      : _extension_ = extension_,
+        super._();
 
   factory _$ReferenceImpl.fromJson(Map<String, dynamic> json) =>
       _$$ReferenceImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final String? reference;
@@ -427,7 +482,7 @@ class _$ReferenceImpl extends _Reference {
 
   @override
   String toString() {
-    return 'Reference(reference: $reference, referenceElement: $referenceElement, identifier: $identifier, display: $display, displayElement: $displayElement)';
+    return 'Reference(id: $id, extension_: $extension_, reference: $reference, referenceElement: $referenceElement, identifier: $identifier, display: $display, displayElement: $displayElement)';
   }
 
   @override
@@ -435,6 +490,9 @@ class _$ReferenceImpl extends _Reference {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReferenceImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
             (identical(other.reference, reference) ||
                 other.reference == reference) &&
             (identical(other.referenceElement, referenceElement) ||
@@ -448,8 +506,15 @@ class _$ReferenceImpl extends _Reference {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, reference, referenceElement,
-      identifier, display, displayElement);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      reference,
+      referenceElement,
+      identifier,
+      display,
+      displayElement);
 
   @JsonKey(ignore: true)
   @override
@@ -467,7 +532,9 @@ class _$ReferenceImpl extends _Reference {
 
 abstract class _Reference extends Reference {
   const factory _Reference(
-          {final String? reference,
+          {final String? id,
+          @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+          final String? reference,
           @JsonKey(name: '_reference') final Element? referenceElement,
           final Identifier? identifier,
           final String? display,
@@ -478,6 +545,11 @@ abstract class _Reference extends Reference {
   factory _Reference.fromJson(Map<String, dynamic> json) =
       _$ReferenceImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
   @override
   String? get reference;
   @override
@@ -502,6 +574,9 @@ FhirMeta _$FhirMetaFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FhirMeta {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   FhirId? get versionId => throw _privateConstructorUsedError;
   @JsonKey(name: '_versionId')
   Element? get versionIdElement => throw _privateConstructorUsedError;
@@ -526,7 +601,9 @@ abstract class $FhirMetaCopyWith<$Res> {
       _$FhirMetaCopyWithImpl<$Res, FhirMeta>;
   @useResult
   $Res call(
-      {FhirId? versionId,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      FhirId? versionId,
       @JsonKey(name: '_versionId') Element? versionIdElement,
       FhirInstant? lastUpdated,
       @JsonKey(name: '_lastUpdated') Element? lastUpdatedElement,
@@ -534,9 +611,6 @@ abstract class $FhirMetaCopyWith<$Res> {
       @JsonKey(name: '_profile') List<Element?>? profileElement,
       List<Coding>? security,
       List<Coding>? tag});
-
-  $ElementCopyWith<$Res>? get versionIdElement;
-  $ElementCopyWith<$Res>? get lastUpdatedElement;
 }
 
 /// @nodoc
@@ -552,6 +626,8 @@ class _$FhirMetaCopyWithImpl<$Res, $Val extends FhirMeta>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? versionId = freezed,
     Object? versionIdElement = freezed,
     Object? lastUpdated = freezed,
@@ -562,6 +638,14 @@ class _$FhirMetaCopyWithImpl<$Res, $Val extends FhirMeta>
     Object? tag = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       versionId: freezed == versionId
           ? _value.versionId
           : versionId // ignore: cast_nullable_to_non_nullable
@@ -596,30 +680,6 @@ class _$FhirMetaCopyWithImpl<$Res, $Val extends FhirMeta>
               as List<Coding>?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get versionIdElement {
-    if (_value.versionIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.versionIdElement!, (value) {
-      return _then(_value.copyWith(versionIdElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get lastUpdatedElement {
-    if (_value.lastUpdatedElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.lastUpdatedElement!, (value) {
-      return _then(_value.copyWith(lastUpdatedElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -631,7 +691,9 @@ abstract class _$$FhirMetaImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirId? versionId,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      FhirId? versionId,
       @JsonKey(name: '_versionId') Element? versionIdElement,
       FhirInstant? lastUpdated,
       @JsonKey(name: '_lastUpdated') Element? lastUpdatedElement,
@@ -639,11 +701,6 @@ abstract class _$$FhirMetaImplCopyWith<$Res>
       @JsonKey(name: '_profile') List<Element?>? profileElement,
       List<Coding>? security,
       List<Coding>? tag});
-
-  @override
-  $ElementCopyWith<$Res>? get versionIdElement;
-  @override
-  $ElementCopyWith<$Res>? get lastUpdatedElement;
 }
 
 /// @nodoc
@@ -657,6 +714,8 @@ class __$$FhirMetaImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? versionId = freezed,
     Object? versionIdElement = freezed,
     Object? lastUpdated = freezed,
@@ -667,6 +726,14 @@ class __$$FhirMetaImplCopyWithImpl<$Res>
     Object? tag = freezed,
   }) {
     return _then(_$FhirMetaImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       versionId: freezed == versionId
           ? _value.versionId
           : versionId // ignore: cast_nullable_to_non_nullable
@@ -707,7 +774,9 @@ class __$$FhirMetaImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FhirMetaImpl extends _FhirMeta {
   const _$FhirMetaImpl(
-      {this.versionId,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      this.versionId,
       @JsonKey(name: '_versionId') this.versionIdElement,
       this.lastUpdated,
       @JsonKey(name: '_lastUpdated') this.lastUpdatedElement,
@@ -715,7 +784,8 @@ class _$FhirMetaImpl extends _FhirMeta {
       @JsonKey(name: '_profile') final List<Element?>? profileElement,
       final List<Coding>? security,
       final List<Coding>? tag})
-      : _profile = profile,
+      : _extension_ = extension_,
+        _profile = profile,
         _profileElement = profileElement,
         _security = security,
         _tag = tag,
@@ -723,6 +793,19 @@ class _$FhirMetaImpl extends _FhirMeta {
 
   factory _$FhirMetaImpl.fromJson(Map<String, dynamic> json) =>
       _$$FhirMetaImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirId? versionId;
@@ -777,7 +860,7 @@ class _$FhirMetaImpl extends _FhirMeta {
 
   @override
   String toString() {
-    return 'FhirMeta(versionId: $versionId, versionIdElement: $versionIdElement, lastUpdated: $lastUpdated, lastUpdatedElement: $lastUpdatedElement, profile: $profile, profileElement: $profileElement, security: $security, tag: $tag)';
+    return 'FhirMeta(id: $id, extension_: $extension_, versionId: $versionId, versionIdElement: $versionIdElement, lastUpdated: $lastUpdated, lastUpdatedElement: $lastUpdatedElement, profile: $profile, profileElement: $profileElement, security: $security, tag: $tag)';
   }
 
   @override
@@ -785,6 +868,9 @@ class _$FhirMetaImpl extends _FhirMeta {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FhirMetaImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
             (identical(other.versionId, versionId) ||
                 other.versionId == versionId) &&
             (identical(other.versionIdElement, versionIdElement) ||
@@ -804,6 +890,8 @@ class _$FhirMetaImpl extends _FhirMeta {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
       versionId,
       versionIdElement,
       lastUpdated,
@@ -829,7 +917,9 @@ class _$FhirMetaImpl extends _FhirMeta {
 
 abstract class _FhirMeta extends FhirMeta {
   const factory _FhirMeta(
-      {final FhirId? versionId,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final FhirId? versionId,
       @JsonKey(name: '_versionId') final Element? versionIdElement,
       final FhirInstant? lastUpdated,
       @JsonKey(name: '_lastUpdated') final Element? lastUpdatedElement,
@@ -842,6 +932,11 @@ abstract class _FhirMeta extends FhirMeta {
   factory _FhirMeta.fromJson(Map<String, dynamic> json) =
       _$FhirMetaImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
   @override
   FhirId? get versionId;
   @override
@@ -979,8 +1074,6 @@ mixin _$ElementDefinition {
   Element? get defaultValueElement => throw _privateConstructorUsedError;
   FhirExtension? get defaultValueExtension =>
       throw _privateConstructorUsedError;
-  BackboneElement? get defaultValueBackboneElement =>
-      throw _privateConstructorUsedError;
   Narrative? get defaultValueNarrative => throw _privateConstructorUsedError;
   Annotation? get defaultValueAnnotation => throw _privateConstructorUsedError;
   Attachment? get defaultValueAttachment => throw _privateConstructorUsedError;
@@ -1085,8 +1178,6 @@ mixin _$ElementDefinition {
   Element? get fixedMarkdownElement => throw _privateConstructorUsedError;
   Element? get fixedElement => throw _privateConstructorUsedError;
   FhirExtension? get fixedExtension => throw _privateConstructorUsedError;
-  BackboneElement? get fixedBackboneElement =>
-      throw _privateConstructorUsedError;
   Narrative? get fixedNarrative => throw _privateConstructorUsedError;
   Annotation? get fixedAnnotation => throw _privateConstructorUsedError;
   Attachment? get fixedAttachment => throw _privateConstructorUsedError;
@@ -1179,8 +1270,6 @@ mixin _$ElementDefinition {
   Element? get patternMarkdownElement => throw _privateConstructorUsedError;
   Element? get patternElement => throw _privateConstructorUsedError;
   FhirExtension? get patternExtension => throw _privateConstructorUsedError;
-  BackboneElement? get patternBackboneElement =>
-      throw _privateConstructorUsedError;
   Narrative? get patternNarrative => throw _privateConstructorUsedError;
   Annotation? get patternAnnotation => throw _privateConstructorUsedError;
   Attachment? get patternAttachment => throw _privateConstructorUsedError;
@@ -1381,7 +1470,6 @@ abstract class $ElementDefinitionCopyWith<$Res> {
       Element? defaultValueMarkdownElement,
       Element? defaultValueElement,
       FhirExtension? defaultValueExtension,
-      BackboneElement? defaultValueBackboneElement,
       Narrative? defaultValueNarrative,
       Annotation? defaultValueAnnotation,
       Attachment? defaultValueAttachment,
@@ -1455,7 +1543,6 @@ abstract class $ElementDefinitionCopyWith<$Res> {
       @JsonKey(name: '_fixedMarkdown') Element? fixedMarkdownElement,
       Element? fixedElement,
       FhirExtension? fixedExtension,
-      BackboneElement? fixedBackboneElement,
       Narrative? fixedNarrative,
       Annotation? fixedAnnotation,
       Attachment? fixedAttachment,
@@ -1526,7 +1613,6 @@ abstract class $ElementDefinitionCopyWith<$Res> {
       @JsonKey(name: '_patternMarkdown') Element? patternMarkdownElement,
       Element? patternElement,
       FhirExtension? patternExtension,
-      BackboneElement? patternBackboneElement,
       Narrative? patternNarrative,
       Annotation? patternAnnotation,
       Attachment? patternAttachment,
@@ -1613,38 +1699,9 @@ abstract class $ElementDefinitionCopyWith<$Res> {
       ElementDefinitionBinding? binding,
       List<ElementDefinitionMapping>? mapping});
 
-  $ElementCopyWith<$Res>? get pathElement;
-  $ElementCopyWith<$Res>? get sliceNameElement;
-  $ElementCopyWith<$Res>? get labelElement;
   $ElementDefinitionSlicingCopyWith<$Res>? get slicing;
-  $ElementCopyWith<$Res>? get shortElement;
-  $ElementCopyWith<$Res>? get definitionElement;
-  $ElementCopyWith<$Res>? get commentElement;
-  $ElementCopyWith<$Res>? get requirementsElement;
-  $ElementCopyWith<$Res>? get minElement;
-  $ElementCopyWith<$Res>? get maxElement;
   $ElementDefinitionBaseCopyWith<$Res>? get base;
-  $ElementCopyWith<$Res>? get contentReferenceElement;
-  $ElementCopyWith<$Res>? get defaultValueBooleanElement;
-  $ElementCopyWith<$Res>? get defaultValueIntegerElement;
-  $ElementCopyWith<$Res>? get defaultValueDecimalElement;
-  $ElementCopyWith<$Res>? get defaultValueBase64BinaryElement;
-  $ElementCopyWith<$Res>? get defaultValueInstantElement;
-  $ElementCopyWith<$Res>? get defaultValueStringElement;
-  $ElementCopyWith<$Res>? get defaultValueUriElement;
-  $ElementCopyWith<$Res>? get defaultValueDateElement;
-  $ElementCopyWith<$Res>? get defaultValueDateTimeElement;
-  $ElementCopyWith<$Res>? get defaultValueTimeElement;
-  $ElementCopyWith<$Res>? get defaultValueCodeElement;
-  $ElementCopyWith<$Res>? get defaultValueOidElement;
-  $ElementCopyWith<$Res>? get defaultValueUuidElement;
-  $ElementCopyWith<$Res>? get defaultValueIdElement;
-  $ElementCopyWith<$Res>? get defaultValueUnsignedIntElement;
-  $ElementCopyWith<$Res>? get defaultValuePositiveIntElement;
-  $ElementCopyWith<$Res>? get defaultValueMarkdownElement;
-  $ElementCopyWith<$Res>? get defaultValueElement;
   $FhirExtensionCopyWith<$Res>? get defaultValueExtension;
-  $BackboneElementCopyWith<$Res>? get defaultValueBackboneElement;
   $NarrativeCopyWith<$Res>? get defaultValueNarrative;
   $AnnotationCopyWith<$Res>? get defaultValueAnnotation;
   $AttachmentCopyWith<$Res>? get defaultValueAttachment;
@@ -1678,28 +1735,7 @@ abstract class $ElementDefinitionCopyWith<$Res> {
   $DataRequirementCopyWith<$Res>? get defaultValueDataRequirement;
   $ParameterDefinitionCopyWith<$Res>? get defaultValueParameterDefinition;
   $TriggerDefinitionCopyWith<$Res>? get defaultValueTriggerDefinition;
-  $ElementCopyWith<$Res>? get meaningWhenMissingElement;
-  $ElementCopyWith<$Res>? get orderMeaningElement;
-  $ElementCopyWith<$Res>? get fixedBooleanElement;
-  $ElementCopyWith<$Res>? get fixedIntegerElement;
-  $ElementCopyWith<$Res>? get fixedDecimalElement;
-  $ElementCopyWith<$Res>? get fixedBase64BinaryElement;
-  $ElementCopyWith<$Res>? get fixedInstantElement;
-  $ElementCopyWith<$Res>? get fixedStringElement;
-  $ElementCopyWith<$Res>? get fixedUriElement;
-  $ElementCopyWith<$Res>? get fixedDateElement;
-  $ElementCopyWith<$Res>? get fixedDateTimeElement;
-  $ElementCopyWith<$Res>? get fixedTimeElement;
-  $ElementCopyWith<$Res>? get fixedCodeElement;
-  $ElementCopyWith<$Res>? get fixedOidElement;
-  $ElementCopyWith<$Res>? get fixedUuidElement;
-  $ElementCopyWith<$Res>? get fixedIdElement;
-  $ElementCopyWith<$Res>? get fixedUnsignedIntElement;
-  $ElementCopyWith<$Res>? get fixedPositiveIntElement;
-  $ElementCopyWith<$Res>? get fixedMarkdownElement;
-  $ElementCopyWith<$Res>? get fixedElement;
   $FhirExtensionCopyWith<$Res>? get fixedExtension;
-  $BackboneElementCopyWith<$Res>? get fixedBackboneElement;
   $NarrativeCopyWith<$Res>? get fixedNarrative;
   $AnnotationCopyWith<$Res>? get fixedAnnotation;
   $AttachmentCopyWith<$Res>? get fixedAttachment;
@@ -1733,26 +1769,7 @@ abstract class $ElementDefinitionCopyWith<$Res> {
   $DataRequirementCopyWith<$Res>? get fixedDataRequirement;
   $ParameterDefinitionCopyWith<$Res>? get fixedParameterDefinition;
   $TriggerDefinitionCopyWith<$Res>? get fixedTriggerDefinition;
-  $ElementCopyWith<$Res>? get patternBooleanElement;
-  $ElementCopyWith<$Res>? get patternIntegerElement;
-  $ElementCopyWith<$Res>? get patternDecimalElement;
-  $ElementCopyWith<$Res>? get patternBase64BinaryElement;
-  $ElementCopyWith<$Res>? get patternInstantElement;
-  $ElementCopyWith<$Res>? get patternStringElement;
-  $ElementCopyWith<$Res>? get patternUriElement;
-  $ElementCopyWith<$Res>? get patternDateElement;
-  $ElementCopyWith<$Res>? get patternDateTimeElement;
-  $ElementCopyWith<$Res>? get patternTimeElement;
-  $ElementCopyWith<$Res>? get patternCodeElement;
-  $ElementCopyWith<$Res>? get patternOidElement;
-  $ElementCopyWith<$Res>? get patternUuidElement;
-  $ElementCopyWith<$Res>? get patternIdElement;
-  $ElementCopyWith<$Res>? get patternUnsignedIntElement;
-  $ElementCopyWith<$Res>? get patternPositiveIntElement;
-  $ElementCopyWith<$Res>? get patternMarkdownElement;
-  $ElementCopyWith<$Res>? get patternElement;
   $FhirExtensionCopyWith<$Res>? get patternExtension;
-  $BackboneElementCopyWith<$Res>? get patternBackboneElement;
   $NarrativeCopyWith<$Res>? get patternNarrative;
   $AnnotationCopyWith<$Res>? get patternAnnotation;
   $AttachmentCopyWith<$Res>? get patternAttachment;
@@ -1786,28 +1803,8 @@ abstract class $ElementDefinitionCopyWith<$Res> {
   $DataRequirementCopyWith<$Res>? get patternDataRequirement;
   $ParameterDefinitionCopyWith<$Res>? get patternParameterDefinition;
   $TriggerDefinitionCopyWith<$Res>? get patternTriggerDefinition;
-  $ElementCopyWith<$Res>? get minValueDateElement;
-  $ElementCopyWith<$Res>? get minValueDateTimeElement;
-  $ElementCopyWith<$Res>? get minValueInstantElement;
-  $ElementCopyWith<$Res>? get minValueTimeElement;
-  $ElementCopyWith<$Res>? get minValueDecimalElement;
-  $ElementCopyWith<$Res>? get minValueIntegerElement;
-  $ElementCopyWith<$Res>? get minValuePositiveIntElement;
-  $ElementCopyWith<$Res>? get minValueUnsignedIntElement;
   $QuantityCopyWith<$Res>? get minValueQuantity;
-  $ElementCopyWith<$Res>? get maxValueDateElement;
-  $ElementCopyWith<$Res>? get maxValueDateTimeElement;
-  $ElementCopyWith<$Res>? get maxValueInstantElement;
-  $ElementCopyWith<$Res>? get maxValueTimeElement;
-  $ElementCopyWith<$Res>? get maxValueDecimalElement;
-  $ElementCopyWith<$Res>? get maxValueIntegerElement;
-  $ElementCopyWith<$Res>? get maxValuePositiveIntElement;
-  $ElementCopyWith<$Res>? get maxValueUnsignedIntElement;
   $QuantityCopyWith<$Res>? get maxValueQuantity;
-  $ElementCopyWith<$Res>? get maxLengthElement;
-  $ElementCopyWith<$Res>? get mustSupportElement;
-  $ElementCopyWith<$Res>? get isModifierElement;
-  $ElementCopyWith<$Res>? get isSummaryElement;
   $ElementDefinitionBindingCopyWith<$Res>? get binding;
 }
 
@@ -1890,7 +1887,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
     Object? defaultValueMarkdownElement = freezed,
     Object? defaultValueElement = freezed,
     Object? defaultValueExtension = freezed,
-    Object? defaultValueBackboneElement = freezed,
     Object? defaultValueNarrative = freezed,
     Object? defaultValueAnnotation = freezed,
     Object? defaultValueAttachment = freezed,
@@ -1964,7 +1960,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
     Object? fixedMarkdownElement = freezed,
     Object? fixedElement = freezed,
     Object? fixedExtension = freezed,
-    Object? fixedBackboneElement = freezed,
     Object? fixedNarrative = freezed,
     Object? fixedAnnotation = freezed,
     Object? fixedAttachment = freezed,
@@ -2034,7 +2029,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
     Object? patternMarkdownElement = freezed,
     Object? patternElement = freezed,
     Object? patternExtension = freezed,
-    Object? patternBackboneElement = freezed,
     Object? patternNarrative = freezed,
     Object? patternAnnotation = freezed,
     Object? patternAttachment = freezed,
@@ -2383,10 +2377,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
           ? _value.defaultValueExtension
           : defaultValueExtension // ignore: cast_nullable_to_non_nullable
               as FhirExtension?,
-      defaultValueBackboneElement: freezed == defaultValueBackboneElement
-          ? _value.defaultValueBackboneElement
-          : defaultValueBackboneElement // ignore: cast_nullable_to_non_nullable
-              as BackboneElement?,
       defaultValueNarrative: freezed == defaultValueNarrative
           ? _value.defaultValueNarrative
           : defaultValueNarrative // ignore: cast_nullable_to_non_nullable
@@ -2680,10 +2670,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
           ? _value.fixedExtension
           : fixedExtension // ignore: cast_nullable_to_non_nullable
               as FhirExtension?,
-      fixedBackboneElement: freezed == fixedBackboneElement
-          ? _value.fixedBackboneElement
-          : fixedBackboneElement // ignore: cast_nullable_to_non_nullable
-              as BackboneElement?,
       fixedNarrative: freezed == fixedNarrative
           ? _value.fixedNarrative
           : fixedNarrative // ignore: cast_nullable_to_non_nullable
@@ -2960,10 +2946,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
           ? _value.patternExtension
           : patternExtension // ignore: cast_nullable_to_non_nullable
               as FhirExtension?,
-      patternBackboneElement: freezed == patternBackboneElement
-          ? _value.patternBackboneElement
-          : patternBackboneElement // ignore: cast_nullable_to_non_nullable
-              as BackboneElement?,
       patternNarrative: freezed == patternNarrative
           ? _value.patternNarrative
           : patternNarrative // ignore: cast_nullable_to_non_nullable
@@ -3293,42 +3275,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get pathElement {
-    if (_value.pathElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.pathElement!, (value) {
-      return _then(_value.copyWith(pathElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sliceNameElement {
-    if (_value.sliceNameElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sliceNameElement!, (value) {
-      return _then(_value.copyWith(sliceNameElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get labelElement {
-    if (_value.labelElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.labelElement!, (value) {
-      return _then(_value.copyWith(labelElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $ElementDefinitionSlicingCopyWith<$Res>? get slicing {
     if (_value.slicing == null) {
       return null;
@@ -3336,78 +3282,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
 
     return $ElementDefinitionSlicingCopyWith<$Res>(_value.slicing!, (value) {
       return _then(_value.copyWith(slicing: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get shortElement {
-    if (_value.shortElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.shortElement!, (value) {
-      return _then(_value.copyWith(shortElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get definitionElement {
-    if (_value.definitionElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.definitionElement!, (value) {
-      return _then(_value.copyWith(definitionElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get commentElement {
-    if (_value.commentElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.commentElement!, (value) {
-      return _then(_value.copyWith(commentElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get requirementsElement {
-    if (_value.requirementsElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.requirementsElement!, (value) {
-      return _then(_value.copyWith(requirementsElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get minElement {
-    if (_value.minElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.minElement!, (value) {
-      return _then(_value.copyWith(minElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get maxElement {
-    if (_value.maxElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.maxElement!, (value) {
-      return _then(_value.copyWith(maxElement: value) as $Val);
     });
   }
 
@@ -3425,240 +3299,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get contentReferenceElement {
-    if (_value.contentReferenceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.contentReferenceElement!, (value) {
-      return _then(_value.copyWith(contentReferenceElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueBooleanElement {
-    if (_value.defaultValueBooleanElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueBooleanElement!, (value) {
-      return _then(_value.copyWith(defaultValueBooleanElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueIntegerElement {
-    if (_value.defaultValueIntegerElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueIntegerElement!, (value) {
-      return _then(_value.copyWith(defaultValueIntegerElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueDecimalElement {
-    if (_value.defaultValueDecimalElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueDecimalElement!, (value) {
-      return _then(_value.copyWith(defaultValueDecimalElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueBase64BinaryElement {
-    if (_value.defaultValueBase64BinaryElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueBase64BinaryElement!,
-        (value) {
-      return _then(
-          _value.copyWith(defaultValueBase64BinaryElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueInstantElement {
-    if (_value.defaultValueInstantElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueInstantElement!, (value) {
-      return _then(_value.copyWith(defaultValueInstantElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueStringElement {
-    if (_value.defaultValueStringElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueStringElement!, (value) {
-      return _then(_value.copyWith(defaultValueStringElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueUriElement {
-    if (_value.defaultValueUriElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueUriElement!, (value) {
-      return _then(_value.copyWith(defaultValueUriElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueDateElement {
-    if (_value.defaultValueDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueDateElement!, (value) {
-      return _then(_value.copyWith(defaultValueDateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueDateTimeElement {
-    if (_value.defaultValueDateTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueDateTimeElement!, (value) {
-      return _then(_value.copyWith(defaultValueDateTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueTimeElement {
-    if (_value.defaultValueTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueTimeElement!, (value) {
-      return _then(_value.copyWith(defaultValueTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueCodeElement {
-    if (_value.defaultValueCodeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueCodeElement!, (value) {
-      return _then(_value.copyWith(defaultValueCodeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueOidElement {
-    if (_value.defaultValueOidElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueOidElement!, (value) {
-      return _then(_value.copyWith(defaultValueOidElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueUuidElement {
-    if (_value.defaultValueUuidElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueUuidElement!, (value) {
-      return _then(_value.copyWith(defaultValueUuidElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueIdElement {
-    if (_value.defaultValueIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueIdElement!, (value) {
-      return _then(_value.copyWith(defaultValueIdElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueUnsignedIntElement {
-    if (_value.defaultValueUnsignedIntElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueUnsignedIntElement!,
-        (value) {
-      return _then(
-          _value.copyWith(defaultValueUnsignedIntElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValuePositiveIntElement {
-    if (_value.defaultValuePositiveIntElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValuePositiveIntElement!,
-        (value) {
-      return _then(
-          _value.copyWith(defaultValuePositiveIntElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueMarkdownElement {
-    if (_value.defaultValueMarkdownElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueMarkdownElement!, (value) {
-      return _then(_value.copyWith(defaultValueMarkdownElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get defaultValueElement {
-    if (_value.defaultValueElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.defaultValueElement!, (value) {
-      return _then(_value.copyWith(defaultValueElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $FhirExtensionCopyWith<$Res>? get defaultValueExtension {
     if (_value.defaultValueExtension == null) {
       return null;
@@ -3666,19 +3306,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
 
     return $FhirExtensionCopyWith<$Res>(_value.defaultValueExtension!, (value) {
       return _then(_value.copyWith(defaultValueExtension: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $BackboneElementCopyWith<$Res>? get defaultValueBackboneElement {
-    if (_value.defaultValueBackboneElement == null) {
-      return null;
-    }
-
-    return $BackboneElementCopyWith<$Res>(_value.defaultValueBackboneElement!,
-        (value) {
-      return _then(_value.copyWith(defaultValueBackboneElement: value) as $Val);
     });
   }
 
@@ -4092,246 +3719,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get meaningWhenMissingElement {
-    if (_value.meaningWhenMissingElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.meaningWhenMissingElement!, (value) {
-      return _then(_value.copyWith(meaningWhenMissingElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get orderMeaningElement {
-    if (_value.orderMeaningElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.orderMeaningElement!, (value) {
-      return _then(_value.copyWith(orderMeaningElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedBooleanElement {
-    if (_value.fixedBooleanElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedBooleanElement!, (value) {
-      return _then(_value.copyWith(fixedBooleanElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedIntegerElement {
-    if (_value.fixedIntegerElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedIntegerElement!, (value) {
-      return _then(_value.copyWith(fixedIntegerElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedDecimalElement {
-    if (_value.fixedDecimalElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedDecimalElement!, (value) {
-      return _then(_value.copyWith(fixedDecimalElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedBase64BinaryElement {
-    if (_value.fixedBase64BinaryElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedBase64BinaryElement!, (value) {
-      return _then(_value.copyWith(fixedBase64BinaryElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedInstantElement {
-    if (_value.fixedInstantElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedInstantElement!, (value) {
-      return _then(_value.copyWith(fixedInstantElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedStringElement {
-    if (_value.fixedStringElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedStringElement!, (value) {
-      return _then(_value.copyWith(fixedStringElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedUriElement {
-    if (_value.fixedUriElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedUriElement!, (value) {
-      return _then(_value.copyWith(fixedUriElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedDateElement {
-    if (_value.fixedDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedDateElement!, (value) {
-      return _then(_value.copyWith(fixedDateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedDateTimeElement {
-    if (_value.fixedDateTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedDateTimeElement!, (value) {
-      return _then(_value.copyWith(fixedDateTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedTimeElement {
-    if (_value.fixedTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedTimeElement!, (value) {
-      return _then(_value.copyWith(fixedTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedCodeElement {
-    if (_value.fixedCodeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedCodeElement!, (value) {
-      return _then(_value.copyWith(fixedCodeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedOidElement {
-    if (_value.fixedOidElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedOidElement!, (value) {
-      return _then(_value.copyWith(fixedOidElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedUuidElement {
-    if (_value.fixedUuidElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedUuidElement!, (value) {
-      return _then(_value.copyWith(fixedUuidElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedIdElement {
-    if (_value.fixedIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedIdElement!, (value) {
-      return _then(_value.copyWith(fixedIdElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedUnsignedIntElement {
-    if (_value.fixedUnsignedIntElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedUnsignedIntElement!, (value) {
-      return _then(_value.copyWith(fixedUnsignedIntElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedPositiveIntElement {
-    if (_value.fixedPositiveIntElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedPositiveIntElement!, (value) {
-      return _then(_value.copyWith(fixedPositiveIntElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedMarkdownElement {
-    if (_value.fixedMarkdownElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedMarkdownElement!, (value) {
-      return _then(_value.copyWith(fixedMarkdownElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get fixedElement {
-    if (_value.fixedElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.fixedElement!, (value) {
-      return _then(_value.copyWith(fixedElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $FhirExtensionCopyWith<$Res>? get fixedExtension {
     if (_value.fixedExtension == null) {
       return null;
@@ -4339,19 +3726,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
 
     return $FhirExtensionCopyWith<$Res>(_value.fixedExtension!, (value) {
       return _then(_value.copyWith(fixedExtension: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $BackboneElementCopyWith<$Res>? get fixedBackboneElement {
-    if (_value.fixedBackboneElement == null) {
-      return null;
-    }
-
-    return $BackboneElementCopyWith<$Res>(_value.fixedBackboneElement!,
-        (value) {
-      return _then(_value.copyWith(fixedBackboneElement: value) as $Val);
     });
   }
 
@@ -4759,222 +4133,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternBooleanElement {
-    if (_value.patternBooleanElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternBooleanElement!, (value) {
-      return _then(_value.copyWith(patternBooleanElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternIntegerElement {
-    if (_value.patternIntegerElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternIntegerElement!, (value) {
-      return _then(_value.copyWith(patternIntegerElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternDecimalElement {
-    if (_value.patternDecimalElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternDecimalElement!, (value) {
-      return _then(_value.copyWith(patternDecimalElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternBase64BinaryElement {
-    if (_value.patternBase64BinaryElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternBase64BinaryElement!, (value) {
-      return _then(_value.copyWith(patternBase64BinaryElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternInstantElement {
-    if (_value.patternInstantElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternInstantElement!, (value) {
-      return _then(_value.copyWith(patternInstantElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternStringElement {
-    if (_value.patternStringElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternStringElement!, (value) {
-      return _then(_value.copyWith(patternStringElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternUriElement {
-    if (_value.patternUriElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternUriElement!, (value) {
-      return _then(_value.copyWith(patternUriElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternDateElement {
-    if (_value.patternDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternDateElement!, (value) {
-      return _then(_value.copyWith(patternDateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternDateTimeElement {
-    if (_value.patternDateTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternDateTimeElement!, (value) {
-      return _then(_value.copyWith(patternDateTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternTimeElement {
-    if (_value.patternTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternTimeElement!, (value) {
-      return _then(_value.copyWith(patternTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternCodeElement {
-    if (_value.patternCodeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternCodeElement!, (value) {
-      return _then(_value.copyWith(patternCodeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternOidElement {
-    if (_value.patternOidElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternOidElement!, (value) {
-      return _then(_value.copyWith(patternOidElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternUuidElement {
-    if (_value.patternUuidElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternUuidElement!, (value) {
-      return _then(_value.copyWith(patternUuidElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternIdElement {
-    if (_value.patternIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternIdElement!, (value) {
-      return _then(_value.copyWith(patternIdElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternUnsignedIntElement {
-    if (_value.patternUnsignedIntElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternUnsignedIntElement!, (value) {
-      return _then(_value.copyWith(patternUnsignedIntElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternPositiveIntElement {
-    if (_value.patternPositiveIntElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternPositiveIntElement!, (value) {
-      return _then(_value.copyWith(patternPositiveIntElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternMarkdownElement {
-    if (_value.patternMarkdownElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternMarkdownElement!, (value) {
-      return _then(_value.copyWith(patternMarkdownElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patternElement {
-    if (_value.patternElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patternElement!, (value) {
-      return _then(_value.copyWith(patternElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $FhirExtensionCopyWith<$Res>? get patternExtension {
     if (_value.patternExtension == null) {
       return null;
@@ -4982,19 +4140,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
 
     return $FhirExtensionCopyWith<$Res>(_value.patternExtension!, (value) {
       return _then(_value.copyWith(patternExtension: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $BackboneElementCopyWith<$Res>? get patternBackboneElement {
-    if (_value.patternBackboneElement == null) {
-      return null;
-    }
-
-    return $BackboneElementCopyWith<$Res>(_value.patternBackboneElement!,
-        (value) {
-      return _then(_value.copyWith(patternBackboneElement: value) as $Val);
     });
   }
 
@@ -5402,102 +4547,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get minValueDateElement {
-    if (_value.minValueDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.minValueDateElement!, (value) {
-      return _then(_value.copyWith(minValueDateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get minValueDateTimeElement {
-    if (_value.minValueDateTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.minValueDateTimeElement!, (value) {
-      return _then(_value.copyWith(minValueDateTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get minValueInstantElement {
-    if (_value.minValueInstantElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.minValueInstantElement!, (value) {
-      return _then(_value.copyWith(minValueInstantElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get minValueTimeElement {
-    if (_value.minValueTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.minValueTimeElement!, (value) {
-      return _then(_value.copyWith(minValueTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get minValueDecimalElement {
-    if (_value.minValueDecimalElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.minValueDecimalElement!, (value) {
-      return _then(_value.copyWith(minValueDecimalElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get minValueIntegerElement {
-    if (_value.minValueIntegerElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.minValueIntegerElement!, (value) {
-      return _then(_value.copyWith(minValueIntegerElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get minValuePositiveIntElement {
-    if (_value.minValuePositiveIntElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.minValuePositiveIntElement!, (value) {
-      return _then(_value.copyWith(minValuePositiveIntElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get minValueUnsignedIntElement {
-    if (_value.minValueUnsignedIntElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.minValueUnsignedIntElement!, (value) {
-      return _then(_value.copyWith(minValueUnsignedIntElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $QuantityCopyWith<$Res>? get minValueQuantity {
     if (_value.minValueQuantity == null) {
       return null;
@@ -5510,102 +4559,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get maxValueDateElement {
-    if (_value.maxValueDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.maxValueDateElement!, (value) {
-      return _then(_value.copyWith(maxValueDateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get maxValueDateTimeElement {
-    if (_value.maxValueDateTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.maxValueDateTimeElement!, (value) {
-      return _then(_value.copyWith(maxValueDateTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get maxValueInstantElement {
-    if (_value.maxValueInstantElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.maxValueInstantElement!, (value) {
-      return _then(_value.copyWith(maxValueInstantElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get maxValueTimeElement {
-    if (_value.maxValueTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.maxValueTimeElement!, (value) {
-      return _then(_value.copyWith(maxValueTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get maxValueDecimalElement {
-    if (_value.maxValueDecimalElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.maxValueDecimalElement!, (value) {
-      return _then(_value.copyWith(maxValueDecimalElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get maxValueIntegerElement {
-    if (_value.maxValueIntegerElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.maxValueIntegerElement!, (value) {
-      return _then(_value.copyWith(maxValueIntegerElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get maxValuePositiveIntElement {
-    if (_value.maxValuePositiveIntElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.maxValuePositiveIntElement!, (value) {
-      return _then(_value.copyWith(maxValuePositiveIntElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get maxValueUnsignedIntElement {
-    if (_value.maxValueUnsignedIntElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.maxValueUnsignedIntElement!, (value) {
-      return _then(_value.copyWith(maxValueUnsignedIntElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $QuantityCopyWith<$Res>? get maxValueQuantity {
     if (_value.maxValueQuantity == null) {
       return null;
@@ -5613,54 +4566,6 @@ class _$ElementDefinitionCopyWithImpl<$Res, $Val extends ElementDefinition>
 
     return $QuantityCopyWith<$Res>(_value.maxValueQuantity!, (value) {
       return _then(_value.copyWith(maxValueQuantity: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get maxLengthElement {
-    if (_value.maxLengthElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.maxLengthElement!, (value) {
-      return _then(_value.copyWith(maxLengthElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get mustSupportElement {
-    if (_value.mustSupportElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.mustSupportElement!, (value) {
-      return _then(_value.copyWith(mustSupportElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get isModifierElement {
-    if (_value.isModifierElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.isModifierElement!, (value) {
-      return _then(_value.copyWith(isModifierElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get isSummaryElement {
-    if (_value.isSummaryElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.isSummaryElement!, (value) {
-      return _then(_value.copyWith(isSummaryElement: value) as $Val);
     });
   }
 
@@ -5761,7 +4666,6 @@ abstract class _$$ElementDefinitionImplCopyWith<$Res>
       Element? defaultValueMarkdownElement,
       Element? defaultValueElement,
       FhirExtension? defaultValueExtension,
-      BackboneElement? defaultValueBackboneElement,
       Narrative? defaultValueNarrative,
       Annotation? defaultValueAnnotation,
       Attachment? defaultValueAttachment,
@@ -5835,7 +4739,6 @@ abstract class _$$ElementDefinitionImplCopyWith<$Res>
       @JsonKey(name: '_fixedMarkdown') Element? fixedMarkdownElement,
       Element? fixedElement,
       FhirExtension? fixedExtension,
-      BackboneElement? fixedBackboneElement,
       Narrative? fixedNarrative,
       Annotation? fixedAnnotation,
       Attachment? fixedAttachment,
@@ -5906,7 +4809,6 @@ abstract class _$$ElementDefinitionImplCopyWith<$Res>
       @JsonKey(name: '_patternMarkdown') Element? patternMarkdownElement,
       Element? patternElement,
       FhirExtension? patternExtension,
-      BackboneElement? patternBackboneElement,
       Narrative? patternNarrative,
       Annotation? patternAnnotation,
       Attachment? patternAttachment,
@@ -5994,69 +4896,11 @@ abstract class _$$ElementDefinitionImplCopyWith<$Res>
       List<ElementDefinitionMapping>? mapping});
 
   @override
-  $ElementCopyWith<$Res>? get pathElement;
-  @override
-  $ElementCopyWith<$Res>? get sliceNameElement;
-  @override
-  $ElementCopyWith<$Res>? get labelElement;
-  @override
   $ElementDefinitionSlicingCopyWith<$Res>? get slicing;
-  @override
-  $ElementCopyWith<$Res>? get shortElement;
-  @override
-  $ElementCopyWith<$Res>? get definitionElement;
-  @override
-  $ElementCopyWith<$Res>? get commentElement;
-  @override
-  $ElementCopyWith<$Res>? get requirementsElement;
-  @override
-  $ElementCopyWith<$Res>? get minElement;
-  @override
-  $ElementCopyWith<$Res>? get maxElement;
   @override
   $ElementDefinitionBaseCopyWith<$Res>? get base;
   @override
-  $ElementCopyWith<$Res>? get contentReferenceElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueBooleanElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueIntegerElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueDecimalElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueBase64BinaryElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueInstantElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueStringElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueUriElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueDateElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueDateTimeElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueTimeElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueCodeElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueOidElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueUuidElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueIdElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueUnsignedIntElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValuePositiveIntElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueMarkdownElement;
-  @override
-  $ElementCopyWith<$Res>? get defaultValueElement;
-  @override
   $FhirExtensionCopyWith<$Res>? get defaultValueExtension;
-  @override
-  $BackboneElementCopyWith<$Res>? get defaultValueBackboneElement;
   @override
   $NarrativeCopyWith<$Res>? get defaultValueNarrative;
   @override
@@ -6124,49 +4968,7 @@ abstract class _$$ElementDefinitionImplCopyWith<$Res>
   @override
   $TriggerDefinitionCopyWith<$Res>? get defaultValueTriggerDefinition;
   @override
-  $ElementCopyWith<$Res>? get meaningWhenMissingElement;
-  @override
-  $ElementCopyWith<$Res>? get orderMeaningElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedBooleanElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedIntegerElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedDecimalElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedBase64BinaryElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedInstantElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedStringElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedUriElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedDateElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedDateTimeElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedTimeElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedCodeElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedOidElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedUuidElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedIdElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedUnsignedIntElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedPositiveIntElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedMarkdownElement;
-  @override
-  $ElementCopyWith<$Res>? get fixedElement;
-  @override
   $FhirExtensionCopyWith<$Res>? get fixedExtension;
-  @override
-  $BackboneElementCopyWith<$Res>? get fixedBackboneElement;
   @override
   $NarrativeCopyWith<$Res>? get fixedNarrative;
   @override
@@ -6234,45 +5036,7 @@ abstract class _$$ElementDefinitionImplCopyWith<$Res>
   @override
   $TriggerDefinitionCopyWith<$Res>? get fixedTriggerDefinition;
   @override
-  $ElementCopyWith<$Res>? get patternBooleanElement;
-  @override
-  $ElementCopyWith<$Res>? get patternIntegerElement;
-  @override
-  $ElementCopyWith<$Res>? get patternDecimalElement;
-  @override
-  $ElementCopyWith<$Res>? get patternBase64BinaryElement;
-  @override
-  $ElementCopyWith<$Res>? get patternInstantElement;
-  @override
-  $ElementCopyWith<$Res>? get patternStringElement;
-  @override
-  $ElementCopyWith<$Res>? get patternUriElement;
-  @override
-  $ElementCopyWith<$Res>? get patternDateElement;
-  @override
-  $ElementCopyWith<$Res>? get patternDateTimeElement;
-  @override
-  $ElementCopyWith<$Res>? get patternTimeElement;
-  @override
-  $ElementCopyWith<$Res>? get patternCodeElement;
-  @override
-  $ElementCopyWith<$Res>? get patternOidElement;
-  @override
-  $ElementCopyWith<$Res>? get patternUuidElement;
-  @override
-  $ElementCopyWith<$Res>? get patternIdElement;
-  @override
-  $ElementCopyWith<$Res>? get patternUnsignedIntElement;
-  @override
-  $ElementCopyWith<$Res>? get patternPositiveIntElement;
-  @override
-  $ElementCopyWith<$Res>? get patternMarkdownElement;
-  @override
-  $ElementCopyWith<$Res>? get patternElement;
-  @override
   $FhirExtensionCopyWith<$Res>? get patternExtension;
-  @override
-  $BackboneElementCopyWith<$Res>? get patternBackboneElement;
   @override
   $NarrativeCopyWith<$Res>? get patternNarrative;
   @override
@@ -6340,49 +5104,9 @@ abstract class _$$ElementDefinitionImplCopyWith<$Res>
   @override
   $TriggerDefinitionCopyWith<$Res>? get patternTriggerDefinition;
   @override
-  $ElementCopyWith<$Res>? get minValueDateElement;
-  @override
-  $ElementCopyWith<$Res>? get minValueDateTimeElement;
-  @override
-  $ElementCopyWith<$Res>? get minValueInstantElement;
-  @override
-  $ElementCopyWith<$Res>? get minValueTimeElement;
-  @override
-  $ElementCopyWith<$Res>? get minValueDecimalElement;
-  @override
-  $ElementCopyWith<$Res>? get minValueIntegerElement;
-  @override
-  $ElementCopyWith<$Res>? get minValuePositiveIntElement;
-  @override
-  $ElementCopyWith<$Res>? get minValueUnsignedIntElement;
-  @override
   $QuantityCopyWith<$Res>? get minValueQuantity;
   @override
-  $ElementCopyWith<$Res>? get maxValueDateElement;
-  @override
-  $ElementCopyWith<$Res>? get maxValueDateTimeElement;
-  @override
-  $ElementCopyWith<$Res>? get maxValueInstantElement;
-  @override
-  $ElementCopyWith<$Res>? get maxValueTimeElement;
-  @override
-  $ElementCopyWith<$Res>? get maxValueDecimalElement;
-  @override
-  $ElementCopyWith<$Res>? get maxValueIntegerElement;
-  @override
-  $ElementCopyWith<$Res>? get maxValuePositiveIntElement;
-  @override
-  $ElementCopyWith<$Res>? get maxValueUnsignedIntElement;
-  @override
   $QuantityCopyWith<$Res>? get maxValueQuantity;
-  @override
-  $ElementCopyWith<$Res>? get maxLengthElement;
-  @override
-  $ElementCopyWith<$Res>? get mustSupportElement;
-  @override
-  $ElementCopyWith<$Res>? get isModifierElement;
-  @override
-  $ElementCopyWith<$Res>? get isSummaryElement;
   @override
   $ElementDefinitionBindingCopyWith<$Res>? get binding;
 }
@@ -6464,7 +5188,6 @@ class __$$ElementDefinitionImplCopyWithImpl<$Res>
     Object? defaultValueMarkdownElement = freezed,
     Object? defaultValueElement = freezed,
     Object? defaultValueExtension = freezed,
-    Object? defaultValueBackboneElement = freezed,
     Object? defaultValueNarrative = freezed,
     Object? defaultValueAnnotation = freezed,
     Object? defaultValueAttachment = freezed,
@@ -6538,7 +5261,6 @@ class __$$ElementDefinitionImplCopyWithImpl<$Res>
     Object? fixedMarkdownElement = freezed,
     Object? fixedElement = freezed,
     Object? fixedExtension = freezed,
-    Object? fixedBackboneElement = freezed,
     Object? fixedNarrative = freezed,
     Object? fixedAnnotation = freezed,
     Object? fixedAttachment = freezed,
@@ -6608,7 +5330,6 @@ class __$$ElementDefinitionImplCopyWithImpl<$Res>
     Object? patternMarkdownElement = freezed,
     Object? patternElement = freezed,
     Object? patternExtension = freezed,
-    Object? patternBackboneElement = freezed,
     Object? patternNarrative = freezed,
     Object? patternAnnotation = freezed,
     Object? patternAttachment = freezed,
@@ -6957,10 +5678,6 @@ class __$$ElementDefinitionImplCopyWithImpl<$Res>
           ? _value.defaultValueExtension
           : defaultValueExtension // ignore: cast_nullable_to_non_nullable
               as FhirExtension?,
-      defaultValueBackboneElement: freezed == defaultValueBackboneElement
-          ? _value.defaultValueBackboneElement
-          : defaultValueBackboneElement // ignore: cast_nullable_to_non_nullable
-              as BackboneElement?,
       defaultValueNarrative: freezed == defaultValueNarrative
           ? _value.defaultValueNarrative
           : defaultValueNarrative // ignore: cast_nullable_to_non_nullable
@@ -7254,10 +5971,6 @@ class __$$ElementDefinitionImplCopyWithImpl<$Res>
           ? _value.fixedExtension
           : fixedExtension // ignore: cast_nullable_to_non_nullable
               as FhirExtension?,
-      fixedBackboneElement: freezed == fixedBackboneElement
-          ? _value.fixedBackboneElement
-          : fixedBackboneElement // ignore: cast_nullable_to_non_nullable
-              as BackboneElement?,
       fixedNarrative: freezed == fixedNarrative
           ? _value.fixedNarrative
           : fixedNarrative // ignore: cast_nullable_to_non_nullable
@@ -7534,10 +6247,6 @@ class __$$ElementDefinitionImplCopyWithImpl<$Res>
           ? _value.patternExtension
           : patternExtension // ignore: cast_nullable_to_non_nullable
               as FhirExtension?,
-      patternBackboneElement: freezed == patternBackboneElement
-          ? _value.patternBackboneElement
-          : patternBackboneElement // ignore: cast_nullable_to_non_nullable
-              as BackboneElement?,
       patternNarrative: freezed == patternNarrative
           ? _value.patternNarrative
           : patternNarrative // ignore: cast_nullable_to_non_nullable
@@ -7940,7 +6649,6 @@ class _$ElementDefinitionImpl extends _ElementDefinition {
       @JsonKey(name: '_defaultValueMarkdown') this.defaultValueMarkdownElement,
       this.defaultValueElement,
       this.defaultValueExtension,
-      this.defaultValueBackboneElement,
       this.defaultValueNarrative,
       this.defaultValueAnnotation,
       this.defaultValueAttachment,
@@ -8014,7 +6722,6 @@ class _$ElementDefinitionImpl extends _ElementDefinition {
       @JsonKey(name: '_fixedMarkdown') this.fixedMarkdownElement,
       this.fixedElement,
       this.fixedExtension,
-      this.fixedBackboneElement,
       this.fixedNarrative,
       this.fixedAnnotation,
       this.fixedAttachment,
@@ -8084,7 +6791,6 @@ class _$ElementDefinitionImpl extends _ElementDefinition {
       @JsonKey(name: '_patternMarkdown') this.patternMarkdownElement,
       this.patternElement,
       this.patternExtension,
-      this.patternBackboneElement,
       this.patternNarrative,
       this.patternAnnotation,
       this.patternAttachment,
@@ -8403,8 +7109,6 @@ class _$ElementDefinitionImpl extends _ElementDefinition {
   @override
   final FhirExtension? defaultValueExtension;
   @override
-  final BackboneElement? defaultValueBackboneElement;
-  @override
   final Narrative? defaultValueNarrative;
   @override
   final Annotation? defaultValueAnnotation;
@@ -8570,8 +7274,6 @@ class _$ElementDefinitionImpl extends _ElementDefinition {
   @override
   final FhirExtension? fixedExtension;
   @override
-  final BackboneElement? fixedBackboneElement;
-  @override
   final Narrative? fixedNarrative;
   @override
   final Annotation? fixedAnnotation;
@@ -8726,8 +7428,6 @@ class _$ElementDefinitionImpl extends _ElementDefinition {
   final Element? patternElement;
   @override
   final FhirExtension? patternExtension;
-  @override
-  final BackboneElement? patternBackboneElement;
   @override
   final Narrative? patternNarrative;
   @override
@@ -8954,7 +7654,7 @@ class _$ElementDefinitionImpl extends _ElementDefinition {
 
   @override
   String toString() {
-    return 'ElementDefinition(id: $id, extension_: $extension_, path: $path, pathElement: $pathElement, representation: $representation, representationElement: $representationElement, sliceName: $sliceName, sliceNameElement: $sliceNameElement, label: $label, labelElement: $labelElement, code: $code, slicing: $slicing, short: $short, shortElement: $shortElement, definition: $definition, definitionElement: $definitionElement, comment: $comment, commentElement: $commentElement, requirements: $requirements, requirementsElement: $requirementsElement, alias: $alias, aliasElement: $aliasElement, min: $min, minElement: $minElement, max: $max, maxElement: $maxElement, base: $base, contentReference: $contentReference, contentReferenceElement: $contentReferenceElement, type: $type, defaultValueBoolean: $defaultValueBoolean, defaultValueBooleanElement: $defaultValueBooleanElement, defaultValueInteger: $defaultValueInteger, defaultValueIntegerElement: $defaultValueIntegerElement, defaultValueDecimal: $defaultValueDecimal, defaultValueDecimalElement: $defaultValueDecimalElement, defaultValueBase64Binary: $defaultValueBase64Binary, defaultValueBase64BinaryElement: $defaultValueBase64BinaryElement, defaultValueInstant: $defaultValueInstant, defaultValueInstantElement: $defaultValueInstantElement, defaultValueString: $defaultValueString, defaultValueStringElement: $defaultValueStringElement, defaultValueUri: $defaultValueUri, defaultValueUriElement: $defaultValueUriElement, defaultValueDate: $defaultValueDate, defaultValueDateElement: $defaultValueDateElement, defaultValueDateTime: $defaultValueDateTime, defaultValueDateTimeElement: $defaultValueDateTimeElement, defaultValueTime: $defaultValueTime, defaultValueTimeElement: $defaultValueTimeElement, defaultValueCode: $defaultValueCode, defaultValueCodeElement: $defaultValueCodeElement, defaultValueOid: $defaultValueOid, defaultValueOidElement: $defaultValueOidElement, defaultValueUuid: $defaultValueUuid, defaultValueUuidElement: $defaultValueUuidElement, defaultValueId: $defaultValueId, defaultValueIdElement: $defaultValueIdElement, defaultValueUnsignedInt: $defaultValueUnsignedInt, defaultValueUnsignedIntElement: $defaultValueUnsignedIntElement, defaultValuePositiveInt: $defaultValuePositiveInt, defaultValuePositiveIntElement: $defaultValuePositiveIntElement, defaultValueMarkdown: $defaultValueMarkdown, defaultValueMarkdownElement: $defaultValueMarkdownElement, defaultValueElement: $defaultValueElement, defaultValueExtension: $defaultValueExtension, defaultValueBackboneElement: $defaultValueBackboneElement, defaultValueNarrative: $defaultValueNarrative, defaultValueAnnotation: $defaultValueAnnotation, defaultValueAttachment: $defaultValueAttachment, defaultValueIdentifier: $defaultValueIdentifier, defaultValueCodeableConcept: $defaultValueCodeableConcept, defaultValueCoding: $defaultValueCoding, defaultValueQuantity: $defaultValueQuantity, defaultValueDuration: $defaultValueDuration, defaultValueSimpleQuantity: $defaultValueSimpleQuantity, defaultValueDistance: $defaultValueDistance, defaultValueCount: $defaultValueCount, defaultValueMoney: $defaultValueMoney, defaultValueAge: $defaultValueAge, defaultValueRange: $defaultValueRange, defaultValuePeriod: $defaultValuePeriod, defaultValueRatio: $defaultValueRatio, defaultValueReference: $defaultValueReference, defaultValueSampledData: $defaultValueSampledData, defaultValueSignature: $defaultValueSignature, defaultValueHumanName: $defaultValueHumanName, defaultValueAddress: $defaultValueAddress, defaultValueContactPoint: $defaultValueContactPoint, defaultValueTiming: $defaultValueTiming, defaultValueMeta: $defaultValueMeta, defaultValueElementDefinition: $defaultValueElementDefinition, defaultValueContactDetail: $defaultValueContactDetail, defaultValueContributor: $defaultValueContributor, defaultValueDosage: $defaultValueDosage, defaultValueRelatedArtifact: $defaultValueRelatedArtifact, defaultValueUsageContext: $defaultValueUsageContext, defaultValueDataRequirement: $defaultValueDataRequirement, defaultValueParameterDefinition: $defaultValueParameterDefinition, defaultValueTriggerDefinition: $defaultValueTriggerDefinition, meaningWhenMissing: $meaningWhenMissing, meaningWhenMissingElement: $meaningWhenMissingElement, orderMeaning: $orderMeaning, orderMeaningElement: $orderMeaningElement, fixedBoolean: $fixedBoolean, fixedBooleanElement: $fixedBooleanElement, fixedInteger: $fixedInteger, fixedIntegerElement: $fixedIntegerElement, fixedDecimal: $fixedDecimal, fixedDecimalElement: $fixedDecimalElement, fixedBase64Binary: $fixedBase64Binary, fixedBase64BinaryElement: $fixedBase64BinaryElement, fixedInstant: $fixedInstant, fixedInstantElement: $fixedInstantElement, fixedString: $fixedString, fixedStringElement: $fixedStringElement, fixedUri: $fixedUri, fixedUriElement: $fixedUriElement, fixedDate: $fixedDate, fixedDateElement: $fixedDateElement, fixedDateTime: $fixedDateTime, fixedDateTimeElement: $fixedDateTimeElement, fixedTime: $fixedTime, fixedTimeElement: $fixedTimeElement, fixedCode: $fixedCode, fixedCodeElement: $fixedCodeElement, fixedOid: $fixedOid, fixedOidElement: $fixedOidElement, fixedUuid: $fixedUuid, fixedUuidElement: $fixedUuidElement, fixedId: $fixedId, fixedIdElement: $fixedIdElement, fixedUnsignedInt: $fixedUnsignedInt, fixedUnsignedIntElement: $fixedUnsignedIntElement, fixedPositiveInt: $fixedPositiveInt, fixedPositiveIntElement: $fixedPositiveIntElement, fixedMarkdown: $fixedMarkdown, fixedMarkdownElement: $fixedMarkdownElement, fixedElement: $fixedElement, fixedExtension: $fixedExtension, fixedBackboneElement: $fixedBackboneElement, fixedNarrative: $fixedNarrative, fixedAnnotation: $fixedAnnotation, fixedAttachment: $fixedAttachment, fixedIdentifier: $fixedIdentifier, fixedCodeableConcept: $fixedCodeableConcept, fixedCoding: $fixedCoding, fixedQuantity: $fixedQuantity, fixedDuration: $fixedDuration, fixedSimpleQuantity: $fixedSimpleQuantity, fixedDistance: $fixedDistance, fixedCount: $fixedCount, fixedMoney: $fixedMoney, fixedAge: $fixedAge, fixedRange: $fixedRange, fixedPeriod: $fixedPeriod, fixedRatio: $fixedRatio, fixedReference: $fixedReference, fixedSampledData: $fixedSampledData, fixedSignature: $fixedSignature, fixedHumanName: $fixedHumanName, fixedAddress: $fixedAddress, fixedContactPoint: $fixedContactPoint, fixedTiming: $fixedTiming, fixedMeta: $fixedMeta, fixedElementDefinition: $fixedElementDefinition, fixedContactDetail: $fixedContactDetail, fixedContributor: $fixedContributor, fixedDosage: $fixedDosage, fixedRelatedArtifact: $fixedRelatedArtifact, fixedUsageContext: $fixedUsageContext, fixedDataRequirement: $fixedDataRequirement, fixedParameterDefinition: $fixedParameterDefinition, fixedTriggerDefinition: $fixedTriggerDefinition, patternBoolean: $patternBoolean, patternBooleanElement: $patternBooleanElement, patternInteger: $patternInteger, patternIntegerElement: $patternIntegerElement, patternDecimal: $patternDecimal, patternDecimalElement: $patternDecimalElement, patternBase64Binary: $patternBase64Binary, patternBase64BinaryElement: $patternBase64BinaryElement, patternInstant: $patternInstant, patternInstantElement: $patternInstantElement, patternString: $patternString, patternStringElement: $patternStringElement, patternUri: $patternUri, patternUriElement: $patternUriElement, patternDate: $patternDate, patternDateElement: $patternDateElement, patternDateTime: $patternDateTime, patternDateTimeElement: $patternDateTimeElement, patternTime: $patternTime, patternTimeElement: $patternTimeElement, patternCode: $patternCode, patternCodeElement: $patternCodeElement, patternOid: $patternOid, patternOidElement: $patternOidElement, patternUuid: $patternUuid, patternUuidElement: $patternUuidElement, patternId: $patternId, patternIdElement: $patternIdElement, patternUnsignedInt: $patternUnsignedInt, patternUnsignedIntElement: $patternUnsignedIntElement, patternPositiveInt: $patternPositiveInt, patternPositiveIntElement: $patternPositiveIntElement, patternMarkdown: $patternMarkdown, patternMarkdownElement: $patternMarkdownElement, patternElement: $patternElement, patternExtension: $patternExtension, patternBackboneElement: $patternBackboneElement, patternNarrative: $patternNarrative, patternAnnotation: $patternAnnotation, patternAttachment: $patternAttachment, patternIdentifier: $patternIdentifier, patternCodeableConcept: $patternCodeableConcept, patternCoding: $patternCoding, patternQuantity: $patternQuantity, patternDuration: $patternDuration, patternSimpleQuantity: $patternSimpleQuantity, patternDistance: $patternDistance, patternCount: $patternCount, patternMoney: $patternMoney, patternAge: $patternAge, patternRange: $patternRange, patternPeriod: $patternPeriod, patternRatio: $patternRatio, patternReference: $patternReference, patternSampledData: $patternSampledData, patternSignature: $patternSignature, patternHumanName: $patternHumanName, patternAddress: $patternAddress, patternContactPoint: $patternContactPoint, patternTiming: $patternTiming, patternMeta: $patternMeta, patternElementDefinition: $patternElementDefinition, patternContactDetail: $patternContactDetail, patternContributor: $patternContributor, patternDosage: $patternDosage, patternRelatedArtifact: $patternRelatedArtifact, patternUsageContext: $patternUsageContext, patternDataRequirement: $patternDataRequirement, patternParameterDefinition: $patternParameterDefinition, patternTriggerDefinition: $patternTriggerDefinition, example: $example, minValueDate: $minValueDate, minValueDateElement: $minValueDateElement, minValueDateTime: $minValueDateTime, minValueDateTimeElement: $minValueDateTimeElement, minValueInstant: $minValueInstant, minValueInstantElement: $minValueInstantElement, minValueTime: $minValueTime, minValueTimeElement: $minValueTimeElement, minValueDecimal: $minValueDecimal, minValueDecimalElement: $minValueDecimalElement, minValueInteger: $minValueInteger, minValueIntegerElement: $minValueIntegerElement, minValuePositiveInt: $minValuePositiveInt, minValuePositiveIntElement: $minValuePositiveIntElement, minValueUnsignedInt: $minValueUnsignedInt, minValueUnsignedIntElement: $minValueUnsignedIntElement, minValueQuantity: $minValueQuantity, maxValueDate: $maxValueDate, maxValueDateElement: $maxValueDateElement, maxValueDateTime: $maxValueDateTime, maxValueDateTimeElement: $maxValueDateTimeElement, maxValueInstant: $maxValueInstant, maxValueInstantElement: $maxValueInstantElement, maxValueTime: $maxValueTime, maxValueTimeElement: $maxValueTimeElement, maxValueDecimal: $maxValueDecimal, maxValueDecimalElement: $maxValueDecimalElement, maxValueInteger: $maxValueInteger, maxValueIntegerElement: $maxValueIntegerElement, maxValuePositiveInt: $maxValuePositiveInt, maxValuePositiveIntElement: $maxValuePositiveIntElement, maxValueUnsignedInt: $maxValueUnsignedInt, maxValueUnsignedIntElement: $maxValueUnsignedIntElement, maxValueQuantity: $maxValueQuantity, maxLength: $maxLength, maxLengthElement: $maxLengthElement, condition: $condition, conditionElement: $conditionElement, constraint: $constraint, mustSupport: $mustSupport, mustSupportElement: $mustSupportElement, isModifier: $isModifier, isModifierElement: $isModifierElement, isSummary: $isSummary, isSummaryElement: $isSummaryElement, binding: $binding, mapping: $mapping)';
+    return 'ElementDefinition(id: $id, extension_: $extension_, path: $path, pathElement: $pathElement, representation: $representation, representationElement: $representationElement, sliceName: $sliceName, sliceNameElement: $sliceNameElement, label: $label, labelElement: $labelElement, code: $code, slicing: $slicing, short: $short, shortElement: $shortElement, definition: $definition, definitionElement: $definitionElement, comment: $comment, commentElement: $commentElement, requirements: $requirements, requirementsElement: $requirementsElement, alias: $alias, aliasElement: $aliasElement, min: $min, minElement: $minElement, max: $max, maxElement: $maxElement, base: $base, contentReference: $contentReference, contentReferenceElement: $contentReferenceElement, type: $type, defaultValueBoolean: $defaultValueBoolean, defaultValueBooleanElement: $defaultValueBooleanElement, defaultValueInteger: $defaultValueInteger, defaultValueIntegerElement: $defaultValueIntegerElement, defaultValueDecimal: $defaultValueDecimal, defaultValueDecimalElement: $defaultValueDecimalElement, defaultValueBase64Binary: $defaultValueBase64Binary, defaultValueBase64BinaryElement: $defaultValueBase64BinaryElement, defaultValueInstant: $defaultValueInstant, defaultValueInstantElement: $defaultValueInstantElement, defaultValueString: $defaultValueString, defaultValueStringElement: $defaultValueStringElement, defaultValueUri: $defaultValueUri, defaultValueUriElement: $defaultValueUriElement, defaultValueDate: $defaultValueDate, defaultValueDateElement: $defaultValueDateElement, defaultValueDateTime: $defaultValueDateTime, defaultValueDateTimeElement: $defaultValueDateTimeElement, defaultValueTime: $defaultValueTime, defaultValueTimeElement: $defaultValueTimeElement, defaultValueCode: $defaultValueCode, defaultValueCodeElement: $defaultValueCodeElement, defaultValueOid: $defaultValueOid, defaultValueOidElement: $defaultValueOidElement, defaultValueUuid: $defaultValueUuid, defaultValueUuidElement: $defaultValueUuidElement, defaultValueId: $defaultValueId, defaultValueIdElement: $defaultValueIdElement, defaultValueUnsignedInt: $defaultValueUnsignedInt, defaultValueUnsignedIntElement: $defaultValueUnsignedIntElement, defaultValuePositiveInt: $defaultValuePositiveInt, defaultValuePositiveIntElement: $defaultValuePositiveIntElement, defaultValueMarkdown: $defaultValueMarkdown, defaultValueMarkdownElement: $defaultValueMarkdownElement, defaultValueElement: $defaultValueElement, defaultValueExtension: $defaultValueExtension, defaultValueNarrative: $defaultValueNarrative, defaultValueAnnotation: $defaultValueAnnotation, defaultValueAttachment: $defaultValueAttachment, defaultValueIdentifier: $defaultValueIdentifier, defaultValueCodeableConcept: $defaultValueCodeableConcept, defaultValueCoding: $defaultValueCoding, defaultValueQuantity: $defaultValueQuantity, defaultValueDuration: $defaultValueDuration, defaultValueSimpleQuantity: $defaultValueSimpleQuantity, defaultValueDistance: $defaultValueDistance, defaultValueCount: $defaultValueCount, defaultValueMoney: $defaultValueMoney, defaultValueAge: $defaultValueAge, defaultValueRange: $defaultValueRange, defaultValuePeriod: $defaultValuePeriod, defaultValueRatio: $defaultValueRatio, defaultValueReference: $defaultValueReference, defaultValueSampledData: $defaultValueSampledData, defaultValueSignature: $defaultValueSignature, defaultValueHumanName: $defaultValueHumanName, defaultValueAddress: $defaultValueAddress, defaultValueContactPoint: $defaultValueContactPoint, defaultValueTiming: $defaultValueTiming, defaultValueMeta: $defaultValueMeta, defaultValueElementDefinition: $defaultValueElementDefinition, defaultValueContactDetail: $defaultValueContactDetail, defaultValueContributor: $defaultValueContributor, defaultValueDosage: $defaultValueDosage, defaultValueRelatedArtifact: $defaultValueRelatedArtifact, defaultValueUsageContext: $defaultValueUsageContext, defaultValueDataRequirement: $defaultValueDataRequirement, defaultValueParameterDefinition: $defaultValueParameterDefinition, defaultValueTriggerDefinition: $defaultValueTriggerDefinition, meaningWhenMissing: $meaningWhenMissing, meaningWhenMissingElement: $meaningWhenMissingElement, orderMeaning: $orderMeaning, orderMeaningElement: $orderMeaningElement, fixedBoolean: $fixedBoolean, fixedBooleanElement: $fixedBooleanElement, fixedInteger: $fixedInteger, fixedIntegerElement: $fixedIntegerElement, fixedDecimal: $fixedDecimal, fixedDecimalElement: $fixedDecimalElement, fixedBase64Binary: $fixedBase64Binary, fixedBase64BinaryElement: $fixedBase64BinaryElement, fixedInstant: $fixedInstant, fixedInstantElement: $fixedInstantElement, fixedString: $fixedString, fixedStringElement: $fixedStringElement, fixedUri: $fixedUri, fixedUriElement: $fixedUriElement, fixedDate: $fixedDate, fixedDateElement: $fixedDateElement, fixedDateTime: $fixedDateTime, fixedDateTimeElement: $fixedDateTimeElement, fixedTime: $fixedTime, fixedTimeElement: $fixedTimeElement, fixedCode: $fixedCode, fixedCodeElement: $fixedCodeElement, fixedOid: $fixedOid, fixedOidElement: $fixedOidElement, fixedUuid: $fixedUuid, fixedUuidElement: $fixedUuidElement, fixedId: $fixedId, fixedIdElement: $fixedIdElement, fixedUnsignedInt: $fixedUnsignedInt, fixedUnsignedIntElement: $fixedUnsignedIntElement, fixedPositiveInt: $fixedPositiveInt, fixedPositiveIntElement: $fixedPositiveIntElement, fixedMarkdown: $fixedMarkdown, fixedMarkdownElement: $fixedMarkdownElement, fixedElement: $fixedElement, fixedExtension: $fixedExtension, fixedNarrative: $fixedNarrative, fixedAnnotation: $fixedAnnotation, fixedAttachment: $fixedAttachment, fixedIdentifier: $fixedIdentifier, fixedCodeableConcept: $fixedCodeableConcept, fixedCoding: $fixedCoding, fixedQuantity: $fixedQuantity, fixedDuration: $fixedDuration, fixedSimpleQuantity: $fixedSimpleQuantity, fixedDistance: $fixedDistance, fixedCount: $fixedCount, fixedMoney: $fixedMoney, fixedAge: $fixedAge, fixedRange: $fixedRange, fixedPeriod: $fixedPeriod, fixedRatio: $fixedRatio, fixedReference: $fixedReference, fixedSampledData: $fixedSampledData, fixedSignature: $fixedSignature, fixedHumanName: $fixedHumanName, fixedAddress: $fixedAddress, fixedContactPoint: $fixedContactPoint, fixedTiming: $fixedTiming, fixedMeta: $fixedMeta, fixedElementDefinition: $fixedElementDefinition, fixedContactDetail: $fixedContactDetail, fixedContributor: $fixedContributor, fixedDosage: $fixedDosage, fixedRelatedArtifact: $fixedRelatedArtifact, fixedUsageContext: $fixedUsageContext, fixedDataRequirement: $fixedDataRequirement, fixedParameterDefinition: $fixedParameterDefinition, fixedTriggerDefinition: $fixedTriggerDefinition, patternBoolean: $patternBoolean, patternBooleanElement: $patternBooleanElement, patternInteger: $patternInteger, patternIntegerElement: $patternIntegerElement, patternDecimal: $patternDecimal, patternDecimalElement: $patternDecimalElement, patternBase64Binary: $patternBase64Binary, patternBase64BinaryElement: $patternBase64BinaryElement, patternInstant: $patternInstant, patternInstantElement: $patternInstantElement, patternString: $patternString, patternStringElement: $patternStringElement, patternUri: $patternUri, patternUriElement: $patternUriElement, patternDate: $patternDate, patternDateElement: $patternDateElement, patternDateTime: $patternDateTime, patternDateTimeElement: $patternDateTimeElement, patternTime: $patternTime, patternTimeElement: $patternTimeElement, patternCode: $patternCode, patternCodeElement: $patternCodeElement, patternOid: $patternOid, patternOidElement: $patternOidElement, patternUuid: $patternUuid, patternUuidElement: $patternUuidElement, patternId: $patternId, patternIdElement: $patternIdElement, patternUnsignedInt: $patternUnsignedInt, patternUnsignedIntElement: $patternUnsignedIntElement, patternPositiveInt: $patternPositiveInt, patternPositiveIntElement: $patternPositiveIntElement, patternMarkdown: $patternMarkdown, patternMarkdownElement: $patternMarkdownElement, patternElement: $patternElement, patternExtension: $patternExtension, patternNarrative: $patternNarrative, patternAnnotation: $patternAnnotation, patternAttachment: $patternAttachment, patternIdentifier: $patternIdentifier, patternCodeableConcept: $patternCodeableConcept, patternCoding: $patternCoding, patternQuantity: $patternQuantity, patternDuration: $patternDuration, patternSimpleQuantity: $patternSimpleQuantity, patternDistance: $patternDistance, patternCount: $patternCount, patternMoney: $patternMoney, patternAge: $patternAge, patternRange: $patternRange, patternPeriod: $patternPeriod, patternRatio: $patternRatio, patternReference: $patternReference, patternSampledData: $patternSampledData, patternSignature: $patternSignature, patternHumanName: $patternHumanName, patternAddress: $patternAddress, patternContactPoint: $patternContactPoint, patternTiming: $patternTiming, patternMeta: $patternMeta, patternElementDefinition: $patternElementDefinition, patternContactDetail: $patternContactDetail, patternContributor: $patternContributor, patternDosage: $patternDosage, patternRelatedArtifact: $patternRelatedArtifact, patternUsageContext: $patternUsageContext, patternDataRequirement: $patternDataRequirement, patternParameterDefinition: $patternParameterDefinition, patternTriggerDefinition: $patternTriggerDefinition, example: $example, minValueDate: $minValueDate, minValueDateElement: $minValueDateElement, minValueDateTime: $minValueDateTime, minValueDateTimeElement: $minValueDateTimeElement, minValueInstant: $minValueInstant, minValueInstantElement: $minValueInstantElement, minValueTime: $minValueTime, minValueTimeElement: $minValueTimeElement, minValueDecimal: $minValueDecimal, minValueDecimalElement: $minValueDecimalElement, minValueInteger: $minValueInteger, minValueIntegerElement: $minValueIntegerElement, minValuePositiveInt: $minValuePositiveInt, minValuePositiveIntElement: $minValuePositiveIntElement, minValueUnsignedInt: $minValueUnsignedInt, minValueUnsignedIntElement: $minValueUnsignedIntElement, minValueQuantity: $minValueQuantity, maxValueDate: $maxValueDate, maxValueDateElement: $maxValueDateElement, maxValueDateTime: $maxValueDateTime, maxValueDateTimeElement: $maxValueDateTimeElement, maxValueInstant: $maxValueInstant, maxValueInstantElement: $maxValueInstantElement, maxValueTime: $maxValueTime, maxValueTimeElement: $maxValueTimeElement, maxValueDecimal: $maxValueDecimal, maxValueDecimalElement: $maxValueDecimalElement, maxValueInteger: $maxValueInteger, maxValueIntegerElement: $maxValueIntegerElement, maxValuePositiveInt: $maxValuePositiveInt, maxValuePositiveIntElement: $maxValuePositiveIntElement, maxValueUnsignedInt: $maxValueUnsignedInt, maxValueUnsignedIntElement: $maxValueUnsignedIntElement, maxValueQuantity: $maxValueQuantity, maxLength: $maxLength, maxLengthElement: $maxLengthElement, condition: $condition, conditionElement: $conditionElement, constraint: $constraint, mustSupport: $mustSupport, mustSupportElement: $mustSupportElement, isModifier: $isModifier, isModifierElement: $isModifierElement, isSummary: $isSummary, isSummaryElement: $isSummaryElement, binding: $binding, mapping: $mapping)';
   }
 
   @override
@@ -9064,7 +7764,6 @@ class _$ElementDefinitionImpl extends _ElementDefinition {
             (identical(other.defaultValueMarkdownElement, defaultValueMarkdownElement) || other.defaultValueMarkdownElement == defaultValueMarkdownElement) &&
             (identical(other.defaultValueElement, defaultValueElement) || other.defaultValueElement == defaultValueElement) &&
             (identical(other.defaultValueExtension, defaultValueExtension) || other.defaultValueExtension == defaultValueExtension) &&
-            (identical(other.defaultValueBackboneElement, defaultValueBackboneElement) || other.defaultValueBackboneElement == defaultValueBackboneElement) &&
             (identical(other.defaultValueNarrative, defaultValueNarrative) || other.defaultValueNarrative == defaultValueNarrative) &&
             (identical(other.defaultValueAnnotation, defaultValueAnnotation) || other.defaultValueAnnotation == defaultValueAnnotation) &&
             (identical(other.defaultValueAttachment, defaultValueAttachment) || other.defaultValueAttachment == defaultValueAttachment) &&
@@ -9138,7 +7837,6 @@ class _$ElementDefinitionImpl extends _ElementDefinition {
             (identical(other.fixedMarkdownElement, fixedMarkdownElement) || other.fixedMarkdownElement == fixedMarkdownElement) &&
             (identical(other.fixedElement, fixedElement) || other.fixedElement == fixedElement) &&
             (identical(other.fixedExtension, fixedExtension) || other.fixedExtension == fixedExtension) &&
-            (identical(other.fixedBackboneElement, fixedBackboneElement) || other.fixedBackboneElement == fixedBackboneElement) &&
             (identical(other.fixedNarrative, fixedNarrative) || other.fixedNarrative == fixedNarrative) &&
             (identical(other.fixedAnnotation, fixedAnnotation) || other.fixedAnnotation == fixedAnnotation) &&
             (identical(other.fixedAttachment, fixedAttachment) || other.fixedAttachment == fixedAttachment) &&
@@ -9208,7 +7906,6 @@ class _$ElementDefinitionImpl extends _ElementDefinition {
             (identical(other.patternMarkdownElement, patternMarkdownElement) || other.patternMarkdownElement == patternMarkdownElement) &&
             (identical(other.patternElement, patternElement) || other.patternElement == patternElement) &&
             (identical(other.patternExtension, patternExtension) || other.patternExtension == patternExtension) &&
-            (identical(other.patternBackboneElement, patternBackboneElement) || other.patternBackboneElement == patternBackboneElement) &&
             (identical(other.patternNarrative, patternNarrative) || other.patternNarrative == patternNarrative) &&
             (identical(other.patternAnnotation, patternAnnotation) || other.patternAnnotation == patternAnnotation) &&
             (identical(other.patternAttachment, patternAttachment) || other.patternAttachment == patternAttachment) &&
@@ -9362,7 +8059,6 @@ class _$ElementDefinitionImpl extends _ElementDefinition {
         defaultValueMarkdownElement,
         defaultValueElement,
         defaultValueExtension,
-        defaultValueBackboneElement,
         defaultValueNarrative,
         defaultValueAnnotation,
         defaultValueAttachment,
@@ -9436,7 +8132,6 @@ class _$ElementDefinitionImpl extends _ElementDefinition {
         fixedMarkdownElement,
         fixedElement,
         fixedExtension,
-        fixedBackboneElement,
         fixedNarrative,
         fixedAnnotation,
         fixedAttachment,
@@ -9506,7 +8201,6 @@ class _$ElementDefinitionImpl extends _ElementDefinition {
         patternMarkdownElement,
         patternElement,
         patternExtension,
-        patternBackboneElement,
         patternNarrative,
         patternAnnotation,
         patternAttachment,
@@ -9689,7 +8383,6 @@ abstract class _ElementDefinition extends ElementDefinition {
       final Element? defaultValueMarkdownElement,
       final Element? defaultValueElement,
       final FhirExtension? defaultValueExtension,
-      final BackboneElement? defaultValueBackboneElement,
       final Narrative? defaultValueNarrative,
       final Annotation? defaultValueAnnotation,
       final Attachment? defaultValueAttachment,
@@ -9767,7 +8460,6 @@ abstract class _ElementDefinition extends ElementDefinition {
       @JsonKey(name: '_fixedMarkdown') final Element? fixedMarkdownElement,
       final Element? fixedElement,
       final FhirExtension? fixedExtension,
-      final BackboneElement? fixedBackboneElement,
       final Narrative? fixedNarrative,
       final Annotation? fixedAnnotation,
       final Attachment? fixedAttachment,
@@ -9840,7 +8532,6 @@ abstract class _ElementDefinition extends ElementDefinition {
       @JsonKey(name: '_patternMarkdown') final Element? patternMarkdownElement,
       final Element? patternElement,
       final FhirExtension? patternExtension,
-      final BackboneElement? patternBackboneElement,
       final Narrative? patternNarrative,
       final Annotation? patternAnnotation,
       final Attachment? patternAttachment,
@@ -10096,8 +8787,6 @@ abstract class _ElementDefinition extends ElementDefinition {
   @override
   FhirExtension? get defaultValueExtension;
   @override
-  BackboneElement? get defaultValueBackboneElement;
-  @override
   Narrative? get defaultValueNarrative;
   @override
   Annotation? get defaultValueAnnotation;
@@ -10263,8 +8952,6 @@ abstract class _ElementDefinition extends ElementDefinition {
   @override
   FhirExtension? get fixedExtension;
   @override
-  BackboneElement? get fixedBackboneElement;
-  @override
   Narrative? get fixedNarrative;
   @override
   Annotation? get fixedAnnotation;
@@ -10419,8 +9106,6 @@ abstract class _ElementDefinition extends ElementDefinition {
   Element? get patternElement;
   @override
   FhirExtension? get patternExtension;
-  @override
-  BackboneElement? get patternBackboneElement;
   @override
   Narrative? get patternNarrative;
   @override
@@ -10617,6 +9302,9 @@ ElementDefinitionSlicing _$ElementDefinitionSlicingFromJson(
 
 /// @nodoc
 mixin _$ElementDefinitionSlicing {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   List<ElementDefinitionDiscriminator>? get discriminator =>
       throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
@@ -10643,17 +9331,15 @@ abstract class $ElementDefinitionSlicingCopyWith<$Res> {
       _$ElementDefinitionSlicingCopyWithImpl<$Res, ElementDefinitionSlicing>;
   @useResult
   $Res call(
-      {List<ElementDefinitionDiscriminator>? discriminator,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<ElementDefinitionDiscriminator>? discriminator,
       String? description,
       @JsonKey(name: '_description') Element? descriptionElement,
       FhirBoolean? ordered,
       @JsonKey(name: '_ordered') Element? orderedElement,
       ElementDefinitionSlicingRules? rules,
       @JsonKey(name: '_rules') Element? rulesElement});
-
-  $ElementCopyWith<$Res>? get descriptionElement;
-  $ElementCopyWith<$Res>? get orderedElement;
-  $ElementCopyWith<$Res>? get rulesElement;
 }
 
 /// @nodoc
@@ -10670,6 +9356,8 @@ class _$ElementDefinitionSlicingCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? discriminator = freezed,
     Object? description = freezed,
     Object? descriptionElement = freezed,
@@ -10679,6 +9367,14 @@ class _$ElementDefinitionSlicingCopyWithImpl<$Res,
     Object? rulesElement = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       discriminator: freezed == discriminator
           ? _value.discriminator
           : discriminator // ignore: cast_nullable_to_non_nullable
@@ -10709,42 +9405,6 @@ class _$ElementDefinitionSlicingCopyWithImpl<$Res,
               as Element?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get descriptionElement {
-    if (_value.descriptionElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.descriptionElement!, (value) {
-      return _then(_value.copyWith(descriptionElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get orderedElement {
-    if (_value.orderedElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.orderedElement!, (value) {
-      return _then(_value.copyWith(orderedElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get rulesElement {
-    if (_value.rulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.rulesElement!, (value) {
-      return _then(_value.copyWith(rulesElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -10757,20 +9417,15 @@ abstract class _$$ElementDefinitionSlicingImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<ElementDefinitionDiscriminator>? discriminator,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<ElementDefinitionDiscriminator>? discriminator,
       String? description,
       @JsonKey(name: '_description') Element? descriptionElement,
       FhirBoolean? ordered,
       @JsonKey(name: '_ordered') Element? orderedElement,
       ElementDefinitionSlicingRules? rules,
       @JsonKey(name: '_rules') Element? rulesElement});
-
-  @override
-  $ElementCopyWith<$Res>? get descriptionElement;
-  @override
-  $ElementCopyWith<$Res>? get orderedElement;
-  @override
-  $ElementCopyWith<$Res>? get rulesElement;
 }
 
 /// @nodoc
@@ -10786,6 +9441,8 @@ class __$$ElementDefinitionSlicingImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? discriminator = freezed,
     Object? description = freezed,
     Object? descriptionElement = freezed,
@@ -10795,6 +9452,14 @@ class __$$ElementDefinitionSlicingImplCopyWithImpl<$Res>
     Object? rulesElement = freezed,
   }) {
     return _then(_$ElementDefinitionSlicingImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       discriminator: freezed == discriminator
           ? _value._discriminator
           : discriminator // ignore: cast_nullable_to_non_nullable
@@ -10831,18 +9496,34 @@ class __$$ElementDefinitionSlicingImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ElementDefinitionSlicingImpl extends _ElementDefinitionSlicing {
   const _$ElementDefinitionSlicingImpl(
-      {final List<ElementDefinitionDiscriminator>? discriminator,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<ElementDefinitionDiscriminator>? discriminator,
       this.description,
       @JsonKey(name: '_description') this.descriptionElement,
       this.ordered,
       @JsonKey(name: '_ordered') this.orderedElement,
       this.rules,
       @JsonKey(name: '_rules') this.rulesElement})
-      : _discriminator = discriminator,
+      : _extension_ = extension_,
+        _discriminator = discriminator,
         super._();
 
   factory _$ElementDefinitionSlicingImpl.fromJson(Map<String, dynamic> json) =>
       _$$ElementDefinitionSlicingImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   final List<ElementDefinitionDiscriminator>? _discriminator;
   @override
@@ -10872,7 +9553,7 @@ class _$ElementDefinitionSlicingImpl extends _ElementDefinitionSlicing {
 
   @override
   String toString() {
-    return 'ElementDefinitionSlicing(discriminator: $discriminator, description: $description, descriptionElement: $descriptionElement, ordered: $ordered, orderedElement: $orderedElement, rules: $rules, rulesElement: $rulesElement)';
+    return 'ElementDefinitionSlicing(id: $id, extension_: $extension_, discriminator: $discriminator, description: $description, descriptionElement: $descriptionElement, ordered: $ordered, orderedElement: $orderedElement, rules: $rules, rulesElement: $rulesElement)';
   }
 
   @override
@@ -10880,6 +9561,9 @@ class _$ElementDefinitionSlicingImpl extends _ElementDefinitionSlicing {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ElementDefinitionSlicingImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
             const DeepCollectionEquality()
                 .equals(other._discriminator, _discriminator) &&
             (identical(other.description, description) ||
@@ -10898,6 +9582,8 @@ class _$ElementDefinitionSlicingImpl extends _ElementDefinitionSlicing {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
       const DeepCollectionEquality().hash(_discriminator),
       description,
       descriptionElement,
@@ -10923,7 +9609,9 @@ class _$ElementDefinitionSlicingImpl extends _ElementDefinitionSlicing {
 
 abstract class _ElementDefinitionSlicing extends ElementDefinitionSlicing {
   const factory _ElementDefinitionSlicing(
-          {final List<ElementDefinitionDiscriminator>? discriminator,
+          {final String? id,
+          @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+          final List<ElementDefinitionDiscriminator>? discriminator,
           final String? description,
           @JsonKey(name: '_description') final Element? descriptionElement,
           final FhirBoolean? ordered,
@@ -10936,6 +9624,11 @@ abstract class _ElementDefinitionSlicing extends ElementDefinitionSlicing {
   factory _ElementDefinitionSlicing.fromJson(Map<String, dynamic> json) =
       _$ElementDefinitionSlicingImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
   @override
   List<ElementDefinitionDiscriminator>? get discriminator;
   @override
@@ -10966,6 +9659,9 @@ ElementDefinitionDiscriminator _$ElementDefinitionDiscriminatorFromJson(
 
 /// @nodoc
 mixin _$ElementDefinitionDiscriminator {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   ElementDefinitionDiscriminatorType? get type =>
       throw _privateConstructorUsedError;
   @JsonKey(name: '_type')
@@ -10989,13 +9685,12 @@ abstract class $ElementDefinitionDiscriminatorCopyWith<$Res> {
           ElementDefinitionDiscriminator>;
   @useResult
   $Res call(
-      {ElementDefinitionDiscriminatorType? type,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      ElementDefinitionDiscriminatorType? type,
       @JsonKey(name: '_type') Element? typeElement,
       String? path,
       @JsonKey(name: '_path') Element? pathElement});
-
-  $ElementCopyWith<$Res>? get typeElement;
-  $ElementCopyWith<$Res>? get pathElement;
 }
 
 /// @nodoc
@@ -11012,12 +9707,22 @@ class _$ElementDefinitionDiscriminatorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? type = freezed,
     Object? typeElement = freezed,
     Object? path = freezed,
     Object? pathElement = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -11036,30 +9741,6 @@ class _$ElementDefinitionDiscriminatorCopyWithImpl<$Res,
               as Element?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get typeElement {
-    if (_value.typeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.typeElement!, (value) {
-      return _then(_value.copyWith(typeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get pathElement {
-    if (_value.pathElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.pathElement!, (value) {
-      return _then(_value.copyWith(pathElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -11072,15 +9753,12 @@ abstract class _$$ElementDefinitionDiscriminatorImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ElementDefinitionDiscriminatorType? type,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      ElementDefinitionDiscriminatorType? type,
       @JsonKey(name: '_type') Element? typeElement,
       String? path,
       @JsonKey(name: '_path') Element? pathElement});
-
-  @override
-  $ElementCopyWith<$Res>? get typeElement;
-  @override
-  $ElementCopyWith<$Res>? get pathElement;
 }
 
 /// @nodoc
@@ -11096,12 +9774,22 @@ class __$$ElementDefinitionDiscriminatorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? type = freezed,
     Object? typeElement = freezed,
     Object? path = freezed,
     Object? pathElement = freezed,
   }) {
     return _then(_$ElementDefinitionDiscriminatorImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -11127,15 +9815,31 @@ class __$$ElementDefinitionDiscriminatorImplCopyWithImpl<$Res>
 class _$ElementDefinitionDiscriminatorImpl
     extends _ElementDefinitionDiscriminator {
   const _$ElementDefinitionDiscriminatorImpl(
-      {this.type,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      this.type,
       @JsonKey(name: '_type') this.typeElement,
       this.path,
       @JsonKey(name: '_path') this.pathElement})
-      : super._();
+      : _extension_ = extension_,
+        super._();
 
   factory _$ElementDefinitionDiscriminatorImpl.fromJson(
           Map<String, dynamic> json) =>
       _$$ElementDefinitionDiscriminatorImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final ElementDefinitionDiscriminatorType? type;
@@ -11150,7 +9854,7 @@ class _$ElementDefinitionDiscriminatorImpl
 
   @override
   String toString() {
-    return 'ElementDefinitionDiscriminator(type: $type, typeElement: $typeElement, path: $path, pathElement: $pathElement)';
+    return 'ElementDefinitionDiscriminator(id: $id, extension_: $extension_, type: $type, typeElement: $typeElement, path: $path, pathElement: $pathElement)';
   }
 
   @override
@@ -11158,6 +9862,9 @@ class _$ElementDefinitionDiscriminatorImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ElementDefinitionDiscriminatorImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.typeElement, typeElement) ||
                 other.typeElement == typeElement) &&
@@ -11168,8 +9875,14 @@ class _$ElementDefinitionDiscriminatorImpl
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, type, typeElement, path, pathElement);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      type,
+      typeElement,
+      path,
+      pathElement);
 
   @JsonKey(ignore: true)
   @override
@@ -11190,7 +9903,9 @@ class _$ElementDefinitionDiscriminatorImpl
 abstract class _ElementDefinitionDiscriminator
     extends ElementDefinitionDiscriminator {
   const factory _ElementDefinitionDiscriminator(
-          {final ElementDefinitionDiscriminatorType? type,
+          {final String? id,
+          @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+          final ElementDefinitionDiscriminatorType? type,
           @JsonKey(name: '_type') final Element? typeElement,
           final String? path,
           @JsonKey(name: '_path') final Element? pathElement}) =
@@ -11200,6 +9915,11 @@ abstract class _ElementDefinitionDiscriminator
   factory _ElementDefinitionDiscriminator.fromJson(Map<String, dynamic> json) =
       _$ElementDefinitionDiscriminatorImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
   @override
   ElementDefinitionDiscriminatorType? get type;
   @override
@@ -11224,6 +9944,9 @@ ElementDefinitionBase _$ElementDefinitionBaseFromJson(
 
 /// @nodoc
 mixin _$ElementDefinitionBase {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   String? get path => throw _privateConstructorUsedError;
   @JsonKey(name: '_path')
   Element? get pathElement => throw _privateConstructorUsedError;
@@ -11247,16 +9970,14 @@ abstract class $ElementDefinitionBaseCopyWith<$Res> {
       _$ElementDefinitionBaseCopyWithImpl<$Res, ElementDefinitionBase>;
   @useResult
   $Res call(
-      {String? path,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      String? path,
       @JsonKey(name: '_path') Element? pathElement,
       FhirDecimal? min,
       @JsonKey(name: '_min') Element? minElement,
       String? max,
       @JsonKey(name: '_max') Element? maxElement});
-
-  $ElementCopyWith<$Res>? get pathElement;
-  $ElementCopyWith<$Res>? get minElement;
-  $ElementCopyWith<$Res>? get maxElement;
 }
 
 /// @nodoc
@@ -11273,6 +9994,8 @@ class _$ElementDefinitionBaseCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? path = freezed,
     Object? pathElement = freezed,
     Object? min = freezed,
@@ -11281,6 +10004,14 @@ class _$ElementDefinitionBaseCopyWithImpl<$Res,
     Object? maxElement = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -11307,42 +10038,6 @@ class _$ElementDefinitionBaseCopyWithImpl<$Res,
               as Element?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get pathElement {
-    if (_value.pathElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.pathElement!, (value) {
-      return _then(_value.copyWith(pathElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get minElement {
-    if (_value.minElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.minElement!, (value) {
-      return _then(_value.copyWith(minElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get maxElement {
-    if (_value.maxElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.maxElement!, (value) {
-      return _then(_value.copyWith(maxElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -11355,19 +10050,14 @@ abstract class _$$ElementDefinitionBaseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? path,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      String? path,
       @JsonKey(name: '_path') Element? pathElement,
       FhirDecimal? min,
       @JsonKey(name: '_min') Element? minElement,
       String? max,
       @JsonKey(name: '_max') Element? maxElement});
-
-  @override
-  $ElementCopyWith<$Res>? get pathElement;
-  @override
-  $ElementCopyWith<$Res>? get minElement;
-  @override
-  $ElementCopyWith<$Res>? get maxElement;
 }
 
 /// @nodoc
@@ -11382,6 +10072,8 @@ class __$$ElementDefinitionBaseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? path = freezed,
     Object? pathElement = freezed,
     Object? min = freezed,
@@ -11390,6 +10082,14 @@ class __$$ElementDefinitionBaseImplCopyWithImpl<$Res>
     Object? maxElement = freezed,
   }) {
     return _then(_$ElementDefinitionBaseImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -11422,16 +10122,32 @@ class __$$ElementDefinitionBaseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ElementDefinitionBaseImpl extends _ElementDefinitionBase {
   const _$ElementDefinitionBaseImpl(
-      {this.path,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      this.path,
       @JsonKey(name: '_path') this.pathElement,
       this.min,
       @JsonKey(name: '_min') this.minElement,
       this.max,
       @JsonKey(name: '_max') this.maxElement})
-      : super._();
+      : _extension_ = extension_,
+        super._();
 
   factory _$ElementDefinitionBaseImpl.fromJson(Map<String, dynamic> json) =>
       _$$ElementDefinitionBaseImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final String? path;
@@ -11451,7 +10167,7 @@ class _$ElementDefinitionBaseImpl extends _ElementDefinitionBase {
 
   @override
   String toString() {
-    return 'ElementDefinitionBase(path: $path, pathElement: $pathElement, min: $min, minElement: $minElement, max: $max, maxElement: $maxElement)';
+    return 'ElementDefinitionBase(id: $id, extension_: $extension_, path: $path, pathElement: $pathElement, min: $min, minElement: $minElement, max: $max, maxElement: $maxElement)';
   }
 
   @override
@@ -11459,6 +10175,9 @@ class _$ElementDefinitionBaseImpl extends _ElementDefinitionBase {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ElementDefinitionBaseImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
             (identical(other.path, path) || other.path == path) &&
             (identical(other.pathElement, pathElement) ||
                 other.pathElement == pathElement) &&
@@ -11473,7 +10192,15 @@ class _$ElementDefinitionBaseImpl extends _ElementDefinitionBase {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, path, pathElement, min, minElement, max, maxElement);
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      path,
+      pathElement,
+      min,
+      minElement,
+      max,
+      maxElement);
 
   @JsonKey(ignore: true)
   @override
@@ -11492,7 +10219,9 @@ class _$ElementDefinitionBaseImpl extends _ElementDefinitionBase {
 
 abstract class _ElementDefinitionBase extends ElementDefinitionBase {
   const factory _ElementDefinitionBase(
-          {final String? path,
+          {final String? id,
+          @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+          final String? path,
           @JsonKey(name: '_path') final Element? pathElement,
           final FhirDecimal? min,
           @JsonKey(name: '_min') final Element? minElement,
@@ -11504,6 +10233,11 @@ abstract class _ElementDefinitionBase extends ElementDefinitionBase {
   factory _ElementDefinitionBase.fromJson(Map<String, dynamic> json) =
       _$ElementDefinitionBaseImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
   @override
   String? get path;
   @override
@@ -11532,6 +10266,7 @@ ElementDefinitionType _$ElementDefinitionTypeFromJson(
 
 /// @nodoc
 mixin _$ElementDefinitionType {
+  String? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   String? get code => throw _privateConstructorUsedError;
@@ -11565,7 +10300,8 @@ abstract class $ElementDefinitionTypeCopyWith<$Res> {
       _$ElementDefinitionTypeCopyWithImpl<$Res, ElementDefinitionType>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       String? code,
       @JsonKey(name: '_code') Element? codeElement,
       String? profile,
@@ -11576,11 +10312,6 @@ abstract class $ElementDefinitionTypeCopyWith<$Res> {
       @JsonKey(name: '_aggregation') List<Element?>? aggregationElement,
       ElementDefinitionTypeVersioning? versioning,
       @JsonKey(name: '_versioning') Element? versioningElement});
-
-  $ElementCopyWith<$Res>? get codeElement;
-  $ElementCopyWith<$Res>? get profileElement;
-  $ElementCopyWith<$Res>? get targetProfileElement;
-  $ElementCopyWith<$Res>? get versioningElement;
 }
 
 /// @nodoc
@@ -11597,6 +10328,7 @@ class _$ElementDefinitionTypeCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? extension_ = freezed,
     Object? code = freezed,
     Object? codeElement = freezed,
@@ -11610,6 +10342,10 @@ class _$ElementDefinitionTypeCopyWithImpl<$Res,
     Object? versioningElement = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
@@ -11656,54 +10392,6 @@ class _$ElementDefinitionTypeCopyWithImpl<$Res,
               as Element?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get codeElement {
-    if (_value.codeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.codeElement!, (value) {
-      return _then(_value.copyWith(codeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get profileElement {
-    if (_value.profileElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.profileElement!, (value) {
-      return _then(_value.copyWith(profileElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get targetProfileElement {
-    if (_value.targetProfileElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.targetProfileElement!, (value) {
-      return _then(_value.copyWith(targetProfileElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get versioningElement {
-    if (_value.versioningElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.versioningElement!, (value) {
-      return _then(_value.copyWith(versioningElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -11716,7 +10404,8 @@ abstract class _$$ElementDefinitionTypeImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       String? code,
       @JsonKey(name: '_code') Element? codeElement,
       String? profile,
@@ -11727,15 +10416,6 @@ abstract class _$$ElementDefinitionTypeImplCopyWith<$Res>
       @JsonKey(name: '_aggregation') List<Element?>? aggregationElement,
       ElementDefinitionTypeVersioning? versioning,
       @JsonKey(name: '_versioning') Element? versioningElement});
-
-  @override
-  $ElementCopyWith<$Res>? get codeElement;
-  @override
-  $ElementCopyWith<$Res>? get profileElement;
-  @override
-  $ElementCopyWith<$Res>? get targetProfileElement;
-  @override
-  $ElementCopyWith<$Res>? get versioningElement;
 }
 
 /// @nodoc
@@ -11750,6 +10430,7 @@ class __$$ElementDefinitionTypeImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? extension_ = freezed,
     Object? code = freezed,
     Object? codeElement = freezed,
@@ -11763,6 +10444,10 @@ class __$$ElementDefinitionTypeImplCopyWithImpl<$Res>
     Object? versioningElement = freezed,
   }) {
     return _then(_$ElementDefinitionTypeImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       extension_: freezed == extension_
           ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
@@ -11815,7 +10500,8 @@ class __$$ElementDefinitionTypeImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ElementDefinitionTypeImpl extends _ElementDefinitionType {
   const _$ElementDefinitionTypeImpl(
-      {@JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       this.code,
       @JsonKey(name: '_code') this.codeElement,
       this.profile,
@@ -11834,6 +10520,8 @@ class _$ElementDefinitionTypeImpl extends _ElementDefinitionType {
   factory _$ElementDefinitionTypeImpl.fromJson(Map<String, dynamic> json) =>
       _$$ElementDefinitionTypeImplFromJson(json);
 
+  @override
+  final String? id;
   final List<FhirExtension>? _extension_;
   @override
   @JsonKey(name: 'extension')
@@ -11890,7 +10578,7 @@ class _$ElementDefinitionTypeImpl extends _ElementDefinitionType {
 
   @override
   String toString() {
-    return 'ElementDefinitionType(extension_: $extension_, code: $code, codeElement: $codeElement, profile: $profile, profileElement: $profileElement, targetProfile: $targetProfile, targetProfileElement: $targetProfileElement, aggregation: $aggregation, aggregationElement: $aggregationElement, versioning: $versioning, versioningElement: $versioningElement)';
+    return 'ElementDefinitionType(id: $id, extension_: $extension_, code: $code, codeElement: $codeElement, profile: $profile, profileElement: $profileElement, targetProfile: $targetProfile, targetProfileElement: $targetProfileElement, aggregation: $aggregation, aggregationElement: $aggregationElement, versioning: $versioning, versioningElement: $versioningElement)';
   }
 
   @override
@@ -11898,6 +10586,7 @@ class _$ElementDefinitionTypeImpl extends _ElementDefinitionType {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ElementDefinitionTypeImpl &&
+            (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality()
                 .equals(other._extension_, _extension_) &&
             (identical(other.code, code) || other.code == code) &&
@@ -11924,6 +10613,7 @@ class _$ElementDefinitionTypeImpl extends _ElementDefinitionType {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
       const DeepCollectionEquality().hash(_extension_),
       code,
       codeElement,
@@ -11953,7 +10643,8 @@ class _$ElementDefinitionTypeImpl extends _ElementDefinitionType {
 
 abstract class _ElementDefinitionType extends ElementDefinitionType {
   const factory _ElementDefinitionType(
-      {@JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final String? code,
       @JsonKey(name: '_code') final Element? codeElement,
       final String? profile,
@@ -11970,6 +10661,8 @@ abstract class _ElementDefinitionType extends ElementDefinitionType {
   factory _ElementDefinitionType.fromJson(Map<String, dynamic> json) =
       _$ElementDefinitionTypeImpl.fromJson;
 
+  @override
+  String? get id;
   @override
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_;
@@ -12011,6 +10704,9 @@ ElementDefinitionExample _$ElementDefinitionExampleFromJson(
 
 /// @nodoc
 mixin _$ElementDefinitionExample {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   String? get label => throw _privateConstructorUsedError;
   @JsonKey(name: '_label')
   Element? get labelElement => throw _privateConstructorUsedError;
@@ -12067,8 +10763,6 @@ mixin _$ElementDefinitionExample {
   Element? get valueMarkdownElement => throw _privateConstructorUsedError;
   Element? get valueElement => throw _privateConstructorUsedError;
   FhirExtension? get valueExtension => throw _privateConstructorUsedError;
-  BackboneElement? get valueBackboneElement =>
-      throw _privateConstructorUsedError;
   Narrative? get valueNarrative => throw _privateConstructorUsedError;
   Annotation? get valueAnnotation => throw _privateConstructorUsedError;
   Attachment? get valueAttachment => throw _privateConstructorUsedError;
@@ -12122,7 +10816,9 @@ abstract class $ElementDefinitionExampleCopyWith<$Res> {
       _$ElementDefinitionExampleCopyWithImpl<$Res, ElementDefinitionExample>;
   @useResult
   $Res call(
-      {String? label,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      String? label,
       @JsonKey(name: '_label') Element? labelElement,
       FhirBoolean? valueBoolean,
       @JsonKey(name: '_valueBoolean') Element? valueBooleanElement,
@@ -12160,7 +10856,6 @@ abstract class $ElementDefinitionExampleCopyWith<$Res> {
       @JsonKey(name: '_valueMarkdown') Element? valueMarkdownElement,
       Element? valueElement,
       FhirExtension? valueExtension,
-      BackboneElement? valueBackboneElement,
       Narrative? valueNarrative,
       Annotation? valueAnnotation,
       Attachment? valueAttachment,
@@ -12195,27 +10890,7 @@ abstract class $ElementDefinitionExampleCopyWith<$Res> {
       ParameterDefinition? valueParameterDefinition,
       TriggerDefinition? valueTriggerDefinition});
 
-  $ElementCopyWith<$Res>? get labelElement;
-  $ElementCopyWith<$Res>? get valueBooleanElement;
-  $ElementCopyWith<$Res>? get valueIntegerElement;
-  $ElementCopyWith<$Res>? get valueDecimalElement;
-  $ElementCopyWith<$Res>? get valueBase64BinaryElement;
-  $ElementCopyWith<$Res>? get valueInstantElement;
-  $ElementCopyWith<$Res>? get valueStringElement;
-  $ElementCopyWith<$Res>? get valueUriElement;
-  $ElementCopyWith<$Res>? get valueDateElement;
-  $ElementCopyWith<$Res>? get valueDateTimeElement;
-  $ElementCopyWith<$Res>? get valueTimeElement;
-  $ElementCopyWith<$Res>? get valueCodeElement;
-  $ElementCopyWith<$Res>? get valueOidElement;
-  $ElementCopyWith<$Res>? get valueUuidElement;
-  $ElementCopyWith<$Res>? get valueIdElement;
-  $ElementCopyWith<$Res>? get valueUnsignedIntElement;
-  $ElementCopyWith<$Res>? get valuePositiveIntElement;
-  $ElementCopyWith<$Res>? get valueMarkdownElement;
-  $ElementCopyWith<$Res>? get valueElement;
   $FhirExtensionCopyWith<$Res>? get valueExtension;
-  $BackboneElementCopyWith<$Res>? get valueBackboneElement;
   $NarrativeCopyWith<$Res>? get valueNarrative;
   $AnnotationCopyWith<$Res>? get valueAnnotation;
   $AttachmentCopyWith<$Res>? get valueAttachment;
@@ -12265,6 +10940,8 @@ class _$ElementDefinitionExampleCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? label = freezed,
     Object? labelElement = freezed,
     Object? valueBoolean = freezed,
@@ -12303,7 +10980,6 @@ class _$ElementDefinitionExampleCopyWithImpl<$Res,
     Object? valueMarkdownElement = freezed,
     Object? valueElement = freezed,
     Object? valueExtension = freezed,
-    Object? valueBackboneElement = freezed,
     Object? valueNarrative = freezed,
     Object? valueAnnotation = freezed,
     Object? valueAttachment = freezed,
@@ -12339,6 +11015,14 @@ class _$ElementDefinitionExampleCopyWithImpl<$Res,
     Object? valueTriggerDefinition = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       label: freezed == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
@@ -12491,10 +11175,6 @@ class _$ElementDefinitionExampleCopyWithImpl<$Res,
           ? _value.valueExtension
           : valueExtension // ignore: cast_nullable_to_non_nullable
               as FhirExtension?,
-      valueBackboneElement: freezed == valueBackboneElement
-          ? _value.valueBackboneElement
-          : valueBackboneElement // ignore: cast_nullable_to_non_nullable
-              as BackboneElement?,
       valueNarrative: freezed == valueNarrative
           ? _value.valueNarrative
           : valueNarrative // ignore: cast_nullable_to_non_nullable
@@ -12632,234 +11312,6 @@ class _$ElementDefinitionExampleCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get labelElement {
-    if (_value.labelElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.labelElement!, (value) {
-      return _then(_value.copyWith(labelElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueBooleanElement {
-    if (_value.valueBooleanElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueBooleanElement!, (value) {
-      return _then(_value.copyWith(valueBooleanElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueIntegerElement {
-    if (_value.valueIntegerElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueIntegerElement!, (value) {
-      return _then(_value.copyWith(valueIntegerElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueDecimalElement {
-    if (_value.valueDecimalElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueDecimalElement!, (value) {
-      return _then(_value.copyWith(valueDecimalElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueBase64BinaryElement {
-    if (_value.valueBase64BinaryElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueBase64BinaryElement!, (value) {
-      return _then(_value.copyWith(valueBase64BinaryElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueInstantElement {
-    if (_value.valueInstantElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueInstantElement!, (value) {
-      return _then(_value.copyWith(valueInstantElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueStringElement {
-    if (_value.valueStringElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueStringElement!, (value) {
-      return _then(_value.copyWith(valueStringElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueUriElement {
-    if (_value.valueUriElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueUriElement!, (value) {
-      return _then(_value.copyWith(valueUriElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueDateElement {
-    if (_value.valueDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueDateElement!, (value) {
-      return _then(_value.copyWith(valueDateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueDateTimeElement {
-    if (_value.valueDateTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueDateTimeElement!, (value) {
-      return _then(_value.copyWith(valueDateTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueTimeElement {
-    if (_value.valueTimeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueTimeElement!, (value) {
-      return _then(_value.copyWith(valueTimeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueCodeElement {
-    if (_value.valueCodeElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueCodeElement!, (value) {
-      return _then(_value.copyWith(valueCodeElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueOidElement {
-    if (_value.valueOidElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueOidElement!, (value) {
-      return _then(_value.copyWith(valueOidElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueUuidElement {
-    if (_value.valueUuidElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueUuidElement!, (value) {
-      return _then(_value.copyWith(valueUuidElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueIdElement {
-    if (_value.valueIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueIdElement!, (value) {
-      return _then(_value.copyWith(valueIdElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueUnsignedIntElement {
-    if (_value.valueUnsignedIntElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueUnsignedIntElement!, (value) {
-      return _then(_value.copyWith(valueUnsignedIntElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valuePositiveIntElement {
-    if (_value.valuePositiveIntElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valuePositiveIntElement!, (value) {
-      return _then(_value.copyWith(valuePositiveIntElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueMarkdownElement {
-    if (_value.valueMarkdownElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueMarkdownElement!, (value) {
-      return _then(_value.copyWith(valueMarkdownElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueElement {
-    if (_value.valueElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueElement!, (value) {
-      return _then(_value.copyWith(valueElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $FhirExtensionCopyWith<$Res>? get valueExtension {
     if (_value.valueExtension == null) {
       return null;
@@ -12867,19 +11319,6 @@ class _$ElementDefinitionExampleCopyWithImpl<$Res,
 
     return $FhirExtensionCopyWith<$Res>(_value.valueExtension!, (value) {
       return _then(_value.copyWith(valueExtension: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $BackboneElementCopyWith<$Res>? get valueBackboneElement {
-    if (_value.valueBackboneElement == null) {
-      return null;
-    }
-
-    return $BackboneElementCopyWith<$Res>(_value.valueBackboneElement!,
-        (value) {
-      return _then(_value.copyWith(valueBackboneElement: value) as $Val);
     });
   }
 
@@ -13296,7 +11735,9 @@ abstract class _$$ElementDefinitionExampleImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? label,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      String? label,
       @JsonKey(name: '_label') Element? labelElement,
       FhirBoolean? valueBoolean,
       @JsonKey(name: '_valueBoolean') Element? valueBooleanElement,
@@ -13334,7 +11775,6 @@ abstract class _$$ElementDefinitionExampleImplCopyWith<$Res>
       @JsonKey(name: '_valueMarkdown') Element? valueMarkdownElement,
       Element? valueElement,
       FhirExtension? valueExtension,
-      BackboneElement? valueBackboneElement,
       Narrative? valueNarrative,
       Annotation? valueAnnotation,
       Attachment? valueAttachment,
@@ -13370,47 +11810,7 @@ abstract class _$$ElementDefinitionExampleImplCopyWith<$Res>
       TriggerDefinition? valueTriggerDefinition});
 
   @override
-  $ElementCopyWith<$Res>? get labelElement;
-  @override
-  $ElementCopyWith<$Res>? get valueBooleanElement;
-  @override
-  $ElementCopyWith<$Res>? get valueIntegerElement;
-  @override
-  $ElementCopyWith<$Res>? get valueDecimalElement;
-  @override
-  $ElementCopyWith<$Res>? get valueBase64BinaryElement;
-  @override
-  $ElementCopyWith<$Res>? get valueInstantElement;
-  @override
-  $ElementCopyWith<$Res>? get valueStringElement;
-  @override
-  $ElementCopyWith<$Res>? get valueUriElement;
-  @override
-  $ElementCopyWith<$Res>? get valueDateElement;
-  @override
-  $ElementCopyWith<$Res>? get valueDateTimeElement;
-  @override
-  $ElementCopyWith<$Res>? get valueTimeElement;
-  @override
-  $ElementCopyWith<$Res>? get valueCodeElement;
-  @override
-  $ElementCopyWith<$Res>? get valueOidElement;
-  @override
-  $ElementCopyWith<$Res>? get valueUuidElement;
-  @override
-  $ElementCopyWith<$Res>? get valueIdElement;
-  @override
-  $ElementCopyWith<$Res>? get valueUnsignedIntElement;
-  @override
-  $ElementCopyWith<$Res>? get valuePositiveIntElement;
-  @override
-  $ElementCopyWith<$Res>? get valueMarkdownElement;
-  @override
-  $ElementCopyWith<$Res>? get valueElement;
-  @override
   $FhirExtensionCopyWith<$Res>? get valueExtension;
-  @override
-  $BackboneElementCopyWith<$Res>? get valueBackboneElement;
   @override
   $NarrativeCopyWith<$Res>? get valueNarrative;
   @override
@@ -13492,6 +11892,8 @@ class __$$ElementDefinitionExampleImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? label = freezed,
     Object? labelElement = freezed,
     Object? valueBoolean = freezed,
@@ -13530,7 +11932,6 @@ class __$$ElementDefinitionExampleImplCopyWithImpl<$Res>
     Object? valueMarkdownElement = freezed,
     Object? valueElement = freezed,
     Object? valueExtension = freezed,
-    Object? valueBackboneElement = freezed,
     Object? valueNarrative = freezed,
     Object? valueAnnotation = freezed,
     Object? valueAttachment = freezed,
@@ -13566,6 +11967,14 @@ class __$$ElementDefinitionExampleImplCopyWithImpl<$Res>
     Object? valueTriggerDefinition = freezed,
   }) {
     return _then(_$ElementDefinitionExampleImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       label: freezed == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
@@ -13718,10 +12127,6 @@ class __$$ElementDefinitionExampleImplCopyWithImpl<$Res>
           ? _value.valueExtension
           : valueExtension // ignore: cast_nullable_to_non_nullable
               as FhirExtension?,
-      valueBackboneElement: freezed == valueBackboneElement
-          ? _value.valueBackboneElement
-          : valueBackboneElement // ignore: cast_nullable_to_non_nullable
-              as BackboneElement?,
       valueNarrative: freezed == valueNarrative
           ? _value.valueNarrative
           : valueNarrative // ignore: cast_nullable_to_non_nullable
@@ -13862,7 +12267,9 @@ class __$$ElementDefinitionExampleImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ElementDefinitionExampleImpl extends _ElementDefinitionExample {
   const _$ElementDefinitionExampleImpl(
-      {this.label,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      this.label,
       @JsonKey(name: '_label') this.labelElement,
       this.valueBoolean,
       @JsonKey(name: '_valueBoolean') this.valueBooleanElement,
@@ -13900,7 +12307,6 @@ class _$ElementDefinitionExampleImpl extends _ElementDefinitionExample {
       @JsonKey(name: '_valueMarkdown') this.valueMarkdownElement,
       this.valueElement,
       this.valueExtension,
-      this.valueBackboneElement,
       this.valueNarrative,
       this.valueAnnotation,
       this.valueAttachment,
@@ -13934,10 +12340,24 @@ class _$ElementDefinitionExampleImpl extends _ElementDefinitionExample {
       this.valueDataRequirement,
       this.valueParameterDefinition,
       this.valueTriggerDefinition})
-      : super._();
+      : _extension_ = extension_,
+        super._();
 
   factory _$ElementDefinitionExampleImpl.fromJson(Map<String, dynamic> json) =>
       _$$ElementDefinitionExampleImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final String? label;
@@ -14034,8 +12454,6 @@ class _$ElementDefinitionExampleImpl extends _ElementDefinitionExample {
   @override
   final FhirExtension? valueExtension;
   @override
-  final BackboneElement? valueBackboneElement;
-  @override
   final Narrative? valueNarrative;
   @override
   final Annotation? valueAnnotation;
@@ -14104,7 +12522,7 @@ class _$ElementDefinitionExampleImpl extends _ElementDefinitionExample {
 
   @override
   String toString() {
-    return 'ElementDefinitionExample(label: $label, labelElement: $labelElement, valueBoolean: $valueBoolean, valueBooleanElement: $valueBooleanElement, valueInteger: $valueInteger, valueIntegerElement: $valueIntegerElement, valueDecimal: $valueDecimal, valueDecimalElement: $valueDecimalElement, valueBase64Binary: $valueBase64Binary, valueBase64BinaryElement: $valueBase64BinaryElement, valueInstant: $valueInstant, valueInstantElement: $valueInstantElement, valueString: $valueString, valueStringElement: $valueStringElement, valueUri: $valueUri, valueUriElement: $valueUriElement, valueDate: $valueDate, valueDateElement: $valueDateElement, valueDateTime: $valueDateTime, valueDateTimeElement: $valueDateTimeElement, valueTime: $valueTime, valueTimeElement: $valueTimeElement, valueCode: $valueCode, valueCodeElement: $valueCodeElement, valueOid: $valueOid, valueOidElement: $valueOidElement, valueUuid: $valueUuid, valueUuidElement: $valueUuidElement, valueId: $valueId, valueIdElement: $valueIdElement, valueUnsignedInt: $valueUnsignedInt, valueUnsignedIntElement: $valueUnsignedIntElement, valuePositiveInt: $valuePositiveInt, valuePositiveIntElement: $valuePositiveIntElement, valueMarkdown: $valueMarkdown, valueMarkdownElement: $valueMarkdownElement, valueElement: $valueElement, valueExtension: $valueExtension, valueBackboneElement: $valueBackboneElement, valueNarrative: $valueNarrative, valueAnnotation: $valueAnnotation, valueAttachment: $valueAttachment, valueIdentifier: $valueIdentifier, valueCodeableConcept: $valueCodeableConcept, valueCoding: $valueCoding, valueQuantity: $valueQuantity, valueDuration: $valueDuration, valueSimpleQuantity: $valueSimpleQuantity, valueDistance: $valueDistance, valueCount: $valueCount, valueMoney: $valueMoney, valueAge: $valueAge, valueRange: $valueRange, valuePeriod: $valuePeriod, valueRatio: $valueRatio, valueReference: $valueReference, valueSampledData: $valueSampledData, valueSignature: $valueSignature, valueHumanName: $valueHumanName, valueAddress: $valueAddress, valueContactPoint: $valueContactPoint, valueTiming: $valueTiming, valueMeta: $valueMeta, valueElementDefinition: $valueElementDefinition, valueContactDetail: $valueContactDetail, valueContributor: $valueContributor, valueDosage: $valueDosage, valueRelatedArtifact: $valueRelatedArtifact, valueUsageContext: $valueUsageContext, valueDataRequirement: $valueDataRequirement, valueParameterDefinition: $valueParameterDefinition, valueTriggerDefinition: $valueTriggerDefinition)';
+    return 'ElementDefinitionExample(id: $id, extension_: $extension_, label: $label, labelElement: $labelElement, valueBoolean: $valueBoolean, valueBooleanElement: $valueBooleanElement, valueInteger: $valueInteger, valueIntegerElement: $valueIntegerElement, valueDecimal: $valueDecimal, valueDecimalElement: $valueDecimalElement, valueBase64Binary: $valueBase64Binary, valueBase64BinaryElement: $valueBase64BinaryElement, valueInstant: $valueInstant, valueInstantElement: $valueInstantElement, valueString: $valueString, valueStringElement: $valueStringElement, valueUri: $valueUri, valueUriElement: $valueUriElement, valueDate: $valueDate, valueDateElement: $valueDateElement, valueDateTime: $valueDateTime, valueDateTimeElement: $valueDateTimeElement, valueTime: $valueTime, valueTimeElement: $valueTimeElement, valueCode: $valueCode, valueCodeElement: $valueCodeElement, valueOid: $valueOid, valueOidElement: $valueOidElement, valueUuid: $valueUuid, valueUuidElement: $valueUuidElement, valueId: $valueId, valueIdElement: $valueIdElement, valueUnsignedInt: $valueUnsignedInt, valueUnsignedIntElement: $valueUnsignedIntElement, valuePositiveInt: $valuePositiveInt, valuePositiveIntElement: $valuePositiveIntElement, valueMarkdown: $valueMarkdown, valueMarkdownElement: $valueMarkdownElement, valueElement: $valueElement, valueExtension: $valueExtension, valueNarrative: $valueNarrative, valueAnnotation: $valueAnnotation, valueAttachment: $valueAttachment, valueIdentifier: $valueIdentifier, valueCodeableConcept: $valueCodeableConcept, valueCoding: $valueCoding, valueQuantity: $valueQuantity, valueDuration: $valueDuration, valueSimpleQuantity: $valueSimpleQuantity, valueDistance: $valueDistance, valueCount: $valueCount, valueMoney: $valueMoney, valueAge: $valueAge, valueRange: $valueRange, valuePeriod: $valuePeriod, valueRatio: $valueRatio, valueReference: $valueReference, valueSampledData: $valueSampledData, valueSignature: $valueSignature, valueHumanName: $valueHumanName, valueAddress: $valueAddress, valueContactPoint: $valueContactPoint, valueTiming: $valueTiming, valueMeta: $valueMeta, valueElementDefinition: $valueElementDefinition, valueContactDetail: $valueContactDetail, valueContributor: $valueContributor, valueDosage: $valueDosage, valueRelatedArtifact: $valueRelatedArtifact, valueUsageContext: $valueUsageContext, valueDataRequirement: $valueDataRequirement, valueParameterDefinition: $valueParameterDefinition, valueTriggerDefinition: $valueTriggerDefinition)';
   }
 
   @override
@@ -14112,6 +12530,9 @@ class _$ElementDefinitionExampleImpl extends _ElementDefinitionExample {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ElementDefinitionExampleImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
             (identical(other.label, label) || other.label == label) &&
             (identical(other.labelElement, labelElement) ||
                 other.labelElement == labelElement) &&
@@ -14180,11 +12601,9 @@ class _$ElementDefinitionExampleImpl extends _ElementDefinitionExample {
                 other.valuePositiveIntElement == valuePositiveIntElement) &&
             (identical(other.valueMarkdown, valueMarkdown) ||
                 other.valueMarkdown == valueMarkdown) &&
-            (identical(other.valueMarkdownElement, valueMarkdownElement) ||
-                other.valueMarkdownElement == valueMarkdownElement) &&
+            (identical(other.valueMarkdownElement, valueMarkdownElement) || other.valueMarkdownElement == valueMarkdownElement) &&
             (identical(other.valueElement, valueElement) || other.valueElement == valueElement) &&
             (identical(other.valueExtension, valueExtension) || other.valueExtension == valueExtension) &&
-            (identical(other.valueBackboneElement, valueBackboneElement) || other.valueBackboneElement == valueBackboneElement) &&
             (identical(other.valueNarrative, valueNarrative) || other.valueNarrative == valueNarrative) &&
             (identical(other.valueAnnotation, valueAnnotation) || other.valueAnnotation == valueAnnotation) &&
             (identical(other.valueAttachment, valueAttachment) || other.valueAttachment == valueAttachment) &&
@@ -14224,6 +12643,8 @@ class _$ElementDefinitionExampleImpl extends _ElementDefinitionExample {
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
+        id,
+        const DeepCollectionEquality().hash(_extension_),
         label,
         labelElement,
         valueBoolean,
@@ -14262,7 +12683,6 @@ class _$ElementDefinitionExampleImpl extends _ElementDefinitionExample {
         valueMarkdownElement,
         valueElement,
         valueExtension,
-        valueBackboneElement,
         valueNarrative,
         valueAnnotation,
         valueAttachment,
@@ -14315,7 +12735,9 @@ class _$ElementDefinitionExampleImpl extends _ElementDefinitionExample {
 
 abstract class _ElementDefinitionExample extends ElementDefinitionExample {
   const factory _ElementDefinitionExample(
-          {final String? label,
+          {final String? id,
+          @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+          final String? label,
           @JsonKey(name: '_label') final Element? labelElement,
           final FhirBoolean? valueBoolean,
           @JsonKey(name: '_valueBoolean') final Element? valueBooleanElement,
@@ -14356,7 +12778,6 @@ abstract class _ElementDefinitionExample extends ElementDefinitionExample {
           @JsonKey(name: '_valueMarkdown') final Element? valueMarkdownElement,
           final Element? valueElement,
           final FhirExtension? valueExtension,
-          final BackboneElement? valueBackboneElement,
           final Narrative? valueNarrative,
           final Annotation? valueAnnotation,
           final Attachment? valueAttachment,
@@ -14396,6 +12817,11 @@ abstract class _ElementDefinitionExample extends ElementDefinitionExample {
   factory _ElementDefinitionExample.fromJson(Map<String, dynamic> json) =
       _$ElementDefinitionExampleImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
   @override
   String? get label;
   @override
@@ -14491,8 +12917,6 @@ abstract class _ElementDefinitionExample extends ElementDefinitionExample {
   @override
   FhirExtension? get valueExtension;
   @override
-  BackboneElement? get valueBackboneElement;
-  @override
   Narrative? get valueNarrative;
   @override
   Annotation? get valueAnnotation;
@@ -14571,6 +12995,9 @@ ElementDefinitionConstraint _$ElementDefinitionConstraintFromJson(
 
 /// @nodoc
 mixin _$ElementDefinitionConstraint {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   String? get key => throw _privateConstructorUsedError;
   @JsonKey(name: '_key')
   Element? get keyElement => throw _privateConstructorUsedError;
@@ -14609,7 +13036,9 @@ abstract class $ElementDefinitionConstraintCopyWith<$Res> {
           ElementDefinitionConstraint>;
   @useResult
   $Res call(
-      {String? key,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      String? key,
       @JsonKey(name: '_key') Element? keyElement,
       String? requirements,
       @JsonKey(name: '_requirements') Element? requirementsElement,
@@ -14623,14 +13052,6 @@ abstract class $ElementDefinitionConstraintCopyWith<$Res> {
       @JsonKey(name: '_xpath') Element? xpathElement,
       String? source,
       @JsonKey(name: '_source') Element? sourceElement});
-
-  $ElementCopyWith<$Res>? get keyElement;
-  $ElementCopyWith<$Res>? get requirementsElement;
-  $ElementCopyWith<$Res>? get severityElement;
-  $ElementCopyWith<$Res>? get humanElement;
-  $ElementCopyWith<$Res>? get expressionElement;
-  $ElementCopyWith<$Res>? get xpathElement;
-  $ElementCopyWith<$Res>? get sourceElement;
 }
 
 /// @nodoc
@@ -14647,6 +13068,8 @@ class _$ElementDefinitionConstraintCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? key = freezed,
     Object? keyElement = freezed,
     Object? requirements = freezed,
@@ -14663,6 +13086,14 @@ class _$ElementDefinitionConstraintCopyWithImpl<$Res,
     Object? sourceElement = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       key: freezed == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -14721,90 +13152,6 @@ class _$ElementDefinitionConstraintCopyWithImpl<$Res,
               as Element?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get keyElement {
-    if (_value.keyElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.keyElement!, (value) {
-      return _then(_value.copyWith(keyElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get requirementsElement {
-    if (_value.requirementsElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.requirementsElement!, (value) {
-      return _then(_value.copyWith(requirementsElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get severityElement {
-    if (_value.severityElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.severityElement!, (value) {
-      return _then(_value.copyWith(severityElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get humanElement {
-    if (_value.humanElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.humanElement!, (value) {
-      return _then(_value.copyWith(humanElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get expressionElement {
-    if (_value.expressionElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.expressionElement!, (value) {
-      return _then(_value.copyWith(expressionElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get xpathElement {
-    if (_value.xpathElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.xpathElement!, (value) {
-      return _then(_value.copyWith(xpathElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sourceElement {
-    if (_value.sourceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sourceElement!, (value) {
-      return _then(_value.copyWith(sourceElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -14817,7 +13164,9 @@ abstract class _$$ElementDefinitionConstraintImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? key,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      String? key,
       @JsonKey(name: '_key') Element? keyElement,
       String? requirements,
       @JsonKey(name: '_requirements') Element? requirementsElement,
@@ -14831,21 +13180,6 @@ abstract class _$$ElementDefinitionConstraintImplCopyWith<$Res>
       @JsonKey(name: '_xpath') Element? xpathElement,
       String? source,
       @JsonKey(name: '_source') Element? sourceElement});
-
-  @override
-  $ElementCopyWith<$Res>? get keyElement;
-  @override
-  $ElementCopyWith<$Res>? get requirementsElement;
-  @override
-  $ElementCopyWith<$Res>? get severityElement;
-  @override
-  $ElementCopyWith<$Res>? get humanElement;
-  @override
-  $ElementCopyWith<$Res>? get expressionElement;
-  @override
-  $ElementCopyWith<$Res>? get xpathElement;
-  @override
-  $ElementCopyWith<$Res>? get sourceElement;
 }
 
 /// @nodoc
@@ -14861,6 +13195,8 @@ class __$$ElementDefinitionConstraintImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? key = freezed,
     Object? keyElement = freezed,
     Object? requirements = freezed,
@@ -14877,6 +13213,14 @@ class __$$ElementDefinitionConstraintImplCopyWithImpl<$Res>
     Object? sourceElement = freezed,
   }) {
     return _then(_$ElementDefinitionConstraintImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       key: freezed == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -14941,7 +13285,9 @@ class __$$ElementDefinitionConstraintImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ElementDefinitionConstraintImpl extends _ElementDefinitionConstraint {
   const _$ElementDefinitionConstraintImpl(
-      {this.key,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      this.key,
       @JsonKey(name: '_key') this.keyElement,
       this.requirements,
       @JsonKey(name: '_requirements') this.requirementsElement,
@@ -14955,11 +13301,25 @@ class _$ElementDefinitionConstraintImpl extends _ElementDefinitionConstraint {
       @JsonKey(name: '_xpath') this.xpathElement,
       this.source,
       @JsonKey(name: '_source') this.sourceElement})
-      : super._();
+      : _extension_ = extension_,
+        super._();
 
   factory _$ElementDefinitionConstraintImpl.fromJson(
           Map<String, dynamic> json) =>
       _$$ElementDefinitionConstraintImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final String? key;
@@ -14999,7 +13359,7 @@ class _$ElementDefinitionConstraintImpl extends _ElementDefinitionConstraint {
 
   @override
   String toString() {
-    return 'ElementDefinitionConstraint(key: $key, keyElement: $keyElement, requirements: $requirements, requirementsElement: $requirementsElement, severity: $severity, severityElement: $severityElement, human: $human, humanElement: $humanElement, expression: $expression, expressionElement: $expressionElement, xpath: $xpath, xpathElement: $xpathElement, source: $source, sourceElement: $sourceElement)';
+    return 'ElementDefinitionConstraint(id: $id, extension_: $extension_, key: $key, keyElement: $keyElement, requirements: $requirements, requirementsElement: $requirementsElement, severity: $severity, severityElement: $severityElement, human: $human, humanElement: $humanElement, expression: $expression, expressionElement: $expressionElement, xpath: $xpath, xpathElement: $xpathElement, source: $source, sourceElement: $sourceElement)';
   }
 
   @override
@@ -15007,6 +13367,9 @@ class _$ElementDefinitionConstraintImpl extends _ElementDefinitionConstraint {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ElementDefinitionConstraintImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
             (identical(other.key, key) || other.key == key) &&
             (identical(other.keyElement, keyElement) ||
                 other.keyElement == keyElement) &&
@@ -15037,6 +13400,8 @@ class _$ElementDefinitionConstraintImpl extends _ElementDefinitionConstraint {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
       key,
       keyElement,
       requirements,
@@ -15070,7 +13435,9 @@ class _$ElementDefinitionConstraintImpl extends _ElementDefinitionConstraint {
 abstract class _ElementDefinitionConstraint
     extends ElementDefinitionConstraint {
   const factory _ElementDefinitionConstraint(
-          {final String? key,
+          {final String? id,
+          @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+          final String? key,
           @JsonKey(name: '_key') final Element? keyElement,
           final String? requirements,
           @JsonKey(name: '_requirements') final Element? requirementsElement,
@@ -15090,6 +13457,11 @@ abstract class _ElementDefinitionConstraint
   factory _ElementDefinitionConstraint.fromJson(Map<String, dynamic> json) =
       _$ElementDefinitionConstraintImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
   @override
   String? get key;
   @override
@@ -15138,6 +13510,7 @@ ElementDefinitionBinding _$ElementDefinitionBindingFromJson(
 
 /// @nodoc
 mixin _$ElementDefinitionBinding {
+  String? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   ElementDefinitionBindingStrength? get strength =>
@@ -15165,7 +13538,8 @@ abstract class $ElementDefinitionBindingCopyWith<$Res> {
       _$ElementDefinitionBindingCopyWithImpl<$Res, ElementDefinitionBinding>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       ElementDefinitionBindingStrength? strength,
       @JsonKey(name: '_strength') Element? strengthElement,
       String? description,
@@ -15174,9 +13548,6 @@ abstract class $ElementDefinitionBindingCopyWith<$Res> {
       @JsonKey(name: '_valueSetUri') Element? valueSetUriElement,
       Reference? valueSetReference});
 
-  $ElementCopyWith<$Res>? get strengthElement;
-  $ElementCopyWith<$Res>? get descriptionElement;
-  $ElementCopyWith<$Res>? get valueSetUriElement;
   $ReferenceCopyWith<$Res>? get valueSetReference;
 }
 
@@ -15194,6 +13565,7 @@ class _$ElementDefinitionBindingCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? extension_ = freezed,
     Object? strength = freezed,
     Object? strengthElement = freezed,
@@ -15204,6 +13576,10 @@ class _$ElementDefinitionBindingCopyWithImpl<$Res,
     Object? valueSetReference = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       extension_: freezed == extension_
           ? _value.extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
@@ -15241,42 +13617,6 @@ class _$ElementDefinitionBindingCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get strengthElement {
-    if (_value.strengthElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.strengthElement!, (value) {
-      return _then(_value.copyWith(strengthElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get descriptionElement {
-    if (_value.descriptionElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.descriptionElement!, (value) {
-      return _then(_value.copyWith(descriptionElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get valueSetUriElement {
-    if (_value.valueSetUriElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.valueSetUriElement!, (value) {
-      return _then(_value.copyWith(valueSetUriElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get valueSetReference {
     if (_value.valueSetReference == null) {
       return null;
@@ -15298,7 +13638,8 @@ abstract class _$$ElementDefinitionBindingImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
       ElementDefinitionBindingStrength? strength,
       @JsonKey(name: '_strength') Element? strengthElement,
       String? description,
@@ -15307,12 +13648,6 @@ abstract class _$$ElementDefinitionBindingImplCopyWith<$Res>
       @JsonKey(name: '_valueSetUri') Element? valueSetUriElement,
       Reference? valueSetReference});
 
-  @override
-  $ElementCopyWith<$Res>? get strengthElement;
-  @override
-  $ElementCopyWith<$Res>? get descriptionElement;
-  @override
-  $ElementCopyWith<$Res>? get valueSetUriElement;
   @override
   $ReferenceCopyWith<$Res>? get valueSetReference;
 }
@@ -15330,6 +13665,7 @@ class __$$ElementDefinitionBindingImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? extension_ = freezed,
     Object? strength = freezed,
     Object? strengthElement = freezed,
@@ -15340,6 +13676,10 @@ class __$$ElementDefinitionBindingImplCopyWithImpl<$Res>
     Object? valueSetReference = freezed,
   }) {
     return _then(_$ElementDefinitionBindingImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       extension_: freezed == extension_
           ? _value._extension_
           : extension_ // ignore: cast_nullable_to_non_nullable
@@ -15380,7 +13720,8 @@ class __$$ElementDefinitionBindingImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ElementDefinitionBindingImpl extends _ElementDefinitionBinding {
   const _$ElementDefinitionBindingImpl(
-      {@JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       this.strength,
       @JsonKey(name: '_strength') this.strengthElement,
       this.description,
@@ -15394,6 +13735,8 @@ class _$ElementDefinitionBindingImpl extends _ElementDefinitionBinding {
   factory _$ElementDefinitionBindingImpl.fromJson(Map<String, dynamic> json) =>
       _$$ElementDefinitionBindingImplFromJson(json);
 
+  @override
+  final String? id;
   final List<FhirExtension>? _extension_;
   @override
   @JsonKey(name: 'extension')
@@ -15425,7 +13768,7 @@ class _$ElementDefinitionBindingImpl extends _ElementDefinitionBinding {
 
   @override
   String toString() {
-    return 'ElementDefinitionBinding(extension_: $extension_, strength: $strength, strengthElement: $strengthElement, description: $description, descriptionElement: $descriptionElement, valueSetUri: $valueSetUri, valueSetUriElement: $valueSetUriElement, valueSetReference: $valueSetReference)';
+    return 'ElementDefinitionBinding(id: $id, extension_: $extension_, strength: $strength, strengthElement: $strengthElement, description: $description, descriptionElement: $descriptionElement, valueSetUri: $valueSetUri, valueSetUriElement: $valueSetUriElement, valueSetReference: $valueSetReference)';
   }
 
   @override
@@ -15433,6 +13776,7 @@ class _$ElementDefinitionBindingImpl extends _ElementDefinitionBinding {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ElementDefinitionBindingImpl &&
+            (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality()
                 .equals(other._extension_, _extension_) &&
             (identical(other.strength, strength) ||
@@ -15455,6 +13799,7 @@ class _$ElementDefinitionBindingImpl extends _ElementDefinitionBinding {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
       const DeepCollectionEquality().hash(_extension_),
       strength,
       strengthElement,
@@ -15481,7 +13826,8 @@ class _$ElementDefinitionBindingImpl extends _ElementDefinitionBinding {
 
 abstract class _ElementDefinitionBinding extends ElementDefinitionBinding {
   const factory _ElementDefinitionBinding(
-      {@JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
       final ElementDefinitionBindingStrength? strength,
       @JsonKey(name: '_strength') final Element? strengthElement,
       final String? description,
@@ -15494,6 +13840,8 @@ abstract class _ElementDefinitionBinding extends ElementDefinitionBinding {
   factory _ElementDefinitionBinding.fromJson(Map<String, dynamic> json) =
       _$ElementDefinitionBindingImpl.fromJson;
 
+  @override
+  String? get id;
   @override
   @JsonKey(name: 'extension')
   List<FhirExtension>? get extension_;
@@ -15527,6 +13875,9 @@ ElementDefinitionMapping _$ElementDefinitionMappingFromJson(
 
 /// @nodoc
 mixin _$ElementDefinitionMapping {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   FhirId? get identity => throw _privateConstructorUsedError;
   @JsonKey(name: '_identity')
   Element? get identityElement => throw _privateConstructorUsedError;
@@ -15553,7 +13904,9 @@ abstract class $ElementDefinitionMappingCopyWith<$Res> {
       _$ElementDefinitionMappingCopyWithImpl<$Res, ElementDefinitionMapping>;
   @useResult
   $Res call(
-      {FhirId? identity,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      FhirId? identity,
       @JsonKey(name: '_identity') Element? identityElement,
       String? language,
       @JsonKey(name: '_language') Element? languageElement,
@@ -15561,11 +13914,6 @@ abstract class $ElementDefinitionMappingCopyWith<$Res> {
       @JsonKey(name: '_map') Element? mapElement,
       String? comment,
       @JsonKey(name: '_comment') Element? commentElement});
-
-  $ElementCopyWith<$Res>? get identityElement;
-  $ElementCopyWith<$Res>? get languageElement;
-  $ElementCopyWith<$Res>? get mapElement;
-  $ElementCopyWith<$Res>? get commentElement;
 }
 
 /// @nodoc
@@ -15582,6 +13930,8 @@ class _$ElementDefinitionMappingCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? identity = freezed,
     Object? identityElement = freezed,
     Object? language = freezed,
@@ -15592,6 +13942,14 @@ class _$ElementDefinitionMappingCopyWithImpl<$Res,
     Object? commentElement = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       identity: freezed == identity
           ? _value.identity
           : identity // ignore: cast_nullable_to_non_nullable
@@ -15626,54 +13984,6 @@ class _$ElementDefinitionMappingCopyWithImpl<$Res,
               as Element?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get identityElement {
-    if (_value.identityElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.identityElement!, (value) {
-      return _then(_value.copyWith(identityElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get mapElement {
-    if (_value.mapElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.mapElement!, (value) {
-      return _then(_value.copyWith(mapElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get commentElement {
-    if (_value.commentElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.commentElement!, (value) {
-      return _then(_value.copyWith(commentElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -15686,7 +13996,9 @@ abstract class _$$ElementDefinitionMappingImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {FhirId? identity,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      FhirId? identity,
       @JsonKey(name: '_identity') Element? identityElement,
       String? language,
       @JsonKey(name: '_language') Element? languageElement,
@@ -15694,15 +14006,6 @@ abstract class _$$ElementDefinitionMappingImplCopyWith<$Res>
       @JsonKey(name: '_map') Element? mapElement,
       String? comment,
       @JsonKey(name: '_comment') Element? commentElement});
-
-  @override
-  $ElementCopyWith<$Res>? get identityElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
-  $ElementCopyWith<$Res>? get mapElement;
-  @override
-  $ElementCopyWith<$Res>? get commentElement;
 }
 
 /// @nodoc
@@ -15718,6 +14021,8 @@ class __$$ElementDefinitionMappingImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? identity = freezed,
     Object? identityElement = freezed,
     Object? language = freezed,
@@ -15728,6 +14033,14 @@ class __$$ElementDefinitionMappingImplCopyWithImpl<$Res>
     Object? commentElement = freezed,
   }) {
     return _then(_$ElementDefinitionMappingImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       identity: freezed == identity
           ? _value.identity
           : identity // ignore: cast_nullable_to_non_nullable
@@ -15768,7 +14081,9 @@ class __$$ElementDefinitionMappingImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ElementDefinitionMappingImpl extends _ElementDefinitionMapping {
   const _$ElementDefinitionMappingImpl(
-      {this.identity,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      this.identity,
       @JsonKey(name: '_identity') this.identityElement,
       this.language,
       @JsonKey(name: '_language') this.languageElement,
@@ -15776,10 +14091,24 @@ class _$ElementDefinitionMappingImpl extends _ElementDefinitionMapping {
       @JsonKey(name: '_map') this.mapElement,
       this.comment,
       @JsonKey(name: '_comment') this.commentElement})
-      : super._();
+      : _extension_ = extension_,
+        super._();
 
   factory _$ElementDefinitionMappingImpl.fromJson(Map<String, dynamic> json) =>
       _$$ElementDefinitionMappingImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirId? identity;
@@ -15804,7 +14133,7 @@ class _$ElementDefinitionMappingImpl extends _ElementDefinitionMapping {
 
   @override
   String toString() {
-    return 'ElementDefinitionMapping(identity: $identity, identityElement: $identityElement, language: $language, languageElement: $languageElement, map: $map, mapElement: $mapElement, comment: $comment, commentElement: $commentElement)';
+    return 'ElementDefinitionMapping(id: $id, extension_: $extension_, identity: $identity, identityElement: $identityElement, language: $language, languageElement: $languageElement, map: $map, mapElement: $mapElement, comment: $comment, commentElement: $commentElement)';
   }
 
   @override
@@ -15812,6 +14141,9 @@ class _$ElementDefinitionMappingImpl extends _ElementDefinitionMapping {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ElementDefinitionMappingImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
             (identical(other.identity, identity) ||
                 other.identity == identity) &&
             (identical(other.identityElement, identityElement) ||
@@ -15830,8 +14162,18 @@ class _$ElementDefinitionMappingImpl extends _ElementDefinitionMapping {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, identity, identityElement,
-      language, languageElement, map, mapElement, comment, commentElement);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      identity,
+      identityElement,
+      language,
+      languageElement,
+      map,
+      mapElement,
+      comment,
+      commentElement);
 
   @JsonKey(ignore: true)
   @override
@@ -15850,7 +14192,9 @@ class _$ElementDefinitionMappingImpl extends _ElementDefinitionMapping {
 
 abstract class _ElementDefinitionMapping extends ElementDefinitionMapping {
   const factory _ElementDefinitionMapping(
-          {final FhirId? identity,
+          {final String? id,
+          @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+          final FhirId? identity,
           @JsonKey(name: '_identity') final Element? identityElement,
           final String? language,
           @JsonKey(name: '_language') final Element? languageElement,
@@ -15864,6 +14208,11 @@ abstract class _ElementDefinitionMapping extends ElementDefinitionMapping {
   factory _ElementDefinitionMapping.fromJson(Map<String, dynamic> json) =
       _$ElementDefinitionMappingImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
   @override
   FhirId? get identity;
   @override
@@ -15896,6 +14245,9 @@ Dosage _$DosageFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Dosage {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
   FhirDecimal? get sequence => throw _privateConstructorUsedError;
   @JsonKey(name: '_sequence')
   Element? get sequenceElement => throw _privateConstructorUsedError;
@@ -15936,7 +14288,9 @@ abstract class $DosageCopyWith<$Res> {
       _$DosageCopyWithImpl<$Res, Dosage>;
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       String? text,
       @JsonKey(name: '_text') Element? textElement,
@@ -15959,11 +14313,7 @@ abstract class $DosageCopyWith<$Res> {
       Range? rateRange,
       Quantity? rateSimpleQuantity});
 
-  $ElementCopyWith<$Res>? get sequenceElement;
-  $ElementCopyWith<$Res>? get textElement;
-  $ElementCopyWith<$Res>? get patientInstructionElement;
   $TimingCopyWith<$Res>? get timing;
-  $ElementCopyWith<$Res>? get asNeededBooleanElement;
   $CodeableConceptCopyWith<$Res>? get asNeededCodeableConcept;
   $CodeableConceptCopyWith<$Res>? get site;
   $CodeableConceptCopyWith<$Res>? get route;
@@ -15991,6 +14341,8 @@ class _$DosageCopyWithImpl<$Res, $Val extends Dosage>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? text = freezed,
@@ -16015,6 +14367,14 @@ class _$DosageCopyWithImpl<$Res, $Val extends Dosage>
     Object? rateSimpleQuantity = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -16108,42 +14468,6 @@ class _$DosageCopyWithImpl<$Res, $Val extends Dosage>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceElement {
-    if (_value.sequenceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceElement!, (value) {
-      return _then(_value.copyWith(sequenceElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get textElement {
-    if (_value.textElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.textElement!, (value) {
-      return _then(_value.copyWith(textElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get patientInstructionElement {
-    if (_value.patientInstructionElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.patientInstructionElement!, (value) {
-      return _then(_value.copyWith(patientInstructionElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $TimingCopyWith<$Res>? get timing {
     if (_value.timing == null) {
       return null;
@@ -16151,18 +14475,6 @@ class _$DosageCopyWithImpl<$Res, $Val extends Dosage>
 
     return $TimingCopyWith<$Res>(_value.timing!, (value) {
       return _then(_value.copyWith(timing: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get asNeededBooleanElement {
-    if (_value.asNeededBooleanElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.asNeededBooleanElement!, (value) {
-      return _then(_value.copyWith(asNeededBooleanElement: value) as $Val);
     });
   }
 
@@ -16320,7 +14632,9 @@ abstract class _$$DosageImplCopyWith<$Res> implements $DosageCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {FhirDecimal? sequence,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      FhirDecimal? sequence,
       @JsonKey(name: '_sequence') Element? sequenceElement,
       String? text,
       @JsonKey(name: '_text') Element? textElement,
@@ -16344,15 +14658,7 @@ abstract class _$$DosageImplCopyWith<$Res> implements $DosageCopyWith<$Res> {
       Quantity? rateSimpleQuantity});
 
   @override
-  $ElementCopyWith<$Res>? get sequenceElement;
-  @override
-  $ElementCopyWith<$Res>? get textElement;
-  @override
-  $ElementCopyWith<$Res>? get patientInstructionElement;
-  @override
   $TimingCopyWith<$Res>? get timing;
-  @override
-  $ElementCopyWith<$Res>? get asNeededBooleanElement;
   @override
   $CodeableConceptCopyWith<$Res>? get asNeededCodeableConcept;
   @override
@@ -16390,6 +14696,8 @@ class __$$DosageImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
     Object? sequence = freezed,
     Object? sequenceElement = freezed,
     Object? text = freezed,
@@ -16414,6 +14722,14 @@ class __$$DosageImplCopyWithImpl<$Res>
     Object? rateSimpleQuantity = freezed,
   }) {
     return _then(_$DosageImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       sequence: freezed == sequence
           ? _value.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
@@ -16510,7 +14826,9 @@ class __$$DosageImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DosageImpl extends _Dosage {
   const _$DosageImpl(
-      {this.sequence,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      this.sequence,
       @JsonKey(name: '_sequence') this.sequenceElement,
       this.text,
       @JsonKey(name: '_text') this.textElement,
@@ -16532,11 +14850,25 @@ class _$DosageImpl extends _Dosage {
       this.rateRatio,
       this.rateRange,
       this.rateSimpleQuantity})
-      : _additionalInstruction = additionalInstruction,
+      : _extension_ = extension_,
+        _additionalInstruction = additionalInstruction,
         super._();
 
   factory _$DosageImpl.fromJson(Map<String, dynamic> json) =>
       _$$DosageImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final FhirDecimal? sequence;
@@ -16598,7 +14930,7 @@ class _$DosageImpl extends _Dosage {
 
   @override
   String toString() {
-    return 'Dosage(sequence: $sequence, sequenceElement: $sequenceElement, text: $text, textElement: $textElement, additionalInstruction: $additionalInstruction, patientInstruction: $patientInstruction, patientInstructionElement: $patientInstructionElement, timing: $timing, asNeededBoolean: $asNeededBoolean, asNeededBooleanElement: $asNeededBooleanElement, asNeededCodeableConcept: $asNeededCodeableConcept, site: $site, route: $route, method: $method, doseRange: $doseRange, doseSimpleQuantity: $doseSimpleQuantity, maxDosePerPeriod: $maxDosePerPeriod, maxDosePerAdministration: $maxDosePerAdministration, maxDosePerLifetime: $maxDosePerLifetime, rateRatio: $rateRatio, rateRange: $rateRange, rateSimpleQuantity: $rateSimpleQuantity)';
+    return 'Dosage(id: $id, extension_: $extension_, sequence: $sequence, sequenceElement: $sequenceElement, text: $text, textElement: $textElement, additionalInstruction: $additionalInstruction, patientInstruction: $patientInstruction, patientInstructionElement: $patientInstructionElement, timing: $timing, asNeededBoolean: $asNeededBoolean, asNeededBooleanElement: $asNeededBooleanElement, asNeededCodeableConcept: $asNeededCodeableConcept, site: $site, route: $route, method: $method, doseRange: $doseRange, doseSimpleQuantity: $doseSimpleQuantity, maxDosePerPeriod: $maxDosePerPeriod, maxDosePerAdministration: $maxDosePerAdministration, maxDosePerLifetime: $maxDosePerLifetime, rateRatio: $rateRatio, rateRange: $rateRange, rateSimpleQuantity: $rateSimpleQuantity)';
   }
 
   @override
@@ -16606,6 +14938,9 @@ class _$DosageImpl extends _Dosage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DosageImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
             (identical(other.sequence, sequence) ||
                 other.sequence == sequence) &&
             (identical(other.sequenceElement, sequenceElement) ||
@@ -16654,6 +14989,8 @@ class _$DosageImpl extends _Dosage {
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
+        id,
+        const DeepCollectionEquality().hash(_extension_),
         sequence,
         sequenceElement,
         text,
@@ -16694,7 +15031,9 @@ class _$DosageImpl extends _Dosage {
 
 abstract class _Dosage extends Dosage {
   const factory _Dosage(
-      {final FhirDecimal? sequence,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final FhirDecimal? sequence,
       @JsonKey(name: '_sequence') final Element? sequenceElement,
       final String? text,
       @JsonKey(name: '_text') final Element? textElement,
@@ -16721,6 +15060,11 @@ abstract class _Dosage extends Dosage {
 
   factory _Dosage.fromJson(Map<String, dynamic> json) = _$DosageImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
   @override
   FhirDecimal? get sequence;
   @override

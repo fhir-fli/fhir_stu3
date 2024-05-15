@@ -8,6 +8,10 @@ part of 'metadata_types.dart';
 
 _$ContactDetailImpl _$$ContactDetailImplFromJson(Map<String, dynamic> json) =>
     _$ContactDetailImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       name: json['name'] as String?,
       nameElement: json['_name'] == null
           ? null
@@ -26,6 +30,9 @@ Map<String, dynamic> _$$ContactDetailImplToJson(_$ContactDetailImpl instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   writeNotNull('telecom', instance.telecom?.map((e) => e.toJson()).toList());
@@ -34,6 +41,10 @@ Map<String, dynamic> _$$ContactDetailImplToJson(_$ContactDetailImpl instance) {
 
 _$ContributorImpl _$$ContributorImplFromJson(Map<String, dynamic> json) =>
     _$ContributorImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       type: $enumDecodeNullable(_$ContributorTypeEnumMap, json['type']),
       typeElement: json['_type'] == null
           ? null
@@ -56,6 +67,9 @@ Map<String, dynamic> _$$ContributorImplToJson(_$ContributorImpl instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('type', _$ContributorTypeEnumMap[instance.type]);
   writeNotNull('_type', instance.typeElement?.toJson());
   writeNotNull('name', instance.name);
@@ -75,6 +89,10 @@ const _$ContributorTypeEnumMap = {
 _$RelatedArtifactImpl _$$RelatedArtifactImplFromJson(
         Map<String, dynamic> json) =>
     _$RelatedArtifactImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       type: $enumDecodeNullable(_$RelatedArtifactTypeEnumMap, json['type']),
       typeElement: json['_type'] == null
           ? null
@@ -109,6 +127,9 @@ Map<String, dynamic> _$$RelatedArtifactImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('type', _$RelatedArtifactTypeEnumMap[instance.type]);
   writeNotNull('_type', instance.typeElement?.toJson());
   writeNotNull('display', instance.display);
@@ -136,6 +157,10 @@ const _$RelatedArtifactTypeEnumMap = {
 
 _$UsageContextImpl _$$UsageContextImplFromJson(Map<String, dynamic> json) =>
     _$UsageContextImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       code: Coding.fromJson(json['code'] as Map<String, dynamic>),
       valueCodeableConcept: json['valueCodeableConcept'] == null
           ? null
@@ -150,9 +175,7 @@ _$UsageContextImpl _$$UsageContextImplFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$$UsageContextImplToJson(_$UsageContextImpl instance) {
-  final val = <String, dynamic>{
-    'code': instance.code.toJson(),
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -160,6 +183,10 @@ Map<String, dynamic> _$$UsageContextImplToJson(_$UsageContextImpl instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  val['code'] = instance.code.toJson();
   writeNotNull('valueCodeableConcept', instance.valueCodeableConcept?.toJson());
   writeNotNull('valueQuantity', instance.valueQuantity?.toJson());
   writeNotNull('valueRange', instance.valueRange?.toJson());
@@ -169,6 +196,10 @@ Map<String, dynamic> _$$UsageContextImplToJson(_$UsageContextImpl instance) {
 _$DataRequirementImpl _$$DataRequirementImplFromJson(
         Map<String, dynamic> json) =>
     _$DataRequirementImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       type: json['type'] as String?,
       typeElement: json['_type'] == null
           ? null
@@ -206,6 +237,9 @@ Map<String, dynamic> _$$DataRequirementImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('type', instance.type);
   writeNotNull('_type', instance.typeElement?.toJson());
   writeNotNull('profile', instance.profile);
@@ -224,6 +258,10 @@ Map<String, dynamic> _$$DataRequirementImplToJson(
 _$DataRequirementCodeFilterImpl _$$DataRequirementCodeFilterImplFromJson(
         Map<String, dynamic> json) =>
     _$DataRequirementCodeFilterImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       path: json['path'] as String?,
       pathElement: json['_path'] == null
           ? null
@@ -261,6 +299,9 @@ Map<String, dynamic> _$$DataRequirementCodeFilterImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('path', instance.path);
   writeNotNull('_path', instance.pathElement?.toJson());
   writeNotNull('valueSetString', instance.valueSetString);
@@ -280,6 +321,10 @@ Map<String, dynamic> _$$DataRequirementCodeFilterImplToJson(
 _$DataRequirementDateFilterImpl _$$DataRequirementDateFilterImplFromJson(
         Map<String, dynamic> json) =>
     _$DataRequirementDateFilterImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       path: json['path'] as String?,
       pathElement: json['_path'] == null
           ? null
@@ -309,6 +354,9 @@ Map<String, dynamic> _$$DataRequirementDateFilterImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('path', instance.path);
   writeNotNull('_path', instance.pathElement?.toJson());
   writeNotNull('valueDateTime', instance.valueDateTime?.toJson());
@@ -321,6 +369,10 @@ Map<String, dynamic> _$$DataRequirementDateFilterImplToJson(
 _$ParameterDefinitionImpl _$$ParameterDefinitionImplFromJson(
         Map<String, dynamic> json) =>
     _$ParameterDefinitionImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       name: json['name'] as String?,
       nameElement: json['_name'] == null
           ? null
@@ -360,6 +412,9 @@ Map<String, dynamic> _$$ParameterDefinitionImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   writeNotNull('use', instance.use);
@@ -379,6 +434,10 @@ Map<String, dynamic> _$$ParameterDefinitionImplToJson(
 _$TriggerDefinitionImpl _$$TriggerDefinitionImplFromJson(
         Map<String, dynamic> json) =>
     _$TriggerDefinitionImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       type: $enumDecodeNullable(_$TriggerDefinitionTypeEnumMap, json['type']),
       typeElement: json['_type'] == null
           ? null
@@ -422,6 +481,9 @@ Map<String, dynamic> _$$TriggerDefinitionImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('type', _$TriggerDefinitionTypeEnumMap[instance.type]);
   writeNotNull('_type', instance.typeElement?.toJson());
   writeNotNull('eventName', instance.eventName);

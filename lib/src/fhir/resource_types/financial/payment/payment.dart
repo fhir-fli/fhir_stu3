@@ -46,6 +46,9 @@ class PaymentNotice with Resource, _$PaymentNotice {
     CodeableConcept? paymentStatus,
   }) = _PaymentNotice;
 
+  @override
+  String get fhirType => 'PaymentNotice';
+
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory PaymentNotice.fromYaml(dynamic yaml) => yaml is String
       ? PaymentNotice.fromJson(
@@ -115,6 +118,9 @@ class PaymentReconciliation with Resource, _$PaymentReconciliation {
     List<PaymentReconciliationProcessNote>? processNote,
   }) = _PaymentReconciliation;
 
+  @override
+  String get fhirType => 'PaymentReconciliation';
+
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory PaymentReconciliation.fromYaml(dynamic yaml) => yaml is String
       ? PaymentReconciliation.fromJson(
@@ -149,9 +155,13 @@ class PaymentReconciliation with Resource, _$PaymentReconciliation {
 }
 
 @freezed
-class PaymentReconciliationDetail with _$PaymentReconciliationDetail {
+class PaymentReconciliationDetail
+    with BackboneType, _$PaymentReconciliationDetail {
   const PaymentReconciliationDetail._();
   const factory PaymentReconciliationDetail({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     required CodeableConcept type,
     Reference? request,
     Reference? response,
@@ -162,8 +172,8 @@ class PaymentReconciliationDetail with _$PaymentReconciliationDetail {
     Money? amount,
   }) = _PaymentReconciliationDetail;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'PaymentReconciliationDetail';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory PaymentReconciliationDetail.fromYaml(dynamic yaml) => yaml is String
@@ -191,23 +201,23 @@ class PaymentReconciliationDetail with _$PaymentReconciliationDetail {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
-class PaymentReconciliationProcessNote with _$PaymentReconciliationProcessNote {
+class PaymentReconciliationProcessNote
+    with BackboneType, _$PaymentReconciliationProcessNote {
   const PaymentReconciliationProcessNote._();
   const factory PaymentReconciliationProcessNote({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     CodeableConcept? type,
     String? text,
     @JsonKey(name: '_text') Element? textElement,
   }) = _PaymentReconciliationProcessNote;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'PaymentReconciliationProcessNote';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory PaymentReconciliationProcessNote.fromYaml(dynamic yaml) => yaml

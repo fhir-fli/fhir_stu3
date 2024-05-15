@@ -113,22 +113,14 @@ abstract class $CoverageCopyWith<$Res> {
       List<Reference>? contract});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get statusElement;
   $CodeableConceptCopyWith<$Res>? get type;
   $ReferenceCopyWith<$Res>? get policyHolder;
   $ReferenceCopyWith<$Res>? get subscriber;
-  $ElementCopyWith<$Res>? get subscriberIdElement;
   $ReferenceCopyWith<$Res>? get beneficiary;
   $CodeableConceptCopyWith<$Res>? get relationship;
   $PeriodCopyWith<$Res>? get period;
   $CoverageGroupingCopyWith<$Res>? get grouping;
-  $ElementCopyWith<$Res>? get dependentElement;
-  $ElementCopyWith<$Res>? get sequenceElement;
-  $ElementCopyWith<$Res>? get orderElement;
-  $ElementCopyWith<$Res>? get networkElement;
 }
 
 /// @nodoc
@@ -328,30 +320,6 @@ class _$CoverageCopyWithImpl<$Res, $Val extends Coverage>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -359,18 +327,6 @@ class _$CoverageCopyWithImpl<$Res, $Val extends Coverage>
 
     return $NarrativeCopyWith<$Res>(_value.text!, (value) {
       return _then(_value.copyWith(text: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
     });
   }
 
@@ -407,18 +363,6 @@ class _$CoverageCopyWithImpl<$Res, $Val extends Coverage>
 
     return $ReferenceCopyWith<$Res>(_value.subscriber!, (value) {
       return _then(_value.copyWith(subscriber: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get subscriberIdElement {
-    if (_value.subscriberIdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.subscriberIdElement!, (value) {
-      return _then(_value.copyWith(subscriberIdElement: value) as $Val);
     });
   }
 
@@ -467,54 +411,6 @@ class _$CoverageCopyWithImpl<$Res, $Val extends Coverage>
 
     return $CoverageGroupingCopyWith<$Res>(_value.grouping!, (value) {
       return _then(_value.copyWith(grouping: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get dependentElement {
-    if (_value.dependentElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.dependentElement!, (value) {
-      return _then(_value.copyWith(dependentElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get sequenceElement {
-    if (_value.sequenceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.sequenceElement!, (value) {
-      return _then(_value.copyWith(sequenceElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get orderElement {
-    if (_value.orderElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.orderElement!, (value) {
-      return _then(_value.copyWith(orderElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get networkElement {
-    if (_value.networkElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.networkElement!, (value) {
-      return _then(_value.copyWith(networkElement: value) as $Val);
     });
   }
 }
@@ -566,21 +462,13 @@ abstract class _$$CoverageImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
-  @override
-  $ElementCopyWith<$Res>? get statusElement;
   @override
   $CodeableConceptCopyWith<$Res>? get type;
   @override
   $ReferenceCopyWith<$Res>? get policyHolder;
   @override
   $ReferenceCopyWith<$Res>? get subscriber;
-  @override
-  $ElementCopyWith<$Res>? get subscriberIdElement;
   @override
   $ReferenceCopyWith<$Res>? get beneficiary;
   @override
@@ -589,14 +477,6 @@ abstract class _$$CoverageImplCopyWith<$Res>
   $PeriodCopyWith<$Res>? get period;
   @override
   $CoverageGroupingCopyWith<$Res>? get grouping;
-  @override
-  $ElementCopyWith<$Res>? get dependentElement;
-  @override
-  $ElementCopyWith<$Res>? get sequenceElement;
-  @override
-  $ElementCopyWith<$Res>? get orderElement;
-  @override
-  $ElementCopyWith<$Res>? get networkElement;
 }
 
 /// @nodoc
@@ -1205,6 +1085,11 @@ CoverageGrouping _$CoverageGroupingFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CoverageGrouping {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   String? get group => throw _privateConstructorUsedError;
   @JsonKey(name: '_group')
   Element? get groupElement => throw _privateConstructorUsedError;
@@ -1256,7 +1141,10 @@ abstract class $CoverageGroupingCopyWith<$Res> {
       _$CoverageGroupingCopyWithImpl<$Res, CoverageGrouping>;
   @useResult
   $Res call(
-      {String? group,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      String? group,
       @JsonKey(name: '_group') Element? groupElement,
       String? groupDisplay,
       @JsonKey(name: '_groupDisplay') Element? groupDisplayElement,
@@ -1280,19 +1168,6 @@ abstract class $CoverageGroupingCopyWith<$Res> {
       @JsonKey(name: '_subClass') Element? subClassElement,
       String? subClassDisplay,
       @JsonKey(name: '_subClassDisplay') Element? subClassDisplayElement});
-
-  $ElementCopyWith<$Res>? get groupElement;
-  $ElementCopyWith<$Res>? get groupDisplayElement;
-  $ElementCopyWith<$Res>? get subGroupElement;
-  $ElementCopyWith<$Res>? get subGroupDisplayElement;
-  $ElementCopyWith<$Res>? get planElement;
-  $ElementCopyWith<$Res>? get planDisplayElement;
-  $ElementCopyWith<$Res>? get subPlanElement;
-  $ElementCopyWith<$Res>? get subPlanDisplayElement;
-  $ElementCopyWith<$Res>? get classElement;
-  $ElementCopyWith<$Res>? get classDisplayElement;
-  $ElementCopyWith<$Res>? get subClassElement;
-  $ElementCopyWith<$Res>? get subClassDisplayElement;
 }
 
 /// @nodoc
@@ -1308,6 +1183,9 @@ class _$CoverageGroupingCopyWithImpl<$Res, $Val extends CoverageGrouping>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? group = freezed,
     Object? groupElement = freezed,
     Object? groupDisplay = freezed,
@@ -1334,6 +1212,18 @@ class _$CoverageGroupingCopyWithImpl<$Res, $Val extends CoverageGrouping>
     Object? subClassDisplayElement = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       group: freezed == group
           ? _value.group
           : group // ignore: cast_nullable_to_non_nullable
@@ -1432,150 +1322,6 @@ class _$CoverageGroupingCopyWithImpl<$Res, $Val extends CoverageGrouping>
               as Element?,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get groupElement {
-    if (_value.groupElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.groupElement!, (value) {
-      return _then(_value.copyWith(groupElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get groupDisplayElement {
-    if (_value.groupDisplayElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.groupDisplayElement!, (value) {
-      return _then(_value.copyWith(groupDisplayElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get subGroupElement {
-    if (_value.subGroupElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.subGroupElement!, (value) {
-      return _then(_value.copyWith(subGroupElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get subGroupDisplayElement {
-    if (_value.subGroupDisplayElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.subGroupDisplayElement!, (value) {
-      return _then(_value.copyWith(subGroupDisplayElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get planElement {
-    if (_value.planElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.planElement!, (value) {
-      return _then(_value.copyWith(planElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get planDisplayElement {
-    if (_value.planDisplayElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.planDisplayElement!, (value) {
-      return _then(_value.copyWith(planDisplayElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get subPlanElement {
-    if (_value.subPlanElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.subPlanElement!, (value) {
-      return _then(_value.copyWith(subPlanElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get subPlanDisplayElement {
-    if (_value.subPlanDisplayElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.subPlanDisplayElement!, (value) {
-      return _then(_value.copyWith(subPlanDisplayElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get classElement {
-    if (_value.classElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.classElement!, (value) {
-      return _then(_value.copyWith(classElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get classDisplayElement {
-    if (_value.classDisplayElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.classDisplayElement!, (value) {
-      return _then(_value.copyWith(classDisplayElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get subClassElement {
-    if (_value.subClassElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.subClassElement!, (value) {
-      return _then(_value.copyWith(subClassElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get subClassDisplayElement {
-    if (_value.subClassDisplayElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.subClassDisplayElement!, (value) {
-      return _then(_value.copyWith(subClassDisplayElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -1587,7 +1333,10 @@ abstract class _$$CoverageGroupingImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? group,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      String? group,
       @JsonKey(name: '_group') Element? groupElement,
       String? groupDisplay,
       @JsonKey(name: '_groupDisplay') Element? groupDisplayElement,
@@ -1611,31 +1360,6 @@ abstract class _$$CoverageGroupingImplCopyWith<$Res>
       @JsonKey(name: '_subClass') Element? subClassElement,
       String? subClassDisplay,
       @JsonKey(name: '_subClassDisplay') Element? subClassDisplayElement});
-
-  @override
-  $ElementCopyWith<$Res>? get groupElement;
-  @override
-  $ElementCopyWith<$Res>? get groupDisplayElement;
-  @override
-  $ElementCopyWith<$Res>? get subGroupElement;
-  @override
-  $ElementCopyWith<$Res>? get subGroupDisplayElement;
-  @override
-  $ElementCopyWith<$Res>? get planElement;
-  @override
-  $ElementCopyWith<$Res>? get planDisplayElement;
-  @override
-  $ElementCopyWith<$Res>? get subPlanElement;
-  @override
-  $ElementCopyWith<$Res>? get subPlanDisplayElement;
-  @override
-  $ElementCopyWith<$Res>? get classElement;
-  @override
-  $ElementCopyWith<$Res>? get classDisplayElement;
-  @override
-  $ElementCopyWith<$Res>? get subClassElement;
-  @override
-  $ElementCopyWith<$Res>? get subClassDisplayElement;
 }
 
 /// @nodoc
@@ -1649,6 +1373,9 @@ class __$$CoverageGroupingImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? group = freezed,
     Object? groupElement = freezed,
     Object? groupDisplay = freezed,
@@ -1675,6 +1402,18 @@ class __$$CoverageGroupingImplCopyWithImpl<$Res>
     Object? subClassDisplayElement = freezed,
   }) {
     return _then(_$CoverageGroupingImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       group: freezed == group
           ? _value.group
           : group // ignore: cast_nullable_to_non_nullable
@@ -1779,7 +1518,10 @@ class __$$CoverageGroupingImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CoverageGroupingImpl extends _CoverageGrouping {
   const _$CoverageGroupingImpl(
-      {this.group,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.group,
       @JsonKey(name: '_group') this.groupElement,
       this.groupDisplay,
       @JsonKey(name: '_groupDisplay') this.groupDisplayElement,
@@ -1803,10 +1545,36 @@ class _$CoverageGroupingImpl extends _CoverageGrouping {
       @JsonKey(name: '_subClass') this.subClassElement,
       this.subClassDisplay,
       @JsonKey(name: '_subClassDisplay') this.subClassDisplayElement})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$CoverageGroupingImpl.fromJson(Map<String, dynamic> json) =>
       _$$CoverageGroupingImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final String? group;
@@ -1872,7 +1640,7 @@ class _$CoverageGroupingImpl extends _CoverageGrouping {
 
   @override
   String toString() {
-    return 'CoverageGrouping(group: $group, groupElement: $groupElement, groupDisplay: $groupDisplay, groupDisplayElement: $groupDisplayElement, subGroup: $subGroup, subGroupElement: $subGroupElement, subGroupDisplay: $subGroupDisplay, subGroupDisplayElement: $subGroupDisplayElement, plan: $plan, planElement: $planElement, planDisplay: $planDisplay, planDisplayElement: $planDisplayElement, subPlan: $subPlan, subPlanElement: $subPlanElement, subPlanDisplay: $subPlanDisplay, subPlanDisplayElement: $subPlanDisplayElement, class_: $class_, classElement: $classElement, classDisplay: $classDisplay, classDisplayElement: $classDisplayElement, subClass: $subClass, subClassElement: $subClassElement, subClassDisplay: $subClassDisplay, subClassDisplayElement: $subClassDisplayElement)';
+    return 'CoverageGrouping(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, group: $group, groupElement: $groupElement, groupDisplay: $groupDisplay, groupDisplayElement: $groupDisplayElement, subGroup: $subGroup, subGroupElement: $subGroupElement, subGroupDisplay: $subGroupDisplay, subGroupDisplayElement: $subGroupDisplayElement, plan: $plan, planElement: $planElement, planDisplay: $planDisplay, planDisplayElement: $planDisplayElement, subPlan: $subPlan, subPlanElement: $subPlanElement, subPlanDisplay: $subPlanDisplay, subPlanDisplayElement: $subPlanDisplayElement, class_: $class_, classElement: $classElement, classDisplay: $classDisplay, classDisplayElement: $classDisplayElement, subClass: $subClass, subClassElement: $subClassElement, subClassDisplay: $subClassDisplay, subClassDisplayElement: $subClassDisplayElement)';
   }
 
   @override
@@ -1880,6 +1648,11 @@ class _$CoverageGroupingImpl extends _CoverageGrouping {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CoverageGroupingImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.group, group) || other.group == group) &&
             (identical(other.groupElement, groupElement) ||
                 other.groupElement == groupElement) &&
@@ -1930,6 +1703,9 @@ class _$CoverageGroupingImpl extends _CoverageGrouping {
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
+        id,
+        const DeepCollectionEquality().hash(_extension_),
+        const DeepCollectionEquality().hash(_modifierExtension),
         group,
         groupElement,
         groupDisplay,
@@ -1973,7 +1749,10 @@ class _$CoverageGroupingImpl extends _CoverageGrouping {
 
 abstract class _CoverageGrouping extends CoverageGrouping {
   const factory _CoverageGrouping(
-      {final String? group,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      final String? group,
       @JsonKey(name: '_group') final Element? groupElement,
       final String? groupDisplay,
       @JsonKey(name: '_groupDisplay') final Element? groupDisplayElement,
@@ -2003,6 +1782,13 @@ abstract class _CoverageGrouping extends CoverageGrouping {
   factory _CoverageGrouping.fromJson(Map<String, dynamic> json) =
       _$CoverageGroupingImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   String? get group;
   @override
@@ -2165,22 +1951,16 @@ abstract class $EligibilityRequestCopyWith<$Res> {
       CodeableConcept? benefitSubCategory});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get statusElement;
   $CodeableConceptCopyWith<$Res>? get priority;
   $ReferenceCopyWith<$Res>? get patient;
-  $ElementCopyWith<$Res>? get servicedDateElement;
   $PeriodCopyWith<$Res>? get servicedPeriod;
-  $ElementCopyWith<$Res>? get createdElement;
   $ReferenceCopyWith<$Res>? get enterer;
   $ReferenceCopyWith<$Res>? get provider;
   $ReferenceCopyWith<$Res>? get organization;
   $ReferenceCopyWith<$Res>? get insurer;
   $ReferenceCopyWith<$Res>? get facility;
   $ReferenceCopyWith<$Res>? get coverage;
-  $ElementCopyWith<$Res>? get businessArrangementElement;
   $CodeableConceptCopyWith<$Res>? get benefitCategory;
   $CodeableConceptCopyWith<$Res>? get benefitSubCategory;
 }
@@ -2372,30 +2152,6 @@ class _$EligibilityRequestCopyWithImpl<$Res, $Val extends EligibilityRequest>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -2403,18 +2159,6 @@ class _$EligibilityRequestCopyWithImpl<$Res, $Val extends EligibilityRequest>
 
     return $NarrativeCopyWith<$Res>(_value.text!, (value) {
       return _then(_value.copyWith(text: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
     });
   }
 
@@ -2444,18 +2188,6 @@ class _$EligibilityRequestCopyWithImpl<$Res, $Val extends EligibilityRequest>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get servicedDateElement {
-    if (_value.servicedDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.servicedDateElement!, (value) {
-      return _then(_value.copyWith(servicedDateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $PeriodCopyWith<$Res>? get servicedPeriod {
     if (_value.servicedPeriod == null) {
       return null;
@@ -2463,18 +2195,6 @@ class _$EligibilityRequestCopyWithImpl<$Res, $Val extends EligibilityRequest>
 
     return $PeriodCopyWith<$Res>(_value.servicedPeriod!, (value) {
       return _then(_value.copyWith(servicedPeriod: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get createdElement {
-    if (_value.createdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.createdElement!, (value) {
-      return _then(_value.copyWith(createdElement: value) as $Val);
     });
   }
 
@@ -2552,18 +2272,6 @@ class _$EligibilityRequestCopyWithImpl<$Res, $Val extends EligibilityRequest>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get businessArrangementElement {
-    if (_value.businessArrangementElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.businessArrangementElement!, (value) {
-      return _then(_value.copyWith(businessArrangementElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get benefitCategory {
     if (_value.benefitCategory == null) {
       return null;
@@ -2633,23 +2341,13 @@ abstract class _$$EligibilityRequestImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
-  @override
-  $ElementCopyWith<$Res>? get statusElement;
   @override
   $CodeableConceptCopyWith<$Res>? get priority;
   @override
   $ReferenceCopyWith<$Res>? get patient;
   @override
-  $ElementCopyWith<$Res>? get servicedDateElement;
-  @override
   $PeriodCopyWith<$Res>? get servicedPeriod;
-  @override
-  $ElementCopyWith<$Res>? get createdElement;
   @override
   $ReferenceCopyWith<$Res>? get enterer;
   @override
@@ -2662,8 +2360,6 @@ abstract class _$$EligibilityRequestImplCopyWith<$Res>
   $ReferenceCopyWith<$Res>? get facility;
   @override
   $ReferenceCopyWith<$Res>? get coverage;
-  @override
-  $ElementCopyWith<$Res>? get businessArrangementElement;
   @override
   $CodeableConceptCopyWith<$Res>? get benefitCategory;
   @override
@@ -3317,18 +3013,12 @@ abstract class $EligibilityResponseCopyWith<$Res> {
       List<EligibilityResponseError>? error});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get statusElement;
-  $ElementCopyWith<$Res>? get createdElement;
   $ReferenceCopyWith<$Res>? get requestProvider;
   $ReferenceCopyWith<$Res>? get requestOrganization;
   $ReferenceCopyWith<$Res>? get request;
   $CodeableConceptCopyWith<$Res>? get outcome;
-  $ElementCopyWith<$Res>? get dispositionElement;
   $ReferenceCopyWith<$Res>? get insurer;
-  $ElementCopyWith<$Res>? get inforceElement;
   $CodeableConceptCopyWith<$Res>? get form;
 }
 
@@ -3504,30 +3194,6 @@ class _$EligibilityResponseCopyWithImpl<$Res, $Val extends EligibilityResponse>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -3535,30 +3201,6 @@ class _$EligibilityResponseCopyWithImpl<$Res, $Val extends EligibilityResponse>
 
     return $NarrativeCopyWith<$Res>(_value.text!, (value) {
       return _then(_value.copyWith(text: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get createdElement {
-    if (_value.createdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.createdElement!, (value) {
-      return _then(_value.copyWith(createdElement: value) as $Val);
     });
   }
 
@@ -3612,18 +3254,6 @@ class _$EligibilityResponseCopyWithImpl<$Res, $Val extends EligibilityResponse>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get dispositionElement {
-    if (_value.dispositionElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.dispositionElement!, (value) {
-      return _then(_value.copyWith(dispositionElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res>? get insurer {
     if (_value.insurer == null) {
       return null;
@@ -3631,18 +3261,6 @@ class _$EligibilityResponseCopyWithImpl<$Res, $Val extends EligibilityResponse>
 
     return $ReferenceCopyWith<$Res>(_value.insurer!, (value) {
       return _then(_value.copyWith(insurer: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get inforceElement {
-    if (_value.inforceElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.inforceElement!, (value) {
-      return _then(_value.copyWith(inforceElement: value) as $Val);
     });
   }
 
@@ -3701,15 +3319,7 @@ abstract class _$$EligibilityResponseImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
-  @override
-  $ElementCopyWith<$Res>? get statusElement;
-  @override
-  $ElementCopyWith<$Res>? get createdElement;
   @override
   $ReferenceCopyWith<$Res>? get requestProvider;
   @override
@@ -3719,11 +3329,7 @@ abstract class _$$EligibilityResponseImplCopyWith<$Res>
   @override
   $CodeableConceptCopyWith<$Res>? get outcome;
   @override
-  $ElementCopyWith<$Res>? get dispositionElement;
-  @override
   $ReferenceCopyWith<$Res>? get insurer;
-  @override
-  $ElementCopyWith<$Res>? get inforceElement;
   @override
   $CodeableConceptCopyWith<$Res>? get form;
 }
@@ -4261,6 +3867,11 @@ EligibilityResponseInsurance _$EligibilityResponseInsuranceFromJson(
 
 /// @nodoc
 mixin _$EligibilityResponseInsurance {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   Reference? get coverage => throw _privateConstructorUsedError;
   Reference? get contract => throw _privateConstructorUsedError;
   List<EligibilityResponseBenefitBalance>? get benefitBalance =>
@@ -4281,7 +3892,10 @@ abstract class $EligibilityResponseInsuranceCopyWith<$Res> {
           EligibilityResponseInsurance>;
   @useResult
   $Res call(
-      {Reference? coverage,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      Reference? coverage,
       Reference? contract,
       List<EligibilityResponseBenefitBalance>? benefitBalance});
 
@@ -4303,11 +3917,26 @@ class _$EligibilityResponseInsuranceCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? coverage = freezed,
     Object? contract = freezed,
     Object? benefitBalance = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       coverage: freezed == coverage
           ? _value.coverage
           : coverage // ignore: cast_nullable_to_non_nullable
@@ -4358,7 +3987,10 @@ abstract class _$$EligibilityResponseInsuranceImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Reference? coverage,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      Reference? coverage,
       Reference? contract,
       List<EligibilityResponseBenefitBalance>? benefitBalance});
 
@@ -4381,11 +4013,26 @@ class __$$EligibilityResponseInsuranceImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? coverage = freezed,
     Object? contract = freezed,
     Object? benefitBalance = freezed,
   }) {
     return _then(_$EligibilityResponseInsuranceImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       coverage: freezed == coverage
           ? _value.coverage
           : coverage // ignore: cast_nullable_to_non_nullable
@@ -4406,15 +4053,44 @@ class __$$EligibilityResponseInsuranceImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$EligibilityResponseInsuranceImpl extends _EligibilityResponseInsurance {
   const _$EligibilityResponseInsuranceImpl(
-      {this.coverage,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.coverage,
       this.contract,
       final List<EligibilityResponseBenefitBalance>? benefitBalance})
-      : _benefitBalance = benefitBalance,
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _benefitBalance = benefitBalance,
         super._();
 
   factory _$EligibilityResponseInsuranceImpl.fromJson(
           Map<String, dynamic> json) =>
       _$$EligibilityResponseInsuranceImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final Reference? coverage;
@@ -4432,7 +4108,7 @@ class _$EligibilityResponseInsuranceImpl extends _EligibilityResponseInsurance {
 
   @override
   String toString() {
-    return 'EligibilityResponseInsurance(coverage: $coverage, contract: $contract, benefitBalance: $benefitBalance)';
+    return 'EligibilityResponseInsurance(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, coverage: $coverage, contract: $contract, benefitBalance: $benefitBalance)';
   }
 
   @override
@@ -4440,6 +4116,11 @@ class _$EligibilityResponseInsuranceImpl extends _EligibilityResponseInsurance {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EligibilityResponseInsuranceImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.coverage, coverage) ||
                 other.coverage == coverage) &&
             (identical(other.contract, contract) ||
@@ -4450,7 +4131,13 @@ class _$EligibilityResponseInsuranceImpl extends _EligibilityResponseInsurance {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, coverage, contract,
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      coverage,
+      contract,
       const DeepCollectionEquality().hash(_benefitBalance));
 
   @JsonKey(ignore: true)
@@ -4472,7 +4159,10 @@ class _$EligibilityResponseInsuranceImpl extends _EligibilityResponseInsurance {
 abstract class _EligibilityResponseInsurance
     extends EligibilityResponseInsurance {
   const factory _EligibilityResponseInsurance(
-          {final Reference? coverage,
+          {final String? id,
+          @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+          final List<FhirExtension>? modifierExtension,
+          final Reference? coverage,
           final Reference? contract,
           final List<EligibilityResponseBenefitBalance>? benefitBalance}) =
       _$EligibilityResponseInsuranceImpl;
@@ -4481,6 +4171,13 @@ abstract class _EligibilityResponseInsurance
   factory _EligibilityResponseInsurance.fromJson(Map<String, dynamic> json) =
       _$EligibilityResponseInsuranceImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   Reference? get coverage;
   @override
@@ -4501,6 +4198,11 @@ EligibilityResponseBenefitBalance _$EligibilityResponseBenefitBalanceFromJson(
 
 /// @nodoc
 mixin _$EligibilityResponseBenefitBalance {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   CodeableConcept get category => throw _privateConstructorUsedError;
   CodeableConcept? get subCategory => throw _privateConstructorUsedError;
   FhirBoolean? get excluded => throw _privateConstructorUsedError;
@@ -4533,7 +4235,10 @@ abstract class $EligibilityResponseBenefitBalanceCopyWith<$Res> {
           EligibilityResponseBenefitBalance>;
   @useResult
   $Res call(
-      {CodeableConcept category,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept category,
       CodeableConcept? subCategory,
       FhirBoolean? excluded,
       @JsonKey(name: '_excluded') Element? excludedElement,
@@ -4548,9 +4253,6 @@ abstract class $EligibilityResponseBenefitBalanceCopyWith<$Res> {
 
   $CodeableConceptCopyWith<$Res> get category;
   $CodeableConceptCopyWith<$Res>? get subCategory;
-  $ElementCopyWith<$Res>? get excludedElement;
-  $ElementCopyWith<$Res>? get nameElement;
-  $ElementCopyWith<$Res>? get descriptionElement;
   $CodeableConceptCopyWith<$Res>? get network;
   $CodeableConceptCopyWith<$Res>? get unit;
   $CodeableConceptCopyWith<$Res>? get term;
@@ -4570,6 +4272,9 @@ class _$EligibilityResponseBenefitBalanceCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? category = null,
     Object? subCategory = freezed,
     Object? excluded = freezed,
@@ -4584,6 +4289,18 @@ class _$EligibilityResponseBenefitBalanceCopyWithImpl<$Res,
     Object? financial = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -4657,42 +4374,6 @@ class _$EligibilityResponseBenefitBalanceCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get excludedElement {
-    if (_value.excludedElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.excludedElement!, (value) {
-      return _then(_value.copyWith(excludedElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get nameElement {
-    if (_value.nameElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.nameElement!, (value) {
-      return _then(_value.copyWith(nameElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get descriptionElement {
-    if (_value.descriptionElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.descriptionElement!, (value) {
-      return _then(_value.copyWith(descriptionElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $CodeableConceptCopyWith<$Res>? get network {
     if (_value.network == null) {
       return null;
@@ -4738,7 +4419,10 @@ abstract class _$$EligibilityResponseBenefitBalanceImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {CodeableConcept category,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept category,
       CodeableConcept? subCategory,
       FhirBoolean? excluded,
       @JsonKey(name: '_excluded') Element? excludedElement,
@@ -4755,12 +4439,6 @@ abstract class _$$EligibilityResponseBenefitBalanceImplCopyWith<$Res>
   $CodeableConceptCopyWith<$Res> get category;
   @override
   $CodeableConceptCopyWith<$Res>? get subCategory;
-  @override
-  $ElementCopyWith<$Res>? get excludedElement;
-  @override
-  $ElementCopyWith<$Res>? get nameElement;
-  @override
-  $ElementCopyWith<$Res>? get descriptionElement;
   @override
   $CodeableConceptCopyWith<$Res>? get network;
   @override
@@ -4782,6 +4460,9 @@ class __$$EligibilityResponseBenefitBalanceImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? category = null,
     Object? subCategory = freezed,
     Object? excluded = freezed,
@@ -4796,6 +4477,18 @@ class __$$EligibilityResponseBenefitBalanceImplCopyWithImpl<$Res>
     Object? financial = freezed,
   }) {
     return _then(_$EligibilityResponseBenefitBalanceImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -4853,7 +4546,10 @@ class __$$EligibilityResponseBenefitBalanceImplCopyWithImpl<$Res>
 class _$EligibilityResponseBenefitBalanceImpl
     extends _EligibilityResponseBenefitBalance {
   const _$EligibilityResponseBenefitBalanceImpl(
-      {required this.category,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      required this.category,
       this.subCategory,
       this.excluded,
       @JsonKey(name: '_excluded') this.excludedElement,
@@ -4865,12 +4561,38 @@ class _$EligibilityResponseBenefitBalanceImpl
       this.unit,
       this.term,
       final List<EligibilityResponseFinancial>? financial})
-      : _financial = financial,
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        _financial = financial,
         super._();
 
   factory _$EligibilityResponseBenefitBalanceImpl.fromJson(
           Map<String, dynamic> json) =>
       _$$EligibilityResponseBenefitBalanceImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final CodeableConcept category;
@@ -4909,7 +4631,7 @@ class _$EligibilityResponseBenefitBalanceImpl
 
   @override
   String toString() {
-    return 'EligibilityResponseBenefitBalance(category: $category, subCategory: $subCategory, excluded: $excluded, excludedElement: $excludedElement, name: $name, nameElement: $nameElement, description: $description, descriptionElement: $descriptionElement, network: $network, unit: $unit, term: $term, financial: $financial)';
+    return 'EligibilityResponseBenefitBalance(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, category: $category, subCategory: $subCategory, excluded: $excluded, excludedElement: $excludedElement, name: $name, nameElement: $nameElement, description: $description, descriptionElement: $descriptionElement, network: $network, unit: $unit, term: $term, financial: $financial)';
   }
 
   @override
@@ -4917,6 +4639,11 @@ class _$EligibilityResponseBenefitBalanceImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EligibilityResponseBenefitBalanceImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.subCategory, subCategory) ||
@@ -4943,6 +4670,9 @@ class _$EligibilityResponseBenefitBalanceImpl
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
       category,
       subCategory,
       excluded,
@@ -4975,7 +4705,10 @@ class _$EligibilityResponseBenefitBalanceImpl
 abstract class _EligibilityResponseBenefitBalance
     extends EligibilityResponseBenefitBalance {
   const factory _EligibilityResponseBenefitBalance(
-          {required final CodeableConcept category,
+          {final String? id,
+          @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+          final List<FhirExtension>? modifierExtension,
+          required final CodeableConcept category,
           final CodeableConcept? subCategory,
           final FhirBoolean? excluded,
           @JsonKey(name: '_excluded') final Element? excludedElement,
@@ -4994,6 +4727,13 @@ abstract class _EligibilityResponseBenefitBalance
           Map<String, dynamic> json) =
       _$EligibilityResponseBenefitBalanceImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   CodeableConcept get category;
   @override
@@ -5035,6 +4775,11 @@ EligibilityResponseFinancial _$EligibilityResponseFinancialFromJson(
 
 /// @nodoc
 mixin _$EligibilityResponseFinancial {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   CodeableConcept get type => throw _privateConstructorUsedError;
   FhirDecimal? get allowedUnsignedInt => throw _privateConstructorUsedError;
   @JsonKey(name: '_allowedUnsignedInt')
@@ -5063,7 +4808,10 @@ abstract class $EligibilityResponseFinancialCopyWith<$Res> {
           EligibilityResponseFinancial>;
   @useResult
   $Res call(
-      {CodeableConcept type,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept type,
       FhirDecimal? allowedUnsignedInt,
       @JsonKey(name: '_allowedUnsignedInt') Element? allowedUnsignedIntElement,
       String? allowedString,
@@ -5074,10 +4822,7 @@ abstract class $EligibilityResponseFinancialCopyWith<$Res> {
       Money? usedMoney});
 
   $CodeableConceptCopyWith<$Res> get type;
-  $ElementCopyWith<$Res>? get allowedUnsignedIntElement;
-  $ElementCopyWith<$Res>? get allowedStringElement;
   $MoneyCopyWith<$Res>? get allowedMoney;
-  $ElementCopyWith<$Res>? get usedUnsignedIntElement;
   $MoneyCopyWith<$Res>? get usedMoney;
 }
 
@@ -5095,6 +4840,9 @@ class _$EligibilityResponseFinancialCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? type = null,
     Object? allowedUnsignedInt = freezed,
     Object? allowedUnsignedIntElement = freezed,
@@ -5106,6 +4854,18 @@ class _$EligibilityResponseFinancialCopyWithImpl<$Res,
     Object? usedMoney = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -5155,30 +4915,6 @@ class _$EligibilityResponseFinancialCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get allowedUnsignedIntElement {
-    if (_value.allowedUnsignedIntElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.allowedUnsignedIntElement!, (value) {
-      return _then(_value.copyWith(allowedUnsignedIntElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get allowedStringElement {
-    if (_value.allowedStringElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.allowedStringElement!, (value) {
-      return _then(_value.copyWith(allowedStringElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $MoneyCopyWith<$Res>? get allowedMoney {
     if (_value.allowedMoney == null) {
       return null;
@@ -5186,18 +4922,6 @@ class _$EligibilityResponseFinancialCopyWithImpl<$Res,
 
     return $MoneyCopyWith<$Res>(_value.allowedMoney!, (value) {
       return _then(_value.copyWith(allowedMoney: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get usedUnsignedIntElement {
-    if (_value.usedUnsignedIntElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.usedUnsignedIntElement!, (value) {
-      return _then(_value.copyWith(usedUnsignedIntElement: value) as $Val);
     });
   }
 
@@ -5224,7 +4948,10 @@ abstract class _$$EligibilityResponseFinancialImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {CodeableConcept type,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept type,
       FhirDecimal? allowedUnsignedInt,
       @JsonKey(name: '_allowedUnsignedInt') Element? allowedUnsignedIntElement,
       String? allowedString,
@@ -5237,13 +4964,7 @@ abstract class _$$EligibilityResponseFinancialImplCopyWith<$Res>
   @override
   $CodeableConceptCopyWith<$Res> get type;
   @override
-  $ElementCopyWith<$Res>? get allowedUnsignedIntElement;
-  @override
-  $ElementCopyWith<$Res>? get allowedStringElement;
-  @override
   $MoneyCopyWith<$Res>? get allowedMoney;
-  @override
-  $ElementCopyWith<$Res>? get usedUnsignedIntElement;
   @override
   $MoneyCopyWith<$Res>? get usedMoney;
 }
@@ -5261,6 +4982,9 @@ class __$$EligibilityResponseFinancialImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? type = null,
     Object? allowedUnsignedInt = freezed,
     Object? allowedUnsignedIntElement = freezed,
@@ -5272,6 +4996,18 @@ class __$$EligibilityResponseFinancialImplCopyWithImpl<$Res>
     Object? usedMoney = freezed,
   }) {
     return _then(_$EligibilityResponseFinancialImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -5316,7 +5052,10 @@ class __$$EligibilityResponseFinancialImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$EligibilityResponseFinancialImpl extends _EligibilityResponseFinancial {
   const _$EligibilityResponseFinancialImpl(
-      {required this.type,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      required this.type,
       this.allowedUnsignedInt,
       @JsonKey(name: '_allowedUnsignedInt') this.allowedUnsignedIntElement,
       this.allowedString,
@@ -5325,11 +5064,37 @@ class _$EligibilityResponseFinancialImpl extends _EligibilityResponseFinancial {
       this.usedUnsignedInt,
       @JsonKey(name: '_usedUnsignedInt') this.usedUnsignedIntElement,
       this.usedMoney})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$EligibilityResponseFinancialImpl.fromJson(
           Map<String, dynamic> json) =>
       _$$EligibilityResponseFinancialImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final CodeableConcept type;
@@ -5355,7 +5120,7 @@ class _$EligibilityResponseFinancialImpl extends _EligibilityResponseFinancial {
 
   @override
   String toString() {
-    return 'EligibilityResponseFinancial(type: $type, allowedUnsignedInt: $allowedUnsignedInt, allowedUnsignedIntElement: $allowedUnsignedIntElement, allowedString: $allowedString, allowedStringElement: $allowedStringElement, allowedMoney: $allowedMoney, usedUnsignedInt: $usedUnsignedInt, usedUnsignedIntElement: $usedUnsignedIntElement, usedMoney: $usedMoney)';
+    return 'EligibilityResponseFinancial(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, allowedUnsignedInt: $allowedUnsignedInt, allowedUnsignedIntElement: $allowedUnsignedIntElement, allowedString: $allowedString, allowedStringElement: $allowedStringElement, allowedMoney: $allowedMoney, usedUnsignedInt: $usedUnsignedInt, usedUnsignedIntElement: $usedUnsignedIntElement, usedMoney: $usedMoney)';
   }
 
   @override
@@ -5363,6 +5128,11 @@ class _$EligibilityResponseFinancialImpl extends _EligibilityResponseFinancial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EligibilityResponseFinancialImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.allowedUnsignedInt, allowedUnsignedInt) ||
                 other.allowedUnsignedInt == allowedUnsignedInt) &&
@@ -5387,6 +5157,9 @@ class _$EligibilityResponseFinancialImpl extends _EligibilityResponseFinancial {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
       type,
       allowedUnsignedInt,
       allowedUnsignedIntElement,
@@ -5416,7 +5189,10 @@ class _$EligibilityResponseFinancialImpl extends _EligibilityResponseFinancial {
 abstract class _EligibilityResponseFinancial
     extends EligibilityResponseFinancial {
   const factory _EligibilityResponseFinancial(
-      {required final CodeableConcept type,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      required final CodeableConcept type,
       final FhirDecimal? allowedUnsignedInt,
       @JsonKey(name: '_allowedUnsignedInt')
       final Element? allowedUnsignedIntElement,
@@ -5431,6 +5207,13 @@ abstract class _EligibilityResponseFinancial
   factory _EligibilityResponseFinancial.fromJson(Map<String, dynamic> json) =
       _$EligibilityResponseFinancialImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   CodeableConcept get type;
   @override
@@ -5466,6 +5249,11 @@ EligibilityResponseError _$EligibilityResponseErrorFromJson(
 
 /// @nodoc
 mixin _$EligibilityResponseError {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   CodeableConcept get code => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -5480,7 +5268,11 @@ abstract class $EligibilityResponseErrorCopyWith<$Res> {
           $Res Function(EligibilityResponseError) then) =
       _$EligibilityResponseErrorCopyWithImpl<$Res, EligibilityResponseError>;
   @useResult
-  $Res call({CodeableConcept code});
+  $Res call(
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept code});
 
   $CodeableConceptCopyWith<$Res> get code;
 }
@@ -5499,9 +5291,24 @@ class _$EligibilityResponseErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? code = null,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -5527,7 +5334,11 @@ abstract class _$$EligibilityResponseErrorImplCopyWith<$Res>
       __$$EligibilityResponseErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({CodeableConcept code});
+  $Res call(
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept code});
 
   @override
   $CodeableConceptCopyWith<$Res> get code;
@@ -5546,9 +5357,24 @@ class __$$EligibilityResponseErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? code = null,
   }) {
     return _then(_$EligibilityResponseErrorImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -5560,17 +5386,48 @@ class __$$EligibilityResponseErrorImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$EligibilityResponseErrorImpl extends _EligibilityResponseError {
-  const _$EligibilityResponseErrorImpl({required this.code}) : super._();
+  const _$EligibilityResponseErrorImpl(
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      required this.code})
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$EligibilityResponseErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$EligibilityResponseErrorImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final CodeableConcept code;
 
   @override
   String toString() {
-    return 'EligibilityResponseError(code: $code)';
+    return 'EligibilityResponseError(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, code: $code)';
   }
 
   @override
@@ -5578,12 +5435,22 @@ class _$EligibilityResponseErrorImpl extends _EligibilityResponseError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EligibilityResponseErrorImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.code, code) || other.code == code));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, code);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      code);
 
   @JsonKey(ignore: true)
   @override
@@ -5602,12 +5469,22 @@ class _$EligibilityResponseErrorImpl extends _EligibilityResponseError {
 
 abstract class _EligibilityResponseError extends EligibilityResponseError {
   const factory _EligibilityResponseError(
-      {required final CodeableConcept code}) = _$EligibilityResponseErrorImpl;
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      required final CodeableConcept code}) = _$EligibilityResponseErrorImpl;
   const _EligibilityResponseError._() : super._();
 
   factory _EligibilityResponseError.fromJson(Map<String, dynamic> json) =
       _$EligibilityResponseErrorImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   CodeableConcept get code;
   @override
@@ -5688,11 +5565,7 @@ abstract class $EnrollmentRequestCopyWith<$Res> {
       Reference? coverage});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get statusElement;
-  $ElementCopyWith<$Res>? get createdElement;
   $ReferenceCopyWith<$Res>? get insurer;
   $ReferenceCopyWith<$Res>? get provider;
   $ReferenceCopyWith<$Res>? get organization;
@@ -5837,30 +5710,6 @@ class _$EnrollmentRequestCopyWithImpl<$Res, $Val extends EnrollmentRequest>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -5868,30 +5717,6 @@ class _$EnrollmentRequestCopyWithImpl<$Res, $Val extends EnrollmentRequest>
 
     return $NarrativeCopyWith<$Res>(_value.text!, (value) {
       return _then(_value.copyWith(text: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get createdElement {
-    if (_value.createdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.createdElement!, (value) {
-      return _then(_value.copyWith(createdElement: value) as $Val);
     });
   }
 
@@ -5991,15 +5816,7 @@ abstract class _$$EnrollmentRequestImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
-  @override
-  $ElementCopyWith<$Res>? get statusElement;
-  @override
-  $ElementCopyWith<$Res>? get createdElement;
   @override
   $ReferenceCopyWith<$Res>? get insurer;
   @override
@@ -6500,14 +6317,9 @@ abstract class $EnrollmentResponseCopyWith<$Res> {
       Reference? requestOrganization});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get statusElement;
   $ReferenceCopyWith<$Res>? get request;
   $CodeableConceptCopyWith<$Res>? get outcome;
-  $ElementCopyWith<$Res>? get dispositionElement;
-  $ElementCopyWith<$Res>? get createdElement;
   $ReferenceCopyWith<$Res>? get organization;
   $ReferenceCopyWith<$Res>? get requestProvider;
   $ReferenceCopyWith<$Res>? get requestOrganization;
@@ -6660,30 +6472,6 @@ class _$EnrollmentResponseCopyWithImpl<$Res, $Val extends EnrollmentResponse>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -6691,18 +6479,6 @@ class _$EnrollmentResponseCopyWithImpl<$Res, $Val extends EnrollmentResponse>
 
     return $NarrativeCopyWith<$Res>(_value.text!, (value) {
       return _then(_value.copyWith(text: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
     });
   }
 
@@ -6727,30 +6503,6 @@ class _$EnrollmentResponseCopyWithImpl<$Res, $Val extends EnrollmentResponse>
 
     return $CodeableConceptCopyWith<$Res>(_value.outcome!, (value) {
       return _then(_value.copyWith(outcome: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get dispositionElement {
-    if (_value.dispositionElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.dispositionElement!, (value) {
-      return _then(_value.copyWith(dispositionElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get createdElement {
-    if (_value.createdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.createdElement!, (value) {
-      return _then(_value.copyWith(createdElement: value) as $Val);
     });
   }
 
@@ -6828,21 +6580,11 @@ abstract class _$$EnrollmentResponseImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
-  @override
-  $ElementCopyWith<$Res>? get statusElement;
   @override
   $ReferenceCopyWith<$Res>? get request;
   @override
   $CodeableConceptCopyWith<$Res>? get outcome;
-  @override
-  $ElementCopyWith<$Res>? get dispositionElement;
-  @override
-  $ElementCopyWith<$Res>? get createdElement;
   @override
   $ReferenceCopyWith<$Res>? get organization;
   @override

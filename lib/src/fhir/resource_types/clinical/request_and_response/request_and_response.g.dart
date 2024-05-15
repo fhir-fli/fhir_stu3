@@ -287,6 +287,13 @@ const _$Stu3ResourceTypeEnumMap = {
 _$CommunicationPayloadImpl _$$CommunicationPayloadImplFromJson(
         Map<String, dynamic> json) =>
     _$CommunicationPayloadImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       contentString: json['contentString'] as String?,
       contentStringElement: json['_contentString'] == null
           ? null
@@ -311,6 +318,11 @@ Map<String, dynamic> _$$CommunicationPayloadImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('contentString', instance.contentString);
   writeNotNull('_contentString', instance.contentStringElement?.toJson());
   writeNotNull('contentAttachment', instance.contentAttachment?.toJson());
@@ -488,6 +500,13 @@ Map<String, dynamic> _$$CommunicationRequestImplToJson(
 _$CommunicationRequestPayloadImpl _$$CommunicationRequestPayloadImplFromJson(
         Map<String, dynamic> json) =>
     _$CommunicationRequestPayloadImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       contentString: json['contentString'] as String?,
       contentStringElement: json['_contentString'] == null
           ? null
@@ -512,6 +531,11 @@ Map<String, dynamic> _$$CommunicationRequestPayloadImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('contentString', instance.contentString);
   writeNotNull('_contentString', instance.contentStringElement?.toJson());
   writeNotNull('contentAttachment', instance.contentAttachment?.toJson());
@@ -522,6 +546,13 @@ Map<String, dynamic> _$$CommunicationRequestPayloadImplToJson(
 _$CommunicationRequestRequesterImpl
     _$$CommunicationRequestRequesterImplFromJson(Map<String, dynamic> json) =>
         _$CommunicationRequestRequesterImpl(
+          id: json['id'] as String?,
+          extension_: (json['extension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
           agent: Reference.fromJson(json['agent'] as Map<String, dynamic>),
           onBehalfOf: json['onBehalfOf'] == null
               ? null
@@ -530,9 +561,7 @@ _$CommunicationRequestRequesterImpl
 
 Map<String, dynamic> _$$CommunicationRequestRequesterImplToJson(
     _$CommunicationRequestRequesterImpl instance) {
-  final val = <String, dynamic>{
-    'agent': instance.agent.toJson(),
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -540,6 +569,12 @@ Map<String, dynamic> _$$CommunicationRequestRequesterImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['agent'] = instance.agent.toJson();
   writeNotNull('onBehalfOf', instance.onBehalfOf?.toJson());
   return val;
 }
@@ -724,6 +759,13 @@ Map<String, dynamic> _$$DeviceRequestImplToJson(_$DeviceRequestImpl instance) {
 _$DeviceRequestRequesterImpl _$$DeviceRequestRequesterImplFromJson(
         Map<String, dynamic> json) =>
     _$DeviceRequestRequesterImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       agent: Reference.fromJson(json['agent'] as Map<String, dynamic>),
       onBehalfOf: json['onBehalfOf'] == null
           ? null
@@ -732,9 +774,7 @@ _$DeviceRequestRequesterImpl _$$DeviceRequestRequesterImplFromJson(
 
 Map<String, dynamic> _$$DeviceRequestRequesterImplToJson(
     _$DeviceRequestRequesterImpl instance) {
-  final val = <String, dynamic>{
-    'agent': instance.agent.toJson(),
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -742,6 +782,12 @@ Map<String, dynamic> _$$DeviceRequestRequesterImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['agent'] = instance.agent.toJson();
   writeNotNull('onBehalfOf', instance.onBehalfOf?.toJson());
   return val;
 }
@@ -1015,6 +1061,13 @@ const _$SupplyDeliveryStatusEnumMap = {
 _$SupplyDeliverySuppliedItemImpl _$$SupplyDeliverySuppliedItemImplFromJson(
         Map<String, dynamic> json) =>
     _$SupplyDeliverySuppliedItemImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       quantity: json['quantity'] == null
           ? null
           : Quantity.fromJson(json['quantity'] as Map<String, dynamic>),
@@ -1037,6 +1090,11 @@ Map<String, dynamic> _$$SupplyDeliverySuppliedItemImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('quantity', instance.quantity?.toJson());
   writeNotNull('itemCodeableConcept', instance.itemCodeableConcept?.toJson());
   writeNotNull('itemReference', instance.itemReference?.toJson());
@@ -1194,6 +1252,13 @@ const _$SupplyRequestStatusEnumMap = {
 _$SupplyRequestOrderedItemImpl _$$SupplyRequestOrderedItemImplFromJson(
         Map<String, dynamic> json) =>
     _$SupplyRequestOrderedItemImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       quantity: Quantity.fromJson(json['quantity'] as Map<String, dynamic>),
       itemCodeableConcept: json['itemCodeableConcept'] == null
           ? null
@@ -1206,9 +1271,7 @@ _$SupplyRequestOrderedItemImpl _$$SupplyRequestOrderedItemImplFromJson(
 
 Map<String, dynamic> _$$SupplyRequestOrderedItemImplToJson(
     _$SupplyRequestOrderedItemImpl instance) {
-  final val = <String, dynamic>{
-    'quantity': instance.quantity.toJson(),
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -1216,6 +1279,12 @@ Map<String, dynamic> _$$SupplyRequestOrderedItemImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['quantity'] = instance.quantity.toJson();
   writeNotNull('itemCodeableConcept', instance.itemCodeableConcept?.toJson());
   writeNotNull('itemReference', instance.itemReference?.toJson());
   return val;
@@ -1224,6 +1293,13 @@ Map<String, dynamic> _$$SupplyRequestOrderedItemImplToJson(
 _$SupplyRequestRequesterImpl _$$SupplyRequestRequesterImplFromJson(
         Map<String, dynamic> json) =>
     _$SupplyRequestRequesterImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       agent: Reference.fromJson(json['agent'] as Map<String, dynamic>),
       onBehalfOf: json['onBehalfOf'] == null
           ? null
@@ -1232,9 +1308,7 @@ _$SupplyRequestRequesterImpl _$$SupplyRequestRequesterImplFromJson(
 
 Map<String, dynamic> _$$SupplyRequestRequesterImplToJson(
     _$SupplyRequestRequesterImpl instance) {
-  final val = <String, dynamic>{
-    'agent': instance.agent.toJson(),
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -1242,6 +1316,12 @@ Map<String, dynamic> _$$SupplyRequestRequesterImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['agent'] = instance.agent.toJson();
   writeNotNull('onBehalfOf', instance.onBehalfOf?.toJson());
   return val;
 }

@@ -418,6 +418,13 @@ const _$MeasureStatusEnumMap = {
 
 _$MeasureGroupImpl _$$MeasureGroupImplFromJson(Map<String, dynamic> json) =>
     _$MeasureGroupImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       identifier:
           Identifier.fromJson(json['identifier'] as Map<String, dynamic>),
       name: json['name'] as String?,
@@ -437,9 +444,7 @@ _$MeasureGroupImpl _$$MeasureGroupImplFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$$MeasureGroupImplToJson(_$MeasureGroupImpl instance) {
-  final val = <String, dynamic>{
-    'identifier': instance.identifier.toJson(),
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -447,6 +452,12 @@ Map<String, dynamic> _$$MeasureGroupImplToJson(_$MeasureGroupImpl instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['identifier'] = instance.identifier.toJson();
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   writeNotNull('description', instance.description);
@@ -461,6 +472,13 @@ Map<String, dynamic> _$$MeasureGroupImplToJson(_$MeasureGroupImpl instance) {
 _$MeasurePopulationImpl _$$MeasurePopulationImplFromJson(
         Map<String, dynamic> json) =>
     _$MeasurePopulationImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       identifier: json['identifier'] == null
           ? null
           : Identifier.fromJson(json['identifier'] as Map<String, dynamic>),
@@ -491,6 +509,11 @@ Map<String, dynamic> _$$MeasurePopulationImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('identifier', instance.identifier?.toJson());
   writeNotNull('code', instance.code?.toJson());
   writeNotNull('name', instance.name);
@@ -505,6 +528,13 @@ Map<String, dynamic> _$$MeasurePopulationImplToJson(
 _$MeasureStratifierImpl _$$MeasureStratifierImplFromJson(
         Map<String, dynamic> json) =>
     _$MeasureStratifierImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       identifier: json['identifier'] == null
           ? null
           : Identifier.fromJson(json['identifier'] as Map<String, dynamic>),
@@ -528,6 +558,11 @@ Map<String, dynamic> _$$MeasureStratifierImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('identifier', instance.identifier?.toJson());
   writeNotNull('criteria', instance.criteria);
   writeNotNull('_criteria', instance.criteriaElement?.toJson());
@@ -539,6 +574,13 @@ Map<String, dynamic> _$$MeasureStratifierImplToJson(
 _$MeasureSupplementalDataImpl _$$MeasureSupplementalDataImplFromJson(
         Map<String, dynamic> json) =>
     _$MeasureSupplementalDataImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       identifier: json['identifier'] == null
           ? null
           : Identifier.fromJson(json['identifier'] as Map<String, dynamic>),
@@ -565,6 +607,11 @@ Map<String, dynamic> _$$MeasureSupplementalDataImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('identifier', instance.identifier?.toJson());
   writeNotNull('usage', instance.usage?.map((e) => e.toJson()).toList());
   writeNotNull('criteria', instance.criteria);
@@ -700,6 +747,13 @@ const _$MeasureReportTypeEnumMap = {
 _$MeasureReportGroupImpl _$$MeasureReportGroupImplFromJson(
         Map<String, dynamic> json) =>
     _$MeasureReportGroupImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       identifier:
           Identifier.fromJson(json['identifier'] as Map<String, dynamic>),
       population: (json['population'] as List<dynamic>?)
@@ -720,9 +774,7 @@ _$MeasureReportGroupImpl _$$MeasureReportGroupImplFromJson(
 
 Map<String, dynamic> _$$MeasureReportGroupImplToJson(
     _$MeasureReportGroupImpl instance) {
-  final val = <String, dynamic>{
-    'identifier': instance.identifier.toJson(),
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -730,6 +782,12 @@ Map<String, dynamic> _$$MeasureReportGroupImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['identifier'] = instance.identifier.toJson();
   writeNotNull(
       'population', instance.population?.map((e) => e.toJson()).toList());
   writeNotNull('measureScore', instance.measureScore?.toJson());
@@ -742,6 +800,13 @@ Map<String, dynamic> _$$MeasureReportGroupImplToJson(
 _$MeasureReportPopulationImpl _$$MeasureReportPopulationImplFromJson(
         Map<String, dynamic> json) =>
     _$MeasureReportPopulationImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       identifier: json['identifier'] == null
           ? null
           : Identifier.fromJson(json['identifier'] as Map<String, dynamic>),
@@ -767,6 +832,11 @@ Map<String, dynamic> _$$MeasureReportPopulationImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('identifier', instance.identifier?.toJson());
   writeNotNull('code', instance.code?.toJson());
   writeNotNull('count', instance.count?.toJson());
@@ -778,6 +848,13 @@ Map<String, dynamic> _$$MeasureReportPopulationImplToJson(
 _$MeasureReportStratifierImpl _$$MeasureReportStratifierImplFromJson(
         Map<String, dynamic> json) =>
     _$MeasureReportStratifierImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       identifier: json['identifier'] == null
           ? null
           : Identifier.fromJson(json['identifier'] as Map<String, dynamic>),
@@ -796,6 +873,11 @@ Map<String, dynamic> _$$MeasureReportStratifierImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('identifier', instance.identifier?.toJson());
   writeNotNull('stratum', instance.stratum?.map((e) => e.toJson()).toList());
   return val;
@@ -804,6 +886,13 @@ Map<String, dynamic> _$$MeasureReportStratifierImplToJson(
 _$MeasureReportStratumImpl _$$MeasureReportStratumImplFromJson(
         Map<String, dynamic> json) =>
     _$MeasureReportStratumImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       value: json['value'] as String?,
       valueElement: json['_value'] == null
           ? null
@@ -830,6 +919,11 @@ Map<String, dynamic> _$$MeasureReportStratumImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('value', instance.value);
   writeNotNull('_value', instance.valueElement?.toJson());
   writeNotNull(
@@ -842,6 +936,13 @@ Map<String, dynamic> _$$MeasureReportStratumImplToJson(
 _$MeasureReportPopulation1Impl _$$MeasureReportPopulation1ImplFromJson(
         Map<String, dynamic> json) =>
     _$MeasureReportPopulation1Impl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       identifier: json['identifier'] == null
           ? null
           : Identifier.fromJson(json['identifier'] as Map<String, dynamic>),
@@ -867,6 +968,11 @@ Map<String, dynamic> _$$MeasureReportPopulation1ImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('identifier', instance.identifier?.toJson());
   writeNotNull('code', instance.code?.toJson());
   writeNotNull('count', instance.count?.toJson());

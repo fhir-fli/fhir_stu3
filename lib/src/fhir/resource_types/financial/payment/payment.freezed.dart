@@ -93,14 +93,9 @@ abstract class $PaymentNoticeCopyWith<$Res> {
       CodeableConcept? paymentStatus});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get statusElement;
   $ReferenceCopyWith<$Res>? get request;
   $ReferenceCopyWith<$Res>? get response;
-  $ElementCopyWith<$Res>? get statusDateElement;
-  $ElementCopyWith<$Res>? get createdElement;
   $ReferenceCopyWith<$Res>? get target;
   $ReferenceCopyWith<$Res>? get provider;
   $ReferenceCopyWith<$Res>? get organization;
@@ -259,30 +254,6 @@ class _$PaymentNoticeCopyWithImpl<$Res, $Val extends PaymentNotice>
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -290,18 +261,6 @@ class _$PaymentNoticeCopyWithImpl<$Res, $Val extends PaymentNotice>
 
     return $NarrativeCopyWith<$Res>(_value.text!, (value) {
       return _then(_value.copyWith(text: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
     });
   }
 
@@ -326,30 +285,6 @@ class _$PaymentNoticeCopyWithImpl<$Res, $Val extends PaymentNotice>
 
     return $ReferenceCopyWith<$Res>(_value.response!, (value) {
       return _then(_value.copyWith(response: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusDateElement {
-    if (_value.statusDateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusDateElement!, (value) {
-      return _then(_value.copyWith(statusDateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get createdElement {
-    if (_value.createdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.createdElement!, (value) {
-      return _then(_value.copyWith(createdElement: value) as $Val);
     });
   }
 
@@ -440,21 +375,11 @@ abstract class _$$PaymentNoticeImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
-  @override
-  $ElementCopyWith<$Res>? get statusElement;
   @override
   $ReferenceCopyWith<$Res>? get request;
   @override
   $ReferenceCopyWith<$Res>? get response;
-  @override
-  $ElementCopyWith<$Res>? get statusDateElement;
-  @override
-  $ElementCopyWith<$Res>? get createdElement;
   @override
   $ReferenceCopyWith<$Res>? get target;
   @override
@@ -1009,16 +934,11 @@ abstract class $PaymentReconciliationCopyWith<$Res> {
       List<PaymentReconciliationProcessNote>? processNote});
 
   $FhirMetaCopyWith<$Res>? get meta;
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  $ElementCopyWith<$Res>? get languageElement;
   $NarrativeCopyWith<$Res>? get text;
-  $ElementCopyWith<$Res>? get statusElement;
   $PeriodCopyWith<$Res>? get period;
-  $ElementCopyWith<$Res>? get createdElement;
   $ReferenceCopyWith<$Res>? get organization;
   $ReferenceCopyWith<$Res>? get request;
   $CodeableConceptCopyWith<$Res>? get outcome;
-  $ElementCopyWith<$Res>? get dispositionElement;
   $ReferenceCopyWith<$Res>? get requestProvider;
   $ReferenceCopyWith<$Res>? get requestOrganization;
   $CodeableConceptCopyWith<$Res>? get form;
@@ -1198,30 +1118,6 @@ class _$PaymentReconciliationCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get implicitRulesElement {
-    if (_value.implicitRulesElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.implicitRulesElement!, (value) {
-      return _then(_value.copyWith(implicitRulesElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get languageElement {
-    if (_value.languageElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.languageElement!, (value) {
-      return _then(_value.copyWith(languageElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $NarrativeCopyWith<$Res>? get text {
     if (_value.text == null) {
       return null;
@@ -1234,18 +1130,6 @@ class _$PaymentReconciliationCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get statusElement {
-    if (_value.statusElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.statusElement!, (value) {
-      return _then(_value.copyWith(statusElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $PeriodCopyWith<$Res>? get period {
     if (_value.period == null) {
       return null;
@@ -1253,18 +1137,6 @@ class _$PaymentReconciliationCopyWithImpl<$Res,
 
     return $PeriodCopyWith<$Res>(_value.period!, (value) {
       return _then(_value.copyWith(period: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get createdElement {
-    if (_value.createdElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.createdElement!, (value) {
-      return _then(_value.copyWith(createdElement: value) as $Val);
     });
   }
 
@@ -1301,18 +1173,6 @@ class _$PaymentReconciliationCopyWithImpl<$Res,
 
     return $CodeableConceptCopyWith<$Res>(_value.outcome!, (value) {
       return _then(_value.copyWith(outcome: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get dispositionElement {
-    if (_value.dispositionElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.dispositionElement!, (value) {
-      return _then(_value.copyWith(dispositionElement: value) as $Val);
     });
   }
 
@@ -1408,25 +1268,15 @@ abstract class _$$PaymentReconciliationImplCopyWith<$Res>
   @override
   $FhirMetaCopyWith<$Res>? get meta;
   @override
-  $ElementCopyWith<$Res>? get implicitRulesElement;
-  @override
-  $ElementCopyWith<$Res>? get languageElement;
-  @override
   $NarrativeCopyWith<$Res>? get text;
   @override
-  $ElementCopyWith<$Res>? get statusElement;
-  @override
   $PeriodCopyWith<$Res>? get period;
-  @override
-  $ElementCopyWith<$Res>? get createdElement;
   @override
   $ReferenceCopyWith<$Res>? get organization;
   @override
   $ReferenceCopyWith<$Res>? get request;
   @override
   $CodeableConceptCopyWith<$Res>? get outcome;
-  @override
-  $ElementCopyWith<$Res>? get dispositionElement;
   @override
   $ReferenceCopyWith<$Res>? get requestProvider;
   @override
@@ -1970,6 +1820,11 @@ PaymentReconciliationDetail _$PaymentReconciliationDetailFromJson(
 
 /// @nodoc
 mixin _$PaymentReconciliationDetail {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   CodeableConcept get type => throw _privateConstructorUsedError;
   Reference? get request => throw _privateConstructorUsedError;
   Reference? get response => throw _privateConstructorUsedError;
@@ -1995,7 +1850,10 @@ abstract class $PaymentReconciliationDetailCopyWith<$Res> {
           PaymentReconciliationDetail>;
   @useResult
   $Res call(
-      {CodeableConcept type,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept type,
       Reference? request,
       Reference? response,
       Reference? submitter,
@@ -2009,7 +1867,6 @@ abstract class $PaymentReconciliationDetailCopyWith<$Res> {
   $ReferenceCopyWith<$Res>? get response;
   $ReferenceCopyWith<$Res>? get submitter;
   $ReferenceCopyWith<$Res>? get payee;
-  $ElementCopyWith<$Res>? get dateElement;
   $MoneyCopyWith<$Res>? get amount;
 }
 
@@ -2027,6 +1884,9 @@ class _$PaymentReconciliationDetailCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? type = null,
     Object? request = freezed,
     Object? response = freezed,
@@ -2037,6 +1897,18 @@ class _$PaymentReconciliationDetailCopyWithImpl<$Res,
     Object? amount = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -2130,18 +2002,6 @@ class _$PaymentReconciliationDetailCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get dateElement {
-    if (_value.dateElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.dateElement!, (value) {
-      return _then(_value.copyWith(dateElement: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $MoneyCopyWith<$Res>? get amount {
     if (_value.amount == null) {
       return null;
@@ -2163,7 +2023,10 @@ abstract class _$$PaymentReconciliationDetailImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {CodeableConcept type,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept type,
       Reference? request,
       Reference? response,
       Reference? submitter,
@@ -2183,8 +2046,6 @@ abstract class _$$PaymentReconciliationDetailImplCopyWith<$Res>
   @override
   $ReferenceCopyWith<$Res>? get payee;
   @override
-  $ElementCopyWith<$Res>? get dateElement;
-  @override
   $MoneyCopyWith<$Res>? get amount;
 }
 
@@ -2201,6 +2062,9 @@ class __$$PaymentReconciliationDetailImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? type = null,
     Object? request = freezed,
     Object? response = freezed,
@@ -2211,6 +2075,18 @@ class __$$PaymentReconciliationDetailImplCopyWithImpl<$Res>
     Object? amount = freezed,
   }) {
     return _then(_$PaymentReconciliationDetailImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -2251,7 +2127,10 @@ class __$$PaymentReconciliationDetailImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PaymentReconciliationDetailImpl extends _PaymentReconciliationDetail {
   const _$PaymentReconciliationDetailImpl(
-      {required this.type,
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      required this.type,
       this.request,
       this.response,
       this.submitter,
@@ -2259,11 +2138,37 @@ class _$PaymentReconciliationDetailImpl extends _PaymentReconciliationDetail {
       this.date,
       @JsonKey(name: '_date') this.dateElement,
       this.amount})
-      : super._();
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$PaymentReconciliationDetailImpl.fromJson(
           Map<String, dynamic> json) =>
       _$$PaymentReconciliationDetailImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final CodeableConcept type;
@@ -2285,7 +2190,7 @@ class _$PaymentReconciliationDetailImpl extends _PaymentReconciliationDetail {
 
   @override
   String toString() {
-    return 'PaymentReconciliationDetail(type: $type, request: $request, response: $response, submitter: $submitter, payee: $payee, date: $date, dateElement: $dateElement, amount: $amount)';
+    return 'PaymentReconciliationDetail(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, request: $request, response: $response, submitter: $submitter, payee: $payee, date: $date, dateElement: $dateElement, amount: $amount)';
   }
 
   @override
@@ -2293,6 +2198,11 @@ class _$PaymentReconciliationDetailImpl extends _PaymentReconciliationDetail {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentReconciliationDetailImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.request, request) || other.request == request) &&
             (identical(other.response, response) ||
@@ -2308,8 +2218,19 @@ class _$PaymentReconciliationDetailImpl extends _PaymentReconciliationDetail {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, type, request, response,
-      submitter, payee, date, dateElement, amount);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      type,
+      request,
+      response,
+      submitter,
+      payee,
+      date,
+      dateElement,
+      amount);
 
   @JsonKey(ignore: true)
   @override
@@ -2329,7 +2250,10 @@ class _$PaymentReconciliationDetailImpl extends _PaymentReconciliationDetail {
 abstract class _PaymentReconciliationDetail
     extends PaymentReconciliationDetail {
   const factory _PaymentReconciliationDetail(
-      {required final CodeableConcept type,
+      {final String? id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      required final CodeableConcept type,
       final Reference? request,
       final Reference? response,
       final Reference? submitter,
@@ -2342,6 +2266,13 @@ abstract class _PaymentReconciliationDetail
   factory _PaymentReconciliationDetail.fromJson(Map<String, dynamic> json) =
       _$PaymentReconciliationDetailImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   CodeableConcept get type;
   @override
@@ -2372,6 +2303,11 @@ PaymentReconciliationProcessNote _$PaymentReconciliationProcessNoteFromJson(
 
 /// @nodoc
 mixin _$PaymentReconciliationProcessNote {
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ => throw _privateConstructorUsedError;
+  List<FhirExtension>? get modifierExtension =>
+      throw _privateConstructorUsedError;
   CodeableConcept? get type => throw _privateConstructorUsedError;
   String? get text => throw _privateConstructorUsedError;
   @JsonKey(name: '_text')
@@ -2392,12 +2328,14 @@ abstract class $PaymentReconciliationProcessNoteCopyWith<$Res> {
           PaymentReconciliationProcessNote>;
   @useResult
   $Res call(
-      {CodeableConcept? type,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept? type,
       String? text,
       @JsonKey(name: '_text') Element? textElement});
 
   $CodeableConceptCopyWith<$Res>? get type;
-  $ElementCopyWith<$Res>? get textElement;
 }
 
 /// @nodoc
@@ -2414,11 +2352,26 @@ class _$PaymentReconciliationProcessNoteCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? type = freezed,
     Object? text = freezed,
     Object? textElement = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value.extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value.modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -2445,18 +2398,6 @@ class _$PaymentReconciliationProcessNoteCopyWithImpl<$Res,
       return _then(_value.copyWith(type: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ElementCopyWith<$Res>? get textElement {
-    if (_value.textElement == null) {
-      return null;
-    }
-
-    return $ElementCopyWith<$Res>(_value.textElement!, (value) {
-      return _then(_value.copyWith(textElement: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -2469,14 +2410,15 @@ abstract class _$$PaymentReconciliationProcessNoteImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {CodeableConcept? type,
+      {String? id,
+      @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+      List<FhirExtension>? modifierExtension,
+      CodeableConcept? type,
       String? text,
       @JsonKey(name: '_text') Element? textElement});
 
   @override
   $CodeableConceptCopyWith<$Res>? get type;
-  @override
-  $ElementCopyWith<$Res>? get textElement;
 }
 
 /// @nodoc
@@ -2492,11 +2434,26 @@ class __$$PaymentReconciliationProcessNoteImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? extension_ = freezed,
+    Object? modifierExtension = freezed,
     Object? type = freezed,
     Object? text = freezed,
     Object? textElement = freezed,
   }) {
     return _then(_$PaymentReconciliationProcessNoteImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension_: freezed == extension_
+          ? _value._extension_
+          : extension_ // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
+      modifierExtension: freezed == modifierExtension
+          ? _value._modifierExtension
+          : modifierExtension // ignore: cast_nullable_to_non_nullable
+              as List<FhirExtension>?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -2518,12 +2475,43 @@ class __$$PaymentReconciliationProcessNoteImplCopyWithImpl<$Res>
 class _$PaymentReconciliationProcessNoteImpl
     extends _PaymentReconciliationProcessNote {
   const _$PaymentReconciliationProcessNoteImpl(
-      {this.type, this.text, @JsonKey(name: '_text') this.textElement})
-      : super._();
+      {this.id,
+      @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+      final List<FhirExtension>? modifierExtension,
+      this.type,
+      this.text,
+      @JsonKey(name: '_text') this.textElement})
+      : _extension_ = extension_,
+        _modifierExtension = modifierExtension,
+        super._();
 
   factory _$PaymentReconciliationProcessNoteImpl.fromJson(
           Map<String, dynamic> json) =>
       _$$PaymentReconciliationProcessNoteImplFromJson(json);
+
+  @override
+  final String? id;
+  final List<FhirExtension>? _extension_;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_ {
+    final value = _extension_;
+    if (value == null) return null;
+    if (_extension_ is EqualUnmodifiableListView) return _extension_;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<FhirExtension>? _modifierExtension;
+  @override
+  List<FhirExtension>? get modifierExtension {
+    final value = _modifierExtension;
+    if (value == null) return null;
+    if (_modifierExtension is EqualUnmodifiableListView)
+      return _modifierExtension;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   final CodeableConcept? type;
@@ -2535,7 +2523,7 @@ class _$PaymentReconciliationProcessNoteImpl
 
   @override
   String toString() {
-    return 'PaymentReconciliationProcessNote(type: $type, text: $text, textElement: $textElement)';
+    return 'PaymentReconciliationProcessNote(id: $id, extension_: $extension_, modifierExtension: $modifierExtension, type: $type, text: $text, textElement: $textElement)';
   }
 
   @override
@@ -2543,6 +2531,11 @@ class _$PaymentReconciliationProcessNoteImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PaymentReconciliationProcessNoteImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality()
+                .equals(other._extension_, _extension_) &&
+            const DeepCollectionEquality()
+                .equals(other._modifierExtension, _modifierExtension) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.textElement, textElement) ||
@@ -2551,7 +2544,14 @@ class _$PaymentReconciliationProcessNoteImpl
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, type, text, textElement);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(_extension_),
+      const DeepCollectionEquality().hash(_modifierExtension),
+      type,
+      text,
+      textElement);
 
   @JsonKey(ignore: true)
   @override
@@ -2572,7 +2572,10 @@ class _$PaymentReconciliationProcessNoteImpl
 abstract class _PaymentReconciliationProcessNote
     extends PaymentReconciliationProcessNote {
   const factory _PaymentReconciliationProcessNote(
-          {final CodeableConcept? type,
+          {final String? id,
+          @JsonKey(name: 'extension') final List<FhirExtension>? extension_,
+          final List<FhirExtension>? modifierExtension,
+          final CodeableConcept? type,
           final String? text,
           @JsonKey(name: '_text') final Element? textElement}) =
       _$PaymentReconciliationProcessNoteImpl;
@@ -2582,6 +2585,13 @@ abstract class _PaymentReconciliationProcessNote
           Map<String, dynamic> json) =
       _$PaymentReconciliationProcessNoteImpl.fromJson;
 
+  @override
+  String? get id;
+  @override
+  @JsonKey(name: 'extension')
+  List<FhirExtension>? get extension_;
+  @override
+  List<FhirExtension>? get modifierExtension;
   @override
   CodeableConcept? get type;
   @override

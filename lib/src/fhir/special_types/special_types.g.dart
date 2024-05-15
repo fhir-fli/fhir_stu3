@@ -8,6 +8,10 @@ part of 'special_types.dart';
 
 _$NarrativeImpl _$$NarrativeImplFromJson(Map<String, dynamic> json) =>
     _$NarrativeImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       status: $enumDecodeNullable(_$NarrativeStatusEnumMap, json['status']),
       statusElement: json['_status'] == null
           ? null
@@ -24,6 +28,9 @@ Map<String, dynamic> _$$NarrativeImplToJson(_$NarrativeImpl instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('status', _$NarrativeStatusEnumMap[instance.status]);
   writeNotNull('_status', instance.statusElement?.toJson());
   val['div'] = instance.div;
@@ -40,6 +47,10 @@ const _$NarrativeStatusEnumMap = {
 
 _$ReferenceImpl _$$ReferenceImplFromJson(Map<String, dynamic> json) =>
     _$ReferenceImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       reference: json['reference'] as String?,
       referenceElement: json['_reference'] == null
           ? null
@@ -62,6 +73,9 @@ Map<String, dynamic> _$$ReferenceImplToJson(_$ReferenceImpl instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('reference', instance.reference);
   writeNotNull('_reference', instance.referenceElement?.toJson());
   writeNotNull('identifier', instance.identifier?.toJson());
@@ -72,6 +86,10 @@ Map<String, dynamic> _$$ReferenceImplToJson(_$ReferenceImpl instance) {
 
 _$FhirMetaImpl _$$FhirMetaImplFromJson(Map<String, dynamic> json) =>
     _$FhirMetaImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       versionId:
           json['versionId'] == null ? null : FhirId.fromJson(json['versionId']),
       versionIdElement: json['_versionId'] == null
@@ -106,6 +124,9 @@ Map<String, dynamic> _$$FhirMetaImplToJson(_$FhirMetaImpl instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('versionId', instance.versionId?.toJson());
   writeNotNull('_versionId', instance.versionIdElement?.toJson());
   writeNotNull('lastUpdated', instance.lastUpdated?.toJson());
@@ -303,10 +324,6 @@ _$ElementDefinitionImpl _$$ElementDefinitionImplFromJson(
           ? null
           : FhirExtension.fromJson(
               json['defaultValueExtension'] as Map<String, dynamic>),
-      defaultValueBackboneElement: json['defaultValueBackboneElement'] == null
-          ? null
-          : BackboneElement.fromJson(
-              json['defaultValueBackboneElement'] as Map<String, dynamic>),
       defaultValueNarrative: json['defaultValueNarrative'] == null
           ? null
           : Narrative.fromJson(
@@ -539,10 +556,6 @@ _$ElementDefinitionImpl _$$ElementDefinitionImplFromJson(
           ? null
           : FhirExtension.fromJson(
               json['fixedExtension'] as Map<String, dynamic>),
-      fixedBackboneElement: json['fixedBackboneElement'] == null
-          ? null
-          : BackboneElement.fromJson(
-              json['fixedBackboneElement'] as Map<String, dynamic>),
       fixedNarrative: json['fixedNarrative'] == null
           ? null
           : Narrative.fromJson(json['fixedNarrative'] as Map<String, dynamic>),
@@ -759,10 +772,6 @@ _$ElementDefinitionImpl _$$ElementDefinitionImplFromJson(
           ? null
           : FhirExtension.fromJson(
               json['patternExtension'] as Map<String, dynamic>),
-      patternBackboneElement: json['patternBackboneElement'] == null
-          ? null
-          : BackboneElement.fromJson(
-              json['patternBackboneElement'] as Map<String, dynamic>),
       patternNarrative: json['patternNarrative'] == null
           ? null
           : Narrative.fromJson(
@@ -1129,8 +1138,6 @@ Map<String, dynamic> _$$ElementDefinitionImplToJson(
   writeNotNull('defaultValueElement', instance.defaultValueElement?.toJson());
   writeNotNull(
       'defaultValueExtension', instance.defaultValueExtension?.toJson());
-  writeNotNull('defaultValueBackboneElement',
-      instance.defaultValueBackboneElement?.toJson());
   writeNotNull(
       'defaultValueNarrative', instance.defaultValueNarrative?.toJson());
   writeNotNull(
@@ -1225,7 +1232,6 @@ Map<String, dynamic> _$$ElementDefinitionImplToJson(
   writeNotNull('_fixedMarkdown', instance.fixedMarkdownElement?.toJson());
   writeNotNull('fixedElement', instance.fixedElement?.toJson());
   writeNotNull('fixedExtension', instance.fixedExtension?.toJson());
-  writeNotNull('fixedBackboneElement', instance.fixedBackboneElement?.toJson());
   writeNotNull('fixedNarrative', instance.fixedNarrative?.toJson());
   writeNotNull('fixedAnnotation', instance.fixedAnnotation?.toJson());
   writeNotNull('fixedAttachment', instance.fixedAttachment?.toJson());
@@ -1301,8 +1307,6 @@ Map<String, dynamic> _$$ElementDefinitionImplToJson(
   writeNotNull('_patternMarkdown', instance.patternMarkdownElement?.toJson());
   writeNotNull('patternElement', instance.patternElement?.toJson());
   writeNotNull('patternExtension', instance.patternExtension?.toJson());
-  writeNotNull(
-      'patternBackboneElement', instance.patternBackboneElement?.toJson());
   writeNotNull('patternNarrative', instance.patternNarrative?.toJson());
   writeNotNull('patternAnnotation', instance.patternAnnotation?.toJson());
   writeNotNull('patternAttachment', instance.patternAttachment?.toJson());
@@ -1412,6 +1416,10 @@ const _$ElementDefinitionRepresentationEnumMap = {
 _$ElementDefinitionSlicingImpl _$$ElementDefinitionSlicingImplFromJson(
         Map<String, dynamic> json) =>
     _$ElementDefinitionSlicingImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       discriminator: (json['discriminator'] as List<dynamic>?)
           ?.map((e) => ElementDefinitionDiscriminator.fromJson(
               e as Map<String, dynamic>))
@@ -1443,6 +1451,9 @@ Map<String, dynamic> _$$ElementDefinitionSlicingImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull(
       'discriminator', instance.discriminator?.map((e) => e.toJson()).toList());
   writeNotNull('description', instance.description);
@@ -1464,6 +1475,10 @@ const _$ElementDefinitionSlicingRulesEnumMap = {
 _$ElementDefinitionDiscriminatorImpl
     _$$ElementDefinitionDiscriminatorImplFromJson(Map<String, dynamic> json) =>
         _$ElementDefinitionDiscriminatorImpl(
+          id: json['id'] as String?,
+          extension_: (json['extension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
           type: $enumDecodeNullable(
               _$ElementDefinitionDiscriminatorTypeEnumMap, json['type']),
           typeElement: json['_type'] == null
@@ -1485,6 +1500,9 @@ Map<String, dynamic> _$$ElementDefinitionDiscriminatorImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull(
       'type', _$ElementDefinitionDiscriminatorTypeEnumMap[instance.type]);
   writeNotNull('_type', instance.typeElement?.toJson());
@@ -1505,6 +1523,10 @@ const _$ElementDefinitionDiscriminatorTypeEnumMap = {
 _$ElementDefinitionBaseImpl _$$ElementDefinitionBaseImplFromJson(
         Map<String, dynamic> json) =>
     _$ElementDefinitionBaseImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       path: json['path'] as String?,
       pathElement: json['_path'] == null
           ? null
@@ -1529,6 +1551,9 @@ Map<String, dynamic> _$$ElementDefinitionBaseImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('path', instance.path);
   writeNotNull('_path', instance.pathElement?.toJson());
   writeNotNull('min', instance.min?.toJson());
@@ -1541,6 +1566,7 @@ Map<String, dynamic> _$$ElementDefinitionBaseImplToJson(
 _$ElementDefinitionTypeImpl _$$ElementDefinitionTypeImplFromJson(
         Map<String, dynamic> json) =>
     _$ElementDefinitionTypeImpl(
+      id: json['id'] as String?,
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -1581,6 +1607,7 @@ Map<String, dynamic> _$$ElementDefinitionTypeImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('code', instance.code);
@@ -1619,6 +1646,10 @@ const _$ElementDefinitionTypeVersioningEnumMap = {
 _$ElementDefinitionExampleImpl _$$ElementDefinitionExampleImplFromJson(
         Map<String, dynamic> json) =>
     _$ElementDefinitionExampleImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       label: json['label'] as String?,
       labelElement: json['_label'] == null
           ? null
@@ -1720,10 +1751,6 @@ _$ElementDefinitionExampleImpl _$$ElementDefinitionExampleImplFromJson(
           ? null
           : FhirExtension.fromJson(
               json['valueExtension'] as Map<String, dynamic>),
-      valueBackboneElement: json['valueBackboneElement'] == null
-          ? null
-          : BackboneElement.fromJson(
-              json['valueBackboneElement'] as Map<String, dynamic>),
       valueNarrative: json['valueNarrative'] == null
           ? null
           : Narrative.fromJson(json['valueNarrative'] as Map<String, dynamic>),
@@ -1851,6 +1878,9 @@ Map<String, dynamic> _$$ElementDefinitionExampleImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('label', instance.label);
   writeNotNull('_label', instance.labelElement?.toJson());
   writeNotNull('valueBoolean', instance.valueBoolean?.toJson());
@@ -1890,7 +1920,6 @@ Map<String, dynamic> _$$ElementDefinitionExampleImplToJson(
   writeNotNull('_valueMarkdown', instance.valueMarkdownElement?.toJson());
   writeNotNull('valueElement', instance.valueElement?.toJson());
   writeNotNull('valueExtension', instance.valueExtension?.toJson());
-  writeNotNull('valueBackboneElement', instance.valueBackboneElement?.toJson());
   writeNotNull('valueNarrative', instance.valueNarrative?.toJson());
   writeNotNull('valueAnnotation', instance.valueAnnotation?.toJson());
   writeNotNull('valueAttachment', instance.valueAttachment?.toJson());
@@ -1933,6 +1962,10 @@ Map<String, dynamic> _$$ElementDefinitionExampleImplToJson(
 _$ElementDefinitionConstraintImpl _$$ElementDefinitionConstraintImplFromJson(
         Map<String, dynamic> json) =>
     _$ElementDefinitionConstraintImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       key: json['key'] as String?,
       keyElement: json['_key'] == null
           ? null
@@ -1974,6 +2007,9 @@ Map<String, dynamic> _$$ElementDefinitionConstraintImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('key', instance.key);
   writeNotNull('_key', instance.keyElement?.toJson());
   writeNotNull('requirements', instance.requirements);
@@ -2001,6 +2037,7 @@ const _$ElementDefinitionConstraintSeverityEnumMap = {
 _$ElementDefinitionBindingImpl _$$ElementDefinitionBindingImplFromJson(
         Map<String, dynamic> json) =>
     _$ElementDefinitionBindingImpl(
+      id: json['id'] as String?,
       extension_: (json['extension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -2033,6 +2070,7 @@ Map<String, dynamic> _$$ElementDefinitionBindingImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull(
@@ -2057,6 +2095,10 @@ const _$ElementDefinitionBindingStrengthEnumMap = {
 _$ElementDefinitionMappingImpl _$$ElementDefinitionMappingImplFromJson(
         Map<String, dynamic> json) =>
     _$ElementDefinitionMappingImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       identity:
           json['identity'] == null ? null : FhirId.fromJson(json['identity']),
       identityElement: json['_identity'] == null
@@ -2086,6 +2128,9 @@ Map<String, dynamic> _$$ElementDefinitionMappingImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('identity', instance.identity?.toJson());
   writeNotNull('_identity', instance.identityElement?.toJson());
   writeNotNull('language', instance.language);
@@ -2098,6 +2143,10 @@ Map<String, dynamic> _$$ElementDefinitionMappingImplToJson(
 }
 
 _$DosageImpl _$$DosageImplFromJson(Map<String, dynamic> json) => _$DosageImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       sequence: json['sequence'] == null
           ? null
           : FhirDecimal.fromJson(json['sequence']),
@@ -2177,6 +2226,9 @@ Map<String, dynamic> _$$DosageImplToJson(_$DosageImpl instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
   writeNotNull('sequence', instance.sequence?.toJson());
   writeNotNull('_sequence', instance.sequenceElement?.toJson());
   writeNotNull('text', instance.text);

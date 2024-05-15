@@ -56,6 +56,9 @@ class ResearchStudy with Resource, _$ResearchStudy {
     List<ResearchStudyArm>? arm,
   }) = _ResearchStudy;
 
+  @override
+  String get fhirType => 'ResearchStudy';
+
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ResearchStudy.fromYaml(dynamic yaml) => yaml is String
       ? ResearchStudy.fromJson(
@@ -90,9 +93,12 @@ class ResearchStudy with Resource, _$ResearchStudy {
 }
 
 @freezed
-class ResearchStudyArm with _$ResearchStudyArm {
+class ResearchStudyArm with BackboneType, _$ResearchStudyArm {
   const ResearchStudyArm._();
   const factory ResearchStudyArm({
+    String? id,
+    @JsonKey(name: 'extension') List<FhirExtension>? extension_,
+    List<FhirExtension>? modifierExtension,
     String? name,
     @JsonKey(name: '_name') Element? nameElement,
     CodeableConcept? code,
@@ -100,8 +106,8 @@ class ResearchStudyArm with _$ResearchStudyArm {
     @JsonKey(name: '_description') Element? descriptionElement,
   }) = _ResearchStudyArm;
 
-  /// Produces a Yaml formatted String version of the object
-  String toYaml() => json2yaml(toJson());
+  @override
+  String get fhirType => 'ResearchStudyArm';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ResearchStudyArm.fromYaml(dynamic yaml) => yaml is String
@@ -129,10 +135,6 @@ class ResearchStudyArm with _$ResearchStudyArm {
           'This does not properly decode to a Map<String,dynamic>.');
     }
   }
-
-  /// Another convenience method because more and more I'm transmitting FHIR
-  /// data as a String and not a Map
-  String toJsonString() => jsonEncode(toJson());
 }
 
 @freezed
@@ -164,6 +166,9 @@ class ResearchSubject with Resource, _$ResearchSubject {
     @JsonKey(name: '_actualArm') Element? actualArmElement,
     Reference? consent,
   }) = _ResearchSubject;
+
+  @override
+  String get fhirType => 'ResearchSubject';
 
   /// Factory constructor, accepts a [String] in YAML format as an argument
   factory ResearchSubject.fromYaml(dynamic yaml) => yaml is String

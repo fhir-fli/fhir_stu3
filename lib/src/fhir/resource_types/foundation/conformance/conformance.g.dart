@@ -391,6 +391,13 @@ const _$CapabilityStatementAcceptUnknownEnumMap = {
 _$CapabilityStatementSoftwareImpl _$$CapabilityStatementSoftwareImplFromJson(
         Map<String, dynamic> json) =>
     _$CapabilityStatementSoftwareImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       name: json['name'] as String?,
       nameElement: json['_name'] == null
           ? null
@@ -417,6 +424,11 @@ Map<String, dynamic> _$$CapabilityStatementSoftwareImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   writeNotNull('version', instance.version);
@@ -430,6 +442,13 @@ _$CapabilityStatementImplementationImpl
     _$$CapabilityStatementImplementationImplFromJson(
             Map<String, dynamic> json) =>
         _$CapabilityStatementImplementationImpl(
+          id: json['id'] as String?,
+          extension_: (json['extension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
           description: json['description'] as String?,
           descriptionElement: json['_description'] == null
               ? null
@@ -450,6 +469,11 @@ Map<String, dynamic> _$$CapabilityStatementImplementationImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('description', instance.description);
   writeNotNull('_description', instance.descriptionElement?.toJson());
   writeNotNull('url', instance.url);
@@ -460,6 +484,13 @@ Map<String, dynamic> _$$CapabilityStatementImplementationImplToJson(
 _$CapabilityStatementRestImpl _$$CapabilityStatementRestImplFromJson(
         Map<String, dynamic> json) =>
     _$CapabilityStatementRestImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       mode: $enumDecodeNullable(
           _$CapabilityStatementRestModeEnumMap, json['mode']),
       modeElement: json['_mode'] == null
@@ -508,6 +539,11 @@ Map<String, dynamic> _$$CapabilityStatementRestImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('mode', _$CapabilityStatementRestModeEnumMap[instance.mode]);
   writeNotNull('_mode', instance.modeElement?.toJson());
   writeNotNull('documentation', instance.documentation);
@@ -535,7 +571,11 @@ const _$CapabilityStatementRestModeEnumMap = {
 _$CapabilityStatementSecurityImpl _$$CapabilityStatementSecurityImplFromJson(
         Map<String, dynamic> json) =>
     _$CapabilityStatementSecurityImpl(
+      id: json['id'] as String?,
       extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
       cors: json['cors'] == null ? null : FhirBoolean.fromJson(json['cors']),
@@ -565,8 +605,11 @@ Map<String, dynamic> _$$CapabilityStatementSecurityImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('cors', instance.cors?.toJson());
   writeNotNull('_cors', instance.corsElement?.toJson());
   writeNotNull('service', instance.service?.map((e) => e.toJson()).toList());
@@ -580,6 +623,13 @@ Map<String, dynamic> _$$CapabilityStatementSecurityImplToJson(
 _$CapabilityStatementCertificateImpl
     _$$CapabilityStatementCertificateImplFromJson(Map<String, dynamic> json) =>
         _$CapabilityStatementCertificateImpl(
+          id: json['id'] as String?,
+          extension_: (json['extension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
           type: json['type'] as String?,
           typeElement: json['_type'] == null
               ? null
@@ -600,6 +650,11 @@ Map<String, dynamic> _$$CapabilityStatementCertificateImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('type', instance.type);
   writeNotNull('_type', instance.typeElement?.toJson());
   writeNotNull('blob', instance.blob);
@@ -610,6 +665,13 @@ Map<String, dynamic> _$$CapabilityStatementCertificateImplToJson(
 _$CapabilityStatementResourceImpl _$$CapabilityStatementResourceImplFromJson(
         Map<String, dynamic> json) =>
     _$CapabilityStatementResourceImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       type: json['type'] as String?,
       typeElement: json['_type'] == null
           ? null
@@ -707,6 +769,11 @@ Map<String, dynamic> _$$CapabilityStatementResourceImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('type', instance.type);
   writeNotNull('_type', instance.typeElement?.toJson());
   writeNotNull('profile', instance.profile?.toJson());
@@ -789,6 +856,13 @@ const _$CapabilityStatementResourceReferencePolicyEnumMap = {
 _$CapabilityStatementInteractionImpl
     _$$CapabilityStatementInteractionImplFromJson(Map<String, dynamic> json) =>
         _$CapabilityStatementInteractionImpl(
+          id: json['id'] as String?,
+          extension_: (json['extension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
           code: $enumDecodeNullable(
               _$CapabilityStatementInteractionCodeEnumMap, json['code']),
           codeElement: json['_code'] == null
@@ -811,6 +885,11 @@ Map<String, dynamic> _$$CapabilityStatementInteractionImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull(
       'code', _$CapabilityStatementInteractionCodeEnumMap[instance.code]);
   writeNotNull('_code', instance.codeElement?.toJson());
@@ -835,6 +914,13 @@ const _$CapabilityStatementInteractionCodeEnumMap = {
 _$CapabilityStatementSearchParamImpl
     _$$CapabilityStatementSearchParamImplFromJson(Map<String, dynamic> json) =>
         _$CapabilityStatementSearchParamImpl(
+          id: json['id'] as String?,
+          extension_: (json['extension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
           name: json['name'] as String?,
           nameElement: json['_name'] == null
               ? null
@@ -865,6 +951,11 @@ Map<String, dynamic> _$$CapabilityStatementSearchParamImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   writeNotNull('definition', instance.definition);
@@ -892,6 +983,13 @@ const _$CapabilityStatementSearchParamTypeEnumMap = {
 _$CapabilityStatementInteraction1Impl
     _$$CapabilityStatementInteraction1ImplFromJson(Map<String, dynamic> json) =>
         _$CapabilityStatementInteraction1Impl(
+          id: json['id'] as String?,
+          extension_: (json['extension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
           code: $enumDecodeNullable(
               _$CapabilityStatementInteraction1CodeEnumMap, json['code']),
           codeElement: json['_code'] == null
@@ -914,6 +1012,11 @@ Map<String, dynamic> _$$CapabilityStatementInteraction1ImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull(
       'code', _$CapabilityStatementInteraction1CodeEnumMap[instance.code]);
   writeNotNull('_code', instance.codeElement?.toJson());
@@ -933,6 +1036,13 @@ const _$CapabilityStatementInteraction1CodeEnumMap = {
 _$CapabilityStatementOperationImpl _$$CapabilityStatementOperationImplFromJson(
         Map<String, dynamic> json) =>
     _$CapabilityStatementOperationImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       name: json['name'] as String?,
       nameElement: json['_name'] == null
           ? null
@@ -951,6 +1061,11 @@ Map<String, dynamic> _$$CapabilityStatementOperationImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   val['definition'] = instance.definition.toJson();
@@ -960,6 +1075,13 @@ Map<String, dynamic> _$$CapabilityStatementOperationImplToJson(
 _$CapabilityStatementMessagingImpl _$$CapabilityStatementMessagingImplFromJson(
         Map<String, dynamic> json) =>
     _$CapabilityStatementMessagingImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       endpoint: (json['endpoint'] as List<dynamic>?)
           ?.map((e) =>
               CapabilityStatementEndpoint.fromJson(e as Map<String, dynamic>))
@@ -994,6 +1116,11 @@ Map<String, dynamic> _$$CapabilityStatementMessagingImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('endpoint', instance.endpoint?.map((e) => e.toJson()).toList());
   writeNotNull('reliableCache', instance.reliableCache?.toJson());
   writeNotNull('_reliableCache', instance.reliableCacheElement?.toJson());
@@ -1008,6 +1135,13 @@ Map<String, dynamic> _$$CapabilityStatementMessagingImplToJson(
 _$CapabilityStatementEndpointImpl _$$CapabilityStatementEndpointImplFromJson(
         Map<String, dynamic> json) =>
     _$CapabilityStatementEndpointImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       protocol: Coding.fromJson(json['protocol'] as Map<String, dynamic>),
       address: json['address'] as String?,
       addressElement: json['_address'] == null
@@ -1017,9 +1151,7 @@ _$CapabilityStatementEndpointImpl _$$CapabilityStatementEndpointImplFromJson(
 
 Map<String, dynamic> _$$CapabilityStatementEndpointImplToJson(
     _$CapabilityStatementEndpointImpl instance) {
-  final val = <String, dynamic>{
-    'protocol': instance.protocol.toJson(),
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -1027,6 +1159,12 @@ Map<String, dynamic> _$$CapabilityStatementEndpointImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['protocol'] = instance.protocol.toJson();
   writeNotNull('address', instance.address);
   writeNotNull('_address', instance.addressElement?.toJson());
   return val;
@@ -1036,6 +1174,13 @@ _$CapabilityStatementSupportedMessageImpl
     _$$CapabilityStatementSupportedMessageImplFromJson(
             Map<String, dynamic> json) =>
         _$CapabilityStatementSupportedMessageImpl(
+          id: json['id'] as String?,
+          extension_: (json['extension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
           mode: $enumDecodeNullable(
               _$CapabilityStatementSupportedMessageModeEnumMap, json['mode']),
           modeElement: json['_mode'] == null
@@ -1055,6 +1200,11 @@ Map<String, dynamic> _$$CapabilityStatementSupportedMessageImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull(
       'mode', _$CapabilityStatementSupportedMessageModeEnumMap[instance.mode]);
   writeNotNull('_mode', instance.modeElement?.toJson());
@@ -1071,6 +1221,13 @@ const _$CapabilityStatementSupportedMessageModeEnumMap = {
 _$CapabilityStatementEventImpl _$$CapabilityStatementEventImplFromJson(
         Map<String, dynamic> json) =>
     _$CapabilityStatementEventImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       code: Coding.fromJson(json['code'] as Map<String, dynamic>),
       category: $enumDecodeNullable(
           _$CapabilityStatementEventCategoryEnumMap, json['category']),
@@ -1096,9 +1253,7 @@ _$CapabilityStatementEventImpl _$$CapabilityStatementEventImplFromJson(
 
 Map<String, dynamic> _$$CapabilityStatementEventImplToJson(
     _$CapabilityStatementEventImpl instance) {
-  final val = <String, dynamic>{
-    'code': instance.code.toJson(),
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -1106,6 +1261,12 @@ Map<String, dynamic> _$$CapabilityStatementEventImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['code'] = instance.code.toJson();
   writeNotNull(
       'category', _$CapabilityStatementEventCategoryEnumMap[instance.category]);
   writeNotNull('_category', instance.categoryElement?.toJson());
@@ -1136,6 +1297,13 @@ const _$CapabilityStatementEventModeEnumMap = {
 _$CapabilityStatementDocumentImpl _$$CapabilityStatementDocumentImplFromJson(
         Map<String, dynamic> json) =>
     _$CapabilityStatementDocumentImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       mode: $enumDecodeNullable(
           _$CapabilityStatementDocumentModeEnumMap, json['mode']),
       modeElement: json['_mode'] == null
@@ -1158,6 +1326,11 @@ Map<String, dynamic> _$$CapabilityStatementDocumentImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('mode', _$CapabilityStatementDocumentModeEnumMap[instance.mode]);
   writeNotNull('_mode', instance.modeElement?.toJson());
   writeNotNull('documentation', instance.documentation);
@@ -1347,6 +1520,13 @@ const _$CompartmentDefinitionCodeEnumMap = {
 _$CompartmentDefinitionResourceImpl
     _$$CompartmentDefinitionResourceImplFromJson(Map<String, dynamic> json) =>
         _$CompartmentDefinitionResourceImpl(
+          id: json['id'] as String?,
+          extension_: (json['extension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
           code: json['code'] == null ? null : FhirCode.fromJson(json['code']),
           codeElement: json['_code'] == null
               ? null
@@ -1376,6 +1556,11 @@ Map<String, dynamic> _$$CompartmentDefinitionResourceImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('code', instance.code?.toJson());
   writeNotNull('_code', instance.codeElement?.toJson());
   writeNotNull('param', instance.param);
@@ -1561,6 +1746,13 @@ const _$DataElementStringencyEnumMap = {
 _$DataElementMappingImpl _$$DataElementMappingImplFromJson(
         Map<String, dynamic> json) =>
     _$DataElementMappingImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       identity:
           json['identity'] == null ? null : FhirId.fromJson(json['identity']),
       identityElement: json['_identity'] == null
@@ -1590,6 +1782,11 @@ Map<String, dynamic> _$$DataElementMappingImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('identity', instance.identity?.toJson());
   writeNotNull('_identity', instance.identityElement?.toJson());
   writeNotNull('uri', instance.uri);
@@ -1764,6 +1961,13 @@ const _$GraphDefinitionStatusEnumMap = {
 _$GraphDefinitionLinkImpl _$$GraphDefinitionLinkImplFromJson(
         Map<String, dynamic> json) =>
     _$GraphDefinitionLinkImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       path: json['path'] as String?,
       pathElement: json['_path'] == null
           ? null
@@ -1799,6 +2003,11 @@ Map<String, dynamic> _$$GraphDefinitionLinkImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('path', instance.path);
   writeNotNull('_path', instance.pathElement?.toJson());
   writeNotNull('sliceName', instance.sliceName);
@@ -1816,6 +2025,13 @@ Map<String, dynamic> _$$GraphDefinitionLinkImplToJson(
 _$GraphDefinitionTargetImpl _$$GraphDefinitionTargetImplFromJson(
         Map<String, dynamic> json) =>
     _$GraphDefinitionTargetImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       type: json['type'] as String?,
       typeElement: json['_type'] == null
           ? null
@@ -1843,6 +2059,11 @@ Map<String, dynamic> _$$GraphDefinitionTargetImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('type', instance.type);
   writeNotNull('_type', instance.typeElement?.toJson());
   writeNotNull('profile', instance.profile);
@@ -1856,6 +2077,13 @@ Map<String, dynamic> _$$GraphDefinitionTargetImplToJson(
 _$GraphDefinitionCompartmentImpl _$$GraphDefinitionCompartmentImplFromJson(
         Map<String, dynamic> json) =>
     _$GraphDefinitionCompartmentImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       code: json['code'] == null ? null : FhirCode.fromJson(json['code']),
       codeElement: json['_code'] == null
           ? null
@@ -1885,6 +2113,11 @@ Map<String, dynamic> _$$GraphDefinitionCompartmentImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('code', instance.code?.toJson());
   writeNotNull('_code', instance.codeElement?.toJson());
   writeNotNull('rule', _$GraphDefinitionCompartmentRuleEnumMap[instance.rule]);
@@ -2087,6 +2320,13 @@ const _$ImplementationGuideStatusEnumMap = {
 _$ImplementationGuideDependencyImpl
     _$$ImplementationGuideDependencyImplFromJson(Map<String, dynamic> json) =>
         _$ImplementationGuideDependencyImpl(
+          id: json['id'] as String?,
+          extension_: (json['extension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
           type: $enumDecodeNullable(
               _$ImplementationGuideDependencyTypeEnumMap, json['type']),
           typeElement: json['_type'] == null
@@ -2108,6 +2348,11 @@ Map<String, dynamic> _$$ImplementationGuideDependencyImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull(
       'type', _$ImplementationGuideDependencyTypeEnumMap[instance.type]);
   writeNotNull('_type', instance.typeElement?.toJson());
@@ -2125,6 +2370,13 @@ const _$ImplementationGuideDependencyTypeEnumMap = {
 _$ImplementationGuidePackageImpl _$$ImplementationGuidePackageImplFromJson(
         Map<String, dynamic> json) =>
     _$ImplementationGuidePackageImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       name: json['name'] as String?,
       nameElement: json['_name'] == null
           ? null
@@ -2149,6 +2401,11 @@ Map<String, dynamic> _$$ImplementationGuidePackageImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   writeNotNull('description', instance.description);
@@ -2160,6 +2417,13 @@ Map<String, dynamic> _$$ImplementationGuidePackageImplToJson(
 _$ImplementationGuideResourceImpl _$$ImplementationGuideResourceImplFromJson(
         Map<String, dynamic> json) =>
     _$ImplementationGuideResourceImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       example: json['example'] == null
           ? null
           : FhirBoolean.fromJson(json['example']),
@@ -2200,6 +2464,11 @@ Map<String, dynamic> _$$ImplementationGuideResourceImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('example', instance.example?.toJson());
   writeNotNull('_example', instance.exampleElement?.toJson());
   writeNotNull('name', instance.name);
@@ -2218,6 +2487,13 @@ Map<String, dynamic> _$$ImplementationGuideResourceImplToJson(
 _$ImplementationGuideGlobalImpl _$$ImplementationGuideGlobalImplFromJson(
         Map<String, dynamic> json) =>
     _$ImplementationGuideGlobalImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       type: json['type'] as String?,
       typeElement: json['_type'] == null
           ? null
@@ -2235,6 +2511,11 @@ Map<String, dynamic> _$$ImplementationGuideGlobalImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('type', instance.type);
   writeNotNull('_type', instance.typeElement?.toJson());
   val['profile'] = instance.profile.toJson();
@@ -2244,6 +2525,13 @@ Map<String, dynamic> _$$ImplementationGuideGlobalImplToJson(
 _$ImplementationGuidePageImpl _$$ImplementationGuidePageImplFromJson(
         Map<String, dynamic> json) =>
     _$ImplementationGuidePageImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       source: json['source'] as String?,
       sourceElement: json['_source'] == null
           ? null
@@ -2288,6 +2576,11 @@ Map<String, dynamic> _$$ImplementationGuidePageImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('source', instance.source);
   writeNotNull('_source', instance.sourceElement?.toJson());
   writeNotNull('title', instance.title);
@@ -2519,6 +2812,13 @@ const _$MessageDefinitionStatusEnumMap = {
 _$MessageDefinitionFocusImpl _$$MessageDefinitionFocusImplFromJson(
         Map<String, dynamic> json) =>
     _$MessageDefinitionFocusImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       code: json['code'] == null ? null : FhirCode.fromJson(json['code']),
       codeElement: json['_code'] == null
           ? null
@@ -2546,6 +2846,11 @@ Map<String, dynamic> _$$MessageDefinitionFocusImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('code', instance.code?.toJson());
   writeNotNull('_code', instance.codeElement?.toJson());
   writeNotNull('profile', instance.profile?.toJson());
@@ -2560,6 +2865,13 @@ _$MessageDefinitionAllowedResponseImpl
     _$$MessageDefinitionAllowedResponseImplFromJson(
             Map<String, dynamic> json) =>
         _$MessageDefinitionAllowedResponseImpl(
+          id: json['id'] as String?,
+          extension_: (json['extension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
           message: Reference.fromJson(json['message'] as Map<String, dynamic>),
           situation: json['situation'] as String?,
           situationElement: json['_situation'] == null
@@ -2569,9 +2881,7 @@ _$MessageDefinitionAllowedResponseImpl
 
 Map<String, dynamic> _$$MessageDefinitionAllowedResponseImplToJson(
     _$MessageDefinitionAllowedResponseImpl instance) {
-  final val = <String, dynamic>{
-    'message': instance.message.toJson(),
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -2579,6 +2889,12 @@ Map<String, dynamic> _$$MessageDefinitionAllowedResponseImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['message'] = instance.message.toJson();
   writeNotNull('situation', instance.situation);
   writeNotNull('_situation', instance.situationElement?.toJson());
   return val;
@@ -2809,6 +3125,13 @@ const _$OperationDefinitionKindEnumMap = {
 _$OperationDefinitionParameterImpl _$$OperationDefinitionParameterImplFromJson(
         Map<String, dynamic> json) =>
     _$OperationDefinitionParameterImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       name: json['name'] as String?,
       nameElement: json['_name'] == null
           ? null
@@ -2862,6 +3185,11 @@ Map<String, dynamic> _$$OperationDefinitionParameterImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   writeNotNull('use', _$OperationDefinitionParameterUseEnumMap[instance.use]);
@@ -2904,7 +3232,11 @@ const _$OperationDefinitionParameterSearchTypeEnumMap = {
 _$OperationDefinitionBindingImpl _$$OperationDefinitionBindingImplFromJson(
         Map<String, dynamic> json) =>
     _$OperationDefinitionBindingImpl(
+      id: json['id'] as String?,
       extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
           ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
           .toList(),
       strength: $enumDecodeNullable(
@@ -2932,8 +3264,11 @@ Map<String, dynamic> _$$OperationDefinitionBindingImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
   writeNotNull(
       'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('strength',
       _$OperationDefinitionBindingStrengthEnumMap[instance.strength]);
   writeNotNull('_strength', instance.strengthElement?.toJson());
@@ -2954,6 +3289,13 @@ const _$OperationDefinitionBindingStrengthEnumMap = {
 _$OperationDefinitionOverloadImpl _$$OperationDefinitionOverloadImplFromJson(
         Map<String, dynamic> json) =>
     _$OperationDefinitionOverloadImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       parameterName: (json['parameterName'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -2977,6 +3319,11 @@ Map<String, dynamic> _$$OperationDefinitionOverloadImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('parameterName', instance.parameterName);
   writeNotNull('_parameterName',
       instance.parameterNameElement?.map((e) => e?.toJson()).toList());
@@ -3277,6 +3624,13 @@ const _$SearchParameterModifierEnumMap = {
 _$SearchParameterComponentImpl _$$SearchParameterComponentImplFromJson(
         Map<String, dynamic> json) =>
     _$SearchParameterComponentImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       definition:
           Reference.fromJson(json['definition'] as Map<String, dynamic>),
       expression: json['expression'] as String?,
@@ -3287,9 +3641,7 @@ _$SearchParameterComponentImpl _$$SearchParameterComponentImplFromJson(
 
 Map<String, dynamic> _$$SearchParameterComponentImplToJson(
     _$SearchParameterComponentImpl instance) {
-  final val = <String, dynamic>{
-    'definition': instance.definition.toJson(),
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -3297,6 +3649,12 @@ Map<String, dynamic> _$$SearchParameterComponentImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['definition'] = instance.definition.toJson();
   writeNotNull('expression', instance.expression);
   writeNotNull('_expression', instance.expressionElement?.toJson());
   return val;
@@ -3573,6 +3931,13 @@ const _$StructureDefinitionDerivationEnumMap = {
 _$StructureDefinitionMappingImpl _$$StructureDefinitionMappingImplFromJson(
         Map<String, dynamic> json) =>
     _$StructureDefinitionMappingImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       identity:
           json['identity'] == null ? null : FhirId.fromJson(json['identity']),
       identityElement: json['_identity'] == null
@@ -3602,6 +3967,11 @@ Map<String, dynamic> _$$StructureDefinitionMappingImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('identity', instance.identity?.toJson());
   writeNotNull('_identity', instance.identityElement?.toJson());
   writeNotNull('uri', instance.uri);
@@ -3616,30 +3986,70 @@ Map<String, dynamic> _$$StructureDefinitionMappingImplToJson(
 _$StructureDefinitionSnapshotImpl _$$StructureDefinitionSnapshotImplFromJson(
         Map<String, dynamic> json) =>
     _$StructureDefinitionSnapshotImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       element: (json['element'] as List<dynamic>)
           .map((e) => ElementDefinition.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
 Map<String, dynamic> _$$StructureDefinitionSnapshotImplToJson(
-        _$StructureDefinitionSnapshotImpl instance) =>
-    <String, dynamic>{
-      'element': instance.element.map((e) => e.toJson()).toList(),
-    };
+    _$StructureDefinitionSnapshotImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['element'] = instance.element.map((e) => e.toJson()).toList();
+  return val;
+}
 
 _$StructureDefinitionDifferentialImpl
     _$$StructureDefinitionDifferentialImplFromJson(Map<String, dynamic> json) =>
         _$StructureDefinitionDifferentialImpl(
+          id: json['id'] as String?,
+          extension_: (json['extension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+              ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+              .toList(),
           element: (json['element'] as List<dynamic>)
               .map((e) => ElementDefinition.fromJson(e as Map<String, dynamic>))
               .toList(),
         );
 
 Map<String, dynamic> _$$StructureDefinitionDifferentialImplToJson(
-        _$StructureDefinitionDifferentialImpl instance) =>
-    <String, dynamic>{
-      'element': instance.element.map((e) => e.toJson()).toList(),
-    };
+    _$StructureDefinitionDifferentialImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
+  val['element'] = instance.element.map((e) => e.toJson()).toList();
+  return val;
+}
 
 _$StructureMapImpl _$$StructureMapImplFromJson(Map<String, dynamic> json) =>
     _$StructureMapImpl(
@@ -3821,6 +4231,13 @@ const _$StructureMapStatusEnumMap = {
 _$StructureMapStructureImpl _$$StructureMapStructureImplFromJson(
         Map<String, dynamic> json) =>
     _$StructureMapStructureImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       url: json['url'] as String?,
       urlElement: json['_url'] == null
           ? null
@@ -3850,6 +4267,11 @@ Map<String, dynamic> _$$StructureMapStructureImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('url', instance.url);
   writeNotNull('_url', instance.urlElement?.toJson());
   writeNotNull('mode', _$StructureMapStructureModeEnumMap[instance.mode]);
@@ -3872,6 +4294,13 @@ const _$StructureMapStructureModeEnumMap = {
 _$StructureMapGroupImpl _$$StructureMapGroupImplFromJson(
         Map<String, dynamic> json) =>
     _$StructureMapGroupImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       name: json['name'] as String?,
       nameElement: json['_name'] == null
           ? null
@@ -3907,6 +4336,11 @@ Map<String, dynamic> _$$StructureMapGroupImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   writeNotNull('extends', instance.extends_);
@@ -3931,6 +4365,13 @@ const _$StructureMapGroupTypeModeEnumMap = {
 _$StructureMapInputImpl _$$StructureMapInputImplFromJson(
         Map<String, dynamic> json) =>
     _$StructureMapInputImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       name: json['name'] as String?,
       nameElement: json['_name'] == null
           ? null
@@ -3959,6 +4400,11 @@ Map<String, dynamic> _$$StructureMapInputImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   writeNotNull('type', instance.type);
@@ -3979,6 +4425,13 @@ const _$StructureMapInputModeEnumMap = {
 _$StructureMapRuleImpl _$$StructureMapRuleImplFromJson(
         Map<String, dynamic> json) =>
     _$StructureMapRuleImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       name: json['name'] as String?,
       nameElement: json['_name'] == null
           ? null
@@ -4012,6 +4465,11 @@ Map<String, dynamic> _$$StructureMapRuleImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   val['source'] = instance.source.map((e) => e.toJson()).toList();
@@ -4027,6 +4485,13 @@ Map<String, dynamic> _$$StructureMapRuleImplToJson(
 _$StructureMapSourceImpl _$$StructureMapSourceImplFromJson(
         Map<String, dynamic> json) =>
     _$StructureMapSourceImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       context: json['context'] as String?,
       contextElement: json['_context'] == null
           ? null
@@ -4153,10 +4618,6 @@ _$StructureMapSourceImpl _$$StructureMapSourceImplFromJson(
           ? null
           : FhirExtension.fromJson(
               json['defaultValueExtension'] as Map<String, dynamic>),
-      defaultValueBackboneElement: json['defaultValueBackboneElement'] == null
-          ? null
-          : BackboneElement.fromJson(
-              json['defaultValueBackboneElement'] as Map<String, dynamic>),
       defaultValueNarrative: json['defaultValueNarrative'] == null
           ? null
           : Narrative.fromJson(
@@ -4316,6 +4777,11 @@ Map<String, dynamic> _$$StructureMapSourceImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('context', instance.context);
   writeNotNull('_context', instance.contextElement?.toJson());
   writeNotNull('min', instance.min?.toJson());
@@ -4373,8 +4839,6 @@ Map<String, dynamic> _$$StructureMapSourceImplToJson(
   writeNotNull('defaultValueElement', instance.defaultValueElement?.toJson());
   writeNotNull(
       'defaultValueExtension', instance.defaultValueExtension?.toJson());
-  writeNotNull('defaultValueBackboneElement',
-      instance.defaultValueBackboneElement?.toJson());
   writeNotNull(
       'defaultValueNarrative', instance.defaultValueNarrative?.toJson());
   writeNotNull(
@@ -4453,6 +4917,13 @@ const _$StructureMapSourceListModeEnumMap = {
 _$StructureMapTargetImpl _$$StructureMapTargetImplFromJson(
         Map<String, dynamic> json) =>
     _$StructureMapTargetImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       context: json['context'] as String?,
       contextElement: json['_context'] == null
           ? null
@@ -4504,6 +4975,11 @@ Map<String, dynamic> _$$StructureMapTargetImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('context', instance.context);
   writeNotNull('_context', instance.contextElement?.toJson());
   writeNotNull('contextType',
@@ -4568,6 +5044,13 @@ const _$StructureMapTargetTransformEnumMap = {
 _$StructureMapParameterImpl _$$StructureMapParameterImplFromJson(
         Map<String, dynamic> json) =>
     _$StructureMapParameterImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       valueId:
           json['valueId'] == null ? null : FhirId.fromJson(json['valueId']),
       valueIdElement: json['_valueId'] == null
@@ -4607,6 +5090,11 @@ Map<String, dynamic> _$$StructureMapParameterImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('valueId', instance.valueId?.toJson());
   writeNotNull('_valueId', instance.valueIdElement?.toJson());
   writeNotNull('valueString', instance.valueString);
@@ -4623,6 +5111,13 @@ Map<String, dynamic> _$$StructureMapParameterImplToJson(
 _$StructureMapDependentImpl _$$StructureMapDependentImplFromJson(
         Map<String, dynamic> json) =>
     _$StructureMapDependentImpl(
+      id: json['id'] as String?,
+      extension_: (json['extension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      modifierExtension: (json['modifierExtension'] as List<dynamic>?)
+          ?.map((e) => FhirExtension.fromJson(e as Map<String, dynamic>))
+          .toList(),
       name: json['name'] as String?,
       nameElement: json['_name'] == null
           ? null
@@ -4646,6 +5141,11 @@ Map<String, dynamic> _$$StructureMapDependentImplToJson(
     }
   }
 
+  writeNotNull('id', instance.id);
+  writeNotNull(
+      'extension', instance.extension_?.map((e) => e.toJson()).toList());
+  writeNotNull('modifierExtension',
+      instance.modifierExtension?.map((e) => e.toJson()).toList());
   writeNotNull('name', instance.name);
   writeNotNull('_name', instance.nameElement?.toJson());
   writeNotNull('variable', instance.variable);
