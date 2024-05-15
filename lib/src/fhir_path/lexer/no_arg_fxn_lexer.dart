@@ -9,6 +9,11 @@ import '../../../fhir_stu3.dart';
 ///*************************************************************************/
 
 /// identifies toBooleans
+final Parser<HtmlCheckerParser> htmlCheckerLexer =
+    (string('htmlChecks()') | string('.htmlChecks()'))
+        .map((_) => HtmlCheckerParser());
+
+/// identifies toBooleans
 final Parser<ToBooleanParser> toBooleanLexer =
     (string('toBoolean()') | string('.toBoolean()'))
         .map((_) => ToBooleanParser());
